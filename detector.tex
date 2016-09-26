@@ -1,38 +1,34 @@
-\chapter{Continued captions}
-\label{chap:ContCaptions}
+\chapter{The CMS experiment at the \LHC}
+\label{chap:detector}
 
-Here are some funky floats using ``continued captions'', i.e. for a semantically
-collected group of float contents which are too numerous to fit into a single
-float, such as the pretty circles in the following figure:
+% \chapterquote{There, sir! that is the perfection of vessels!}
+% {Jules Verne, 1828--1905}
 
-\newcommand{\circleimg}[1]{%
-\begin{tikzpicture}
-  \draw[color=black,fill=#1,thick] (1,0) circle (1.5cm);
-\end{tikzpicture}%
-}
+\section{The \LHC}
+\label{sec:lhc}
 
-\begin{figure}[hb]
-  \subfloat[][Example 1a]{\label{fig:cc1a}\circleimg{red!80}}\quad
-  \subfloat[][Example 1b]{\label{fig:cc1b}\circleimg{green!70!yellow}}\quad
-  \subfloat[][Example 1c]{\label{fig:cc1c}\circleimg{blue!80}}\quad
-  \subfloat[][Example 1d]{\label{fig:cc1d}\circleimg{orange!80!yellow}}
-  \caption{Demonstration of \texttt{subfig} continued captions.}
-  \label{fig:cc1}
-\end{figure}
+% \begin{figure}
+%   \includegraphics[width=\largefigwidth]{ckmfitter-alpha-combined}
+%   \caption[CKM Fitter constraints on \alphaCKM.]%
+%   {CKM Fitter constraints on \alphaCKM from combined \BToPiPi,
+%     \BToRhoPi and \BToRhoRho decay analyses.}
+%   \label{fig:CKMFitter}
+% \end{figure}
 
-\begin{figure}[p]
-  \ContinuedFloat
-  \subfloat[][Example 1e]{\label{fig:cc1e}\circleimg{violet}}\quad
-  \subfloat[][Example 1f]{\label{fig:cc1f}\circleimg{cyan}}\quad
-  \subfloat[][Example 1g]{\label{fig:cc1g}\circleimg{magenta}}\quad
-  \subfloat[][Example 1h]{\label{fig:cc1h}\circleimg{yellow}}
-  \caption[]{Demonstration of \texttt{subfig} continued captions (continued).}
-\end{figure}
+\section{The CMS detector}
+\label{sec:cms}
 
-\noindent
-This mechanism means that the same float label is used for both pages of
-floats. Note that we can refer to \FigureRef{fig:cc1} in general, or to
-\FigureRef{fig:cc1g} on \PageRef{fig:cc1g} in particular!
+\subsection{Trigger system}
+\label{sec:triggers}
 
-\noindent
-Just for the hell of it, let's also refer to \SectionRef{sec:neutralmixing}.
+% \begin{table}[bp]
+%   \begin{tabular}{lllll}
+%                 & L0              & L1              & HLT             \\
+%     \midrule\\
+%     Input rate  & \unit{40}{\MHz} & \unit{1}{\MHz}  & \unit{40}{\kHz} \\
+%     Output rate & \unit{1}{\MHz}  & \unit{40}{\kHz} & \unit{2}{\kHz}  \\
+%     Location    & On detector     & Counting room   & Counting room   \\
+%   \end{tabular}
+%   \caption{Characteristics of the trigger levels and offline analysis.}
+%   \label{tab:TriggerDetails}
+% \end{table}

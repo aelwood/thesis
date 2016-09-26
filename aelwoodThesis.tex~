@@ -25,8 +25,9 @@
 
 
 %% Define the thesis title and author
-\title{A study of \BToKPi decays with\\ the \LHCb experiment}
-\author{Andrew Gordon Buckley}
+\title{A search for supersymmetry with the CMS detector at the
+  LHC}
+\author{Adam Christopher Elwood}
 
 %% Doc-specific PDF metadata
 \makeatletter
