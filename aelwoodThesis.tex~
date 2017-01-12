@@ -1,5 +1,5 @@
 %% For normal draft builds (figs undisplayed hence fast compile)
-\documentclass[hyperpdf,nobind,draft,oneside]{hepthesis}
+%\documentclass[hyperpdf,nobind,draft,oneside]{hepthesis}
 %\documentclass[hyperpdf,nobind,draft,twoside]{hepthesis}
 
 %% For short draft builds (breaks citations by necessity)
@@ -8,7 +8,7 @@
 %%For Cambridge soft-bound version
 %\documentclass[hyperpdf,bindnopdf]{hepthesis}
 %% For Cambridge hard-bound version (must be one-sided)
-%\documentclass[hyperpdf,oneside]{hepthesis}
+\documentclass[hyperpdf,oneside]{hepthesis}
 
 %% Load special font packages here if you wish
 %\usepackage{lmodern}
@@ -33,8 +33,8 @@
 \makeatletter
 \@ifpackageloaded{hyperref}{%
 \hypersetup{%
-  pdftitle = {A search for supersymmetry with the CMS detector at the
-  LHC},
+  pdftitle = {A search for supersymmetry in an all hadronic final
+  state at the LHC},
   pdfsubject = {Adam Elwood's PhD Thesis},
   pdfkeywords = {CMS, supersymmetry, physics, LHC, trigger},
   pdfauthor = {\textcopyright\ Adam Elwood}
@@ -54,16 +54,16 @@
 \begin{mainmatter}
   %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
   \input{introduction}
-  \input{theory}
+  %\input{theory}
   \input{detector}
   %% To ignore a specific chapter while working on another, making the build faster, comment it out:
   %\input{chap4}
 \end{mainmatter}
 
 %% Produce the appendices
-\begin{appendices}
-  \input{appendices}
-\end{appendices}
+% \begin{appendices}
+%   \input{appendices}
+% \end{appendices}
 
 %% Produce the un-numbered back matter (e.g. colophon,
 %% bibliography, tables of figures etc., index...)
