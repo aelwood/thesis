@@ -1,8 +1,11 @@
 \chapter{The CMS experiment at the LHC}
 \label{chap:detector}
 
-% \chapterquote{There, sir! that is the perfection of vessels!}
-% {Jules Verne, 1828--1905}
+\chapterquote{Traditional scientific method has always been, at the
+very best, 20-20 hindsight. It's good for seeing where you've been.
+It's good for testing the truth of what you think you know, but it
+can't tell you where you ought to go.}%
+{Robert M. Pirsig, Zen and the art of motorcycle maintenance}
 
 The \LHC is one of the largest machines ever built. It exists within a
 27~km tunnel $O(100$~m$)$ underground on the border of France and
@@ -88,17 +91,19 @@ at the highest ever recorded energies.
 
 \section{The CMS detector} \label{sec:cms}
 
-The \CMS detector is one of two multipurpose
-detectors built around proton beam collision points and,
-situated at Point 5 on the \LHC. The key goals of the CMS detector at
-its conception were the discovery of the \SM Higgs boson and search
-for signatures of \BSM physics. In \CMS the results of collisions are
-measured with a series of subdetectors, built within and around a 3.8T
-superconducting solenoid, designed to track, identify and record the
-energy of all non-neutrino SM particles \cite{Bayatian:2006zz}. With
-its comprehensive, close to $4\pi$, solid angle coverage, \CMS is well
-suited to inferring the existence of weakly interacting particles
-through the momentum imbalance of visible particles. 
+The \CMS detector is one of two multipurpose detectors built around
+proton beam collision points, the other being ATLAS. It is situated at
+Point 5 on the \LHC, as visibile in Fig.~\ref{fig:lhc}. The key goals
+of the \CMS detector at its conception were the discovery of the \SM
+Higgs boson and searches for generic signatures of \BSM physics. In \CMS the
+results of collisions are measured with a series of subdetectors,
+built within and around a $3.8~T$ superconducting solenoid. They are designed to
+track, identify and record the energy of all non-neutrino \SM particles
+\cite{Bayatian:2006zz}. With its comprehensive, close to $4\pi$, solid
+angle coverage, \CMS is well suited to inferring the existence of
+weakly interacting particles through the momentum imbalance of visible
+particles. This is particularly relevant when searching for \BSM
+physics.
 
 \begin{figure}
 \begin{center}
@@ -109,13 +114,24 @@ highlighting the key detecting components \cite{Bayatian:2006zz}}
 
 A representative view of \CMS and its components can be seen in
 Fig.~\ref{fig:CMS}. The detector is designed in a series of
-cylindrical layers of subdetectors working out from the centre, where
-the proton collisions occur. The first layer consists of the silicon
-tracking system. This tracker is designed to allow the reconstruction
-of the trajectory of charged particles as they move through the
-magnetic field. The degree to which the path of these particles is
-bent allows for an accurate determination of their momentum. The next
-layer beyond the silicon tracker is the ECAL. 
+cylindrical layers of subdetectors working out from the central point,
+where the proton collisions occur. The first layer consists of the
+silicon tracking system. This tracker is designed to allow the
+reconstruction of the trajectory of charged particles produced in the
+collision point as they move through the magnetic field. The degree to
+which the path of these particles is bent allows for an accurate
+determination of their momentum. The next layer beyond the silicon
+tracker is the \ECAL, which is designed to absorb and measure the
+energy of electrons and photons. Surrounding this is the \HCAL that
+absorbs the remaining hadronic particles that have punched through the
+\ECAL. Surrounding the tracker and calorimeters is the superconducting
+solenoid. In the final layer are the muon chambers and iron return
+yoke. The chambers are designed to detect the presence of muons that
+will not be absorbed by the central components of the detector. The
+data from all these subdetectors are read out by dedicated front end
+electronics. It is initially analysed at a basic level by the \CMS
+trigger system. The most promising data is then kept and stored for
+``offline'' physics analysis. 
 
 Explain the coordinate system..
 
@@ -141,11 +157,11 @@ extend up to very high pileup (number of simultaneous collisions)
 
 \subsection{The Electromagnetic and Hadronic Calorimeters} Surrounding
 the tracking system are the electromagnetic and hadronic calorimeters
-(ECAL and HCAL). The ECAL is constructed from 75~848 PbWO$_4$
+(\ECAL and \HCAL). The \ECAL is constructed from 75~848 PbWO$_4$
 scintillating crystals covering $|\eta|<3$. They are designed to
 absorb electrons and photons and emit light proportional to the energy
 deposited. This light is detected by custom photodiodes designed to
-perform well in high magnetic fields.  \\\\ The HCAL is designed to
+perform well in high magnetic fields.  \\\\ The \HCAL is designed to
 absorb hadrons and is constructed from brass absorbers interleaved
 with scintillating plastic tiles covering $|\eta|<3$. The
 scintillations are read out with hybrid photodiodes via wavelength
@@ -157,7 +173,7 @@ Preshower detector consisting of lead absorbers and silicon
 microstrips \cite{CMSTechDesign1DetectorPerformance}\cite{Cutajar}.
 
 \subsection{The Muon System} As muons are unlikely to be absorbed in
-the ECAL and HCAL, a muon system is built into the iron return yoke
+the \ECAL and \HCAL, a muon system is built into the iron return yoke
 that surrounds the solenoid.  This consists of wire chambers
 containing ionising gas that allows the measurement of muon momenta
 with a greater than $1\%$ precision
