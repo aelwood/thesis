@@ -8,8 +8,8 @@ can't tell you where you ought to go.}%
 {Robert M. Pirsig, Zen and the art of motorcycle maintenance}
 
 The \LHC is one of the largest machines ever built. It exists within a
-27~km tunnel $O(100$~m$)$ underground on the border of France and
-Switzerland. Along the extent of the \LHC are built a series of
+27~km tunnel $\sim 100$~m$)$ underground on the border of France and
+Switzerland. Around the ring of the \LHC are built a series of
 detectors that can record in a high level of detail the result of high
 energy particle collisions produced by the collider. This chapter
 will focus on the details and performance of \CMS, a multi-purpose
@@ -26,22 +26,24 @@ The proton-proton collisions are most utilised for direct searches for
 new physics and therefore take up the vast majority of the \LHC's
 running time. 
 
-To bring protons up to the $6.5\tev$ required in Run~2 of the \LHC they are
-accelerated through a series of stages. Hydrogen atoms are initially stripped
-of their electrons and accelerated to 50\mev by a linear accelerator,
-\ac{LINAC2}. The energy is then increased to 1.4\gev by the \ac{PSB} before
-being injected into the \ac{PS} which brings the energies up to 26\gev. A final
-kick up to 450\gev is provided by the \ac{SPS}. This chain of accelerators also
-collect the protons into bunches that are either 25~ns (from Run~2 onwards) or
-50~ns apart (during Run~1 and early stages of Run~2). These bunches are then
-injected into the \LHC, in which they are steered by around 1200
-superconducting dipole magnets while being accelerated up to $6.5\tev$ with
-\ac{RF} cavities. Once the beam has reached the intended energy and is stable,
-protons are collided at four different points on the ring, around which are
+To bring protons up to the $6.5~\tev$ required in Run~2 of the \LHC
+they are accelerated through a series of stages. Hydrogen atoms are
+initially stripped of their electrons and accelerated to 50\mev by
+\ac{LINAC2}. The energy is then increased to 1.4\gev by the \ac{PSB}
+before being injected into the \ac{PS} which boosts the energy up to
+26\gev. A final kick up to 450\gev is provided by the \ac{SPS}. This
+chain of accelerators also collect the protons into bunches that are
+either 25~ns (from Run~2 onwards) or 50~ns apart (during Run~1 and
+early stages of Run~2). These bunches are then injected into the \LHC,
+in which they are steered by around 1200 superconducting dipole
+magnets while being accelerated up to $6.5\tev$ with \ac{RF} cavities.
+Once the beam has reached the intended energy and is stable, protons
+are collided at four different points on the ring, around which are
 built the four major \LHC detectors, ALICE \cite{Aamodt:2008zz}, ATLAS
-\cite{Aad:2008zzm}, LHCb \cite{Alves:2008zz} and \CMS \cite{Chatrchyan:2008aa}.
-A representation of this accelerator complex and the location of the
-detectors can be seen in Fig.~\ref{fig:lhc}.
+\cite{Aad:2008zzm}, LHCb \cite{Alves:2008zz} and \CMS
+\cite{Chatrchyan:2008aa}.  A representation of this accelerator
+complex and the location of the detectors can be seen in
+Fig.~\ref{fig:lhc}.
 
 \begin{figure}
   \includegraphics[width=\largefigwidth]{figs/LHC_default}
@@ -97,9 +99,9 @@ Point 5 on the \LHC, as visibile in Fig.~\ref{fig:lhc}. The key goals
 of the \CMS detector at its conception were the discovery of the \SM
 Higgs boson and searches for generic signatures of \BSM physics. In \CMS the
 results of collisions are measured with a series of subdetectors,
-built within and around a $3.8~T$ superconducting solenoid. They are designed to
+built within and around a $3.8~$T superconducting solenoid. They are designed to
 track, identify and record the energy of all non-neutrino \SM particles
-\cite{Bayatian:2006zz}. With its comprehensive, close to $4\pi$, solid
+\cite{Bayatian:2006zz}. With its comprehensive solid
 angle coverage, \CMS is well suited to inferring the existence of
 weakly interacting particles through the momentum imbalance of visible
 particles. This is particularly relevant when searching for \BSM
@@ -108,7 +110,7 @@ physics.
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.8\linewidth]{figs/cms_detector} \end{center}
-\caption{An internal view of the Compact Muon Solenoid detector
+\caption{An internal view of the \CMS detector
 highlighting the key detecting components \cite{Bayatian:2006zz}}
 \label{fig:CMS} \end{figure}
 
@@ -120,18 +122,18 @@ silicon tracking system. This tracker is designed to allow the
 reconstruction of the trajectory of charged particles produced in the
 collision point as they move through the magnetic field. The degree to
 which the path of these particles is bent allows for an accurate
-determination of their momentum. The next layer beyond the silicon
+determination of their momenta. The next layer beyond the silicon
 tracker is the \ECAL, which is designed to absorb and measure the
 energy of electrons and photons. Surrounding this is the \HCAL that
 absorbs the remaining hadronic particles that have punched through the
-\ECAL. Surrounding the tracker and calorimeters is the superconducting
+\ECAL. Built around the tracker and calorimeters is the superconducting
 solenoid. In the final layer are the muon chambers and iron return
 yoke. The chambers are designed to detect the presence of muons that
 will not be absorbed by the central components of the detector. The
 data from all these subdetectors are read out by dedicated front end
-electronics. It is initially analysed at a basic level by the \CMS
-trigger system. The most promising data is then kept and stored for
-``offline'' physics analysis. 
+electronic. They are then passed through the \CMS trigger system which
+selects the most promising data to be kept and stored for ``offline''
+processing. 
 
 Measurements of physical quantities made by \CMS are typically
 interpreted in a three dimensional coordinate system that originates
@@ -147,7 +149,7 @@ the pseudorapidity, defined as $\eta=-ln(tan(\theta/2))$. Distances in
 the $\eta$-$\phi$ plane is then given as $\Delta R =
 \sqrt{\Delta\phi^2+\Delta\eta^2}$.
 
-\subsection{The inner tracking system} 
+\subsection{The tracker} 
 
 The \CMS inner tracking system is designed to accurately determine the
 trajectories of charged particles produced in hadron collision events
@@ -160,17 +162,21 @@ greater than $99\%$ \cite{Bayatian:2006zz}. Along with this, the
 spatial resolution of the tracker is such that the points of origin of
 event decay products can be inferred within $10$~$\mu$m. Together,
 this allows the performance of \CMS to extend up to very high levels
-of \PU \cite{CMSTrackPerformance}.
+of \PU.% \cite{CMSTrackPerformance}.
 
 The tracker is required to operate in a challenging, high radiation
 environment. Additionally, in an ideal detector the particles produced
 in collisions are solely absorbed by the calorimeters. The tracker
 must therefore consist of as little material as possible. To achieve
-the high level of precision required given these conditions the
-tracker utilises silicon technology. basics... . The tracker comprises a
-series of pixel and strip detectors covering all angles in \phi and
-extending up to $\abs{\eta}<2.5$. The tracker's layout is visible in
-Fig.~\ref{fig}. 
+the high level of precision and fast response time required given
+these conditions, the tracker utilises silicon technology. As charged
+particles pass through doped silicon an electron-hole pair is
+produced. In the presence of an electric field this gives rise to a
+pulse of electrical current in the previously resistive silicon. This
+behaviour is utilised by the tracker in a series of silicon pixel and
+strip detectors covering all angles in \phi and extending up to
+$|\eta|<2.5$. The tracker's layout is visible in
+Fig.~\ref{fig:tracker}. 
 
 \begin{figure}
 \begin{center}
@@ -179,34 +185,91 @@ Fig.~\ref{fig}.
 Detector modules are represented by different lines \cite{Chatrchyan:2008aa}}
 \label{fig:tracker} \end{figure}
 
-
-The Pixel Detector is the high granularity component of the tracking
+The pixel detector is the high granularity component of the tracking
 system that sits closest to the interaction point, covering the
-pseudorapidity region $|\eta|<2.1$. 
+pseudorapidity region $|\eta|<2.5$. It consists of three cylindrical
+layers of hybrid pixel detector modules that are complemented by two
+disks of pixel modules on each side. The pixel detector makes use of
+66 million pixels covering an area of $\sim 1$~m$^2$ to give the
+tracker its excellent spatial resolution of $15$-$20$~$\mu$m in both
+the $r$-$\phi$ and $z$ direction. This resolution is essential for a
+precise determination of the position of collision event vertices and
+for the observation of vertices displaced from this origin that can be
+used to identify particles such as hadrons containing $b$-quarks.
 
-The Silicon Strip
-Tracker sits around this with barrel and endcap components covering
-$|\eta|<2.4$. \cite{Adam_Elwood_MSci}. 
+Surrounding the pixel detector is the silicon strip tracker that
+covers the region up to $|\eta|<2.4$. It consists of three different
+subsystems built from 9.6 million silicon strips that cover an area of
+198~m$^2$. Each of these strips are 10-20~cm long and 80-180~$\mu$m
+wide. Working out from the centre the subsystems are the
+Tracker Inner Barrel and Disks (TIB/TID), the Tracker Outer Barrel
+(TOB) and the Tracker End Caps (TEC). They are arranged in a geometry
+that maintains a good degree of coverage across all angles and can be
+seen in detail in Fig.~\ref{fig:tracker}. Along with the spatial
+resolution provided by the pixel detector the silicon strip tracker
+adds enough modules to reconstruct the trajectory of particles to the
+required high level of precision.
+
+\subsection{The electromagnetic calorimeter} 
+
+The \ECAL is constructed from $\sim 75~848$ lead tungstate (PbWO$_4$)
+scintillating crystals covering the region $|\eta|<3$ \cite{CMS:1997ema}. It is
+designed to absorb electrons and photons and emit light proportional to the
+energy deposited. This light is detected by custom photodiodes designed to
+perform well in high magnetic fields.  The \ECAL achieves this in a way which
+is fast, radiation resistant and with a high granularity. 
+
+The \ECAL is divided into the \ac{EB} which covers the region
+$|\eta|<1.479$ and the \ac{EE} which covers the region
+$1.479<|\eta|<3.0$. Additionally, built just before the \ac{EE} in the
+region $1.653<|\eta|<2.6$ is the Preshower. Unlike the other
+components which are predominantly PbWO$_4$ crystals, the Preshower is
+a lead and silicon sampling calorimeter. Its main aim is to improve
+the position resolution of particles in the forward direction and help
+to distinguish collinear $\pi^0$ decays from high energy photons
+\cite{Chatrchyan:2008aa}. This layout of the \ECAL can be seen in
+Fig.~\ref{fig:ecal}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{figs/ecal_colorless} \end{center}
+\caption{ A cutaway diagram of the \CMS \ECAL. All the key components,
+including the barrel and endcap crystal layouts, are displayed
+\cite{Chatrchyan:2008aa}}
+\label{fig:ecal} \end{figure}
+
+As high energy electrons or photons enter one of the \ECAL's they
+initiate an electromagnetic shower. This results in a cascade of lower
+energy particles that undergo bremsstrahlung and pair production.
+These charged particles ionise atoms in the crystal which then emit
+scintillation light as they de-excite. As the crystals are
+transparent, this light can be measured by avalanch photodiodes and
+vacuum phototriodes which convert it into an electronic current. This
+current is proportional to the energy deposited in the crystal and,
+after calibration, can be used to accurately infer the total energy
+deposited by a particular particle.
 
 
-\subsection{The Electromagnetic and Hadronic Calorimeters} 
 
-Surrounding
-the tracking system are the electromagnetic and hadronic calorimeters
-(\ECAL and \HCAL). The \ECAL is constructed from 75~848 PbWO$_4$
-scintillating crystals covering $|\eta|<3$. They are designed to
-absorb electrons and photons and emit light proportional to the energy
-deposited. This light is detected by custom photodiodes designed to
-perform well in high magnetic fields.  \\\\ The \HCAL is designed to
+\subsection{The hadronic calorimeter} 
+The \HCAL is designed to
 absorb hadrons and is constructed from brass absorbers interleaved
 with scintillating plastic tiles covering $|\eta|<3$. The
 scintillations are read out with hybrid photodiodes via wavelength
-shifting fibres.  \\\\ In the forward detector regions, the hadronic
+shifting fibres. 
+
+layout..
+
+In the forward detector regions, the hadronic
 calorimetry is extended up to $|\eta|<5$ with the Forward Calorimeter,
 made from steel absorber with quartz scintillating fibre. To also help
 prevent signal contamination from low energy neutral pions there is a
 Preshower detector consisting of lead absorbers and silicon
 microstrips \cite{CMSTechDesign1DetectorPerformance}\cite{Cutajar}.
+
+how measurements are made
+
+resolution
 
 \subsection{The Muon System} As muons are unlikely to be absorbed in
 the \ECAL and \HCAL, a muon system is built into the iron return yoke
