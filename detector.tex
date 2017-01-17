@@ -215,15 +215,15 @@ required high level of precision.
 The \ECAL is constructed from $\sim 75~848$ lead tungstate (PbWO$_4$)
 scintillating crystals covering the region $|\eta|<3$ \cite{CMS:1997ema}. It is
 designed to absorb electrons and photons and emit light proportional to the
-energy deposited. This light is detected by custom photodiodes designed to
-perform well in high magnetic fields.  The \ECAL achieves this in a way which
+energy deposited. This light is detected by custom photodiodes that
+perform well in high magnetic fields. This is achieved in a way which
 is fast, radiation resistant and with a high granularity. 
 
 The \ECAL is divided into the \ac{EB} which covers the region
 $|\eta|<1.479$ and the \ac{EE} which covers the region
 $1.479<|\eta|<3.0$. Additionally, built just before the \ac{EE} in the
 region $1.653<|\eta|<2.6$ is the Preshower. Unlike the other
-components which are predominantly PbWO$_4$ crystals, the Preshower is
+components, which are predominantly PbWO$_4$ crystals, the Preshower is
 a lead and silicon sampling calorimeter. Its main aim is to improve
 the position resolution of particles in the forward direction and help
 to distinguish collinear $\pi^0$ decays from high energy photons
@@ -238,38 +238,91 @@ including the barrel and endcap crystal layouts, are displayed
 \cite{Chatrchyan:2008aa}}
 \label{fig:ecal} \end{figure}
 
-As high energy electrons or photons enter one of the \ECAL's they
-initiate an electromagnetic shower. This results in a cascade of lower
-energy particles that undergo bremsstrahlung and pair production.
-These charged particles ionise atoms in the crystal which then emit
-scintillation light as they de-excite. As the crystals are
-transparent, this light can be measured by avalanch photodiodes and
-vacuum phototriodes which convert it into an electronic current. This
-current is proportional to the energy deposited in the crystal and,
-after calibration, can be used to accurately infer the total energy
-deposited by a particular particle.
+As high energy electrons or photons enter one of the \ECAL's crystals
+they initiate an electromagnetic shower. This results in a cascade of
+lower energy particles that undergo bremsstrahlung and pair
+production.  These charged particles ionise atoms in the crystal which
+then emit scintillation light as they de-excite. As the crystals are
+transparent, this light can be measured by avalanche photodiodes and
+vacuum phototriodes which convert it into an electronic current. The
+magnitude of this current is then proportional to the energy deposited
+in the crystal and can be used to accurately infer the total energy
+deposited. Irradiation of the crystals decreases their transparency
+over time. To counteract this a time dependent calibration is carried
+out for each of the crystals with a laser of wavelength
+$\lambda=440$~nm. 
 
-
+Measurements in a test beam in the absence of a magnetic field have
+measured the PbWO$_4$ crystals to have a resolution, $\sigma_E$, given
+by the following formula \cite{1748-0221-2-04-P04004}:
+\begin{equation} \label{eq:ecalres}
+\left(\frac{\sigma_E}{E[\gev]}\right)^2=\left(\frac{2.8\%}
+{\sqrt{E[\gev]}}\right)^2+\left(\frac{12\%}{E[\gev]}\right)^2+(0.30\%)^2.
+\end{equation} 
+In this equation $E$ denotes the energy of the incident
+particle. The first term encapsulates uncertainties from fluctuations in the
+scintillation light. The second term takes account of noise in the
+electronics and digitisation. The final term then covers any
+non-uniform longitudinal response or inter-calibration errors. 
 
 \subsection{The hadronic calorimeter} 
-The \HCAL is designed to
-absorb hadrons and is constructed from brass absorbers interleaved
-with scintillating plastic tiles covering $|\eta|<3$. The
+
+The final layer of calorimetry in \CMS is the \HCAL \cite{CMS:HCAL}.
+It is designed to absorb hadrons that have punched through the \ECAL.
+It is a sampling calorimeter that is constructed from brass absorbers
+interleaved with scintillating plastic tiles covering $|\eta|<3$. The
 scintillations are read out with hybrid photodiodes via wavelength
-shifting fibres. 
+shifting fibres.  Additionally, the hadronic calorimetry is extended
+up to $|\eta|<5.2$ with the \ac{HF}, made from steel absorber with
+quartz scintillating fibre. 
 
-layout..
+The brass absorbers are arranged in plates that are interspersed with
+plastic tiles. Incident particles induce hadronic showers in the
+brass layers that produce scintillating light in the plastic. This
+light is collected by wavelength-shifting fibres which transfer the
+signal to on-detector amplifiers for read-out. Brass has the advantage
+of being non-magnetic and having the short nuclear interaction length
+of 16.42~cm. In the \ac{HF} steel replaces the brass and quartz fibre
+replaces the plastic due to the very high radiation environment
+present in the forward region of the detector. The total time to
+collect a \HCAL signal pulse is large with respect to the collision
+rate of the \LHC. Only $68\%$ of the pulse is collected within 25~ns.
+This leads to cases of \ac{OOTPU} where signal from a bunch
+crossing can influence the read out of future bunch crossings.
 
-In the forward detector regions, the hadronic
-calorimetry is extended up to $|\eta|<5$ with the Forward Calorimeter,
-made from steel absorber with quartz scintillating fibre. To also help
-prevent signal contamination from low energy neutral pions there is a
-Preshower detector consisting of lead absorbers and silicon
-microstrips \cite{CMSTechDesign1DetectorPerformance}\cite{Cutajar}.
+The subdetectors that make up the \HCAL along with the \ac{HF} can be
+seen in Fig.~\ref{fig:hcal}. Within \CMS's solenoid is the \ac{HB},
+which extends up to $|\eta|<1.3$, and the \ac{HE}, covering
+$1.3<|\eta|<3.0$. They are segmented in \eta-\phi towers with a size
+of $0.087\times0.087$ in the \ac{HB} varying up to $0.17\times0.17$ in
+some areas of the \ac{HE}. The \ac{HB} towers are lined up with
+$5\times5$ arrays of \ECAL crystals and each read-out individually. On
+its own the \ac{HB} provides between $5.8$ and $10.6$ interaction
+lengths of absorber while the \ac{HE} provides $\sim10$ interaction
+lengths. Beyond the magnetic coil is the \ac{HO} that increases to a
+minimum of $11.8$ the interaction length in line with the \ac{HB}. The
+magnetic coil acts as an absorber for the scintillators in the \ac{HO}
+that absorbs any late-starting or highly-penetrating showers.
 
-how measurements are made
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{figs/cms_HCAL} \end{center}
+\caption{ A schematic of the \CMS \HCAL. The locations of the hadron
+barrel (HB), endcap (HE), outer (HO) and forward (HF) calorimeters are
+displayed \cite{Chatrchyan:2008aa}}
+\label{fig:hcal} \end{figure}
 
-resolution
+The combined resolution, $\sigma_E$ of the \ECAL and \HCAL when
+considered together have been measured in a test beam as
+\cite{Abdullin:2008zzb}: 
+\begin{equation} \label{eq:hcalres}
+\left(\frac{\sigma_E}{E[\gev]}\right)^2=\left(\frac{84.7\pm1.6\%}
+{\sqrt{E[\gev]}}\right)^2+(7.4\pm0.8\%)^2.  
+\end{equation} 
+In this equation $E$ is the energy of the incident particle. An
+in-situ calibration is also performed with a UV laser and
+$^137$Cs$/^60$Co sources that can be inserted into the scintillation
+tiles in the \ac{HB} and \ac{HE}.
 
 \subsection{The Muon System} As muons are unlikely to be absorbed in
 the \ECAL and \HCAL, a muon system is built into the iron return yoke
