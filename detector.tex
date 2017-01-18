@@ -326,15 +326,14 @@ tiles in the \ac{HB} and \ac{HE}.
 
 \subsection{The Muon System} 
 
-Due to the fact that muons are heavier than electrons they are
-minimally ionising, losing little energy via brehmsstrahlung. They
-pass through the \ECAL and \HCAL losing minimal energy. As they are a
-key component of many electroweak decays \CMS has a dedicated muon
-system to detect them that is interleaved with the iron return yoke
-surrounding the solenoid. This muon system consists of wire chambers
-containing ionising gas that, in combination with the tracker, allows
-the measurement of muon momenta with a greater than $1\%$ precision
-\cite{CMS:1997dma}.
+As muons are heavier than electrons they are minimally ionising,
+losing little energy via brehmsstrahlung. They therefore pass through
+the \ECAL and \HCAL depositing little energy. As they are a key
+component of many electroweak decays \CMS has a dedicated muon system
+interleaved with the iron return yoke surrounding the solenoid. This
+muon system consists of wire chambers containing ionising gas that, in
+combination with the tracker, allows the measurement of muon momenta
+with a greater than $1\%$ precision \cite{CMS:1997dma}.
 
 \begin{figure}
 \begin{center}
@@ -348,20 +347,42 @@ Cathode Strip Chamber (CSC) subsystems are displayed
 The layout of the muon system can be seen in Fig.~\ref{fig:muon}. It
 consists of the \ac{DT}, \ac{RPC} and \ac{CSC} subsystems. They each
 utilise different gaseous chamber technologies to perform measurements
-of muons in different operating regions of \CMS. In the barrel region the
-\ac{DT} chambers cover the range $|\eta|<1.2$. These chambers are
-filled with a mixture of argon and carbon dioxide gas. As a muon
+of muons in different operating regions of \CMS. In the barrel region
+the \ac{DT} chambers cover the range $|\eta|<1.2$. These chambers are
+filled with a mixture of Ar and CO$_2$ gas. As a muon
 passes through the chamber this gas is ionised. Within the chambers
-are $\sim172000$ wires, each $2.4$~m long and electrically charged.
-Free electrons produced in the ionisation drift towards the anode of
-the wires and induce an electrical fi
+are $\sim172000$ wires, each $2.4$~m long with a potential difference
+applied across them. Free electrons produced in the ionisation drift
+towards the anode of the wires and induce an electrical signal which
+is read-out. 
 
-how it works
+Within the endcap region the \ac{CSC}s cover the range
+$0.9<|\eta|<2.4$. The \ac{CSC}s are required to have a fast response
+time and be radiation hard due to the higher muon and background rates
+in the forward region of \CMS. They consist of chambers containing an
+Ar, CO$_2$ and CF$_4$ gas mix around anode wires sandwiched by copper
+cathode strips.
 
-resolution
+The \ac{RPC}s cover the range $|\eta|<2.1$ and augment the behaviour
+of the \ac{DT}s and \ac{CSC}s. They consist of oppositely charged
+bakelite plate electrodes separated by a 2~mm gas gap. They have a
+much poorer position resolution than the other subsystems, 0.8-1.2~cm
+as opposed to 40-150~$\mu$m. However they have a much better temporal
+resolution of $\sim3$~ns. This allows them to be used as an
+independent muon trigger that can identify the bunch crossing in which
+the muon originates.
+
+The muon systems on their own provide an energy resolution of 9-11\%
+for muons with $\pT<200\gev$ and $|\eta|<2.4$. However, better
+performance is obtained by combining muon chamber hits with the
+tracker as described in Chapter~\ref{chap:reconstruction}. The muon
+system also has excellent charge identification with a misassignment
+rate of $<0.1\%$ for $\pT<100\gev$ muons.
 
 \subsection{The Trigger and Data Acquisition System}
-\label{sec:triggers} The rate of collisions at the LHC is so high that
+\label{sec:triggers} 
+
+The rate of collisions at the LHC is so high that
 it would be impossible to reconstruct and store the results of all
 collision events. As the majority of the collisions are soft QCD
 processes, they are not useful in the search for new physics at the
@@ -371,10 +392,14 @@ physics processes. The Level 1 Trigger (L1T) is the first component of
 the trigger system and is made from custom FPGA computational boards
 situated close to the detector. This uses coarse information from the
 calorimeters and muon system to reduce the event rate from $20$MHz
-(during Run 1) to $\sim100$kHz. The data from the subdetectors are
+(during Run 1) to $\sim100$kHz.
+
+The data from the subdetectors are
 then passed to the High Level Trigger (HLT), which uses full detector
 information to reconstruct the events and reduce the data rate to
-$\sim1$kHz. The remaining events are then fully reconstructed and
-stored at various Grid sites \cite{GridTechDesign}.
+$\sim1$kHz. 
+HLT 200 ms per event
 
+The remaining events are then fully reconstructed and
+stored at various Grid sites \cite{GridTechDesign}.
 
