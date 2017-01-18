@@ -382,13 +382,20 @@ rate of $<0.1\%$ for $\pT<100\gev$ muons.
 \subsection{The Trigger and Data Acquisition System}
 \label{sec:triggers} 
 
-The rate of collisions at the LHC is so high that
-it would be impossible to reconstruct and store the results of all
-collision events. As the majority of the collisions are soft QCD
-processes, they are not useful in the search for new physics at the
-electroweak energy scale. This necessitates a multi-level trigger
-system that is designed to pick out and store only high centre-of-mass
-physics processes. The Level 1 Trigger (L1T) is the first component of
+At 40~\mhz, the rate of collisions at the LHC is so high that it would
+be too computationally expensive to reconstruct and store the detector
+read-out for every bunch crossing. As the majority of proton
+collisions at the \LHC are soft scattering QCD processes, they are not
+useful in the search for new physics at the electroweak energy scale.
+This necessitates a multi-level trigger system that is designed to
+pick out and store only ``interesting'' high centre-of-mass physics
+processes \cite{Tapper:1556311}\cite{Bayatyan:706847}. Once events
+have been selected by the trigger system the chosen bunch-crossings
+can be stored on tape for offline analysis.  They are then centrally
+reconstructed through the Grid computing infrastructure and used for
+high-level physics analysis \cite{Bayatyan:838359}.
+
+The Level 1 Trigger (L1T) is the first component of
 the trigger system and is made from custom FPGA computational boards
 situated close to the detector. This uses coarse information from the
 calorimeters and muon system to reduce the event rate from $20$MHz
