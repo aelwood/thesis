@@ -383,30 +383,65 @@ rate of $<0.1\%$ for $\pT<100\gev$ muons.
 \label{sec:triggers} 
 
 At 40~\mhz, the rate of collisions at the LHC is so high that it would
-be too computationally expensive to reconstruct and store the detector
-read-out for every bunch crossing. As the majority of proton
-collisions at the \LHC are soft scattering QCD processes, they are not
-useful in the search for new physics at the electroweak energy scale.
-This necessitates a multi-level trigger system that is designed to
-pick out and store only ``interesting'' high centre-of-mass physics
-processes \cite{Tapper:1556311}\cite{Bayatyan:706847}. Once events
-have been selected by the trigger system the chosen bunch-crossings
-can be stored on tape for offline analysis.  They are then centrally
+be too computationally expensive to reconstruct and store the
+$O(1)$~MB detector read-out for every bunch crossing. As the majority
+of proton collisions at the \LHC are soft scattering QCD processes,
+they are not useful in the search for new physics at the electroweak
+energy scale. This necessitates a multi-level trigger system that is
+designed to pick out and store only ``interesting'' high
+centre-of-mass physics processes
+\cite{Tapper:1556311}\cite{Bayatyan:706847}. Once events have been
+selected by the trigger system the chosen bunch-crossings can be
+stored on tape for offline analysis. They are then centrally
 reconstructed through the Grid computing infrastructure and used for
 high-level physics analysis \cite{Bayatyan:838359}.
 
-The Level 1 Trigger (L1T) is the first component of
-the trigger system and is made from custom FPGA computational boards
-situated close to the detector. This uses coarse information from the
-calorimeters and muon system to reduce the event rate from $20$MHz
-(during Run 1) to $\sim100$kHz.
+The \ac{L1T} is the first component of the two layer trigger system
+and is made from custom \ac{FPGA} computational boards situated close
+to the detector. This technology allows for decisions to be made with
+very low latency times. As the data from a bunch crossing comes out of
+\CMS it can only be stored in the read-out pipelines a total of
+$3.2~\mu$s, of which $\sim2~\mu$s is required for transmitting data to
+and from the detector. The \ac{L1T} must therefore make a decision on
+this time scale using coarse information from the calorimeters and
+muon system, with the aim to to reduce the event rate to
+$\sim100$~kHz. 
 
-The data from the subdetectors are
-then passed to the High Level Trigger (HLT), which uses full detector
-information to reconstruct the events and reduce the data rate to
-$\sim1$kHz. 
-HLT 200 ms per event
+A flowchart showing how the data from the different detector
+subsystems passes through the \ac{L1T} can be seen in
+Fig.~\ref{fig:l1t}. At the Global Trigger decision is made whether to
+pass the event to the next triggering stage. The calorimeter trigger
+takes calorimeter deposits at the tower level and coarsely
+reconstructions physics objects. Events with high total transverse or
+missing transverse energy are typically accepted.  More details of the
+calorimeter trigger utilised in Run~2 are given in
+Chapter~\ref{chap:trigger}. The muon trigger looks for the presence of
+muons with a reasonably high energy to aid the trigger decision.
 
-The remaining events are then fully reconstructed and
-stored at various Grid sites \cite{GridTechDesign}.
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{figs/cms_muon} \end{center}
+\caption{ Dataflow of the trigger used to collect data in Run~2 of the
+\LHC \cite{Tapper:1556311}.}
+\label{fig:l1t} \end{figure}
 
+After an event has been accepted by the \ac{L1T} it is passed to the
+\ac{HLT}, which uses full detector information to reconstruct the
+events and reduce the data rate to $\sim1$kHz on a high-performance
+computer farm \cite{Cittolin:578006}.  With reduced event rate
+provided by the \ac{L1T} the \ac{HLT} has a larger latency budget, but
+the algorithms used are still limited in their complexity compared to
+those used for offline analysis. The \ac{HLT} tend to be tailored
+towards targeting particular physics processes in a way that would not
+be possible at the \ac{L1T}.
+%HLT 200 ms per event
+
+Events that are finally accepted by the \ac{HLT} are then transmitted
+to the Tier-0 data centre, located at CERN, for permanent storage and
+event reconstruction. This data is distributed and stored around the
+world through a GRID computing infrastructure \cite{Bayatyan:838359}.
+This infrastructure has a four tiered that represents the importance
+and accessibility of the user at each site. From Tier-0 data are
+transferred to 13 Tier-1 computing centres. These centres are then
+available to Tier-2 and Tier-3 sites where offline data analysis can be
+performed by different members of the \CMS collaboration around the world.
