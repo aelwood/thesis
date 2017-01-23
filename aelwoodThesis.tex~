@@ -25,7 +25,7 @@
 
 
 %% Define the thesis title and author
-\title{A search for supersymmetry with the CMS detector at the
+\title{A search for supersymmetry in $\sqrt{s}=13\tev$ proton-proton collisions with the CMS detector at the
   LHC}
 \author{Adam Christopher Elwood}
 
@@ -54,7 +54,7 @@
 \begin{mainmatter}
   %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
   \input{introduction}
-  %\input{theory}
+  \input{theory}
   \input{detector}
   %% To ignore a specific chapter while working on another, making the build faster, comment it out:
   %\input{chap4}
