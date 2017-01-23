@@ -1,0 +1,64 @@
+\chapter{Event reconstruction and simulation}
+\label{chap:reconstruction}
+
+After the result of proton collisions have been observed in the
+various subdetectors that comprise \CMS, each of these events must be
+reconstructed in a way that allows for analysis of the physical
+processes occurring in the collision. Information from the
+subdetectors is used to infer the presence of different particles
+produced in the collision. To help understand the different physical
+processes that may occur during \LHC proton collisions \MC simulations
+of events are utilised. The reconstruction algorithms and simulations
+that are relevant to a search for supersymmetry are described in this
+Chapter.
+
+\section{Tracks and vertices}
+\label{sec:tracks_reco}
+
+As charged particles pass through the \CMS tracker they leave energy
+deposits, known as hits, in each layer. These
+hits are reconstructed as tracks with the \ac{CTF}
+algorithm \cite{Chatrchyan:2014fea}. This algorithm associates all
+hits belonging to a single charged particle and allows the
+determination of its curvature through the magnetic field.
+
+\begin{itemize}
+\item{Initially two or three hits in the inner layers of the tracker
+are used to produce seeds for initial track candidates. Quality
+selections are applied to reduce the number of fake tracks.} 
+\item{The seed is extrapolated along the expected trajectory using a
+Kalman filter \cite{Fruhwirth:1987fm} with a helical tracking
+hypothesis.  This allows the seeds to be associated with a hit in an
+outside tracker layer.} 
+\item{This is carried out recursively into the subsequent tracker
+layers until the outer-most layer is reached or another stopping
+condition.} 
+\item{With all the remaining tracking candidates, additional quality
+criteria are required to reject fake tracks.}
+\item{This series of steps is repeated up to six times with the hits
+associated to identified tracks removed after each iteration. }
+\end{itemize}
+
+
+efficiency and resolution (show plots?)
+
+vertex reconstruction
+
+\section{Electrons and photons}
+\label{sec:electrons_reco}
+
+\section{Muons}
+\label{sec:muons_reco}
+
+\section{Particle flow}
+\label{sec:pflow_reco}
+
+\section{Jets}
+\label{sec:jets_reco}
+
+\section{Missing transverse energy (MET)}
+\label{sec:met_reco}
+
+\section{Monte Carlo (MC) simulation}
+\label{sec:mc_reco}
+
