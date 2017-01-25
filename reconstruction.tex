@@ -118,6 +118,7 @@ candidates can then be utilised to calculate other event level
 variables, such as for jet reconstruction described in
 Sec.~\ref{sec:jets_reco}.
 %Do i need to describe how clusters are made more?
+
 The algorithm starts by taking the tracks, that are reconstructed as
 described in Sec.~\ref{sec:tracks_reco}, along with clusters of energy
 in the calorimeters, which are reconstructed separately in the \ECAL and
@@ -139,9 +140,26 @@ significant deposits in the \HCAL with no associated track.
 \section{Electrons and photons}
 \label{sec:electrons_reco}
 
-both the same, lose energy before calorimeter
+Both electrons and photons interact with the \ECAL in a similar way.
+The reconstruction techniques used are therefore very similar, with
+the main difference being the lack of track in photon reconstruction.
+As electrons interact with the tracker, they lose $33\%$ of their
+energy on average before reaching the \ECAL
+\cite{1748-0221-10-06-P06005}. Most of this energy loss occurs through
+bremsstrahlung, which is non-Gaussian. As the Kalman filter that is
+used in track reconstruction assumes Gaussian energy losses another
+specialist track reconstruction for electrons is employed, known as
+the Gaussian Sum Filter algorithm \cite{Adam:815410}. The photons that
+are produced during bremsstrahlung must also be properly associated to
+the electron when clustering in the calorimeter to maintain a good
+energy resolution. As the electrons bend in the magnetic field but
+the photons they emit do not, the calorimeter clusters are allowed to
+extend along the azimuthal direction. These rectangular \ECAL windows
+are know as ``superclusters''.
 
-cluster reconstruction
+super cluster reconstruction 
+
+hybrid in barrel , multi 5x5 in the endcap
 
 \section{Muons}
 \label{sec:muons_reco}
