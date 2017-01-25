@@ -16,42 +16,121 @@ Chapter.
 \label{sec:tracks_reco}
 
 As charged particles pass through the \CMS tracker they leave energy
-deposits, known as hits, in each layer. These
+deposits, known as ``hits'', in each layer. These
 hits are reconstructed as tracks with the \ac{CTF}
-algorithm \cite{Chatrchyan:2014fea}. This algorithm associates all
-hits belonging to a single charged particle and allows the
-determination of its curvature through the magnetic field.
+algorithm \cite{Chatrchyan:2014fea}. This algorithm tries to associate
+hits that belong to a single charged particle. This allows the
+determination of the track left by the charged particle its curvature
+through the magnetic field can be measured. The steps of the algorithm
+are as follows:
 
 \begin{itemize}
 \item{Initially two or three hits in the inner layers of the tracker
 are used to produce seeds for initial track candidates. Quality
-selections are applied to reduce the number of fake tracks.} 
-\item{The seed is extrapolated along the expected trajectory using a
+selections are applied on the selected hits to reduce the number of fake tracks.} 
+\item{Each seed is extrapolated along the expected trajectory using a
 Kalman filter \cite{Fruhwirth:1987fm} with a helical tracking
-hypothesis.  This allows the seeds to be associated with a hit in an
-outside tracker layer.} 
-\item{This is carried out recursively into the subsequent tracker
-layers until the outer-most layer is reached or another stopping
-condition.} 
-\item{With all the remaining tracking candidates, additional quality
+hypothesis.  This allows the seeds to be associated with hits in an
+outer tracker layer.} 
+\item{The extrapolation is carried out recursively into the subsequent
+tracker layers until the outer-most layer, or another
+stopping condition, is reached.} 
+\item{Of the tracking candidates that are found, additional quality
 criteria are required to reject fake tracks.}
 \item{This series of steps is repeated up to six times with the hits
 associated to identified tracks removed after each iteration. }
 \end{itemize}
 
+Track reconstruction efficiencies for a variety of charged particles
+are shown in Fig.~\ref{fig:tracks_reco} as a function of \pt and
+$\eta$. In the central region of the detector all particles with a \pt
+from 10 to 100~\gev are reconstructed with a 90-100\% precision. In the
+forward detector region this efficiency remains above $\sim80\%$.
+%fake rate? leave out for now...
 
-efficiency and resolution (show plots?)
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{figs/reconstruction/trackerPerformance} \end{center}
+\caption{Efficiencies of track reconstruction for different charged
+particles as a function of \pt and $\eta$. Muons are shown at the top,
+pions in the middle and electrons at the bottom. The barrel,
+transition and endcap regions are defined by the $\eta$ intervals of
+0-0.9, 0.9-1.4 and 1.4-2.5 respectively.  For all the tracks
+``high-purity'' quality requirements are made
+\cite{Chatrchyan:2014fea}}
+\label{fig:tracks_reco} \end{figure}
 
-vertex reconstruction
+After charged particle tracks are reconstructed they can be used to
+reconstruct the positions, known as interaction vertices, of the different
+proton-proton in the event. Tracks are required to originate from a
+region that is compatible with the \LHC ``beamspot'', the area in
+which the proton beams cross and collisions occur. The $z$ coordinates
+of tracks at the closest point of approach to the beamspot are taken
+as an input for the deterministic annealing clustering algorithm
+\cite{726788:DA}. This finds the most probable vertex positions and
+assigns each track to a vertex. The final $x$,$y$,$z$ position of
+these vertices is then found using the adaptive vertex fitter 
+\cite{Waltenberger:2008zz}. This assigns the most probably position of
+the vertex for the given set of input tracks. Quality criteria are
+then applied to reject fake vertices. They are chosen in such a way as
+to remain efficient for real vertices that typically have a large
+number of tracks compatible with them. Finally, the ``primary vertex''
+is determined as the vertex with tracks that have the greatest scalar
+sum of \pt. Other vertices are then initially attributed to \PU.
+However, vertices that are displaced from the initial proton collision
+are common signatures of unstable particles that decay within the
+detector, such as $b$-hadrons. These can be found in subsequent levels
+of reconstruction.
+
+The primary vertex efficiency as a function of the number of tracks in
+a cluster can be seen in Fig.~\ref{fig:vertex_reco}. The efficiency increases to
+close to $>99\%$ as long as there are a reasonable number of tracks in
+an event. The vertex resolution reaches $\sim10~\mu$m in $x,y$ and
+$\sim10~\mu$m in $z$ with $>40$ reconstructed tracks.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.5\linewidth]{figs/reconstruction/vertexPerformance} \end{center}
+\caption{ The vertex reconstruction efficiency as a function of the
+number of tracks originating from the vertex. Measured in data and
+simulation for $\sqrt{s}=7~\tev$ proton collisions.
+\cite{Chatrchyan:2014fea}}
+\label{fig:vertex_reco} \end{figure}
+
+\section{Particle flow}
+\label{sec:pflow_reco}
+
+Each subdetector of \CMS contributes complimentary information
+about the different types of particles that pass through the detector
+as a whole. This complementary is exploited in identifying the
+different types of particle with the \PF algorithm
+\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001,CMS-PAS-PFT-10-002}. As
+\CMS has accurate momentum resolution in the tracker and a
+high granularity \ECAL this algorithm allows both to augment the measurement of
+objects in the \HCAL. This then allows calibrations specific to
+charged and neutral hadrons to be applied. 
+
+The \PF algorithm searches for a set of individual particles that are
+known as ``\PF candidates''. They are then classified as charged or
+neutral hadrons, photons, muons or electrons. The set of \PF
+candidates can then be utilised to calculate other event level
+variables, such as for jet reconstruction described in
+Sec.~\ref{sec:jets_reco}.
+
+how it works
 
 \section{Electrons and photons}
 \label{sec:electrons_reco}
 
+both the same, lose energy before calorimeter
+
+cluster reconstruction
+
 \section{Muons}
 \label{sec:muons_reco}
 
-\section{Particle flow}
-\label{sec:pflow_reco}
+don't lose much energy
+
 
 \section{Jets}
 \label{sec:jets_reco}
