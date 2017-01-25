@@ -97,18 +97,19 @@ simulation for $\sqrt{s}=7~\tev$ proton collisions.
 \cite{Chatrchyan:2014fea}}
 \label{fig:vertex_reco} \end{figure}
 
+
 \section{Particle flow}
 \label{sec:pflow_reco}
 
-Each subdetector of \CMS contributes complimentary information
-about the different types of particles that pass through the detector
-as a whole. This complementary is exploited in identifying the
-different types of particle with the \PF algorithm
+Each subdetector of \CMS contributes complimentary information about
+the different types of particles that pass through the detector. This
+complementary is exploited in identifying the different types of
+particle with the \PF algorithm
 \cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001,CMS-PAS-PFT-10-002}. As
-\CMS has accurate momentum resolution in the tracker and a
-high granularity \ECAL this algorithm allows both to augment the measurement of
-objects in the \HCAL. This then allows calibrations specific to
-charged and neutral hadrons to be applied. 
+\CMS has accurate momentum resolution in the tracker and a high
+granularity \ECAL this algorithm allows both to augment the
+measurement of objects in the \HCAL. This then allows calibrations
+specific to charged and neutral hadrons to be applied. 
 
 The \PF algorithm searches for a set of individual particles that are
 known as ``\PF candidates''. They are then classified as charged or
@@ -116,8 +117,24 @@ neutral hadrons, photons, muons or electrons. The set of \PF
 candidates can then be utilised to calculate other event level
 variables, such as for jet reconstruction described in
 Sec.~\ref{sec:jets_reco}.
+%Do i need to describe how clusters are made more?
+The algorithm starts by taking the tracks, that are reconstructed as
+described in Sec.~\ref{sec:tracks_reco}, along with clusters of energy
+in the calorimeters, which are reconstructed separately in the \ECAL and
+\HCAL. Clusters are paired with tracks if the track trajectory is
+compatible with the cluster position. These pairs are then used to
+identify charged particles. Electrons and hadrons are typically
+differentiated based on the proportion of energy they deposit in the
+\ECAL or \HCAL. Electrons will deposit nearly all their energy in the
+\ECAL where hadrons will deposit much more in the \HCAL. A similar
+pairing between tracks and hits in the muon system is used to identify
+muons. 
 
-how it works
+Neutral particles are then identified through calorimeter clusters
+that do not have a compatible track associated to them. Photons, for
+example, will leave a significant \ECAL deposit with no track, which
+would be present for electrons. Similarly, neutral hadrons will leave
+significant deposits in the \HCAL with no associated track.
 
 \section{Electrons and photons}
 \label{sec:electrons_reco}
