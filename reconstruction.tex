@@ -302,13 +302,49 @@ photons or electrons and at least one charged track.
 
 \subsection{Jet energy corrections}
 
-JECs
+Due to the imperfect resolution of the \CMS detector the initial
+measured transverse momentum, $p_T^{raw}$, of a jet does not
+necessarily match the energy of the particle that initiated the jet.
+The difference between the raw \pT and the ``true'' \pT typically
+depends on the \pT of the jet and its position in the detector, along
+with components of the jet that are measured by different
+subdetectors. To correct the raw \pT of the jet a correction is
+applied with the functional form
+\cite{1748-0221-6-11-P11002}:
+\begin{equation}
+p_T^{cor}=C^{Off}(p_T^{raw},\rho,A_j)\cdot C^{Rel}(\eta)\cdot
+C^{Abs}(p_T^{Rel})\cdot C^{Res}(p_T^{Abs})\cdot p_T^{raw}
+\end{equation}
+The first step of is the offset calibration, $C^{off}$, which performs a correction
+that removes the effect of other jets originating from \PU in the jet
+cone. Initially, the contribution made by charged particles that do
+not originate from the primary vertex is removed. This process is
+known as \ac{CHS}. The remaining contribution from neutral \PU
+particles is corrected using jet area subtraction
+\cite{Cacciari:2007fd}. In this case the jet area, $A_j$ is multiplied
+by the average pileup energy density, \rho. The value of \rho is
+determined from the energy density of \PF candidates across the entire
+detector.
 
-\PU correction, rho area
+Next, a relative correction, $C^{Rel}$ is applied as a function of the
+\eta of the jet. This compensates for the differing response of
+different parts of the detector across different pseudorapidity
+ranges. An absolute correction, $C^{Abs}$ is then applied on the
+output of the first two calibration steps, $p_T^{Rel}$. This
+correction is designed to correct the dependence of the jet \pT on the
+magnitude of the measured \pT. These two corrections are calculated
+using information taken from both simulation and data.%Z balance and dijet balance
+The final correction $C^{Res}$ is applied only to data and not
+simulation. This is designed to correct the residual differences in
+the \pT and $\eta$ response between the data and simulation.
+
+%put in performance figure?
 
 \subsection{Tagging $b$-hadrons}
 
 \section{Isolation}
+
+isolation for mu and photons with delta beta and rho
 
 mention cross cleaning for jets
 
