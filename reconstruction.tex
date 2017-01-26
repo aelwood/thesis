@@ -230,13 +230,87 @@ is measured separately in the barrel (a) and endcap (b) regions.
 \section{Jets}
 \label{sec:jets_reco}
 
-intro, hadrons reconstructed as...
+As there is a very high probability that proton collisions will
+produce quarks and gluons, identifying and measuring them is a crucial part of
+object reconstruction in \CMS. This is particularly relevant when
+searching for strongly produced \SUSY particles as they typically
+decay via hadrons to the \LSP as described in
+Chapter~\ref{chap:theory}. Due to the nature of the strong force,
+high $\pT$ quarks and gluons undergo immediate hadronisation. The
+result of this is a collimated shower, predominantly hadronic,
+particles. To therefore reconstruct the quarks and gluons produced in
+an event these collimated showers of particles are clustered and
+reconstructed as ``jets'' \cite{Salam2010}.
 
-antiKT
+\subsection{The anti-$k_T$ clustering algorithm}
+
+When determining the clustering algorithm to be used, the theoretical
+behaviour of hadronisation must be taken into account
+\cite{Salam2010}. Specifically, jets can undergo soft gluon radiation
+of arbitrarily low energy gluons with an arbitrarily high probability.
+Similarly, a gluon can split into two gluons that share its energy.
+The final result of the clustering algorithm must therefore not depend
+on either of these things happening. It must be, what is known as
+infrared and collinear safe. The jet algorithms used in \CMS are
+typically some form of the ``sequential recombination algorithm'' that
+is safe according to the above criteria. After defining a ``distance''
+between all pairs of particles in the event, $d_{ij}$, and a distance
+from each particle to the beamline, $d_{iB}$, the algorithm undertakes
+the following steps:
+\begin{itemize}
+\item{Calculate $d_{ij}$ for all pairs of particles in the event and
+$d_{iB}$ for each particle.}
+\item{If a value of $d_{ij}$ is smallest combine the pair of particles
+with this distance into a single new particle and start again.}
+\item{If a value of $d_{iB}$ is smallest remove this particle from the
+list of particles, classify it as a cluster and start again.}
+\item{Stop when there are no more particles remaining.}
+\end{itemize}
+For the sequential recombination algorithms used by \CMS the distance
+parameters used are defined as:
+\begin{equation} \label{eq:antiktdij}
+d_{ij} = \textrm{min}(p_{Ti}^{2k},p_{Tj}^{2k})\frac{\Delta R_{ij}^2}{R^2} ,~~~~d_{iB} = p_{Ti}^{2k}
+\end{equation} 
+for particles $i$ and $j$ where $k=-1,0,1$, $\Delta R$
+is the separation in the $\eta$-$\phi$ plane and $R$ is a fixed
+parameter that sets the jet size. The most commonly used of the \CMS
+algorithms has $k=-1$ and is known as the anti-$k_T$ algorithm
+\cite{1126-6708-2008-04-063}. The anti-$k_T$ algorithm tends to
+cluster circular jets built around the hardest particles in a
+particular event. For jets considered by most analyses $R=0.4$ is
+chosen as this area contains the hadronic showers of most and gluons
+while remaining insensitive to contamination from \PU.
+
+\subsection{Jet identification}
+
+For the results presented in this thesis the \textsc{FastJet}
+\cite{Cacciari2012} package is used to cluster the \PF candidates,
+that are produced as described in Sec.~\ref{sec:pflow_reco}. The
+anti-$k_T$ algorithm is used with $R=0.4$. The use of \PF candidates
+allows for the use of the excellent tracker momentum resolution when
+calculating the contribution to the momentum of each jet from charged
+particles. As jets typically consist of 65\% charged hadrons, 25\%
+photons and 10\% neutrals, this presents a significant improvement on
+clustering the calorimeter deposits on their own. 
+
+To reject ``fake'' jets from background sources or detector noise
+additional selection is applied to jet candidates. The Loose set of
+criteria for jets provides an 84\% suppression of fake jets while
+maintaining a $>99\%$ efficiency for real jets. It requires at least
+two \PF candidates, $<99\%$ of the jet to come from only hadrons,
+photons or electrons and at least one charged track.
+
+\subsection{Jet energy corrections}
+
+JECs
+
+\PU correction, rho area
 
 \subsection{Tagging $b$-hadrons}
 
 \section{Isolation}
+
+mention cross cleaning for jets
 
 \section{Missing transverse energy (MET)}
 \label{sec:met_reco}
