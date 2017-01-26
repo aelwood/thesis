@@ -157,18 +157,86 @@ the photons they emit do not, the calorimeter clusters are allowed to
 extend along the azimuthal direction. These rectangular \ECAL windows
 are know as ``superclusters''.
 
-super cluster reconstruction 
+To form the superclusters in the barrel the ``hybrid'' clustering
+algorithm is used. A single seed crystal with a local maximum
+transverse energy $E_T>1~\gev$ is identified and a rectangular
+configuration of $3\times 1$ or $5\times 1$ crystals in $\eta$-$\phi$
+is formed around it. The algorithm then looks in the $\phi$ region
+adjacent to this rectangle up to $\Delta\phi\pm 0.3$.
+Additional rectangular regions that have $E_T>100$~MeV are kept and
+grouped to form the supercluster. In the endcaps the ``multi $5\times
+5$'' algorithm is used instead, which aggregates $5\times 5$ arrays of
+crystals within $\Delta\eta<0.07$ and $\Delta\phi<0.3$ of the seed.
 
-hybrid in barrel , multi 5x5 in the endcap
+After electrons are identified, through a supercluster matched to a
+track, or photons are identified, through an unmatched supercluster,
+additional selection criteria are applied to suppress backgrounds. The
+major backgrounds come from misreconstructed hadronic jets or
+semi-leptonic decays of heavy quarks. To suppress this, cuts are on
+the ratio of energy deposits in the \HCAL to the \ECAL, the difference
+in direction between the track and supercluster (in the case of
+electrons) and the width of the cluster, which is larger for hadrons.
 
 \section{Muons}
 \label{sec:muons_reco}
 
-don't lose much energy
+Unlike electrons and photons, muons are minimally ionising so do not
+deposit much of their energy in the inner part of the detector
+\cite{Chatrchyan:2008aa}. Muon reconstruction is therefore carried
+using a combination of tracks and hits in the muon system. To maintain
+efficiencies across a wide range of muon energies, two algorithms are
+utilised \cite{1748-0221-7-10-P10002}. The ``global'' muon algorithm
+functions in the same way as the \PF algorithm, mentioned in
+Sec.~\ref{sec:pflow_reco}. To maintain efficiency for low energy muons
+that have a lower probability of traversing the entire muon system
+the ``tracker'' muon algorithm is additionally used.
 
+The global muon algorithm starts with hits in the muon system that
+give an initial estimate of the position, energy and direction of
+candidate muons. It then searches for tracks in the inner detector
+that are compatible with this candidate. If this is the case, the
+track is extrapolated to the hits in the muon system using a Kalman
+filter, similar to the way tracks are reconstructed in
+Sec.~\ref{sec:tracks_reco}. 
+
+The tracker muon algorithm starts with tracks with $\pt>0.5~\gev$ and
+extrapolates them into the muon system, again with a Kalman filter. If
+any of these tracks can be matched to at least one muon chamber hit it
+is considered to be a muon. For muons with $\pT<200~\gev$ the tracker
+provides the highest resolution energy measurement, while the muon
+system starts to perform better for the straighter, higher \pT,
+tracks.
+
+To reduce the background from hadrons that have punched through the
+\HCAL or muons not originating from the primary vertex, such as cosmic
+ray muons, a series of selections are applied to the reconstructed
+muon candidates. These include a quality requirement on the fit of the
+tracks, a minimum number of hits in the muon systems and a track
+compatible with originating from the beamspot. A different set of
+criteria can be applied to trade off the efficiency and fake rate of
+the muons. After an application of a ``Tight'' set of criteria, the
+efficiency of muons with $\pT>10~\gev$ is measured to be $>96\%$. This
+is shown in Fig.~\ref{fig:muonEff}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.9\linewidth]{figs/reconstruction/muonEff} \end{center}
+\caption{ The tight muon reconstruction efficiency as a function of the
+\pt of the muon in $\sqrt{s}=7~\tev$ proton collisions. The efficiency
+is measured separately in the barrel (a) and endcap (b) regions.
+\cite{1748-0221-7-10-P10002}}
+\label{fig:muonEff} \end{figure}
 
 \section{Jets}
 \label{sec:jets_reco}
+
+intro, hadrons reconstructed as...
+
+antiKT
+
+\subsection{Tagging $b$-hadrons}
+
+\section{Isolation}
 
 \section{Missing transverse energy (MET)}
 \label{sec:met_reco}
