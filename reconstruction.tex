@@ -301,6 +301,7 @@ two \PF candidates, $<99\%$ of the jet to come from only hadrons,
 photons or electrons and at least one charged track.
 
 \subsection{Jet energy corrections}
+\label{sec:reco_jec}
 
 Due to the imperfect resolution of the \CMS detector the initial
 measured transverse momentum, $p_T^{raw}$, of a jet does not
@@ -387,7 +388,7 @@ a tagging efficiency of $\sim 69\%$ and a mistag rate of $\sim 1\%$
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.5\linewidth]{figs/reconstruction/bTag} \end{center}
+\includegraphics[width=0.7\linewidth]{figs/reconstruction/bTag} \end{center}
 \caption{ The distribution of the discriminator \ac{CSVv2} algorithm
 for $b$-tagging in multijet events. Tagged jets are clustered with the
 anti-$k_T$ algorithm with $R=0.4$ and span $50<\pT<250~\gev$. A
@@ -395,14 +396,77 @@ working point is chosen to trade off b-tagging efficiency for mistag
 rate by making a cut on the discriminator \cite{CMS-PAS-BTV-15-001}.}
 \label{fig:bTag} \end{figure}
 
-\section{Isolation}
+\section{Isolation and jet cross-cleaning}
 
-isolation for mu and photons with delta beta and rho
+It is often important to differentiate ``prompt'' leptons produced in
+the primary vertex from those that are the result of decay products of
+other particles, such as those in hadronic jets. To do this an
+``isolation'' variable, $I^{\textrm{rel}}$, is defined for each
+lepton. To construct it  the \pT of the \PF candidates within a cone
+around the lepton are summed and the estimated neutral-charged
+contribution of \PU within that cone is subtracted. This is then
+divided by the \pT of the lepton in question, $\pT^l$. In the case
+that the lepton is part of a jet, $I^{\textrm{rel}}$ will have a large
+value, this will not typically be the case if it is prompt.
 
-mention cross cleaning for jets
+In the work presented in this thesis two variants of cone size are
+used. In the standard case, denoted $I^{\textrm{rel}}$, a cone size
+of $\Delta R=0.3$ is used. To maintain acceptance to leptons produced
+in the decays of boosted objects, such as top-quarks, a
+``mini-isolation'' can be defined that has a variable cone that
+depends on the \pT of the object. A value of $\Delta R=0.2$ is chosen
+for $\pT^l<50~\gev$, but this is scaled down to a minimum $\Delta
+R=0.05$ for $\pT^l>200~\gev$.
 
-\section{Missing transverse energy (MET)}
+The contribution from \PU is typically estimated in two different
+ways. For effective-area correction the average \PU energy density of
+neutral particles, $\rho^{\textrm{neutral}}$, is multiplied by the
+area of the isolation cone, similar to the \PU correction carried out
+in jets as described in Sec.~\ref{sec:reco_jec}. For $\Delta\beta$
+correction the energy of neutral particles is estimated as half the
+energy from charged particles that originate from \PU vertices in the
+cone. This ratio of charged to neutral particles is determined from
+simulation. % reference??
+
+To avoid isolated leptons being classified as jets a
+``cross-cleaning'' is performed on the result of the jet clustering.
+In this case all jets that are within $\Delta R=0.4$ of an isolated
+lepton are removed from the event.
+
+\section{Missing transverse energy (\met) and energy sums}
 \label{sec:met_reco}
+
+Weakly interacting particles, such as neutrinos or neutralinos, will
+pass through all components of the \CMS detector. Their production can
+therefore only be inferred from the imbalance of momentum in the decay
+products of a proton collision that can be observed by \CMS. To
+measure the magnitude and direction of the missing momentum the
+missing transverse energy variable, \met, is defined as the negative
+vector sum of the momentum, $\vec{p}_T$, of all the particles in an
+event:
+\begin{equation}
+\met = -\sum{\vec{p}_T}.
+\end{equation}
+This is reconstructed taking the \PF candidates up to $|\eta|<5$ as
+input \cite{1748-0221-10-02-P02006}. 
+
+A correction is applied to \met based on the jet energy correction
+described in Sec.~\ref{sec:reco_jec}. This is known as the ``type-I''
+correction and applies the jet energy correction to the \PF candidates that are
+clustered into jets. This method takes jets with $\pT>15~\gev$ and
+helps to signficantly improve the \met resolution.
+
+It is also advantageous to define other energy sums that take only
+jets as input. These are typically better understood and calibrated
+than each unclustered \PF candidate. To gain a measure of the scale of
+hadronic energy in an event the \HT variable is defined as the scalar
+sum of jet momenta, $\pT^{\textrm{jet}}$. To gain an alternative
+measure of the missing energy the negative vector sum of jet momenta,
+$\vec{\pT}^{\textrm{jet}}$, denoted  \MHT is defined.
+\begin{equation}
+\HT = \sum{\pT^{\textrm{jet}}},~~~~\MHT =
+-\sum{\vec{\pT}^{\textrm{jet}}}.
+\end{equation}
 
 \section{Monte Carlo (MC) simulation}
 \label{sec:mc_reco}
