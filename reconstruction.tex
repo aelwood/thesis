@@ -471,3 +471,36 @@ $\vec{\pT}^{\textrm{jet}}$, denoted  \MHT is defined.
 \section{Monte Carlo (MC) simulation}
 \label{sec:mc_reco}
 
+A major part of understanding the data collected by \CMS involves the
+use of simulated events for different types of \SM and \BSM processes.
+With a good simulation, it is possible to classify the events observed
+in data as demonstrating particular physical processes that are
+predicted by theory. The simulation of proton collisions is
+particularly challenging, as it requires an accurate modelling of a
+wide range of \SM phenomena as well as a very good understanding of
+the \CMS detector. The simulation is split up into a series of
+stages that split up the theoretical simulation and detector modelling
+\cite{Buckley:2011ms}. 
+
+In the first stage, the hard scattering of the colliding constituents
+of the incoming protons, the ``partons'', through electroweak or QCD
+interactions is modelled. The fraction of the proton momentum carried
+by each parton is sampled from a \ac{PDF}.  This modelling involves a
+calculation with perturbation theory to a fixed order, typically \LO
+or \NLO, with a dedicated Monte Carlo generator such as
+\textsc{MadGraph} \cite{Alwall:2011uj} or \textsc{Pythia}
+\cite{Sjostrand:2007gs}.
+
+In the next stage an iterative process of ``parton showering'' is
+carried out. QCD radiation is taken from the hard scatter decay
+products is carried out until the particles in the shower reach an
+energy where perturbation theory breaks down, the QCD cut-off scale
+$\Lambda_{\textrm{QCD}}\sim 1~\gev$. After the parton showering the
+remaining particles undergo hadronisation. Colourless hadrons are
+formed and allowed to decay, resulting in ``generator-level''
+particles with well defined four-momenta.
+
+generator level passed through GEANT
+
+overlay PU
+
