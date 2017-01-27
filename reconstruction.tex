@@ -487,20 +487,35 @@ of the incoming protons, the ``partons'', through electroweak or QCD
 interactions is modelled. The fraction of the proton momentum carried
 by each parton is sampled from a \ac{PDF}.  This modelling involves a
 calculation with perturbation theory to a fixed order, typically \LO
-or \NLO, with a dedicated Monte Carlo generator such as
+or \NLO, with a dedicated \MC generator such as
 \textsc{MadGraph} \cite{Alwall:2011uj} or \textsc{Pythia}
 \cite{Sjostrand:2007gs}.
 
 In the next stage an iterative process of ``parton showering'' is
 carried out. QCD radiation is taken from the hard scatter decay
-products is carried out until the particles in the shower reach an
-energy where perturbation theory breaks down, the QCD cut-off scale
-$\Lambda_{\textrm{QCD}}\sim 1~\gev$. After the parton showering the
+products is carried out until the particles in the shower reach the
+QCD cut-off scale $\Lambda_{\textrm{QCD}}\sim 1~\gev$, where
+perturbation theory breaks down. After the parton showering the
 remaining particles undergo hadronisation. Colourless hadrons are
 formed and allowed to decay, resulting in ``generator-level''
-particles with well defined four-momenta.
+particles with well defined four-momenta. The hadronisation is carried
+out with MC generators such as \textsc{Pythia} \cite{Sjostrand:2007gs}
+and \textsc{Herwig} \cite{Bahr:2008pv} that each use different
+techniques to carry the connection of the colour-flow from the initial
+state to final state particles. Remaining unstable particles have
+their decays simulated with dedicated \MC algorithms.
 
-generator level passed through GEANT
+The output of the hadronisation stage is then passed through a
+simulation of \CMS with software such as \textsc{Geant4}
+\cite{Agostinelli:2002hh}. The individual components and their
+responses are faithfully reproduced to output a simulated event that
+is comparable to one measured in real proton collisions. The standard
+reconstruction, such as that described in this chapter, can then be
+performed.
 
-overlay PU
-
+Finally, the \PU must be simulated in \MC. A large sample of minimum
+bias, typically soft, QCD events are simulated. Individual events from
+this sample are taken and overlaid on the simulated event of interest
+to imitate the effects of \PU. The effects of \ac{OOTPU} are also
+taken into account by simulating other minimum bias \MC events within
+a $12$ bunch crossing window.
