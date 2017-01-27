@@ -349,11 +349,51 @@ representative values of \pT can be seen on Fig.~\ref{fig:jec}.
 uncertainty as a function of jet \eta
 for jets with $\pT=50~\gev$ (left) and jets with $\pT=200~\gev$
 (right) for different types of jet reconstruction. The correction for jets
-reconstructed with \PF candidates is shown in the red line.
-\cite{1748-0221-6-11-P11002}}
+reconstructed with \PF candidates is shown in the red line, the CALO
+label indicates jets reconstructed purely with calorimeter deposits
+and no tracker information \cite{1748-0221-6-11-P11002}}
 \label{fig:jec} \end{figure}
 
-\subsection{Tagging $b$-hadrons}
+\subsection{Tagging $b$-jets}
+
+A particular type of quark that is of interest when searching for
+indications of new physics is the $b$-quark. The production of these
+quarks is relatively rare in \SM QCD interactions and often
+indicate the presence of a top quark that has decayed to a
+$b$. In a wide range of \SUSY models the decay via top quarks is
+favoured over other, lighter quarks. It is therefore very advantageous
+to have a way of identifying jets as originating from $b$-quarks,
+known as ``$b$-tagging''.
+
+As $b$-hadrons have a relatively long lifetime, $\tau\sim 1.5$~ps
+\cite{PhysRevD.86.010001}, they typically travel $c\tau\sim 450~\mu$m
+from the primary vertex before decaying. The \CMS tracker has a
+spatial resolution $\sim 30~\mu$m for $\sim 5~\gev$ tracks, which
+means the displaced vertex created by the $\sim 5~\gev$ mass $b$-quarks
+can be resolved. This is exploited by the \ac{CSVv2} algorithm used
+for $b$-tagging in Run~2 \cite{CMS-PAS-BTV-15-001}. This algorithm
+uses a neural net with detector inputs including vertices identified
+by the tracker that are displaced from the primary vertex and
+associated to the jet and information about the tracks originating
+from this vertex.
+
+As with the other physics object definitions in this chapter,
+different selection criteria can be chosen to trade-off the mistag
+rate and efficiencies for $b$-tagging. In this case a different cut on
+the \ac{CSVv2} discriminator is chosen, its distribution is shown in
+Fig.~\ref{fig:bTag}. A ``Medium'' working point of 0.8 corresponds to
+a tagging efficiency of $\sim 69\%$ and a mistag rate of $\sim 1\%$
+\cite{CMS-PAS-BTV-15-001}. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.5\linewidth]{figs/reconstruction/bTag} \end{center}
+\caption{ The distribution of the discriminator \ac{CSVv2} algorithm
+for $b$-tagging in multijet events. Tagged jets are clustered with the
+anti-$k_T$ algorithm with $R=0.4$ and span $50<\pT<250~\gev$. A
+working point is chosen to trade off b-tagging efficiency for mistag
+rate by making a cut on the discriminator \cite{CMS-PAS-BTV-15-001}.}
+\label{fig:bTag} \end{figure}
 
 \section{Isolation}
 
