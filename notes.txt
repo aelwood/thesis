@@ -3,3 +3,9 @@
     - Add references for dark matter and dark energy in Intro and in
       other places!
     - Sort out the references in general
+
+STUFF TO REMEMBER I DID:
+  - other optimisation (maybe remake? see my talks)
+  - dPhi vs bDPhi plots (see ICHEP NOTE)
+  - QCD method
+
