@@ -2,7 +2,7 @@
 
 EXTRASTYS = abhepexpt.sty abhep.sty abmath.sty lineno.sty siunitx.sty SIunits.sty varwidth.sty
 
-aelwoodThesis.pdf: aelwoodThesis.tex preamble.tex introduction.tex theory.tex detector.tex reconstruction.tex frontmatter.tex appendices.tex
+aelwoodThesis.pdf: aelwoodThesis.tex preamble.tex introduction.tex theory.tex detector.tex reconstruction.tex frontmatter.tex appendices.tex l1trig.tex
 	@rm -f $(EXTRASTYS)
 	unzip extrastyles.zip
 	@rm -f aelwoodThesis.{aux,toc,lof,lot}

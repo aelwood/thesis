@@ -1,25 +1,90 @@
-\chapter{The level-1 trigger upgrade jet algorithm}
+\chapter{The Level-1 Trigger upgrade jet algorithm}
 \label{chap:l1trig}
 
-\section{The trigger upgrade for Run~2}
+\section{The Calorimeter Trigger upgrade for Run~2}
 \label{sec:trigUpgrade}
 
-%REPHRASE THIS BIT TO MAKE IT MORE THESIS
-With the upgrading of the LHC to $\sqrt{s}=13$ to $14$ TeV in 2015 the
-demands on the trigger are going to be greatly increased, particularly
-with the instantaneous luminosity increase
-\cite{TriggerTDR_Tapper:2013yva}. The calculations for triggering on
-the calorimeters are carried out with a Global Calorimeter Trigger
-(GCT). 
+With the advent of Run~2 of the \LHC, the demands placed on the \CMS
+trigger greatly increased. After a long period of shutdown the energy
+of proton collisions was increased to $13~\tev$ and the bunch crossing
+rate decreased to 25~ns. With this configuration the design luminosity
+of $10^{34}$cm$^{-2}$s$^{-1}$ can be reached with an average \PU of
+around 25 events per bunch crossing. However, the potential luminosity
+of the \LHC after the pre-Run~2 upgrade exceeds the original design
+value, allowing a \PU of up to 40. As the original Level-1 trigger was
+not designed to deal with this degree of \PU, its performance would be
+significantly diminished. The presence of extra collisions in each
+event results in a general increase in the average energy deposited in
+the calorimeters of the detector. This extra energy smears out the
+measurement of energy deposited from the primary vertex, reducing the resolution with
+which it is measured. This acts to increase the rate at which the
+trigger accepts events and decrease the accuracy with which it
+identifies interesting events. As this rate is limited by the readout
+capability, a trigger that is not upgraded will have a reduced
+efficiency of acceptance of interesting physics events.  It is
+therefore very advantageous to upgrade the Level-1 trigger in a way
+that allows it to deal with the extra \PU.
 
-The ECAL and HCAL components are split into a $56\times 72$
-grid of towers (TT) in $\eta$ and $\phi$ (the azimuthal angle), with
-each tower covering the area of $5\times5$ ECAL crystals. The GCT in
-the previous run had limited resources so the towers were grouped into
-$4\times4$ blocks, known as RCT regions, by the Regional Calorimeter
-Trigger. This is visually represented in
+Along with maintaining a low output rate and a high efficiency,
+another key consideration for the Level-1 trigger is the latency of
+the algorithms run on the boards that carry out the trigger
+processing. The latency must be kept low to ensure that each bunch
+crossing can be processed in as much detail as possible. To be able to
+carry out this sort of processing the Level-1 makes use of custom
+\FPGA boards, as described in . The complexity and structure of the
+trigger algorithms is therefore limited to ensure they can run quickly
+enough on the \FPGA boards. An upgrade to the trigger hardware
+therefore allows more sophisticated algorithms to be carried out,
+while still being able to process every bunch crossing.
 
-Fig.~\ref{fig:trigger_calorimeter}.
+The amount of calorimeter information that can be put into a single
+\FPGA is also limited by its I/O capacity. To process the full
+calorimeter data from a single bunch crossing in the Level-1 trigger
+it takes the equivalent of $\sim10$ bunch crossings of time. In Run~1
+of the \LHC the calculations for triggering on the calorimeters were
+performed with the \ac{GCT}.The \ac{GCT} dealt with this delay by
+processing different sections of the calorimeter in separate boards,
+necessitating duplication of information at the detector section
+boundaries. However, by time multiplexing the calorimeter data, it is
+possible to have individual \FPGA boards that each process one bunch
+crossing with minimal information duplication. As well increasing the
+possible information bandwidth, this allows much greater flexibility
+in algorithms as each FPGA has access to all the information available
+in each event \cite{1748-0221-9-10-C10034,1748-0221-7-01-C01060}. 
+
+\begin{figure}[!t]
+  \centering
+  \subfloat[Run~1 trigger architecture.]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/old_trigger}
+  }~ 
+  \subfloat[Run~2 upgrade TMT trigger architecture.]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/tmt}
+  } \\
+  \caption{A representation of the time multiplexed trigger (TMT)
+  architecture (b) as opposed to the pre-upgrade trigger architecture
+  (a). The entire information for one event is processed by one board
+  rather than just parts of the detector for each board \cite{1748-0221-9-10-C10034}}
+  \label{fig:tmt}
+\end{figure}
+
+The upgrade to the Level-1 trigger exploits the recent technological
+improvement in the performance of \FPGA processors and high-speed
+optical links. The upgrade architecture is that of a \TMT, a 
+representation of the difference between this architecture and that of
+the \ac{GCT} can be seen in Fig.~\ref{fig:tmt}
+
+The inputs to the Calorimeter Trigger from the varous \ECAL and \HCAL
+components are split into a $56\times 72$ grid of \TT in $\eta$ and
+$\phi$, with each tower covering the area of $5\times5$ ECAL crystals.
+As the processing power of the \ac{GCT} was limited, for trigger
+calculations the \TT were grouped into $4\times4$ blocks, known as
+\emph{RCT regions}. These different regions are visually represented
+in Fig.~\ref{fig:trigger_calorimeter}. Due to the advantages brought
+by the upgrade, the new algorithms will have access to the full
+granularity information of all the \TT. A representation of the
+upgrade to the position resolution presented by this change is in
+Fig.~\ref{fig:sunnyJim}.
+
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=0.4\linewidth]{figs/trigger/trigger_calorimeter}
@@ -29,61 +94,29 @@ Fig.~\ref{fig:trigger_calorimeter}.
 	\label{fig:trigger_calorimeter}
 \end{figure}
 
-A key consideration for the L1T is the latency of the algorithms run
-on the boards. This depends on the algorithms themselves and the
-boards being used. The latency must be kept low to ensure that each
-bunch crossing can be processed in as much detail as possible. An
-upgrade to the trigger is proposed to allow more sophisticated
-algorithms, while not missing any bunch crossings. 
-
-% The upgrade to the trigger will come in two stages, each exploiting
-% the recent improvement in the performance of FPGAs and high-speed
-% optical links. Stage 1 will be introduced for the start of Run 2 in
-% 2015 \cite{UCT-TDR}. The basis for Stage 2 will be a Time Multiplexed
-% Trigger (TMT) and will be commissioned in parallel with Stage 1, ready
-% for the 2016 run. 
-
-The amount of calorimeter information that can be put into a single
-FPGA is limited by the IO capacity of the FPGA. To process the full
-calorimeter data from a single bunch crossing it takes the equivalent
-of $\sim10$ bunch crossings of time. The GCT deals with this problem
-by processing different sections of the calorimeter in separate
-boards. This necessitates duplication of information at the section
-boundaries. However, by time multiplexing the calorimeter data, it is
-possible to have 10 FPGAs processing one bunch crossing each with full
-granularity calorimeter information in each board. This allows much
-greater flexibility in algorithms as each FPGA has access to all the
-information available in each event \cite{Baber1_2013}
-\cite{TMTdemo2012}.
-
 \begin{figure}[!t]
   \centering
-  \subfigure[Run~1 trigger architecture.]{
-    \includegraphics[width=0.5\textwidth]{figs/trigger/old_trigger}
-  } 
-  \subfigure[Run~2 upgrade TMT trigger architecture.]{
-    \includegraphics[width=0.5\textwidth]{figures/trigger/tmt}
+  \subfloat[Run~1 calorimeter trigger resolution.]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/L1inputreslegacy}
+  }~ 
+  \subfloat[Run~2 upgrade trigger resolution.]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/L1inputresupgrade}
   } \\
-  \caption{A representation of the time multiplexed trigger (TMT)
-  architecture (b) as opposed to the pre-upgrade trigger architecture
-  (a). The entire information for one event is processed by one board
-  rather than just parts of the detector for each board \cite{1748-0221-9-10-C10034}}
-  \label{fig:mhtmet_sideband}
+  \caption{}
+  \label{fig:sunnyJim}
 \end{figure}
-
-Talk about TMT...
 
 \section{The jet finder and energy sums}
 \label{sec:jetFinder}
 
-To make use of the L1 trigger upgrades new algorithms must be
-developed that improve the identification of different particles. With
-more information available, it is possible to develop more efficient
-triggers for the various analyses carried out at CMS. The increase in
-granularity allows the trigger to have a better view of the
-substructure of energy deposits, allowing the identification of 3
-pronged tau jets and isolated electrons that have varying deposits in
-the ECAL and HCAL for example. 
+To make use of the Level-1 trigger upgrade new algorithms improve the
+identification of different physics objects present in each collision. With more information
+available, it is possible to develop more efficient triggers for the
+various analyses carried out at CMS. The increase in granularity
+allows the trigger to have a better view of the substructure of energy
+deposits, allowing the identification of 3 pronged tau jets and
+isolated electrons that have varying deposits in the ECAL and HCAL for
+example. 
 
 One particular area of potential improvement is in the jet algorithm.
 During Run 1, the jet candidates were created from a $3\times3$ RCT
