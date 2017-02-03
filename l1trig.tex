@@ -387,23 +387,46 @@ be seen in Fig.~\ref{fig:medianstrips}.
   \label{fig:alldonutstrips}
 \end{figure}
 
-%chunky donut
+One of the main issues with the donut subtraction algorithm is its
+sensitivity to fluctuations. Contamination from other jets from the
+hard scatter cause too much energy to be subtracted and in the case
+that there are no \PU particles in the donut too little energy is
+subtracted. This is mitigated by taking the median energy two strips
+but can be further reduced by increasing the area covered by the
+strips. The rings of \TT can be extended to be three towers wide,
+known as a \emph{chunky} donut and illustrated in
+Fig.~\ref{fig:chunkystrips}. This is particularly effective in
+reducing the fluctuations in the positions of \PU particles with
+respect to the jet in consideration.
 
-To confirm that this final energy is
-a measure of the PU in the event, it is plotted against the number of
-interactions for a Monte Carlo (MC) simulation of $t\bar{t}$ 13~TeV
-data in Fig.~\ref{fig:donut_nint}. There is a good correlation,
-implying the donut energy should be a good measure of PU.
+To confirm that the energy in the median two strips of the  chunky
+donut is a good measure of the \PU in the event, it is plotted against
+the number of interactions for a minimum bias \MC sample in
+Fig.~\ref{fig:donut_nint}. There is a good correlation that appears to
+pass through the origin, implying it is indeed a good measure of \PU. 
+% note that the fact that it passes through the origin for ttbar
+% indicates that the median strips reduce hard scatter contamination
 
-The way L1 hardware carries out the jet finding algorithm, the TT that
-make up the donut are already available in memory. This means donut
-subtraction has a very low latency penalty. The main disadvantage is
-in the sensitivity of the donut energy to fluctuations. Contamination
-from other close hard jets cause an over subtraction of energy, and in
-the case that there is no PU within the donut there is an under
-subtraction. 
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.8\linewidth]{figs/trigger/threestrips}
+  \caption{The energy density in the median two $3\times 1$ \TT strips
+  of a chunky donut around Level-1 jets in the \CMS calorimeters as a
+  function of the number of simultaneous collisions. This is taken
+  from minimum bias \MC simulation at 13~\tev with a 50~ns bunch
+  crossing time}
+	\end{center}
+	\label{fig:donut_nint}
+\end{figure}
+
+In the implementation of the Level-1 jet finding algorithm in the
+upgrade hardware , the \TT that make up the donut are already
+available in memory. This means donut subtraction has a very low
+latency penalty. This presents a significant advantage over a global
+\PUS. 
 
 \subsubsection{Jet seed threshold and zero suppression}
+
 % The seed threshold does the job of removing PU jets, but does not
 % correct the energy of the reconstructed high energy jets.
 A simple way of reducing the number of soft QCD jets is by introducing
