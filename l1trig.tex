@@ -275,28 +275,87 @@ trigger rate and efficiency on the number of simultaneous interactions
 in an event. It should do this in a way that improves the resolution
 of object energy measurements in a way that increases the acceptance
 of interesting physics events while allowing for the rejection of soft
-QCD multijet processes. Different forms of \PUS in the Level-1 trigger
-are outlined in this section and their performance subject to this
-criteria is is examined in Sec.~\ref{sec:jet_algo_performance}. 
+QCD multijet processes. It is also important to take account of the
+Level-1 trigger architecture when designing the algorithm to ensure
+that it can be performed with a fixed latency. Different forms of \PUS
+in the Level-1 trigger are outlined in this section and their
+performance subject to this criteria is is examined in
+Sec.~\ref{sec:jet_algo_performance}. 
 
-\subsubsection{Global \boldmath $\rho$}
-A prominent method of PUS is to find the average energy per unit area in the calorimeter due to PU, $\rho$, and subtract it from each reconstructed jet. A favoured estimator for this quantity is \cite{global_rho}:
+\subsubsection{Global pileup subtraction}
+
+A prominent method of \PUS is $\rho$-area correction
+\cite{Cacciari:2007fd,Cacciari:2008gn}. It works by finding the
+average energy per unit area in the calorimeter due to PU, $\rho$, and
+subtracting it from each reconstructed jet. A favoured estimator for this
+quantity is:
 \begin{equation}
 \rho\equiv median(\frac{p_{Tj}}{A_j}),
 \end{equation}
-where $p_{Tj}$ is the transverse momentum of a jet $j$, $A_j$ is its area and the median is taken over all reconstructed jets in an event. This form of PUS is known as global $\rho$ and acts to remove the low energy half of jets in an event and correct the remaining high energy half. It works particularly well high PU cases as $\rho$ is insensitive to fluctuations in the energy of interesting physics events. 
-\\\\
-A disadvantage of global $\rho$ PUS is the fact that it is non local, it does not account for $\eta$ dependence of PU. In an ideal case PU on average has no $\eta$ dependence, although the response of the calorimeter trigger inputs is not fully independent. It is possible to calculate $\rho$ for particular ranges of $\eta$, local $\rho$, but this method loses robustness as the number of jets that are sampled is lowered for each $\rho$ calculation. 
-%At L1, global $\rho$ subtraction also has a latency penalty in hardware, the jets must be found before it can be calculated and subtracted from their energies. Depending on available hardware resources this can present a problem.
+where $p_{Tj}$ is the transverse momentum of a jet $j$, $A_j$ is its
+area and the median is taken over all reconstructed jets in an event.
+In this Chapter this form of \PUS is known as \emph{global $\rho$}. It
+acts to remove half the jets in an event, the low energy half, and
+correct down the energy of the remaining half. This works works
+particularly well in high \PU cases as $\rho$ is insensitive to
+fluctuations in the energy of interesting physics events. It is
+possible to take account of $\eta$ dependence through a new variable
+\emph{local $\rho$}, where the different values are calculated in
+different $\eta$ ranges of the detector. This method loses robustness
+as the number of jets that are sampled is lowered for each $\rho$
+calculation.
 
-\subsubsection{Jet seed threshold and zero suppression}
-A simple way of reducing the number of soft QCD jets is by introducing an energy threshold on the TT that can form a jet. The TT that is considered for a jet candidate in the algorithm outlined in Section~\ref{sec:stage2_jetalgo} is required to be above a certain energy, known as the seed threshold. This is very easy to implement in hardware, and has the potential to save latency as it reduces the number of jets that need to be made. A disadvantage is that it can kill soft jets that originate from a primary vertex. It is also not $\eta$ dependent, although this possibility is being investigated. For the following studies a seed of $2.5$~GeV (5 in L1 units) was chosen as a benchmark that appeared to kill PU jets without removing jets above 10~GeV from a zero PU $t\bar{t}$ test sample, the optimisation of this seed is to be studied. 
+The mean value of \rho, as a function of the number of interactions, is
+shown in Fig.~\ref{fig:rho}. This is taken from a minimum bias \MC
+simulation in which there is no visible hard interaction but only
+overlaid \PU collisions. There is a good correlation between the
+number of simultaneous collisions and \rho that passes through the
+origin, indicating that it is indeed a reasonable measure of the \PU
+in the event. 
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=1.0\linewidth]{figs/trigger/median}
+	\end{center}
+  \caption{The median energy density, \rho, of Level-1 jets in the \CMS
+  calorimeters as a function of the number of simultaneous collisions.
+  This is taken from minimum bias \MC simulation at 13~\tev with a
+  50~ns bunch crossing time}
+	\label{fig:rho}
+\end{figure}
+
+Global $\rho$ subtraction has a latency penalty in hardware as
+the jets must be found before it can be calculated and subtracted from
+their energies. Depending on the final firmware designs this can
+present a problem and makes global \rho subtraction harder to perform
+in hardware. Despite this fact, as global \rho is a popular and well
+understood form of offline \PUS it acts as a good benchmark against
+which to test other algorithms.
 
 \subsubsection{Donut Subtraction}
-The seed threshold does the job of removing PU jets, but does not correct the energy of the reconstructed high energy jets. As hard jets are boosted objects, it is assumed that they most of their energy is deposited very close to the central TT \cite{JetProfile_pileup}. Therefore, in the case of isolated jets, the ring $5$ TT from the centre of the jet can be assumed to contain only PU, see Figure~\ref{fig:stage2_jetalgo}(b). It is therefore proposed to take the energy per unit area in this ring, known as a donut, scale it up by the area of the jet and subtract the resulting energy from the jet. 
-\\\\
-This approach only works for correcting isolated jets, if one jet is in the vicinity of another the energy in the donut is inflated above that of PU as can be seen in Fig.~\ref{fig:donut_energies}(a). To mitigate this, only the median two $4\times1$ TT strips of the four that make up the donut are used to calculate the PU energy density. This lessens the effect of the contamination, shown in Fig.~\ref{fig:donut_energies}(b). To confirm that this final energy is a measure of the PU in the event, it is plotted against the number of interactions for a Monte Carlo (MC) simulation of $t\bar{t}$ 13~TeV data in Fig.~\ref{fig:donut_nint}. There is a good correlation, implying the donut energy should be a good measure of PU.
-\\\\
+
+The seed threshold does the job of removing PU jets, but does not
+correct the energy of the reconstructed high energy jets. As hard jets
+are boosted objects, it is assumed that they most of their energy is
+deposited very close to the central TT \cite{JetProfile_pileup}.
+Therefore, in the case of isolated jets, the ring $5$ TT from the
+centre of the jet can be assumed to contain only PU, see
+Figure~\ref{fig:stage2_jetalgo}(b). It is therefore proposed to take
+the energy per unit area in this ring, known as a donut, scale it up
+by the area of the jet and subtract the resulting energy from the jet.
+
+This approach only works for correcting isolated jets, if one jet is
+in the vicinity of another the energy in the donut is inflated above
+that of PU as can be seen in Fig.~\ref{fig:donut_energies}(a). To
+mitigate this, only the median two $4\times1$ TT strips of the four
+that make up the donut are used to calculate the PU energy density.
+This lessens the effect of the contamination, shown in
+Fig.~\ref{fig:donut_energies}(b). To confirm that this final energy is
+a measure of the PU in the event, it is plotted against the number of
+interactions for a Monte Carlo (MC) simulation of $t\bar{t}$ 13~TeV
+data in Fig.~\ref{fig:donut_nint}. There is a good correlation,
+implying the donut energy should be a good measure of PU.
+
 %donut energy vs nint, response
 % \begin{figure}
 % 	\begin{center}
@@ -313,7 +372,29 @@ This approach only works for correcting isolated jets, if one jet is in the vici
 % 	\caption{The mean energy of the median two strips of the donut against the number of interactions in an event of $t\bar{t}$ Monte Carlo simulation. Energy is in L1 Units (0.5~GeV)}
 % 	\label{fig:donut_nint}
 % \end{figure}
-\noindent The way L1 hardware carries out the jet finding algorithm, the TT that make up the donut are already available in memory. This means donut subtraction has a very low latency penalty. The main disadvantage is in the sensitivity of the donut energy to fluctuations. Contamination from other close hard jets cause an over subtraction of energy, and in the case that there is no PU within the donut there is an under subtraction. 
+The way L1 hardware carries out the jet finding algorithm, the TT that
+make up the donut are already available in memory. This means donut
+subtraction has a very low latency penalty. The main disadvantage is
+in the sensitivity of the donut energy to fluctuations. Contamination
+from other close hard jets cause an over subtraction of energy, and in
+the case that there is no PU within the donut there is an under
+subtraction. 
+
+\subsubsection{Jet seed threshold and zero suppression}
+
+A simple way of reducing the number of soft QCD jets is by introducing
+an energy threshold on the TT that can form a jet. The TT that is
+considered for a jet candidate in the algorithm outlined in
+Section~\ref{sec:stage2_jetalgo} is required to be above a certain
+energy, known as the seed threshold. This is very easy to implement in
+hardware, and has the potential to save latency as it reduces the
+number of jets that need to be made. A disadvantage is that it can
+kill soft jets that originate from a primary vertex. It is also not
+$\eta$ dependent, although this possibility is being investigated. For
+the following studies a seed of $2.5$~GeV (5 in L1 units) was chosen
+as a benchmark that appeared to kill PU jets without removing jets
+above 10~GeV from a zero PU $t\bar{t}$ test sample, the optimisation
+of this seed is to be studied. 
 
 
 
