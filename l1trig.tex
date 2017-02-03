@@ -282,7 +282,7 @@ in the Level-1 trigger are outlined in this section and their
 performance subject to this criteria is is examined in
 Sec.~\ref{sec:jet_algo_performance}. 
 
-\subsubsection{Global pileup subtraction}
+\subsection{Global pileup subtraction}
 
 A prominent method of \PUS is $\rho$-area correction
 \cite{Cacciari:2007fd,Cacciari:2008gn}. It works by finding the
@@ -332,7 +332,7 @@ in hardware. Despite this fact, as global \rho is a popular and well
 understood form of offline \PUS it acts as a good benchmark against
 which to test other algorithms.
 
-\subsubsection{Donut Subtraction}
+\subsection{Donut Subtraction}
 
 As jets from the hard scatter are typically boosted objects, most of
 their energy is deposited very close to the central \TT of the jet
@@ -425,25 +425,50 @@ available in memory. This means donut subtraction has a very low
 latency penalty. This presents a significant advantage over a global
 \PUS. 
 
-\subsubsection{Jet seed threshold and zero suppression}
+\subsection{Jet seed threshold and zero suppression}
 
-% The seed threshold does the job of removing PU jets, but does not
-% correct the energy of the reconstructed high energy jets.
-A simple way of reducing the number of soft QCD jets is by introducing
-an energy threshold on the TT that can form a jet. The TT that is
-considered for a jet candidate in the algorithm outlined in
+Donut subtraction helps to remove the effects of \PU on the
+reconstructed high energy jets, but is less successful at removing the
+soft jets that are purely from \PU interactions. A simple way of
+reducing the number of soft jets is by introducing an energy threshold
+on the \TT that can form a jet. The \TT that is considered for a jet
+candidate in the algorithm outlined in
 Section~\ref{sec:stage2_jetalgo} is required to be above a certain
 energy, known as the seed threshold. This is very easy to implement in
 hardware, and has the potential to save latency as it reduces the
 number of jets that need to be made. A disadvantage is that it can
-kill soft jets that originate from a primary vertex. It is also not
-$\eta$ dependent, although this possibility is being investigated. For
-the following studies a seed of $2.5$~GeV (5 in L1 units) was chosen
-as a benchmark that appeared to kill PU jets without removing jets
-above 10~GeV from a zero PU $t\bar{t}$ test sample, the optimisation
-of this seed is to be studied. 
+kill soft jets that originate from a primary vertex. It also does not
+account for any $\eta$ dependence. For the studies in
+Sec.~\ref{sec:jet_algo_performance} studies a seed of $2.5$~GeV was
+chosen as a benchmark that appeared to kill PU jets without removing
+jets above 10~GeV from a zero PU $t\bar{t}$ test sample. This is
+demonstrated in Fig.~\ref{fig:noPUSeedTTbar}. As the Level-1 hardware
+measures energy in units corresponding to 0.5~\gev (\emph{L1-units},
+this is denoted as \emph{Seed 5}. 
 
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.8\linewidth]{figs/trigger/noPUSeedTTbar}
+  \caption{The Level-1 jet energy vs seed threshold for a simulated
+  sample of top quark pair production events with no overlaid \PU. The
+  units of energy are \emph{L1-units}, which correspond to 0.5~\gev
+  each. A seed threshold of 2.5~\gev only removes up to 10~\gev jets
+  from the hard scatter.}
+	\end{center}
+	\label{fig:noPUSeedTTbar}
+\end{figure}
 
+To remove the effects of noise on the Level-1 trigger inputs, a
+\emph{zero-suppression} is performed that requires \TT to have an
+energy above 0.5~\gev before they are considered to have energy in at
+all. As \PU is expected to result in much smaller energy deposits than
+interesting physics processes, the effect of increasing the energy
+that is suppressed to zero when building the jets also acts as a form
+of \PUS. This form of \PUS is studied in
+Sec.~\ref{sec:jet_algo_performance} and is named Tower Suppression
+(TSup). Despite being very easy to implement in hardware this
+algorithm does not adapt well to different \PU conditions and can
+reduce the energy resolution of the jets.
 
 \section{Level-1 jet energy calibration}
 \label{sec:l1jec}
@@ -475,7 +500,6 @@ The performance of this calibration can be seen in Fig.~\ref{fig:calibclosure}. 
 % \end{figure}
 
 \section{Performance of the upgraded algorithm}
-\label{sec:l1jec}
 
 \label{sec:jet_algo_performance}
 The performance of the jet algorithm with the above methods of PUS was tested on 13~TeV MC simulation. A comparison is made to the jets produced by the GCT as it was in 2012. To investigate rates a zero bias neutrino gun sample was used. To test physics performance and compare to AK4 generator level jets (Gen) a $t\bar{t}$ signal sample was used . L1 jets are calibrated with the method as outlined in Section~\ref{sec:pu140_calib}.
