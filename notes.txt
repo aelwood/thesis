@@ -8,4 +8,5 @@ STUFF TO REMEMBER I DID:
   - other optimisation (maybe remake? see my talks)
   - dPhi vs bDPhi plots (see ICHEP NOTE)
   - QCD method
+  - MinChi studies? should i put this here?
 

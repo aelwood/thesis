@@ -232,8 +232,8 @@ or \TT as input. They currently include:
 \item{total $E_T$, the scalar sum of the transverse energy in all the \TT}
 \item{\met, the inverse vector sum of the transverse energy in all the
 \TT}
-\item{\ht, the scalar sum of all Level-1 jets}
-\item{\mht, the inverse vector sum of all the Level-1 jets}
+\item{\HT, the scalar sum of all Level-1 jets}
+\item{\MHT, the inverse vector sum of all the Level-1 jets}
 \end{itemize}
 
 \section{Pileup subtraction}
@@ -241,10 +241,45 @@ or \TT as input. They currently include:
 
 \subsection{Characterising pileup}
 
-During or after the creation of L1 jets with the algorithm described in Section~\ref{sec:stage2_jetalgo}, PUS is performed. The purpose of this is to remove jets that originate from soft QCD scattering events and to correct the energy of jets from hard physics processes that have been contaminated by PU. The ideal scenario is one in which the energy of interesting jets is not dependent on the number of collisions during a bunch crossing. Three forms of PUS at L1 are outlined in here and investigated in Section~\ref{sec:jet_algo_performance}. These algorithms are designed to operate on an event-by-event basis, allowing the performance to change dynamically based on differing PU conditions. 
-%cite global rho
+On average, the decays from \PU are expected to be isotropically
+distributed around the detector. However, there will be significant
+event-by-event differences due to poisson fluctuations in the number
+of \PU collisions. While the number of simultaneous interactions is
+such that these fluctuations are significant it is advantageous to
+correct for the \PU on a per-event basis. To be able to remove the
+effects of \PU in the Level-1 trigger there needs to be a way remove
+the objects that originate from \PU particles. Additionally, an
+estimate of the average energy deposited in each event should be used
+to correct the $E_T$ of the remaining objects. These procedures are
+known collectively as \emph{\PUS}.
 
-\subsection{Global \boldmath $\rho$}
+It is observed that the density of decays from \PU to
+depend on their position in $\eta$ \cite{Cacciari2011}. This is
+most likely caused by the differing response of the detector along its
+length. The fact that the trigger only has access to
+coarse calorimeter information with no tracks means these detector
+effects are likely to be enhanced. It is therefore desirable for \PUS
+algorithms to measure the \PU energy density near to the objects that
+are corrected. This \emph{local} \PUS then requires a trade off
+between the proximity to the object and the effects of
+larger statistical fluctuations present when sampling a smaller area. 
+
+A \emph{global} subtraction can be used to determine the average
+energy density across the whole detector. This method is much less
+susceptible to fluctuations and contamination from particles from the
+hard-interaction, but does not take account of local fluctuations or
+detector effects.
+
+The ideal form of \PUS will remove the dependence of the Level-1
+trigger rate and efficiency on the number of simultaneous interactions
+in an event. It should do this in a way that improves the resolution
+of object energy measurements in a way that increases the acceptance
+of interesting physics events while allowing for the rejection of soft
+QCD multijet processes. Different forms of \PUS in the Level-1 trigger
+are outlined in this section and their performance subject to this
+criteria is is examined in Sec.~\ref{sec:jet_algo_performance}. 
+
+\subsubsection{Global \boldmath $\rho$}
 A prominent method of PUS is to find the average energy per unit area in the calorimeter due to PU, $\rho$, and subtract it from each reconstructed jet. A favoured estimator for this quantity is \cite{global_rho}:
 \begin{equation}
 \rho\equiv median(\frac{p_{Tj}}{A_j}),
@@ -254,10 +289,10 @@ where $p_{Tj}$ is the transverse momentum of a jet $j$, $A_j$ is its area and th
 A disadvantage of global $\rho$ PUS is the fact that it is non local, it does not account for $\eta$ dependence of PU. In an ideal case PU on average has no $\eta$ dependence, although the response of the calorimeter trigger inputs is not fully independent. It is possible to calculate $\rho$ for particular ranges of $\eta$, local $\rho$, but this method loses robustness as the number of jets that are sampled is lowered for each $\rho$ calculation. 
 %At L1, global $\rho$ subtraction also has a latency penalty in hardware, the jets must be found before it can be calculated and subtracted from their energies. Depending on available hardware resources this can present a problem.
 
-\subsection{Seed Threshold}
+\subsubsection{Jet seed threshold and zero suppression}
 A simple way of reducing the number of soft QCD jets is by introducing an energy threshold on the TT that can form a jet. The TT that is considered for a jet candidate in the algorithm outlined in Section~\ref{sec:stage2_jetalgo} is required to be above a certain energy, known as the seed threshold. This is very easy to implement in hardware, and has the potential to save latency as it reduces the number of jets that need to be made. A disadvantage is that it can kill soft jets that originate from a primary vertex. It is also not $\eta$ dependent, although this possibility is being investigated. For the following studies a seed of $2.5$~GeV (5 in L1 units) was chosen as a benchmark that appeared to kill PU jets without removing jets above 10~GeV from a zero PU $t\bar{t}$ test sample, the optimisation of this seed is to be studied. 
 
-\subsection{Donut Subtraction}
+\subsubsection{Donut Subtraction}
 The seed threshold does the job of removing PU jets, but does not correct the energy of the reconstructed high energy jets. As hard jets are boosted objects, it is assumed that they most of their energy is deposited very close to the central TT \cite{JetProfile_pileup}. Therefore, in the case of isolated jets, the ring $5$ TT from the centre of the jet can be assumed to contain only PU, see Figure~\ref{fig:stage2_jetalgo}(b). It is therefore proposed to take the energy per unit area in this ring, known as a donut, scale it up by the area of the jet and subtract the resulting energy from the jet. 
 \\\\
 This approach only works for correcting isolated jets, if one jet is in the vicinity of another the energy in the donut is inflated above that of PU as can be seen in Fig.~\ref{fig:donut_energies}(a). To mitigate this, only the median two $4\times1$ TT strips of the four that make up the donut are used to calculate the PU energy density. This lessens the effect of the contamination, shown in Fig.~\ref{fig:donut_energies}(b). To confirm that this final energy is a measure of the PU in the event, it is plotted against the number of interactions for a Monte Carlo (MC) simulation of $t\bar{t}$ 13~TeV data in Fig.~\ref{fig:donut_nint}. There is a good correlation, implying the donut energy should be a good measure of PU.
