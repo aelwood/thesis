@@ -315,12 +315,12 @@ in the event.
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=1.0\linewidth]{figs/trigger/median}
-	\end{center}
+		\includegraphics[width=0.8\linewidth]{figs/trigger/median}
   \caption{The median energy density, \rho, of Level-1 jets in the \CMS
   calorimeters as a function of the number of simultaneous collisions.
   This is taken from minimum bias \MC simulation at 13~\tev with a
   50~ns bunch crossing time}
+	\end{center}
 	\label{fig:rho}
 \end{figure}
 
@@ -334,44 +334,67 @@ which to test other algorithms.
 
 \subsubsection{Donut Subtraction}
 
-The seed threshold does the job of removing PU jets, but does not
-correct the energy of the reconstructed high energy jets. As hard jets
-are boosted objects, it is assumed that they most of their energy is
-deposited very close to the central TT \cite{JetProfile_pileup}.
-Therefore, in the case of isolated jets, the ring $5$ TT from the
-centre of the jet can be assumed to contain only PU, see
-Figure~\ref{fig:stage2_jetalgo}(b). It is therefore proposed to take
-the energy per unit area in this ring, known as a donut, scale it up
-by the area of the jet and subtract the resulting energy from the jet.
+As jets from the hard scatter are typically boosted objects, most of
+their energy is deposited very close to the central \TT of the jet
+algorithm \cite{JetProfile_pileup}. A typical energy profile of a jet
+is shown in Fig.~\ref{fig:jetprofile}. In the case of isolated jets,
+the ring $5$ \TT from the centre of the jet can be assumed to contain
+only \PU.  The \emph{donut subtraction} algorithm therefore take the
+energy per unit area in the ring of \TT surrounding the jet (shown in
+Fig.~\ref{fig:donutstrips}) and scales
+it up by the area of the jet. The resulting energy is then subtracted
+from the jet to correct any \PU contamination. This kind of \PUS has
+been applied in the analysis of heavy ion collisions at the \LHC
+\cite{Cacciari:2010te}.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.8\linewidth]{figs/trigger/jetProfile}
+  \caption{ Jet energy profile as a function of distance from the
+  centre of the jet, $R$. The number of trigger towers that the
+  distances corresponds to are shown in pink. Calculated for jets from
+  a simulation of Z to $\mu\mu$ events \cite{JetProfile_pileup}}
+	\end{center}
+	\label{fig:jetprofile}
+\end{figure}
 
 This approach only works for correcting isolated jets, if one jet is
-in the vicinity of another the energy in the donut is inflated above
-that of PU as can be seen in Fig.~\ref{fig:donut_energies}(a). To
-mitigate this, only the median two $4\times1$ TT strips of the four
-that make up the donut are used to calculate the PU energy density.
-This lessens the effect of the contamination, shown in
-Fig.~\ref{fig:donut_energies}(b). To confirm that this final energy is
+in the vicinity of another the energy in the donut can be increased to
+above that of \PU. To mitigate this, only the median two $4\times1$
+\TT strips of the four that make up the donut are used to calculate
+the PU energy density. This reduces the chance that energy from
+another jet will be counted as \PU and also removes strips that have
+very little energy in them from a downward fluctuation in \PU
+contamination. An example of the two strips that could be selected can
+be seen in Fig.~\ref{fig:medianstrips}.
+
+\begin{figure}[!t]
+  \centering
+  \subfloat[Strips considered for donut subtraction.]{
+    \includegraphics[width=0.3\textwidth]{figs/trigger/donut}
+    \label{fig:donutstrips}
+  }~ 
+  \subfloat[Example of median energy strips.]{
+    \includegraphics[width=0.3\textwidth]{figs/trigger/donut2}
+    \label{fig:medianstrips}
+  }~
+  \subfloat[Strips considered for chunky donut subtraction.]{
+    \includegraphics[width=0.3\textwidth]{figs/trigger/chunkyDonut}
+    \label{fig:chunkystrips}
+  }\\
+  \caption{Various configurations of \TT strips around the Level-1 jet
+  algorithm window used for donut subtraction}
+  \label{fig:alldonutstrips}
+\end{figure}
+
+%chunky donut
+
+To confirm that this final energy is
 a measure of the PU in the event, it is plotted against the number of
 interactions for a Monte Carlo (MC) simulation of $t\bar{t}$ 13~TeV
 data in Fig.~\ref{fig:donut_nint}. There is a good correlation,
 implying the donut energy should be a good measure of PU.
 
-%donut energy vs nint, response
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics[width=0.5\linewidth]{Donut_plots/noniso_donut_energy}\put(-32,133){(a)}
-% 		\includegraphics[width=0.5\linewidth]{Donut_plots/noniso_finaldonut_energy}\put(-32,133){(b)}
-% 	\end{center}
-% 	\caption{(a) The energy per unit area in units of $0.5$~GeV/TT of the donut ring taken around the jet. (b) The energy per unit area in units of $0.5$~GeV/TT of the median two strips of the donut ring taken around the jet}
-% 	\label{fig:donut_energies}
-% \end{figure}
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics[width=0.6\linewidth]{Donut_plots/donut_nint}
-% 	\end{center}
-% 	\caption{The mean energy of the median two strips of the donut against the number of interactions in an event of $t\bar{t}$ Monte Carlo simulation. Energy is in L1 Units (0.5~GeV)}
-% 	\label{fig:donut_nint}
-% \end{figure}
 The way L1 hardware carries out the jet finding algorithm, the TT that
 make up the donut are already available in memory. This means donut
 subtraction has a very low latency penalty. The main disadvantage is
@@ -381,7 +404,8 @@ the case that there is no PU within the donut there is an under
 subtraction. 
 
 \subsubsection{Jet seed threshold and zero suppression}
-
+% The seed threshold does the job of removing PU jets, but does not
+% correct the energy of the reconstructed high energy jets.
 A simple way of reducing the number of soft QCD jets is by introducing
 an energy threshold on the TT that can form a jet. The TT that is
 considered for a jet candidate in the algorithm outlined in
