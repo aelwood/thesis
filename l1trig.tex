@@ -473,31 +473,74 @@ reduce the energy resolution of the jets.
 \section{Level-1 jet energy calibration}
 \label{sec:l1jec}
 
-%mention something here about the PU140 calibration?
+To obtain Level-1 jets that correspond as closely as possible to the
+true physics objects that they represent, they must be calibrated. The
+varying response of the \HCAL and \ECAL as a function of jet \pT and
+\eta necessitates a calibration that depends on these variables.  The
+need for calibration in the Level-1 trigger is exacerbated by the
+coarse level of information available compared to that in offline
+reconstruction.
 
-The inputs to the trigger do not exactly represent the offline quantities and the L1 jets have an more rigid size than the simulated Gen jets. By correcting the energy of the L1 jets through calibration it is possible to scale there energy to be closer to that of the Gen jets in an event \cite{l1jet-calibration}. It was necessary to produce a set of calibrations for L1 jets made with simulated data for the High Luminosity upgrade of the LHC, with PU of $\sim140$ per bunch crossing, for studies on the upgrade.
-\\\\
-To perform the calibration, L1 jets are matched to Gen jets produced from MC truth quantities (required to have $\Delta R<0.3$) for a collection of MC simulated events. For a particular bin of Gen $p_T$, a Gaussian is fit to the distribution of L1 jet $p_T$, giving a mean and its standard deviation. This value is plotted on the $x$ axis of the plot in Fig.~\ref{fig:calibfit}. The $y$ value is found by fitting in the same bin the ratio of the Gen and L1 $p_T$. The result is a set of points that can be fit with an appropriate function. To calibrate L1 jets in the future, the correction factor can be calculated by reading off the value of the fit function at a certain L1 $p_T$. 
-\\\\
-The performance of this calibration can be seen in Fig.~\ref{fig:calibclosure}. In this case the calibration is effective down to around $30$~GeV. This is expected as the fit was only valid until this value. In high PU samples the low energy L1 jets are heavily contaminated. This results in the Gen jets not being matched to the correct corresponding L1 jet, characterised by the turn over in the ratio as the $p_T$ decreases.
-%why calibrate
-%calibration theory- fit
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics[width=0.6\linewidth]{pu140_calibrationfit}
-% 	\end{center}
-% 	\caption{A fit to the L1 $p_T$ against its ratio with Gen for a particular $\eta$ bin. This fit is used to calculate calibration factors for the L1 jets.}
-% 	\label{fig:calibfit}
-% \end{figure}
-% %explain turnover
-% %closure test- plots
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics[width=1.0\linewidth]{pu140_calib_closure}
-% 	\end{center}
-% 	\caption{The ratio of L1 jets with Gen before and after they are calibrated, demonstrating the effectiveness of the calibration \cite{nick-pu140calib}}
-% 	\label{fig:calibclosure}
-% \end{figure}
+The calibration is performed using QCD dijet \MC simulation with an
+average \PU of 40. Samples were generated with a range of generator
+scales from 10 to 600~\gev. These energies characterise the \pT of the
+leading jet and ensure a wide range of jet energies are available for
+calibration. From this sample \emph{generator jets} are clustered from
+the truth-level generator particles, the final result of the procedure
+described in Sec.~\ref{sec:mc_reco}. Clustering is performed with the
+anti-$k_T$ algorithm with $R=0.4$ after removing any muon and neutrino
+gen particles. This ensures that the Level-1 jets are just calibrated
+based on the particles that should be deposited in the calorimeters.
+The Level-1 jet algorithm is performed on the simulated Level-1
+trigger calorimeter inputs. Each Level-1 jet is matched to the
+generator jet that is closest in $\Delta
+R=\sqrt{(\Delta\eta)^2+(\Delta\phi)^2}$ to the central \TT of the jet.
+If a generator level jet cannot be found within $\Delta R<0.3$, the
+Level-1 jet in question is ignored. The \pT of the Level-1 jet,
+L1~\pT, after \PUS is compared to the \pT of the generator jet,
+GEN~\pT, and the response is defined as the ratio of these two
+quantities, L1~$\pT/$GEN~\pT.
+% from Kristian via Adinda about what the PT hat is:
+% The is the Pt scale of the "internal quark line" in the Feynman
+% diagram for QCD multi-jet production.
+% It sets a typical scale of the highest Pt jet, but in most events
+% there will be softer jets from parton showers in addition.
+
+adlfjalds
+
+% To perform the calibration, L1 jets are matched to Gen jets produced
+% from MC truth quantities (required to have $\Delta R<0.3$) for a
+% collection of MC simulated events. For a particular bin of Gen
+% $p_T$, a Gaussian is fit to the distribution of L1 jet $p_T$, giving
+% a mean and its standard deviation. This value is plotted on the $x$
+% axis of the plot in Fig.~\ref{fig:calibfit}. The $y$ value is found
+% by fitting in the same bin the ratio of the Gen and L1 $p_T$. The
+% result is a set of points that can be fit with an appropriate
+% function. To calibrate L1 jets in the future, the correction factor
+% can be calculated by reading off the value of the fit function at a
+% certain L1 $p_T$.
+
+calibration functions
+
+closure test
+
+%mention something here about the PU140 calibration?, show nick's plot, put the fits in the appendix
+The performance of this calibration can be seen in Fig.~\ref{fig:calibclosure}.
+In this case the calibration is effective down to around $30$~GeV. This is
+expected as the fit was only valid until this value.  In high PU samples the
+low energy L1 jets are heavily contaminated. This results in the Gen jets not
+being matched to the correct corresponding L1 jet, characterised by the turn
+over in the ratio as the $p_T$ decreases.
+
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=1.0\linewidth]{figs/trigger/pu140_calib_closure}
+  \caption{The ratio of L1 jets with Gen before and after they are calibrated,
+demonstrating the effectiveness of the calibration}
+	\end{center}
+\label{fig:pu140calibclosure}
+\end{figure}
 
 \section{Performance of the upgraded algorithm}
 
