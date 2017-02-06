@@ -506,32 +506,99 @@ quantities, L1~$\pT/$GEN~\pT.
 % It sets a typical scale of the highest Pt jet, but in most events
 % there will be softer jets from parton showers in addition.
 
-adlfjalds
+The distribution of the response is plotted in bins of generator jet
+\pT for each matched jet pairs. A Gaussian function is fit to the
+response to obtain an estimate for the mean response and standard
+deviation for a $2~\gev$ bin of generator jet \pT. The response is
+inverted to provide a corrective scale factor for the Level-1 jets. It
+is fit to a calibration function as a function of the L1~\pT in eight
+bins of \eta, up to $|\eta|<3.0$ \cite{l1triggernote2012}. The
+function has the form:
+\begin{equation}
+\langle \pT^{L1}/\pT^{GEN} \rangle ^{-1} =
+(p_0 + \frac{p_1}{(\log\pT^{L1})+p_2} + p_3 \exp(-p_4(\log
+\pT^{L1}-p_5)^2)),
+\end{equation}
+where $p_n$ are free parameters to be found with a $\chi^2$
+minimisation fit, $\pT^{L1}$ is the Level-1 jet \pT and $\pT^{GEN}$ is
+the matched generator jet \pT. This parameterisation provides a
+multiplicative correction that can be applied to Level-1 jets as they
+are produced online where their original \pT, $\pT^{raw}$ can be
+corrected to $\pT^{corr}$ via:
+\begin{equation}
+ \pT^{corr}=\pT^{raw} \langle \pT^{L1}/\pT^{GEN} \rangle ^{-1}. 
+\end{equation}
+The inverse response as a function of Level-1 jet \pT for Level-1 jets
+produced with chunky donut subtraction and a central seed of 2.5~\gev
+are shown in Fig.~\ref{fig:calibFunctions}.
 
-% To perform the calibration, L1 jets are matched to Gen jets produced
-% from MC truth quantities (required to have $\Delta R<0.3$) for a
-% collection of MC simulated events. For a particular bin of Gen
-% $p_T$, a Gaussian is fit to the distribution of L1 jet $p_T$, giving
-% a mean and its standard deviation. This value is plotted on the $x$
-% axis of the plot in Fig.~\ref{fig:calibfit}. The $y$ value is found
-% by fitting in the same bin the ratio of the Gen and L1 $p_T$. The
-% result is a set of points that can be fit with an appropriate
-% function. To calibrate L1 jets in the future, the correction factor
-% can be calculated by reading off the value of the fit function at a
-% certain L1 $p_T$.
+\begin{figure}[!t]
+  \centering
+  \subfloat[$0.00<\eta<0.75$]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/p1}
+  }~ 
+  \subfloat[$0.75<\eta<1.50$]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/p2}
+  }\\
+  \subfloat[$1.50<\eta<2.25$]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/p3}
+  }~ 
+  \subfloat[$2.25<\eta<3.00$]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/p4}
+  }\\
+  \subfloat[$-0.75<\eta<0.00$]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/m1}
+  }~ 
+  \subfloat[$-1.50<\eta<-0.75$]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/m2}
+  }\\
+  \subfloat[$-2.25<\eta<-1.50$]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/m3}
+  }~ 
+  \subfloat[$-3.00<\eta<-2.25$]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/m4}
+  }
+  \caption{Calibration fits across all \eta ranges as a function of
+  Level-1 jet \pT}
+  \label{fig:calibFunctions}
+\end{figure}
 
-calibration functions
+To test the calibration procedure a closure test is performed by
+applying the calibration function to the simulation that was
+used to derive it. The mean response as a function of generator jet
+\pT in the range  $|\eta|<1.4$ is shown in
+Fig.~\ref{fig:calibclosure} as an example. As in this case, the
+calibration procedure produces a flat response at unity for jets with
+$\pT>50~\gev$. Below this value the matching procedure starts to
+break-down as low \pT Level-1 jets are less likely to be matched to a
+corresponding generator jet. The Level-1 jets that are matched to a
+generator jet are more likely to have a higher value of $\pT$, as
+higher $\pT$ jets are more likely to be identified. This skews the
+response upwards as the closure test approaches low values of $\pT$.
+From observing a series of such closure tests it was concluded that it
+was reasonable to consider Level-1 jets with a $\pT>20~\gev$, as in
+this case the corrected response was reasonably compatible with unity.
 
-closure test
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.8\linewidth]{figs/trigger/calibClosure_s5_donut}
+  \caption{Closure test of the calibration procedure, checking the
+  response as a function of generator jet \pT in the $|\eta|<1.4$ range.}
+	\end{center}
+\label{fig:calibclosure}
+\end{figure}
 
-%mention something here about the PU140 calibration?, show nick's plot, put the fits in the appendix
-The performance of this calibration can be seen in Fig.~\ref{fig:calibclosure}.
-In this case the calibration is effective down to around $30$~GeV. This is
-expected as the fit was only valid until this value.  In high PU samples the
-low energy L1 jets are heavily contaminated. This results in the Gen jets not
-being matched to the correct corresponding L1 jet, characterised by the turn
-over in the ratio as the $p_T$ decreases.
-
+In future upgrades of the \LHC it is proposed to increase the \PU to
+$\sim 140$. This will provide a much higher instantaneous luminosity,
+but presents a significant challenge for reconstruction. To help
+inform this upgrade the Level-1 jets were produced and calibrated on a
+sample with an average \PU of 140. The resulting jet response as a
+function of generator jet \pT and Level-1 jet \eta can be seen in
+Fig.~\ref{fig:pu140calibclosure}. The calibration was performed on
+jets with a seed of 2.5~\gev and chunky donut subtraction. The
+response is within $10\%$ of unity up to $|\eta|<2.5$ and for Level-1
+jets with $\pT>50~\gev$. This suggests that the calibration and \PUS
+procedure scales reasonably well with the number of \PU interactions.
 
 \begin{figure}
 	\begin{center}
