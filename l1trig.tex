@@ -52,7 +52,7 @@ possible information bandwidth, this allows much greater flexibility
 in algorithms as each \FPGA has access to all the information available
 in each event \cite{1748-0221-9-10-C10034,1748-0221-7-01-C01060}. 
 
-\begin{figure}[!t]
+\begin{figure}
   \centering
   \subfloat[Run~1 trigger architecture.]{
     \includegraphics[width=0.4\textwidth]{figs/trigger/old_trigger}
@@ -94,7 +94,7 @@ Fig.~\ref{fig:sunnyJim}.
 	\label{fig:trigger_calorimeter}
 \end{figure}
 
-\begin{figure}[!t]
+\begin{figure}
   \centering
   \subfloat[Run~1 calorimeter trigger resolution.]{
     \includegraphics[width=0.5\textwidth]{figs/trigger/L1inputreslegacy}
@@ -368,7 +368,7 @@ very little energy in them from a downward fluctuation in \PU
 contamination. An example of the two strips that could be selected can
 be seen in Fig.~\ref{fig:medianstrips}.
 
-\begin{figure}[!t]
+\begin{figure}
   \centering
   \subfloat[Strips considered for donut subtraction.]{
     \includegraphics[width=0.3\textwidth]{figs/trigger/donut}
@@ -532,7 +532,7 @@ The inverse response as a function of Level-1 jet \pT for Level-1 jets
 produced with chunky donut subtraction and a central seed of 2.5~\gev
 are shown in Fig.~\ref{fig:calibFunctions}.
 
-\begin{figure}[!t]
+\begin{figure}
   \centering
   \subfloat[$0.00<\eta<0.75$]{
     \includegraphics[width=0.5\textwidth]{figs/trigger/p1}
@@ -612,61 +612,192 @@ demonstrating the effectiveness of the calibration}
 \section{Performance of the upgraded algorithm}
 
 \label{sec:jet_algo_performance}
-The performance of the jet algorithm with the above methods of PUS was tested on 13~TeV MC simulation. A comparison is made to the jets produced by the GCT as it was in 2012. To investigate rates a zero bias neutrino gun sample was used. To test physics performance and compare to AK4 generator level jets (Gen) a $t\bar{t}$ signal sample was used . L1 jets are calibrated with the method as outlined in Section~\ref{sec:pu140_calib}.
-%\footnote{/Neutrino\_Pt-2to20\_gun/Fall13dr-tsg\_PU40bx50\_POSTLS162\_V2-v1/GEN-SIM-RAW}
-%\footnote{/TT\_Tune4C\_13TeV-pythia8-tauola/Fall13dr-tsg\_PU40bx50\_POSTLS162\_V2-v1/GEN-SIM-RAW}
-\\\\
-Fig.~\ref{fig:matchingeff} shows the efficiency of Gen jets being reproduced at L1 as a function of their $p_T$. If a Gen jet has a corresponding L1 jet within a radius $R=0.5$ it is counted as matched. This radius is chosen as the distance from the centre of a L1 jet to the corner of its $9\times9$ square. With the proposed Stage 2 jet algorithm, there is close to $100\%$ efficiency above $70$~GeV. The seed appears to be quite aggressive for low $p_T$ jets, but the donut subtraction does not remove any signal jets. The improved granularity greatly improves the performance over the GCT.
+
+The performance of the jet algorithm with various methods of \PUS as
+described in this chapter is tested on 13~TeV \MC simulation with an
+average \PU of 40. A comparison is made to the jets produced by the
+\GCT as it was in 2012. In some cases the performance of the interim
+calorimeter that was run in the early stage of 2015 during the
+commissioning of the upgraded trigger is plotted with label
+\emph{UCT}. To investigate rates a minimum bias sample was used, this
+sample only consists of overlaid \PU events and has no generator jets.
+To test physics performance a sample of simulated $t\bar{t}$
+production was used, which contains generator jets that originate from
+the hard interaction. The Level-1 jets jets are calibrated for each
+type of \PUS with the method as outlined in Section~\ref{sec:l1jec}.
+
+Fig.~\ref{fig:matchingeff} shows the efficiency of generator jets,
+produced as described in Sec.~\ref{sec:l1jec}, being matched to a
+Level-1 jet as a function of their $p_T$. If a generator jet has a
+corresponding Level-1 jet within a radius $R=0.5$ it is counted as
+This radius is chosen as the distance from the centre of a L1 jet to
+the corner of its $9\times9$ square. A representative selection of the
+different \PUS algorithms are shown. All of the upgrade Level-1 jet
+algorithms have close to $100\%$ efficiency above $70$~GeV. The
+application of a seed threshold significantly reduces the efficiency
+for low $p_T$ jets, but the donut subtraction does not remove any
+signal jets.
 %Checked matching to gen, dr 32, inefficiencies caused by algorithm - gct bad
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics[width=0.6\linewidth]{performance/matchingeff_alljet}
-% 	\end{center}
-% 	\caption{The efficiency with which a Gen jet has a corresponding L1 jet within a radius, $R=0.5$. This is carried out for all Gen jets in 70~000 $t\bar{t}$ events.}
-% 	\label{fig:matchingeff}
-% \end{figure}
-\\\\
-\noindent To characterise the energy performance of the L1 jets, turnon curves are plotted in Fig.~\ref{fig:turnons}. These are made by matching the Gen jets to L1 jets, requiring $\Delta R<0.5$ and taking the matched Gen $p_T$ distribution without a cut on L1 jets and one with a cut on the L1 jets, then dividing the two histograms. The fourth leading jet of a $t\bar{t}$ sample is used as it displays the biggest discrepancy between algorithms. By $80$~GeV the PUS doesn't affect the resolution except for donut subtraction which appears to be over subtracting energy in a small number of cases.
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics[width=0.5\linewidth]{performance/turnon_jet4_40}\put(-42,203){(a)}
-% 		\includegraphics[width=0.5\linewidth]{performance/turnon_jet4_80}\put(-42,203){(b)}
-% 	\end{center}
-% 	\caption{The proportion of remaining Gen jets matched to fourth leading L1 jets after performing a cut on L1 of (a) 40GeV, (b) 80GeV.}
-% 	\label{fig:turnons}
-% \end{figure}
-%turnons - how energy matched to gen - gct bad
-\\\\
-\noindent To measure the performance of the PUS algorithms removing soft QCD PU jets, the rate against the number of interactions is plotted for the zero bias sample for a representative $p_T$ cut of $30$~GeV, Fig.~\ref{fig:ratenvtx}. The PUS clearly lowers the dependence on the number of interactions and reduces the rate of jets passing the cut, it is performing as it should. It seems that the seed threshold is the most effective at killing soft QCD, with donut subtraction on top not making much difference. GCT jets are incredibly sensitive to PU, further motivating the trigger upgrade.
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics[width=0.5\linewidth]{performance/ratenvtx_neutrino_jet1}\put(-42,203){(a)}
-% 		\includegraphics[width=0.5\linewidth]{performance/ratenvtx_neutrino_jet4}\put(-42,203){(b)}
-% 	\end{center}
-% 	\caption{The relative rate of L1 jets with $p_T>30$~GeV after PUS for the leading jet, (a), and fourth leading jet, (b), for $70 000$ zero bias events as a function of the number of interactions (NVTX)}
-% 	\label{fig:ratenvtx}
-% \end{figure}
-%level of soft qcd pileup subtraction- rate vs nvtx
-\\\\
-\noindent To ensure that the PUS algorithms are not too aggressive, efficiency is plotted against the rate from a zero bias sample given a certain $p_T$ cut. Efficiency is defined as the fraction of events with a lead Gen jet of $p_T>50$~GeV that have a lead L1 jet that is matched to a Gen jet ($\Delta R<0.5$). Ideally the efficiency remains close to one while reducing as much rate as possible. It can be seen in Figure~\ref{fig:rateeff} that for the leading jet very good efficiency is retained in all cases, with the fluctuations in donut subtraction affecting it.
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics[width=0.6\linewidth]{performance/jet1RateEff}
-% 	\end{center}
-% 	\caption{The normalised rate against efficiency for various PUS schemes. Efficiency is defined as the fraction of events with a lead Gen jet of $p_T>50$~GeV that have a lead L1 jet that is matched to a Gen jet (dR<0.5). Based on a $t\bar{t}$ and zero bias sample.}
-% 	\label{fig:rateeff}
-% \end{figure}
-%\begin{figure}
-%	\begin{center}
-%		\includegraphics[width=0.5\linewidth]{performance/rateseff_jet1}\put(-42,203){(a)}
-%		\includegraphics[width=0.5\linewidth]{performance/rateseff_jet4}\put(-42,203){(b)}
-% 	\end{center}
-%	\caption{Given a particular $p_T$ cut on a level 1 jet the proportion of remaining leading, (a), and fourth %leading, (b), jets is plotted for a zero bias sample against a $t\bar{t}$ sample. The rate is represented by the %zero bias sample and the efficiency by the $t\bar{t}$}
-%	\label{fig:rateeff}
-%\end{figure}
-%maintaining signal- rateseff
-\\\\
-\noindent The other purpose of PUS is to correct the energy of L1 jets contaminated with PU. The resolution of the jets as compared to Gen is defined as $\frac{p_T^{L1}-p_T^{Gen}}{p_T^{Gen}}$, being zero for perfect agreement. The PUS should act to remove the dependence of the resolution on the number of interactions in an event. In Figure~\ref{fig:resolution} it can be seen that the donut and global $\rho$ subtraction do flatten out the resolution for a representative bin of $p_T$ and $\eta$, whereas the seed on its own does not. 
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.7\linewidth]{figs/trigger/performance/matchingeff_alljet}
+	\end{center}
+	\caption{The efficiency with which a generator jet has a
+  corresponding L1 jet within a radius, $R=0.5$. This is carried out
+  for all Gen jets in 70~000 simulated $t\bar{t}$ production events.}
+	\label{fig:matchingeff}
+\end{figure}
+
+A key goal of \PUS is to reduce the dependence of the Level-1 trigger
+acceptance rate on the number of \PU interactions. To quantify this
+for a representative selection of algorithms, the rate against the
+number of reconstructed vertices is plotted for the minimum bias sample,
+Fig.~\ref{fig:ratenvtx}. The rate is defined as the fraction of
+minimum bias events that pass a Level-1 jet $p_T$ cut of $30$~\gev.
+This cut is applied to a different jet rank depending on the type of
+trigger to be tested. For \emph{single-jet} trigger the cut is applied to
+the lead jet, for a \emph{quad-jet} trigger the cut is applied to the
+fourth leading jet. The different forms of \PUS clearly lowers the
+dependence on the number of interactions and reduces the rate of jets
+passing the cut, it is performing as it should. The upgrade algorithm
+performs significantly better than the \GCT, where the jet trigger
+rates are incredibly sensitive to PU. Of the algorithms investigated,
+the seed of 2.5~\gev, denoted \emph{Seed 5}, has the most dramatic
+effect due to its ability to kill soft \PU jets. The global-\rho
+subtraction, denoted \emph{Global Sub}, also performs well. Applying
+donut subtraction without does not making much difference for this
+particular \PUS benchmark. This is most likely due to the fact that
+donut subtraction works well in correcting the resolution of jets
+contaminated with soft particles from \PU vertices, rather than
+removing low \pT pure \PU jets.
+\begin{figure}
+  \centering
+  \subfloat[Single-jet trigger]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/performance/rateNVertLeadJet}
+  }~ 
+  \subfloat[Quad-jet trigger]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/performance/rateNVertFourthJet}
+  }
+  \caption{The relative rate of events with $p_T>30$~GeV leading (a)
+  and fourth leading (b) jets after different \PUS algorithms with and
+  without seed thresholds for $70 000$ zero bias events as a function
+  of the number of reconstructed vertices.}
+  \label{fig:ratenvtx}
+\end{figure}
+
+To characterise the energy resolution of the Level-1 jets with
+different \PUS algorithms, the efficiency turn on curves are plotted
+in Fig.~\ref{fig:turnons}. The lead jet efficiency turn on,
+Fig.~\ref{fig:leadJetTurnon}, is
+made by matching the generator jets to Level-1 jets, requiring $\Delta
+R<0.5$ and taking the ratio of the matched generator jet $p_T$
+distribution without a cut on the Level-1 jet with the matched
+generator jet distribution after a cut on the L1 jets. Most algorithms
+show a similar performance for a single jet trigger. The effects of
+\PU are less relevant when just considering one high energy object.
+
+More difference is observed when all jets with $\pT>20~\gev$ are
+summed to find the Level-1 $\HT$ of the event. The plot in
+Fig.~\ref{fig:htTurnon} is made by taking the ratio of generator $\HT$
+(also made from 20~\gev jets), with and without a cut on the Level-1
+\HT. When considering a scalar sum of every jet the effects of pileup
+add up and the different algorithms have a more significant
+separation. It is clear that performing \PUS helps to significantly
+improve the energy resolution of Level-1 $\HT$.
+\begin{figure}
+  \centering
+  \subfloat[Lead jet $p_T^{L1}>150~\gev$ efficiency]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/performance/leadJet_150_turnon}
+    \label{fig:leadJetTurnon}
+  }~ 
+  \subfloat[$\HT^{L1}>200~\gev$ efficiency]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/performance/ht_200_turnon}
+    \label{fig:htTurnon}
+  }
+  \caption{ Efficiency after a specific cut for Level-1 leading jets (a) and Level-1 \HT
+  (b) as a function of the corresponding generator quantity.
+  } \label{fig:turnons}
+\end{figure}
+
+In the turn on curves, a change in offset along the $x$-axis results
+from a difference in jet energy scale with respect to the generator
+quantity. As the \GCT jets do not have any calibration applied and the
+UCT has a different type of calibration, this can differ
+significantly. However, this does not give all the relevant
+information when deciding on a final algorithm to increase the overall
+performance of the trigger. The most important consideration is the
+trade-off between the efficiency of the algorithm at picking out a
+particular physics signature for a given rate. This does not depend on
+the specific energy scale of the jets relative to the generator
+quantities.
+
+%% GOT HERE
+To better characterise the \PUS algorithms independently of energy
+scale, efficiency
+is plotted against the rate from a zero bias sample given a certain
+cut on a Level-1 jet quantity. 
+\begin{figure}
+  \centering
+  \subfloat[Lead jet $p_T^{L1}>150~\gev$]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/performance/singleJet_150}
+    \label{fig:leadJetTurnon}
+  }~ 
+  \subfloat[Fourth leading jet $p_T^{L1}>50~\gev$]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/performance/quadJet_50}
+    \label{fig:htTurnon}
+  }
+  \caption{ The normalised rate against efficiency for jet triggers
+  made from jets with various \PUS schemes. Based on $t\bar{t}$ and
+  minimum bias \MC simulation.}
+  \label{fig:rateEffJet}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \subfloat[Level-1 $\HT>200~\gev$]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/performance/ht_200}
+    \label{fig:leadJetTurnon}
+  }~ 
+  \subfloat[Level-1 $\MHT>200~\gev$]{
+    \includegraphics[width=0.5\textwidth]{figs/trigger/performance/mht_200}
+    \label{fig:htTurnon}
+  }
+  \caption{ The normalised rate against efficiency for energy sum
+  triggers made from jets with various \PUS schemes. Based on
+  $t\bar{t}$ and minimum bias \MC simulation.}
+  \label{fig:rateEffJet}
+\end{figure}
+
+The proposed upgrade jet algorithm performs well with respect to the
+previous GCT algorithm. With the introduction of PUS, the more
+challenging conditions at 13TeV in Run 2 can start to be tamed. The
+rate of reconstructed jets can be reduced without sacrificing too much
+efficiency. Global subtraction and donut subtraction both help to
+remove the dependence of the energy of signal jets on PU. Due to
+fluctuations in the donut subtraction, the efficiency takes a hit, but
+it is better at reproducing the $H_T$ distribution than global $\rho$.
+This is just the beginning of the investigation of PUS for L1 jets,
+further investigation is required to optimise the parameters used and
+compare to other PUS schemes.
+
+% \section{Emulator validation}
+% \label{sec:l1jec}
+%
+% put something here?? - maybe 
+
+% put something about the cross trigger?
+
+
+%%% EXTRA PERFORMANCE STUFF FROM 9 MNTH THAT ISNT RELEVANT:
+
+% The other purpose of PUS is to correct the energy of L1 jets
+% contaminated with PU. The resolution of the jets as compared to Gen is
+% defined as $\frac{p_T^{L1}-p_T^{Gen}}{p_T^{Gen}}$, being zero for
+% perfect agreement. The PUS should act to remove the dependence of the
+% resolution on the number of interactions in an event. In
+% Figure~\ref{fig:resolution} it can be seen that the donut and global
+% $\rho$ subtraction do flatten out the resolution for a representative
+% bin of $p_T$ and $\eta$, whereas the seed on its own does not. 
 % \begin{figure}
 % 	\begin{center}
 % 		\includegraphics[width=0.6\linewidth]{performance/pt_20to40_eta_-28to-14}
@@ -675,31 +806,21 @@ Fig.~\ref{fig:matchingeff} shows the efficiency of Gen jets being reproduced at 
 % 	\label{fig:resolution}
 % \end{figure}
 %correcting hard jets- response
-\\\\
-\noindent As a final performance test, the $H_T$ and $\cancel{H}_T$ as defined in Section~\ref{sec:alphaT} are plotted. If the PUS is too aggressive the $H_T$ will be too low when compared to Gen, or too high if it under subtracts. Figure~\ref{fig:htmht} shows that jets with a seed threshold most closely reproduce the $H_T$. Overall the PUS methods are under subtracting, however. The PUS does not improve the $\cancel{H}_T$ distribution, this is expected in the case that PU is distributed evenly.
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics[width=0.5\linewidth]{performance/ht_ttbar}\put(-42,203){(a)}
-% 		\includegraphics[width=0.5\linewidth]{performance/mht_ttbar}\put(-42,203){(b)}
-% 	\end{center}
-% 	\caption{(a) The distribution of the total energy of jets in each event ($H_T$). (b) The distribution of the missing momentum of jets in an event ($\cancel{H}_T$).}
-% 	\label{fig:htmht}
-% \end{figure}
-%not killing important jets- ht mht
-\\\\
-\noindent The proposed Stage 2 jet algorithm performs well with respect to the previous GCT algorithm. With the introduction of PUS, the more challenging conditions at 13TeV in Run 2 can start to be tamed. The rate of reconstructed jets can be reduced without sacrificing too much efficiency. Global subtraction and donut subtraction both help to remove the dependence of the energy of signal jets on PU. Due to fluctuations in the donut subtraction, the efficiency takes a hit, but it is better at reproducing the $H_T$ distribution than global $\rho$. This is just the beginning of the investigation of PUS for L1 jets, further investigation is required to optimise the parameters used and compare to other PUS schemes.
 
-% \begin{figure}
-%   \includegraphics[width=\largefigwidth]{figs/LHC_default}
-%   \caption[]%
-%   {A representation of the CERN accelerator complex that
-%   accelerates hadrons to high energies within the \LHC
-%   \cite{stfc:lhc}}%
-%   \label{fig:lhc}
-% \end{figure}
-
-\section{Emulator validation}
-\label{sec:l1jec}
-
-%put something here??
-
+% As a final performance test, the $H_T$ and $\cancel{H}_T$ as defined
+% in Section~\ref{sec:alphaT} are plotted. If the PUS is too aggressive
+% the $H_T$ will be too low when compared to Gen, or too high if it
+% under subtracts. Figure~\ref{fig:htmht} shows that jets with a seed
+% threshold most closely reproduce the $H_T$. Overall the PUS methods
+% are under subtracting, however. The PUS does not improve the
+% $\cancel{H}_T$ distribution, this is expected in the case that PU is
+% distributed evenly.
+% % \begin{figure}
+% % 	\begin{center}
+% % 		\includegraphics[width=0.5\linewidth]{performance/ht_ttbar}\put(-42,203){(a)}
+% % 		\includegraphics[width=0.5\linewidth]{performance/mht_ttbar}\put(-42,203){(b)}
+% % 	\end{center}
+% % 	\caption{(a) The distribution of the total energy of jets in each event ($H_T$). (b) The distribution of the missing momentum of jets in an event ($\cancel{H}_T$).}
+% % 	\label{fig:htmht}
+% % \end{figure}
+% %not killing important jets- ht mht
