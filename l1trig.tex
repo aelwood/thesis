@@ -640,12 +640,12 @@ The performance of the jet algorithm with the various methods of \PUS
 described in Sec.~\ref{sec:pus} is tested on 13~TeV \MC simulation with an
 average \PU of 40. A comparison is made to the jets produced by the
 \GCT as it was in 2012. In some cases the performance of the interim
-calorimeter that was run in the early stage of 2015 during the
+calorimeter trigger that was run in the early stage of 2015 during the
 commissioning of the upgraded trigger is plotted with label
 \emph{UCT}. To investigate rates a minimum bias sample was used, this
 sample only consists of overlaid \PU events and has no generator jets.
 To test physics performance a sample of simulated $t\bar{t}$
-production was used, which contains generator jets that originate from
+events was used, which contains generator jets that originate from
 the hard interaction. The Level-1 jets jets are calibrated for each
 type of \PUS with the method as outlined in Section~\ref{sec:l1jec}.
 
@@ -653,6 +653,7 @@ Fig.~\ref{fig:matchingeff} shows the efficiency of generator jets,
 produced as described in Sec.~\ref{sec:l1jec}, being matched to a
 Level-1 jet as a function of their $p_T$. If a generator jet has a
 corresponding Level-1 jet within a radius $R=0.5$ it is counted as
+matched.
 This radius is chosen as the distance from the centre of a L1 jet to
 the corner of its $9\times9$ square. A representative selection of the
 different \PUS algorithms are shown. All of the upgrade Level-1 jet
@@ -680,19 +681,19 @@ minimum bias events that pass a Level-1 jet $p_T$ cut of $30$~\gev.
 This cut is applied to a different jet rank depending on the type of
 trigger to be tested. For \emph{single-jet} trigger the cut is applied to
 the lead jet, for a \emph{quad-jet} trigger the cut is applied to the
-fourth leading jet. The different forms of \PUS clearly lowers the
-dependence on the number of interactions and reduces the rate of jets
-passing the cut, it is performing as it should. The upgrade algorithm
+fourth leading jet. The different forms of \PUS clearly reduce the
+dependence of the rate on the number of interactions. The upgrade algorithm
 performs significantly better than the \GCT, where the jet trigger
 rates are incredibly sensitive to PU. Of the algorithms investigated,
 the seed of 2.5~\gev, denoted \emph{Seed 5}, has the most dramatic
-effect due to its ability to kill soft \PU jets. The global-\rho
+effect due to its ability to kill soft \PU jets. The \rho-area
 subtraction, denoted \emph{Global Sub}, also performs well. Applying
-donut subtraction without does not making much difference for this
+donut subtraction without a seed threshold does not making much difference for this
 particular \PUS benchmark. This is most likely due to the fact that
 donut subtraction works well in correcting the resolution of jets
 contaminated with soft particles from \PU vertices, rather than
-removing low \pT pure \PU jets.
+removing low \pT jets that originate from \PU.
+
 \begin{figure}
   \centering
   \subfloat[Single-jet trigger]{
@@ -715,15 +716,15 @@ Fig.~\ref{fig:leadJetTurnon}, is
 made by matching the generator jets to Level-1 jets, requiring $\Delta
 R<0.5$ and taking the ratio of the matched generator jet $p_T$
 distribution without a cut on the Level-1 jet with the matched
-generator jet distribution after a cut on the L1 jets. Most algorithms
-show a similar performance for a single jet trigger. The effects of
+generator jet distribution after a cut on the Level-1 jets. Most algorithms
+show a similar performance for a single-jet trigger. The effects of
 \PU are less relevant when just considering one high energy object.
 
 More difference is observed when all jets with $\pT>20~\gev$ are
 summed to find the Level-1 $\HT$ of the event. The plot in
 Fig.~\ref{fig:htTurnon} is made by taking the ratio of generator $\HT$
 (also made from 20~\gev jets), with and without a cut on the Level-1
-\HT. When considering a scalar sum of every jet the effects of pileup
+\HT. When considering a scalar sum of jets the effects of pileup
 add up and the different algorithms have a more significant
 separation. It is clear that performing \PUS helps to significantly
 improve the energy resolution of Level-1 $\HT$.
@@ -798,11 +799,11 @@ thresholds on the Level-1 $\HT$ is plotted against the minimum bias
 rate. When many jets are summed in this way the application of \PUS
 makes a significant difference. Applying a seed threshold on the
 selected jets performs well. Applying the chunky donut or
-global-$\rho$ \PUS methods on top of the seed obtains the best result.
+$\rho$-area \PUS methods on top of the seed obtains the best result.
+
 Figure~\ref{fig:mhtTurnon} shows a similar rate and efficiency curve
 for the \MHT variable. For reference on this plot the \MET rate and
-efficiency, labelled \emph{MET}, is also shown, at Level-1 \MET is
-constructed from a vector sum of all individual trigger towers. As a
+efficiency, labelled \emph{MET}, is also shown. As a
 vector sum of jets is not made in the interim trigger, the curve with
 the UCT label is a form of \MET constructed from RCT regions. As \MET
 uses the full granularity \TT information without any clustering it
@@ -810,7 +811,7 @@ has an improved resolution, but loses robustness as the inputs are not
 calibrated and are more susceptible to influence from detector noise.
 Of the rate and efficiency curves constructed from a vector sum of
 jets it is again observed that a seed threshold with chunky donut or
-global-\rho \PUS give the best performance.
+\rho-area \PUS give the best performance.
 
 \begin{figure}
   \centering
@@ -859,13 +860,13 @@ Overall, it can be inferred that the application of a seed threshold
 effectively removes jets that originate from \PU. It is then possible
 to successfully correct the energy of jets originating from the hard scatter with
 both local and global \PUS methods. The chunky donut algorithm
-performs most effectively for local \PUS. The global-$\rho$ form of
+performs most effectively for local \PUS. The $\rho$-area form of
 \PUS seems to perform slightly better, but comes with significant
-latency penalties when implementing in hardware. This is particularly
-true when global-$\rho$ \PUS is applied with a seed, as two jet
+latency penalties when implemented in hardware. This is particularly
+true when $\rho$-area \PUS is applied with a seed,as two jet
 collections must be made, those with a seed and those without for the
 $\rho$ calculation. With these hardware considerations, it is
-concluded that the \TT jets with a 2.5~\gev seed threshold and
+concluded that the $9\times9$ \TT jets with a 2.5~\gev seed threshold and
 chunky donut \PUS is the most promising candidate for an upgrade
 algorithm. This algorithm has been implemented into the upgrade
 hardware and commissioned throughout the data collection during 2015.
