@@ -8,7 +8,7 @@ an overall analysis of the underlying physical process can be carried
 out. To aid in classifying the types of collision events, \MC
 simulations are also carried out. The reconstruction algorithms and
 simulations that are relevant to the search for supersymmetry
-presented in this thesis are described in this Chapter.
+presented in this thesis are described in this chapter.
 
 \section{Tracks and vertices}
 \label{sec:tracks_reco}
@@ -29,7 +29,7 @@ criteria are applied on the selected hits that retain only promising
 seeds.} 
 \item{Each seed is extrapolated along the expected trajectory using a
 Kalman filter \cite{Fruhwirth:1987fm} with a helical tracking
-hypothesis.  This allows the seeds to be associated with hits in an
+hypothesis. This allows the seeds to be associated with hits in an
 outer tracker layer while taking account of uncertainties in the
 measurement.} 
 \item{The extrapolation is carried out recursively into the subsequent
@@ -71,7 +71,7 @@ clustering algorithm \cite{726788:DA}. This finds the most probable
 vertex positions and assigns each track to a vertex. The final
 $x$,$y$,$z$ position of these vertices is then found using the
 adaptive vertex fitter \cite{Waltenberger:2008zz}. This assigns the
-most probably position of the vertex for the given set of input
+most probable position of the vertex for the given set of input
 tracks. Quality criteria are then applied to reject fake vertices,
 they are chosen in such a way as to remain efficient for real vertices
 that typically have a large number of tracks compatible with them.
@@ -121,7 +121,7 @@ variables, such as for jet reconstruction described in
 Sec.~\ref{sec:jets_reco}.
 %Do i need to describe how clusters are made more?
 
-The algorithm starts by taking the tracks, that are reconstructed as
+The algorithm starts by taking the tracks, which are reconstructed as
 in Sec.~\ref{sec:tracks_reco}, along with clusters of energy
 in the calorimeters, which are reconstructed separately in the \ECAL and
 \HCAL. Clusters are paired with tracks if the track trajectory is
@@ -129,7 +129,7 @@ compatible with the cluster position. These pairs are then used to
 identify charged particles. Electrons and hadrons are typically
 differentiated based on the proportion of energy they deposit in the
 \ECAL or \HCAL. Electrons will deposit nearly all their energy in the
-\ECAL where hadrons will deposit much more in the \HCAL. A similar
+\ECAL whereas hadrons will deposit much more in the \HCAL. A similar
 pairing between tracks and hits in the muon system is used to identify
 muons. 
 
@@ -149,7 +149,7 @@ As electrons interact with the tracker, they lose on average $33\%$ of
 their energy before reaching the \ECAL \cite{1748-0221-10-06-P06005}.
 Most of this energy loss occurs through bremsstrahlung, which has a
 non-Gaussian loss distribution. As the Kalman filter that is used in
-track reconstruction assumes Gaussian energy losses another specialist
+track reconstruction assumes Gaussian energy losses, another specialist
 track reconstruction for electrons is employed, known as the Gaussian
 Sum Filter algorithm \cite{Adam:815410}. To maintain a good energy
 resolution, the photons that are produced during bremsstrahlung must
@@ -170,12 +170,12 @@ grouped to form the supercluster. In the endcaps the \emph{multi $5\times
 5$} algorithm is used instead, which aggregates $5\times 5$ arrays of
 crystals within $\Delta\eta<0.07$ and $\Delta\phi<0.3$ of the seed.
 
-Electrons are identified, through a supercluster matched to a track or
-photons are identified, through an unmatched supercluster.  After
+Electrons are identified through a supercluster matched to a track, or
+photons are identified through an unmatched supercluster. After
 this, additional selection criteria are applied to suppress
 backgrounds. The major backgrounds come from misreconstructed hadronic
 jets or semi-leptonic decays of heavy quarks. To suppress them cuts
-are on the ratio of energy deposits in the \HCAL to the \ECAL, the
+are made on the ratio of energy deposits in the \HCAL and the \ECAL, the
 difference in direction between the track and supercluster (in the
 case of electrons) and the width of the cluster, which is larger for
 hadrons.
@@ -207,7 +207,7 @@ extrapolates them into the muon system, again with a Kalman filter. If
 any of these tracks can be matched to at least one muon chamber hit it
 is considered to be a muon. For muons with $\pT<200~\gev$ the tracker
 provides the highest resolution energy measurement, while the muon
-system starts to perform better for the straighter, higher \pT,
+system provides a better resolution for the straighter, higher \pT,
 tracks.
 
 To reduce the background from hadrons that have punched through the
@@ -242,7 +242,7 @@ decay via hadrons to the \LSP, as described in
 Chapter~\ref{chap:theory}. Due to the nature of the strong force,
 high $\pT$ quarks and gluons undergo immediate hadronisation. The
 result of this is a collimated shower of, predominantly hadronic,
-particles. To therefore reconstruct the quarks and gluons produced in
+particles. To reconstruct the quarks and gluons produced in
 an event these collimated showers of particles are clustered and
 reconstructed as \emph{jets} \cite{Salam2010}.
 
@@ -256,7 +256,7 @@ Similarly, a gluon can split into two, almost collinear, gluons that share its e
 The final result of the clustering algorithm cannot not depend
 on either of these things happening. It must be both
 \emph{infrared safe} and \emph{collinear safe}. The jet algorithms used in \CMS are
-typically some form of the \emph{sequential recombination algorithm} that
+typically some form of a \emph{sequential recombination algorithm} that
 fulfills the above criteria. After defining a \emph{distance}
 between all pairs of particles in the event, $d_{ij}$, and a distance
 from each particle to the beamline, $d_{iB}$, the algorithm undertakes
@@ -294,10 +294,10 @@ anti-$k_T$ algorithm is used with $R=0.4$. The \PF candidates
 add information from the tracker when
 calculating the momentum contribution to each jet from charged
 particles. As jets typically consist of 65\% charged hadrons, 25\%
-photons and 10\% neutrals, this makes a significant improvement on
+photons and 10\% neutrals, this gives a significant improvement over
 clustering the calorimeter deposits on their own. 
 
-To reject fake jets from background sources or detector noise
+To reject fake jets from background sources or detector noise,
 additional selection is applied to jet candidates. The \emph{loose} set of
 criteria for jets provides an 84\% suppression of fake jets while
 maintaining a $>99\%$ efficiency for real jets. It requires at least
@@ -376,7 +376,7 @@ spatial resolution $\sim 30~\mu$m for $\sim 5~\gev$ tracks, which
 means the displaced vertex created by the $\sim 5~\gev$ mass $b$-quarks
 can be resolved. This is exploited by the \ac{CSVv2} algorithm used
 for $b$-tagging in Run~2 \cite{CMS-PAS-BTV-15-001}. This algorithm
-uses a neural net with detector inputs including vertices identified
+uses a neural net with detector inputs, including vertices identified
 by the tracker that are displaced from the primary vertex and
 associated to the jet and information about the tracks originating
 from this vertex.
@@ -384,7 +384,7 @@ from this vertex.
 As with the other physics object definitions in this chapter,
 different selection criteria can be chosen to trade-off the mistag
 rate and efficiencies for $b$-tagging. For each working point a
-different discrte cut on
+different discrete cut on
 the \ac{CSVv2} discriminator is chosen, its distribution is shown in
 Fig.~\ref{fig:bTag}. A \emph{medium} working point cut of 0.8 corresponds to
 a tagging efficiency of $\sim 69\%$ and a mistag rate of $\sim 1\%$
@@ -403,17 +403,17 @@ rate by making a cut on the discriminator \cite{CMS-PAS-BTV-15-001}.}
 \section{Isolation and jet cross-cleaning}
 
 It is often important to differentiate \emph{prompt} leptons produced
-directlyin the primary vertex from those that are the result of decays
+directly in the primary vertex from those that are the result of decays
 of other particles, such as those in hadronic jets. To do this an
 \emph{isolation} variable, $I^{\textrm{rel}}$, is defined for each
-lepton. To construct it  the \pT of the \PF candidates within a cone
+lepton. To construct it the \pT of the \PF candidates within a cone
 around the lepton are summed and the estimated neutral-charged
 contribution of \PU within that cone is subtracted. This is then
 divided by the \pT of the lepton in question, $\pT^l$. In the case
 that the lepton is part of a jet $I^{\textrm{rel}}$ will have a large
 value, this will not typically be the case if it is prompt.
 
-In the work presented in this thesis two variants of cone size are
+In the work presented in this thesis, two variants of cone size are
 used. In the standard case, denoted $I^{\textrm{rel}}$, a cone size
 of $\Delta R=0.3$ is used. To maintain acceptance to leptons produced
 in the decays of boosted objects, such as top-quarks, a
@@ -455,7 +455,7 @@ This is reconstructed taking the \PF candidates up to $|\eta|<5$ as
 input \cite{1748-0221-10-02-P02006}. 
 
 A correction is applied to \met based on the jet energy correction
-described in Sec.~\ref{sec:reco_jec}. This is known as the \emph{type-I}
+described in Sec.~\ref{sec:reco_jec}. This is known as the \emph{Type-I}
 correction and applies the jet energy correction to the \PF candidates that are
 clustered into jets. This method takes jets with $\pT>15~\gev$ and
 helps to signficantly improve the \met resolution.
@@ -489,7 +489,7 @@ stages that split up the theoretical simulation and detector modelling
 In the first stage, the hard scattering of the colliding constituents,
 \emph{partons} of the incoming protons through electroweak or QCD
 interactions is modelled. The fraction of the proton momentum carried
-by each parton is sampled from a \ac{PDF}.  This modelling involves a
+by each parton is sampled from a \ac{PDF}. This modelling involves a
 calculation with perturbation theory to a fixed order, typically \LO
 or \NLO, with a dedicated \MC generator such as \textsc{MadGraph}
 \cite{Alwall:2011uj} or \textsc{Pythia} \cite{Sjostrand:2007gs}.
@@ -497,7 +497,7 @@ or \NLO, with a dedicated \MC generator such as \textsc{MadGraph}
 In the next stage an iterative process of \emph{parton showering} is
 carried out. Simulated QCD radiation from the hard scatter decay
 products is carried out until the particles in the shower reach the
-QCD cut-off scale $\Lambda_{\textrm{QCD}}\sim 1~\gev$, where
+QCD cut-off scale, $\Lambda_{\textrm{QCD}}\sim 1~\gev$, where
 perturbation theory breaks down. After the parton showering the
 remaining particles undergo hadronisation where colourless hadrons are
 formed and allowed to decay, resulting in \emph{generator-level}
