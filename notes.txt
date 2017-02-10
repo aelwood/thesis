@@ -3,10 +3,29 @@
     - Add references for dark matter and dark energy in Intro and in
       other places!
     - Sort out the references in general
+    - Add the emulator stuff before conclusion of trigger chapter
 
 STUFF TO REMEMBER I DID:
   - other optimisation (maybe remake? see my talks)
   - dPhi vs bDPhi plots (see ICHEP NOTE)
   - QCD method
   - MinChi studies? should i put this here?
+
+
+
+POTENTIAL VIVA QUESTIONS/REVISION:
+
+- Know the resolutions for the tracker, ECAL, HCAL and pT dependence
+  etc.
+    - for ECAL pT resolution is better than tracker at 15GeV
+    - for HCAL few 100s of GeV before this is true
+    - This is important to know WRT start of PFlow section
+
+- Revise: multiple scattering, bremsstrahlung, ionisation
+    - i.e. what is a MIP, how it all works
+
+- Decays of backgrounds
+    - what proportion of Z's decay to nus etc...
+
+- Composition of jets
 

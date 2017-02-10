@@ -1,7 +1,7 @@
 \chapter{Event reconstruction and simulation}
 \label{chap:reconstruction}
 
-After the result of proton collisions have been observed in the
+After the results of proton collisions have been observed in the
 various subdetectors that comprise \CMS, the physical objects produced
 in each collision event are reconstructed. Through this reconstruction
 an overall analysis of the underlying physical process can be carried
@@ -33,12 +33,11 @@ hypothesis. This allows the seeds to be associated with hits in an
 outer tracker layer while taking account of uncertainties in the
 measurement.} 
 \item{The extrapolation is carried out recursively into the subsequent
-tracker layers until the outer-most layer, or another
-stopping condition, is reached.} 
-\item{Of the tracking candidates that are found, additional quality
+tracker layers until the outer-most layer is reached.} 
+\item{Once the tracking candidates are found, additional quality
 criteria are required to reject fake tracks.}
-\item{This series of steps is repeated up to six times with the hits
-associated to identified tracks removed after each iteration. }
+\item{This series of steps is repeated up to six times and the hits
+associated with identified tracks are removed after each iteration. }
 \end{itemize}
 
 Track reconstruction efficiencies for a variety of charged particles
@@ -83,11 +82,11 @@ unstable particles that decay within the detector, such as
 $b$-hadrons. These can be found in subsequent levels of
 reconstruction.
 
-The efficiency of finding the primary vertex as a function of the
+The efficiency for finding the primary vertex as a function of the
 number of tracks in a cluster can be seen in
 Fig.~\ref{fig:vertex_reco}. The efficiency increases to close to
 $>99\%$ for events with $\ge 3$ tracks. The vertex resolution reaches
-$\sim10~\mu$m in $x,y$ and $\sim10~\mu$m in $z$ with $>40$
+$\sim10~\mu$m in $x,y$ and $\sim15~\mu$m in $z$ with $>40$
 reconstructed tracks.
 
 \begin{figure}
@@ -142,7 +141,7 @@ significant deposits in the \HCAL with no associated track.
 \section{Electrons and photons}
 \label{sec:electrons_reco}
 
-Both electrons and photons interact with the \ECAL in a similar way.
+Electrons and photons interact with the \ECAL in a similar way.
 The reconstruction techniques used for both are therefore very similar, with
 the main difference being the lack of track in photon reconstruction.
 As electrons interact with the tracker, they lose on average $33\%$ of
@@ -153,7 +152,7 @@ track reconstruction assumes Gaussian energy losses, another specialist
 track reconstruction for electrons is employed, known as the Gaussian
 Sum Filter algorithm \cite{Adam:815410}. To maintain a good energy
 resolution, the photons that are produced during bremsstrahlung must
-also be properly associated to the electron when clustering in the
+also be properly associated with the electron when clustering in the
 calorimeter. As the electrons bend in the magnetic field but the
 photons they emit do not, the calorimeter clusters are allowed to
 extend along the azimuthal direction. These rectangular \ECAL windows
@@ -174,7 +173,8 @@ Electrons are identified through a supercluster matched to a track, or
 photons are identified through an unmatched supercluster. After
 this, additional selection criteria are applied to suppress
 backgrounds. The major backgrounds come from misreconstructed hadronic
-jets or semi-leptonic decays of heavy quarks. To suppress them cuts
+jets or semi-leptonic decays of heavy quarks. To suppress these
+backgrounds cuts
 are made on the ratio of energy deposits in the \HCAL and the \ECAL, the
 difference in direction between the track and supercluster (in the
 case of electrons) and the width of the cluster, which is larger for
@@ -184,10 +184,10 @@ hadrons.
 \label{sec:muons_reco}
 
 Unlike electrons and photons, muons are minimally ionising so do not
-deposit much of their energy in the tracker or calorimeters
+lose much of their energy to the tracker or calorimeters
 \cite{Chatrchyan:2008aa}. Muon reconstruction therefore
 uses a combination of tracks and hits in the muon system. To maintain
-efficiencies across a wide range of muon energies, two algorithms are
+high efficiencies across a wide range of muon energies, two algorithms are
 utilised \cite{1748-0221-7-10-P10002}. The \emph{global} muon algorithm
 functions in the same way as the \PF algorithm, mentioned in
 Sec.~\ref{sec:pflow_reco}. To maintain efficiency for low energy muons
@@ -218,7 +218,7 @@ muon candidates. These include a quality requirement on the fit of the
 tracks, a minimum number of hits in the muon systems and a track
 compatible with originating from the beamspot. A different set of
 criteria can be applied to trade off the efficiency and fake rate of
-the muons. After an application of a \emph{tight} set of criteria, the
+the muons. After the application of a \emph{tight} set of criteria, the
 efficiency of muons with $\pT>10~\gev$ is measured to be $>96\%$,
 shown in Fig.~\ref{fig:muonEff}.
 
@@ -283,7 +283,8 @@ algorithms has $k=-1$ and is known as the \emph{anti-$k_T$} algorithm
 cluster circular jets built around the hardest particles in a
 particular event. An area of $R=0.4$ is often
 chosen as it contains the hadronic showers of most quarks and gluons
-while remaining insensitive to contamination from \PU.
+produced in $13-14~\tev$ proton collisions, while remaining
+insensitive to contamination from \PU.
 
 \subsection{Jet identification}
 
@@ -294,7 +295,7 @@ anti-$k_T$ algorithm is used with $R=0.4$. The \PF candidates
 add information from the tracker when
 calculating the momentum contribution to each jet from charged
 particles. As jets typically consist of 65\% charged hadrons, 25\%
-photons and 10\% neutrals, this gives a significant improvement over
+photons and 10\% neutral hadrons, this gives a significant improvement over
 clustering the calorimeter deposits on their own. 
 
 To reject fake jets from background sources or detector noise,
@@ -426,15 +427,15 @@ The contribution from \PU is typically estimated in two different
 ways. For \emph{effective-area} correction the average \PU energy
 density of neutral particles, $\rho^{\textrm{neutral}}$, is multiplied
 by the area of the isolation cone, similar to the \PU correction
-carried out in jets as described in Sec.~\ref{sec:reco_jec}. For
-\emph{$\Delta\beta$} correction the energy of neutral particles is
+carried out in jets as described in Sec.~\ref{sec:reco_jec}. For the
+\emph{$\Delta\beta$} correction, the energy of neutral particles is
 estimated as half the energy from charged particles that originate
 from \PU vertices in the cone. This ratio of charged to neutral
 particles is determined from simulation. % reference??
 
 To avoid isolated leptons being classified as jets, a
-\emph{cross-cleaning} is performed on the result of the jet clustering.
-In this case all jets that are within $\Delta R=0.4$ of an isolated
+\emph{cross-cleaning} can be performed on the result of the jet clustering.
+In this case, all jets that are within $\Delta R=0.4$ of an isolated
 lepton are removed from the event.
 
 \section{Missing transverse energy (\met) and energy sums}
@@ -519,7 +520,7 @@ performed.
 Finally, the \PU must be simulated in \MC. A large sample of minimum
 bias, typically soft, QCD events are simulated. Individual events from
 this sample are taken and overlaid on the simulated event of interest
-to imitate the effects of \PU. The effects of \ac{OOTPU} are also
+to imitate the effects of \PU. The effects of \acf{OOTPU} are also
 taken into account by simulating other minimum bias \MC events within
 a $12$ bunch crossing window.
 
