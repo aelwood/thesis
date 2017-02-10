@@ -5,6 +5,8 @@
     - Sort out the references in general
     - Add the emulator stuff before conclusion of trigger chapter
 
+    -consider the btag track statement? think it's fair...
+
 STUFF TO REMEMBER I DID:
   - other optimisation (maybe remake? see my talks)
   - dPhi vs bDPhi plots (see ICHEP NOTE)
