@@ -5,12 +5,13 @@
 \label{sec:trigUpgrade}
 
 With the advent of Run~2 of the \LHC, the demands placed on the \CMS
-trigger greatly increased. After a long period of shutdown the energy
+trigger greatly increased. After a long period of shutdown (known as
+\ac{LS1}) the energy
 of proton collisions was increased to $13~\tev$ and the bunch crossing
 rate decreased to 25~ns. With this configuration the design luminosity
 of $10^{34}$cm$^{-2}$s$^{-1}$ can be reached with an average \PU of
 around 25 events per bunch crossing. However, the potential luminosity
-of the \LHC after the pre-Run~2 upgrade exceeds the original design
+of the \LHC after the \ac{LS1} upgrade exceeds the original design
 value, allowing a \PU of up to 40 simultaneous collisions. The
 original Level-1 trigger was not designed to deal with this amount of
 \PU. The presence of extra collisions in each event results in a
@@ -39,20 +40,28 @@ they can run quickly enough on the \FPGA boards. An upgrade to the
 trigger hardware therefore allows more sophisticated algorithms to be
 carried out, while still being able to process every bunch crossing.
 
-The amount of calorimeter information that can be processed by a single
-\FPGA is also limited by its input and output capacity. To pass the full
-calorimeter data from a single bunch crossing through an \FPGA in the Level-1 trigger
-it takes the equivalent of $\sim10$ bunch crossings of time. In Run~1
-of the \LHC, the calculations for triggering on the calorimeters were
-performed with the \GCT. The \GCT dealt with this delay by
+The amount of calorimeter information that can be processed by a
+single \FPGA is also limited by its input and output capacity. To pass
+the full calorimeter data from a single bunch crossing through an
+\FPGA in the Level-1 trigger it takes the equivalent of $\sim10$ bunch
+crossings of time. In Run~1 of the \LHC, the calculations for
+triggering on the calorimeters were performed with the \GCT
+\cite{Khachatryan:2016bia}. The \GCT dealt with this delay by
 processing different sections of the calorimeter in separate boards,
 necessitating duplication of information at the detector section
 boundaries. However, by time multiplexing the calorimeter data, it is
 possible to have individual \FPGA boards that each process one bunch
-crossing with minimal information duplication. As well as increasing the
-possible information bandwidth, this allows greater flexibility
-in the algorithms used as each \FPGA has access to all the information available
-in each event \cite{1748-0221-9-10-C10034,1748-0221-7-01-C01060}. 
+crossing with minimal information duplication. To achieve this 10
+\FPGA boards are utilised in a round-robin configuration. The data
+collected from the first bunch crossing is processed by one board, the
+data from the second bunch crossing by another board and so on. Each
+bunch crossing is processed by another board until the first board has
+finished and can subsequently process the next available bunch
+crossing. This would not be possible without the timing information
+provided by time multiplexing the data. As well as increasing the
+total possible information bandwidth, this allows greater flexibility
+in the algorithms used as each \FPGA has access to the full event
+information \cite{1748-0221-9-10-C10034,1748-0221-7-01-C01060}. 
 
 \begin{figure}
   \centering
@@ -71,40 +80,43 @@ in each event \cite{1748-0221-9-10-C10034,1748-0221-7-01-C01060}.
 
 The upgrade to the Level-1 trigger exploits the recent technological
 improvement in the performance of \FPGA processors and high-speed
-optical links \cite{tp}. The upgrade architecture is that of a \TMT, a 
+optical links \cite{tp}. The upgrade architecture is that of a \TMT, a
 representation of the difference between this architecture and that of
-the \ac{GCT} can be seen in Fig.~\ref{fig:tmt}.
+the \ac{GCT} can be seen in Fig.~\ref{fig:tmt}. 
 
 The inputs to the Calorimeter Trigger from the various \ECAL and \HCAL
 components are split into a $56\times 72$ grid of \TTs in $\eta$ and
-$\phi$, with each tower covering the area of $5\times5$ \ECAL crystals.
-As the processing power of the \ac{GCT} was limited, for trigger
-calculations the \TTs were grouped into $4\times4$ blocks, known as
-\emph{RCT regions}. These different regions are visually represented
-in Fig.~\ref{fig:trigger_calorimeter}. Due to the advantages brought
-by the upgrade, the new algorithms will have access to the full
-granularity information of all the \TTs. A representation of the
-upgrade to the position resolution afforded by this change is in
-Fig.~\ref{fig:sunnyJim}.
+$\phi$ within the barrel and endcap region ($|\eta|<3$), with each
+tower covering the area of $5\times5$ \ECAL crystals.  As the
+processing power of the \ac{GCT} was limited, for trigger calculations
+the \TTs were grouped into $4\times4$ blocks, known as \emph{\ac{RCT}
+regions} \cite{Khachatryan:2016bia}. These different regions are
+visually represented in Fig.~\ref{fig:trigger_calorimeter}. Due to the
+advantages brought by the upgrade, the new algorithms have access
+to the full granularity information of all the \TTs. A representation
+of the upgrade to the spatial resolution afforded by this change is
+in Fig.~\ref{fig:sunnyJim}.
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=0.7\linewidth]{figs/trigger/trigger_calorimeter}
+		\includegraphics[width=0.5\linewidth]{figs/trigger/trigger_calorimeter}
 	\end{center}
-	\caption{The breakdown of the different calorimeter regions, the RCT
-  and trigger towers are both }
+	\caption{The breakdown of the different calorimeter regions, the
+  \ac{RCT} regions
+  and trigger towers are both shown within the context of the \ECAL
+  calorimeter crystals.}
 	\label{fig:trigger_calorimeter}
 \end{figure}
 
 \begin{figure}
   \centering
   \subfloat[Run~1 calorimeter trigger resolution.]{
-    \includegraphics[width=0.5\textwidth]{figs/trigger/L1inputreslegacy}
-  }~ 
+    \includegraphics[width=0.35\textwidth]{figs/trigger/L1inputreslegacy}
+  }~~
   \subfloat[Run~2 upgrade calorimeter trigger resolution.]{
-    \includegraphics[width=0.5\textwidth]{figs/trigger/L1inputresupgrade}
+    \includegraphics[width=0.35\textwidth]{figs/trigger/L1inputresupgrade}
   } \\
-  \caption{A representation of the position resolution of the trigger
+  \caption{A representation of the spatial resolution of the trigger
   inputs to the calorimeter trigger for the Level-1 trigger before and
   after the upgrade.}
   \label{fig:sunnyJim}
@@ -125,22 +137,23 @@ is in the jet finding algorithm. As the Level-1 trigger must be of a
 fixed latency, it cannot make use of an iterative algorithm, such as
 those used during offline jet-finding (described in
 Sec.~\ref{sec:jets_reco}). In the algorithm used during Run~1, the jet
-candidates are created from a $3\times3$ RCT region sliding window.
-Candidates in which the central region has the maximum energy are kept
-as jets.  These jets cover an area of $\Delta\eta\times\Delta\phi =
-1.04 \times 1.04$, which matches reasonably well the area covered by
-circular jets with $R=0.5$, the maximum radius for Run~1 offline jets.
-To help mitigate the reconstruction of jets originating from \PU, the
-central region of the jet finder is also required to exceed a minimum
-energy, known as the \emph{seed threshold}. Due to latency and
-processing power constraints, there is no way in which contribution to
-the energy of the jet from \PU is subtracted dynamically. Along with
-the relatively large jet size, this means the performance of the
-algorithm will be severely reduced by the conditions present during
-Run~2. An upgrade will provide the extra processing power to carry out
-a dynamic \PUS, correcting the energy of each jet from the influence
-of \PU. The increased position resolution will also allow for a more
-accurate determination of the direction of the jets.
+candidates are created from a $3\times3$ \ac{RCT} region sliding
+window.  Candidates in which the central region has the maximum energy
+are kept as jets \cite{Chatrchyan:2008aa}. These jets cover an area of
+$\Delta\eta\times\Delta\phi = 1.04 \times 1.04$, which matches
+reasonably well the area covered by circular jets with $R=0.5$, the
+maximum radius for Run~1 offline jets.  To help mitigate the
+reconstruction of jets originating from \PU, the central region of the
+jet finder is also required to exceed a minimum energy, known as the
+\emph{seed threshold}. Due to latency and processing power
+constraints, there is no way in which contribution to the energy of
+the jet from \PU is subtracted dynamically. Along with the relatively
+large jet size, this means the performance of the algorithm will be
+severely reduced by the conditions present during Run~2. An upgrade
+will provide the extra processing power to carry out a dynamic \PUS,
+correcting the energy of each jet from the influence of \PU. The
+increased position resolution will also allow for a more accurate
+determination of the direction of the jets.
 
 Once a jet algorithm is chosen, the jets can be used to make Level-1
 trigger decisions. This typically involves selecting events that are
@@ -202,7 +215,7 @@ energy being lost.
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=0.4\linewidth]{figs/trigger/stage2_jetalgo}
+		\includegraphics[width=0.3\linewidth]{figs/trigger/stage2_jetalgo}
   \end{center} \caption{The consideration of a Trigger Tower candidate
   for the upgrade Level-1 Trigger jet algorithm. The candidate (green)
   is vetoed if the energy of the other towers meets the condition
@@ -261,7 +274,7 @@ or \TTs as input. They currently include:
 \label{sec:pus}
 
 \subsection{Characterising pileup}
-
+ 
 On average, the decays from \PU are expected to be isotropically
 distributed around the detector. However, there will be significant
 event-by-event differences due to poisson fluctuations in the number
@@ -303,6 +316,15 @@ in the Level-1 trigger are outlined in this section and their
 performance subject to this criteria is is examined in
 Sec.~\ref{sec:jet_algo_performance}. 
 
+As well as mitigating \PU from simultaneous collisions, the effects of
+\ac{OOTPU} must be removed. This predominantly achieved during the
+generation of the \TT inputs for the calorimeter trigger. When reading
+out the energy deposited in the \ECAL and \HCAL the average extra
+energy deemed to have come from a previous bunch crossing is
+subtracted and a correction factor is applied. This mitigation
+performs well enough to make the effects of \ac{OOTPU} subdominant
+with respect to in-time \PU.
+
 \subsection{Global pileup subtraction}
 
 A prominent method of \PUS is $\rho$-area correction
@@ -327,13 +349,14 @@ fluctuations in the energy of interesting physics events.
 % as the number of jets that are sampled is lowered for each $\rho$
 % calculation.
 
-The mean value of \rho, as a function of the number of interactions, is
-shown in Fig.~\ref{fig:rho}. This is taken from a minimum bias \MC
+The mean value of \rho, as a function of the number of interactions,
+is shown in Fig.~\ref{fig:rho}. This is taken from a minimum bias \MC
 simulation in which there is no visible hard interaction but only
 overlaid \PU collisions. There is a good correlation between the
-number of simultaneous collisions and \rho that passes through the
-origin, indicating that it is indeed a reasonable measure of the \PU
-in the event. 
+number of simultaneous collisions and \rho, indicating that it is
+indeed a reasonable measure of the \PU in the event. The correlation
+also passes through the origin, indicating that \ac{OOTPU} is not a
+problem with a 50~ns bunch spacing.
 
 \begin{figure}
 	\begin{center}
@@ -689,17 +712,17 @@ the seed of 2.5~\gev, denoted \emph{Seed 5}, has the most dramatic
 effect due to its ability to kill soft \PU jets. The \rho-area
 subtraction, denoted \emph{Global Sub}, also performs well. Applying
 donut subtraction without a seed threshold does not making much difference for this
-particular \PUS benchmark. This is most likely due to the fact that
+particular \PUS benchmark. This is likely due to the fact that
 donut subtraction works well in correcting the resolution of jets
 contaminated with soft particles from \PU vertices, rather than
 removing low \pT jets that originate from \PU.
 
 \begin{figure}
   \centering
-  \subfloat[Single-jet trigger]{
+  \subfloat[Single-jet trigger $\pT>30~\gev$]{
     \includegraphics[width=0.5\textwidth]{figs/trigger/performance/rateNVertLeadJet}
   }~ 
-  \subfloat[Quad-jet trigger]{
+  \subfloat[Quad-jet trigger $\pT>30~\gev$]{
     \includegraphics[width=0.5\textwidth]{figs/trigger/performance/rateNVertFourthJet}
   }
   \caption{The relative rate of events with $p_T>30$~GeV leading (a)
@@ -805,7 +828,7 @@ Figure~\ref{fig:mhtTurnon} shows a similar rate and efficiency curve
 for the \MHT variable. For reference on this plot the \MET rate and
 efficiency, labelled \emph{MET}, is also shown. As a
 vector sum of jets is not made in the interim trigger, the curve with
-the UCT label is a form of \MET constructed from RCT regions. As \MET
+the UCT label is a form of \MET constructed from \ac{RCT} regions. As \MET
 uses the full granularity \TT information without any clustering it
 has an improved resolution, but loses robustness as the inputs are not
 calibrated and are more susceptible to influence from detector noise.
@@ -847,7 +870,34 @@ jets it is again observed that a seed threshold with chunky donut or
   \label{fig:rateEffJet}
 \end{figure}
 
-\subsection{Conclusions}
+
+
+\section{Firmware emulation and testing}
+\label{sec:emu}
+
+To fully validate firmware emulate in software bla bla
+
+Useful for testing against simulation etc...
+
+Full level emulation etc....
+
+\begin{figure}
+  \centering
+  \subfloat[]{
+    \includegraphics[width=0.48\textwidth]{figs/trigger/jetEtaEmulator}
+    \label{fig:leadJetTurnon}
+  }~ 
+  \subfloat[]{
+    \includegraphics[width=0.52\textwidth]{figs/trigger/jetPhiEmulator}
+    \label{fig:fourthJetTurnon}
+  }
+  \caption{Demonstration of agreement between the trigger algorithm
+  implemented in firmware and emulated in software for simulation
+  studies}
+  \label{fig:firmwareEmu}
+\end{figure}
+
+\section{Conclusions}
 
 After investigating the performance of the upgrade trigger algorithms
 with simulation, it can be concluded that the upgrade algorithm
@@ -858,28 +908,24 @@ that \PU has the biggest effect on the energy of lower \pT jets from
 the primary vertex and is most likely to produce low $\pT$ jets.
 Overall, it can be inferred that the application of a seed threshold
 effectively removes jets that originate from \PU. It is then possible
-to successfully correct the energy of jets originating from the hard scatter with
-both local and global \PUS methods. The chunky donut algorithm
-performs most effectively for local \PUS. The $\rho$-area form of
-\PUS seems to perform slightly better, but comes with significant
-latency penalties when implemented in hardware. This is particularly
-true when $\rho$-area \PUS is applied with a seed,as two jet
-collections must be made, those with a seed and those without for the
-$\rho$ calculation. With these hardware considerations, it is
-concluded that the $9\times9$ \TT jets with a 2.5~\gev seed threshold and
-chunky donut \PUS is the most promising candidate for an upgrade
-algorithm. This algorithm has been implemented into the upgrade
-hardware and commissioned throughout the data collection during 2015.
-It has been used to make the Level-1 trigger decisions when collecting
-data during Run~2 from 2016 onwards.
+to successfully correct the energy of jets originating from the hard
+scatter with both local and global \PUS methods. The chunky donut
+algorithm performs most effectively for local \PUS. The $\rho$-area
+form of \PUS seems to perform slightly better, but comes with
+significant latency penalties when implemented in hardware. This is
+particularly true when $\rho$-area \PUS is applied with a seed,as two
+jet collections must be made, those with a seed and those without for
+the $\rho$ calculation. Local forms of \PUS are also more robust
+against localised detector faults, which can lead to issues with the
+trigger inputs. With these considerations, it is concluded that the
+$9\times9$ \TT jets with a 2.5~\gev seed threshold and chunky donut
+\PUS is the most promising candidate for an upgrade algorithm. 
 
-% \section{Emulator validation}
-% \label{sec:l1jec}
-%
-% put something here?? - maybe 
-
-% put something about the cross trigger?
-
+This algorithm has been fully implemented into the upgrade hardware
+and successfully tested against its expected behaviour, emulated in
+software. It was commissioned throughout the data collection during
+2015 and has been used to make the Level-1 trigger decisions when
+collecting data during Run~2 from 2016 onwards.
 
 %%% EXTRA PERFORMANCE STUFF FROM 9 MNTH THAT ISNT RELEVANT:
 
