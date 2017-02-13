@@ -687,7 +687,7 @@ signal jets.
 %Checked matching to gen, dr 32, inefficiencies caused by algorithm - gct bad
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=0.7\linewidth]{figs/trigger/performance/matchingeff_alljet}
+		\includegraphics[width=0.6\linewidth]{figs/trigger/performance/matchingeff_alljet}
 	\end{center}
 	\caption{The efficiency with which a generator jet has a
   corresponding L1 jet within a radius, $R=0.5$. This is carried out
@@ -754,11 +754,11 @@ improve the energy resolution of Level-1 $\HT$.
 \begin{figure}
   \centering
   \subfloat[Lead jet $p_T^{L1}>150~\gev$ efficiency]{
-    \includegraphics[width=0.9\textwidth]{figs/trigger/performance/leadJet_150_turnon}
+    \includegraphics[width=0.515\textwidth]{figs/trigger/performance/leadJet_150_turnon}
     \label{fig:leadJetTurnon}
-  }\\ 
+  }~
   \subfloat[$\HT^{L1}>200~\gev$ efficiency]{
-    \includegraphics[width=0.9\textwidth]{figs/trigger/performance/ht_200_turnon}
+    \includegraphics[width=0.485\textwidth]{figs/trigger/performance/ht_200_turnon}
     \label{fig:htTurnon}
   }
   \caption{ Efficiency after a specific cut for Level-1 leading jets (a) and Level-1 \HT
@@ -839,14 +839,14 @@ jets it is again observed that a seed threshold with chunky donut or
 \begin{figure}
   \centering
   \subfloat[Lead jet $p_T>150~\gev$]{
-    \includegraphics[width=0.9\textwidth]{figs/trigger/performance/singleJet_150}
+    \includegraphics[width=0.48\textwidth]{figs/trigger/performance/singleJet_150}
     \label{fig:leadJetTurnon}
-  }\\ 
+  }~ 
   \subfloat[Fourth leading jet $p_T>50~\gev$]{
-    \includegraphics[width=0.9\textwidth]{figs/trigger/performance/quadJet_50}
+    \includegraphics[width=0.52\textwidth]{figs/trigger/performance/quadJet_50}
     \label{fig:fourthJetTurnon}
   }
-  \caption{ The normalised rate (in Hz) against efficiency for a
+  \caption{ The normalised minimum bias rate (in Hz) against efficiency for a
   variety of thresholds of jet triggers
   made from jets with various \PUS schemes. Based on $t\bar{t}$ and
   minimum bias \MC simulation.}
@@ -856,48 +856,21 @@ jets it is again observed that a seed threshold with chunky donut or
 \begin{figure}
   \centering
   \subfloat[$\HT>200~\gev$]{
-    \includegraphics[width=0.9\textwidth]{figs/trigger/performance/ht_200}
+    \includegraphics[width=0.5\textwidth]{figs/trigger/performance/ht_200}
     \label{fig:htTurnon}
-  }\\
+  }~
   \subfloat[$\MHT>200~\gev$]{
-    \includegraphics[width=0.9\textwidth]{figs/trigger/performance/mht_200}
+    \includegraphics[width=0.5\textwidth]{figs/trigger/performance/mht_200}
     \label{fig:mhtTurnon}
   }
-  \caption{ The normalised rate (in Hz) against efficiency for a
+  \caption{ The normalised minimum bias rate (in Hz) against efficiency for a
   variety of thresholds of energy sum
   triggers made from jets with various \PUS schemes. Based on
   $t\bar{t}$ and minimum bias \MC simulation.}
   \label{fig:rateEffJet}
 \end{figure}
 
-
-
-\section{Firmware emulation and testing}
-\label{sec:emu}
-
-To fully validate firmware emulate in software bla bla
-
-Useful for testing against simulation etc...
-
-Full level emulation etc....
-
-\begin{figure}
-  \centering
-  \subfloat[]{
-    \includegraphics[width=0.48\textwidth]{figs/trigger/jetEtaEmulator}
-    \label{fig:leadJetTurnon}
-  }~ 
-  \subfloat[]{
-    \includegraphics[width=0.52\textwidth]{figs/trigger/jetPhiEmulator}
-    \label{fig:fourthJetTurnon}
-  }
-  \caption{Demonstration of agreement between the trigger algorithm
-  implemented in firmware and emulated in software for simulation
-  studies}
-  \label{fig:firmwareEmu}
-\end{figure}
-
-\section{Conclusions}
+\subsection{Conclusions}
 
 After investigating the performance of the upgrade trigger algorithms
 with simulation, it can be concluded that the upgrade algorithm
@@ -921,11 +894,53 @@ trigger inputs. With these considerations, it is concluded that the
 $9\times9$ \TT jets with a 2.5~\gev seed threshold and chunky donut
 \PUS is the most promising candidate for an upgrade algorithm. 
 
-This algorithm has been fully implemented into the upgrade hardware
-and successfully tested against its expected behaviour, emulated in
-software. It was commissioned throughout the data collection during
-2015 and has been used to make the Level-1 trigger decisions when
-collecting data during Run~2 from 2016 onwards.
+\section{Firmware emulation and testing}
+\label{sec:emu}
+
+After choosing a promising jet finder algorithm it must be implemented
+within the firmware of the \FPGA boards that will be used within the
+Level-1 trigger. To provide a reference for validation of the
+algorithm in firmware, a version is implemented in software, known as
+the \emph{emulator}. The software is written to behave in a way that
+is very close to the implementation in the \FPGA hardware. This
+emulator is then included in the collaboration wide \emph{\CMS
+software} and can be used to process data and simulation to produce an
+emulated Level-1 trigger output. This is particularly useful when
+testing the Level-1 trigger in simulation, for example when measuring
+trigger efficiencies for a particular physics analysis. 
+
+In the early stages of the firmware implementation, the jet finding
+was validated against the algorithm in the emulator. A collection of
+simulated events were processed by both the firmware within an \FPGA
+and the emulator. After checking several of the jets were correctly
+reconstructed by hand, the output of the firmware and emulator were
+compared. As is shown in Fig.~\ref{fig:firmwareEmu}, the emulator and
+firmware implementations both find jets in exactly the same positions
+in the detector. This kind of testing was extensively used to test the
+behaviour of the algorithm in the firmware, and to ensure the
+trigger decisions were properly emulated in simulation.
+
+\begin{figure}
+  \centering
+  \subfloat[]{
+    \includegraphics[width=0.48\textwidth]{figs/trigger/jetEtaEmulator}
+    \label{fig:leadJetTurnon}
+  }~ 
+  \subfloat[]{
+    \includegraphics[width=0.52\textwidth]{figs/trigger/jetPhiEmulator}
+    \label{fig:fourthJetTurnon}
+  }
+  \caption{Demonstration of agreement between the trigger algorithm
+  implemented in firmware and emulated in software for simulation
+  studies}
+  \label{fig:firmwareEmu}
+\end{figure}
+
+The chunky donut $9\times9$ \TT jet finder algorithm has been fully
+implemented into the upgrade hardware and successfully tested. It was
+commissioned throughout the data collection during 2015 and has been
+used to make the Level-1 trigger decisions when collecting data during
+Run~2 from 2016 onwards.
 
 %%% EXTRA PERFORMANCE STUFF FROM 9 MNTH THAT ISNT RELEVANT:
 
