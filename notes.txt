@@ -31,3 +31,8 @@ POTENTIAL VIVA QUESTIONS/REVISION:
 
 - Composition of jets
 
+- Be able to derive the gauge invariance stuff, like in Robyn and Mark's
+  theses
+
+- Properly explain the hierarchy problem (ie in SUSY primer)
+
