@@ -22,8 +22,17 @@ imply the presence of the force carrying bosons. How this leads to the
 particle phenomenology of the \SM will be briefly explored in this
 section.
 
+The \SM is typically considered within a lagrangian formalsim. In a
+quantum field theory all the the relevant fields and their
+interactions are described by a lagrangian density. The lagrangian
+density of the \SM can be divided into four parts, which will each be
+addressed within this section:
+\begin{equation}
+\mathcal{L}_{SM}=\mathcal{L}_{gauge}+\mathcal{L}_{fermion}+\mathcal{L}_{Higgs}+\mathcal{L}_{Yukawa}.
+\end{equation}
+
 Throughout this section the convention $c=\hbar = 1$ is used and the
-Einstein vector summation convention is assumed. Four vector indices
+Einstein four-vector summation convention is assumed. Four-vector indices
 are labelled as $\mu$ and $\nu$.
 
 \subsection{The fundamental particles}
@@ -36,19 +45,23 @@ The fermions consist of three generations of charged leptons and their
 corresponding weak force partner, the neutrinos. There are
 additionally three generations of up-quarks and down-quarks. For all
 of these twelve fermions there are corresponding antiparticles that
-have the same mass but opposite quantum numbers.
-
-As fermions are spin-$\frac{1}{2}$ particles they are described by the
-Dirac equation \cite{Griffiths:111880}:
+have the same mass but opposite quantum numbers. As fermions are
+spin-$\frac{1}{2}$ particles they are described by the Dirac equation
+\cite{Griffiths:111880}:
 \begin{equation}
-
+(i\gamma^{\mu}\partial_{\mu}-m)\psi=0,
 \end{equation}
+where $\gamma^{\mu}$ are the Dirac matrices, defined by their
+anti-commutation relation:
+\begin{equation}
+\{\gamma^{\mu},\gamma^{\nu}\}=\gamma^{\mu}\gamma^{\nu}+\gamma^{\nu}\gamma^{\mu}=2g^{\mu\nu},
+\end{equation}
+where $g^{\mu\nu}$ is the Minkowski metric. The covariant derivative is denoted
+by $\partial_{\mu}$ and $m$ is the mass of the particle in question.
 
 There are five types of bosons that arise from the \SM gauge
 symmetries: photons, gluons, $W^{\pm}$, $Z^0$ and the Higgs. Their
 properties will be discussed further in this section.
-
-\subsection{Gauge symmetries}
 
 \begin{table}[htbp!]
 \begin{tabular}{l|l c|c|c|c|c|c}
@@ -85,12 +98,83 @@ Force & photon & $\gamma$ & 0 &  & 0 & 0 & 0 \\
  & Higgs & $h^0$ & 125~GeV &  & 0 & 0 & $-\frac{1}{2}$ \\
 %\hline
 \end{tabular}
-\caption{All the fundamental Standard Model fermions and bosons and their charges
-\cite{PhysRevD.86.010001}}
+\caption{All the fundamental Standard Model fermions and bosons and
+their charges \cite{PhysRevD.86.010001}}
 \label{tab:smParticles}
 \end{table}
 
-The 
+\subsection{Gauge symmetries}
+
+The insensitivity to the structure of a theory to a specific
+transformation constitutes a symmetry. This concept is very powerful
+for gaining insights into fundamental physical theories. For example,
+the fact that physical laws do not change over time, time
+translational symmetry, leads to the conservation of energy.  In
+general, any symmetries have a corresponding conserved quantity, as
+laid out in Noether's theorem \cite{1971TTSP....1..186N}. This concept
+is used extensively when formulating the \SM and allows for the
+derivation of observed interactions through the imposition of a few,
+fairly straightforward, symmetries.
+
+The effect of applying a symmetry within the \SM is demonstrated when
+imposing local $U(1)$ invariance on the Dirac lagrangian for a
+fermion, with wave function $\psi$ and mass, $m$ \cite{Griffiths:111880}:
+\begin{equation}
+\mathcal{L}=i\bar{\psi}\cancel{\partial}\psi-m\bar{\psi}\psi.
+\end{equation}
+A global $U(1)$ transformation, $\psi\rightarrow \exp{i\theta}\psi$,
+leaves the lagrangian invariant. If this $U(1)$ transformation is
+local, i.e. the phase depends on spacetime position, $x$, then the
+lagrangian is no longer invariant. It now transforms as:
+\begin{equation}
+\label{eq:uninvariance}
+\mathcal{L}\rightarrow\mathcal{L}-q(\partial_{\mu}\theta(x))\bar{\psi}\gamma^{\mu}\psi.
+\end{equation}
+However, one can add a vector field, $A_{\mu}$, that interacts with
+the fermion field through the lagrangian term:
+\begin{equation}
+\mathcal{L}_{int}=q(\bar{\psi}\gamma^{\mu}\psi) A_{\mu},
+\end{equation}
+This vector field is chosen to transform as $A_{\mu}\rightarrow
+A_{\mu}+\partial_{\mu}\theta$ and is known as a \emph{gauge field} or
+\emph{gauge boson}. The interaction lagrangian term then transforms
+under a local gauge transformation as:
+\begin{equation}
+\mathcal{L}_{int}\rightarrow \mathcal{L}_{int}+q(\partial_{\mu}\theta)\bar{\psi}\gamma^{\mu}\psi,
+\end{equation}
+this cancels out the term that violated local gauge invariance in
+Equation~\ref{eq:uninvariance}. The existence of a new gauge field
+allows the addition of an additional gauge invariant term containing
+the field strength tensor of the vector field, $F_{\mu\nu}$, which can
+be written in general as:
+\begin{equation}
+F_{\mu\nu}^a=\partial_{\mu}A_{\nu}^a-\partial_{\nu}A_{\mu}^a+gf_{abc}A_{\mu}^{b}A_{\nu}^{c},
+\end{equation}
+for a general gauge group with the structure constants $f^{abc}$. For
+the $U(1)$ group there is only one self-commuting generator so the
+structure constant is 0. For non-Abelian gauge groups, such as
+$SU(3)$, the structure constants can be non-zero, which introduces
+self interaction terms within the lagrangian. In this case the gauge
+boson will carry a charge and can interact with itself.
+
+The final lagrangian for a Dirac fermion can then be written as:
+\begin{equation}
+  \label{eq:localdiraclagrangian}
+  \mathcal{L}=i\bar{\psi}\gamma^{\mu}\mathcal{D}_{\mu}\psi-m\bar{\psi}\psi-\frac{1}{4}F_{\mu\nu}F^{\mu\nu},
+\end{equation}
+where $\mathcal{D}_{\mu}=\partial_{\mu}+iqA_{\mu}$ and is known as the
+\emph{covariant derivative}. This lagrangian will be invariant under
+local $U(1)$ transformations. In this case, the addition of one extra
+gauge field maintains local invariance as $U(1)$ transformations have
+one degree of freedom, corresponding to a generator of the group.
+The local gauge invariance of symmetries with more degrees of freedom
+require the addition of one gauge boson per degree of freedom. 
+
+The general principle of obtaining local gauge invariance method
+through gauge bosons is applied with great success to the gauge group
+of the \SM. With the choice of an appropriate gauge group the bosons
+that describe the strong, weak and electromagnetic forces can all be
+obtained.
 
 \subsection{The strong force}
 
