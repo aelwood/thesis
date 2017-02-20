@@ -1,11 +1,13 @@
 12/1/2017:
   TODO:
-    - Add references for dark matter and dark energy in Intro and in
+    - \ Add references for dark matter and dark energy in Intro and in
       other places!
-    - Sort out the references in general
-    - Add the emulator stuff before conclusion of trigger chapter
+    - \ Sort out the references in general
+    - \ Add the emulator stuff before conclusion of trigger chapter
+    - \ consider the btag track statement? think it's fair...
 
-    -consider the btag track statement? think it's fair...
+    - Check the weak isospin stuff
+
 
 STUFF TO REMEMBER I DID:
   - other optimisation (maybe remake? see my talks)
@@ -38,4 +40,7 @@ POTENTIAL VIVA QUESTIONS/REVISION:
 
 - Make myself clear on what's going on with charges in the SM group
   theory (ie end of gauge group section)
+
+- Difference between chirality and helicity and how that's manifest in
+  the EWK stuff
 

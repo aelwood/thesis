@@ -67,7 +67,7 @@ properties will be discussed further in this section.
 \begin{tabular}{l|l c|c|c|c|c|c}
 %\hline 
 Categories & Particle & & Mass & Spin & Electric & Colour & Weak \\
- &  & & & & charge & charge & isospin \\
+ &  & & & & charge & charge & isospin ($t_3$)\\
 \hline
 \hline
 Leptons & electron & $e$ & 0.511~MeV & & & & \\
@@ -78,12 +78,12 @@ Neutrinos & electron & $\nu_e$ & <225~eV & & & & \\
                 & muon & $\nu_{\mu}$ & <0.19~MeV & $\frac{1}{2}$  & 0  & 0 &  $+\frac{1}{2}$\\
                 & tau & $\nu_{\tau}$ & <18.2~MeV &  &   &  &  \\
 \hline
-Up quarks & up & $u$ & 2.3~MeV & & & \\
-                & charm & $c$ & 1.28~GeV & $\frac{1}{2}$ & $+\frac{2}{3}$  & $r,g,b$ &  $+\frac{1}{2}$\\
+Up & up & $u$ & 2.3~MeV & & & \\
+quarks      & charm & $c$ & 1.28~GeV & $\frac{1}{2}$ & $+\frac{2}{3}$  & $r,g,b$ &  $+\frac{1}{2}$\\
                 & top & $t$ & 173~GeV  &   &  &  \\
 \hline
-Down quarks & down & $d$ & 4.8~MeV & & & & \\
-                & strange & $s$ & 95~MeV & $\frac{1}{2}$ & $-\frac{1}{3}$  & $r,g,b$ &  $-\frac{1}{2}$\\
+Down  & down & $d$ & 4.8~MeV & & & & \\
+quarks & strange & $s$ & 95~MeV & $\frac{1}{2}$ & $-\frac{1}{3}$  & $r,g,b$ &  $-\frac{1}{2}$\\
                 & bottom & $b$ & 4.18~GeV &  &   &  &  \\
 \hline
 Force & photon & $\gamma$ & 0 &  & 0 & 0 & 0 \\
@@ -104,6 +104,7 @@ their charges \cite{PhysRevD.86.010001}}
 \end{table}
 
 \subsection{Gauge symmetries}
+\label{sec:gaugeSymmetries}
 
 The insensitivity to the structure of a theory to a specific
 transformation constitutes a symmetry. This concept is very powerful
@@ -196,7 +197,7 @@ leads to the phenomena known as \emph{asymptotic freedom}
 \cite{PhysRevLett.30.1343}. The strong coupling constant, $\alpha_S$
 gets weaker over short ranges, which leads to quarks behaving as if
 they are unbound when they are very close but more strongly coupled as
-they move part. The fact that $\alpha_S$ can be small makes it very
+they move part. The fact that $\alpha_s$ can be small makes it very
 challenging to calculate \QCD perturbatively, using the well known
 techniques that work for electromagnetic and weak force calculations.
 
@@ -221,7 +222,30 @@ the collision point, known as a \emph{jet}.
 
 \subsection{Electroweak unification}
 
-%describe EWK
+The electromagnetic and weak forces are described in the \SM by the
+symmetry group $SU(2)\times U(1)$. The requirement of local gauge
+invariance in the weak sector led to the electromagnetic and weak
+forces being unified within this group in a landmark achievement in
+the 1960s \cite{Glashow:1961tr,PhysRevLett.19.1264,Salam:1964ry}.
+
+The $SU(2)$ group has three generators, $T_i=\tau_i/2$, where
+$i=1,2,3$ and $\tau_i$ are the Pauli spin matrices. As mentioned in
+Sec.~\ref{sec:gaugeSymmetries}, each of these generators is manifested
+as a gauge field, labelled $W_{\mu}^i$. Within the electroweak theory
+these gauge fields only act on the left handed chiral component of the
+fermion field, $\psi_L$, where $\psi_L = (1-\gamma_5)\psi$ and
+$\gamma^5=i\gamma^0\gamma^1\gamma^2\gamma^3$. This \emph{left
+handedness} of the electroweak theory leads to the parity violation
+that is observed in weak interactions. The charges associated with
+these gauge fields are known as \emph{weak isospin} and are denoted
+$t_i$.
+
+The $U(1)$ group has a single generator, with an associated gauge
+field labelled $B_{\mu}$. This field interacts with particles that
+carry \emph{weak hypercharge}, $Y=2(Q-t_3)$. It is worth noting that this
+is a different charge to that of the $U(1)$ group in \QED, which was
+just the electromagnetic charge, $Q$. 
+%describe EWK as mark did
 
 %%%%%%%% NOTES %%%%%%%
 
