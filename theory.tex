@@ -15,21 +15,25 @@ renormalisable quantum field theory
 particles are represented as spin-$\frac{1}{2}$ fermionic fields and
 forces are represented as spin-1 bosonic fields. An additional spin-0
 \emph{Higgs} field is included to provide the bosons of the weak force
-with their mass. A key principle in the \SM is that of local gauge
-invariance. The gauge group of the \SM is $SU(3)\times SU(2) \times
-U(1)$, when these symmetries are applied to the matter particles they
-imply the presence of the force carrying bosons. How this leads to the
-particle phenomenology of the \SM will be briefly explored in this
-section.
+with their mass. The \SM is built around the concept of local gauge
+invariance. When the symmetries of the \SM local gauge group,
+$SU(3)\times SU(2) \times U(1)$, are applied to the fermions they
+imply the existence of the force carrying bosons. This section will
+briefly explore how this leads to the particle phenomenology of the
+\SM.
 
 The \SM is typically considered within a lagrangian formalsim. In a
 quantum field theory all the the relevant fields and their
 interactions are described by a lagrangian density. The lagrangian
-density of the \SM can be divided into four parts, which will each be
-addressed within this section:
+density of the \SM can be divided into four parts:
 \begin{equation}
-\mathcal{L}_{SM}=\mathcal{L}_{gauge}+\mathcal{L}_{fermion}+\mathcal{L}_{Higgs}+\mathcal{L}_{Yukawa}.
+\mathcal{L}_{SM}=\mathcal{L}_{gauge}+\mathcal{L}_{fermion}+\mathcal{L}_{Higgs}+\mathcal{L}_{Yukawa},
 \end{equation}
+$\mathcal{L}_{fermion}$ describes the fermion
+fields, their interactions with the bosons are described in
+$\mathcal{L}_{gauge}$. The final two terms, $\mathcal{L}_{Higgs}$ and
+$\mathcal{L}_{Yukawa}$, describe how the particles within the \SM
+obtain mass through interactions with the Higgs field.
 
 Throughout this section the convention $c=\hbar = 1$ is used and the
 Einstein four-vector summation convention is assumed. Four-vector indices
@@ -37,9 +41,10 @@ are labelled as $\mu$ and $\nu$.
 
 \subsection{The fundamental particles}
 
-The fundamental particles of the \SM comprise
-fermions and the force mediating bosons, a summary them and their
-relevant charges can be seen in Table~\ref{tab:smParticles}. 
+The fundamental particles of the \SM comprise fermions and the force
+mediating bosons, a summary of them and their relevant
+electromagnetic, weak and strong force charges can be seen in
+Table~\ref{tab:smParticles}. 
 
 The fermions consist of three generations of charged leptons and their
 corresponding weak force partner, the neutrinos. There are
@@ -63,7 +68,8 @@ There are five types of bosons that arise from the \SM gauge
 symmetries: photons, gluons, $W^{\pm}$, $Z^0$ and the Higgs. Their
 properties will be discussed further in this section.
 
-\begin{table}[htbp!]
+%\begin{table}[htbp!]
+\begin{table}
 \begin{tabular}{l|l c|c|c|c|c|c}
 %\hline 
 Categories & Particle & & Mass & Spin & Electric & Colour & Weak \\
@@ -78,24 +84,24 @@ Neutrinos & electron & $\nu_e$ & <225~eV & & & & \\
                 & muon & $\nu_{\mu}$ & <0.19~MeV & $\frac{1}{2}$  & 0  & 0 &  $+\frac{1}{2}$\\
                 & tau & $\nu_{\tau}$ & <18.2~MeV &  &   &  &  \\
 \hline
-Up & up & $u$ & 2.3~MeV & & & \\
-quarks      & charm & $c$ & 1.28~GeV & $\frac{1}{2}$ & $+\frac{2}{3}$  & $r,g,b$ &  $+\frac{1}{2}$\\
-                & top & $t$ & 173~GeV  &   &  &  \\
+Up- & up & $u$ & 2.3~MeV & & & \\
+type      & charm & $c$ & 1.28~GeV & $\frac{1}{2}$ & $+\frac{2}{3}$  & $r,g,b$ &  $+\frac{1}{2}$\\
+quarks          & top & $t$ & 173~GeV  &   &  &  \\
 \hline
-Down  & down & $d$ & 4.8~MeV & & & & \\
-quarks & strange & $s$ & 95~MeV & $\frac{1}{2}$ & $-\frac{1}{3}$  & $r,g,b$ &  $-\frac{1}{2}$\\
-                & bottom & $b$ & 4.18~GeV &  &   &  &  \\
+Down-  & down & $d$ & 4.8~MeV & & & & \\
+type & strange & $s$ & 95~MeV & $\frac{1}{2}$ & $-\frac{1}{3}$  & $r,g,b$ &  $-\frac{1}{2}$\\
+quarks            & bottom & $b$ & 4.18~GeV &  &   &  &  \\
 \hline
-Force & photon & $\gamma$ & 0 &  & 0 & 0 & 0 \\
+Force & photon & $\gamma$ & 0 & 1 & 0 & 0 & 0 \\
 \cline{2-8}
  mediating &  &  &  &  &  & $r\bar{g},r\bar{b},g\bar{r},g\bar{b}$\\
- bosons & gluon & $g$ & 0 &  & 0 & $b\bar{r},b\bar{g},
+ bosons & gluon & $g$ & 0 & 1 & 0 & $b\bar{r},b\bar{g},
 \frac{1}{\sqrt{2}}(r\bar{r}-g\bar{g})$ & 0 \\
  & &  &  &  &  & $\frac{1}{\sqrt{6}}(r\bar{r}+g\bar{g}-2b\bar{b})$ &  \\
 \cline{2-8}
- & W & $W^{\pm}$ & 80.4~GeV & 1 & $\pm 1$ & 0 & $\pm 1$ \\
- & Z & $Z^0$ & 91.2~GeV &  & 0 & 0 & 0 \\
- & Higgs & $h^0$ & 125~GeV &  & 0 & 0 & $-\frac{1}{2}$ \\
+ & W & $W^{\pm}$ & 80.4~GeV &  & $\pm 1$ &  & $\pm 1$ \\
+ & Z & $Z^0$ & 91.2~GeV & 1 & 0 & 0 & 0 \\
+ & Higgs & $h^0$ & 125~GeV &  & 0 &  & $-\frac{1}{2}$ \\
 %\hline
 \end{tabular}
 \caption{All the fundamental Standard Model fermions and bosons and
@@ -265,6 +271,33 @@ gauge field, $g'$, and the isospin gauge field, $g$:
 \begin{equation}
 \theta_W = \frac{g}{g^2+g'^2}.
 \end{equation}
+
+The $W^{\pm}$ gauge bosons only couple to the left handed component of
+the fermion fields. These left-handed components form weak isospin
+doublets in both the quark, $Q_L$, and lepton fields $e_L$. The
+right-handed components form weak isospin singlets, $Q_R$ and $e_R$
+and have $t_3=0$. For the first generation of quarks, the $u$ and $d$
+and the first generation of leptons, $e$ and $\nu_e$, the left and
+right handed components of the fields are broken down as follows:
+\begin{equation}
+  \begin{split}
+  e_L=\left(\begin{array}{c} \nu_{e~L} \\
+  e_L\end{array}\right),~~~
+  Q_L=\left(\begin{array}{c} u_L \\
+  d_L\end{array}\right),~~~e_R=e_R,~~~Q_R=u_R,d_R,
+  \end{split}
+\end{equation}
+where a subscript $L$ denotes the left-handed component and a
+subscript $R$ denotes the right handed component.
+
+Within the quark doublet the charged current interactions of the $W$
+fields act between up and down type quarks. However, the mass
+eigenstate of the quarks is not the same as the weak interaction eigenstate. The mixing
+between these two eigenstates is described by the \ac{CKM} matrix
+\cite{Kobayashi:1973fv}. The matrix is diagonally dominant, meaning the $W$ fields
+are most likely to produce interactions of quarks in the same
+generation, however this allows for inter-generational mixing of the
+quark fields.
 
 %%%%%%%% NOTES %%%%%%%
 
