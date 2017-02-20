@@ -36,3 +36,6 @@ POTENTIAL VIVA QUESTIONS/REVISION:
 
 - Properly explain the hierarchy problem (ie in SUSY primer)
 
+- Make myself clear on what's going on with charges in the SM group
+  theory (ie end of gauge group section)
+

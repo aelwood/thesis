@@ -122,7 +122,8 @@ fermion, with wave function $\psi$ and mass, $m$ \cite{Griffiths:111880}:
 \begin{equation}
 \mathcal{L}=i\bar{\psi}\cancel{\partial}\psi-m\bar{\psi}\psi.
 \end{equation}
-A global $U(1)$ transformation, $\psi\rightarrow \exp{i\theta}\psi$,
+A global $U(1)$ transformation, $\psi\rightarrow e^{iq\theta}\psi$,
+where the phase $\theta$ and $q$ are constant,
 leaves the lagrangian invariant. If this $U(1)$ transformation is
 local, i.e. the phase depends on spacetime position, $x$, then the
 lagrangian is no longer invariant. It now transforms as:
@@ -172,14 +173,51 @@ require the addition of one gauge boson per degree of freedom.
 
 The general principle of obtaining local gauge invariance method
 through gauge bosons is applied with great success to the gauge group
-of the \SM. With the choice of an appropriate gauge group the bosons
-that describe the strong, weak and electromagnetic forces can all be
-obtained.
+of the \SM. With the choice of an appropriate gauge group,
+$SU(3)\times SU(2) \times U(1)$, the bosons that describe the strong,
+weak and electromagnetic forces can all be obtained. In the example
+demonstrated in this section the final lagrangian
+(Eq.~\ref{eq:localdiraclagrangian}) is that which describes \ac{QED},
+predicting the massless photon field, $A_{\mu}$, from the $U(1)$ local
+gauge invariance of fermions with a coupling strength corresponding to
+the electric charge, represented by $q$ in the above. % check this!
 
 \subsection{The strong force}
 
-%describe QCD
-%include some jet phenomenology
+The strong force can be described by the $SU(3)$ gauge group,
+resulting in a description of the interaction between quark fields
+via eight massless gluon gauge fields. This theory is known as \QCD and
+the quark fields possess a colour charge, $C=(r,g,b)$. As the
+$SU(3)$ group is non-Abelian, the gluons also possess a colour and
+anti-colour charge. This leads to gluon-self couplings, which
+results in the short range of the strong force. Additionally,
+screening effects from virtual gluons, carrying the colour charge,
+leads to the phenomena known as \emph{asymptotic freedom}
+\cite{PhysRevLett.30.1343}. The strong coupling constant, $\alpha_S$
+gets weaker over short ranges, which leads to quarks behaving as if
+they are unbound when they are very close but more strongly coupled as
+they move part. The fact that $\alpha_S$ can be small makes it very
+challenging to calculate \QCD perturbatively, using the well known
+techniques that work for electromagnetic and weak force calculations.
+
+One significant consequence of the strong force is that quarks are
+confined to exist in colour-singlet states. This can lead to either
+\emph{mesons} that consist of a quark-antiquark pair, which have the
+same colour and anti-colour charge, or \emph{baryons} that are a
+triple quark or anti-quark bound state with each quark having one of
+the three different colour charges. These quark bound states are known
+collectively as \emph{hadrons}. Despite being very strongly bound, if
+quarks in these bound states are given significant energy they can be
+liberated through the production of quark-antiquark pairs from the
+vacuum. This process is known as \emph{hadronisation} and occurs when
+the energy contained within the gluons binding the quarks more than
+the energy contained within the mass of the produced hadron. When this
+occurs in the environment of a particle collider the quarks typically
+gain a significant momentum. This causes them to move along the
+momentum direction out of the bound state, undergoing hadronisation
+and fragmentation of the hadrons that still have significant energy.
+This leads to a quark producing a collimated emission of hadrons from
+the collision point, known as a \emph{jet}.
 
 \subsection{Electroweak unification}
 
