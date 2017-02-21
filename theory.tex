@@ -298,26 +298,56 @@ dominant, meaning the $W^{\pm}$ fields are most likely to produce
 interactions of quarks in the same generation, however this allows for
 a non-zero intergenerational mixing of the quark fields.
 
-%%%%%%%% NOTES %%%%%%%
+\subsection{Spontaneous symmetry breaking and the Higgs mechanism}
 
-%fundamental particles, leptons and photons and the charges they carry
-% show a table of the particles
+Despite the success of the description of the \SM forces through a
+gauge theory, initial iterations did not provide a way for the
+fundamental \SM particles to have a gauge invariant mass term in the
+lagrangian. This problem was solved through a spontaneous breaking of
+the electroweak symmetry that became known as the \emph{Higgs
+mechanism}
+\cite{Englert:1964et,Higgs:1964ia,Higgs:1964pj,Guralnik:1964eu,Higgs:1966ev,Kibble:1967sv}.
+This spontaneous symmetry breaking allowed the vector bosons of the
+weak force to obtain mass and provided a way to write gauge invariant
+mass terms for the fermions.
 
-%technical again SU2 ..... where the components are
-% which forces these lead to
+A symmetry is spontaneously broken if the ground state of
+the vacuum does not share the symmetry of the lagrangian
+\cite{Griffiths:111880}. Even though the collection of all states does
+share the symmetry, when the theory is in its ground state a
+particular vacuum energy must be chosen. This allows terms which are
+not gauge invariant to be added to the theory by coupling some of the
+fields to a new field with a non-zero vacuum expectation value. This
+is achieved within the \SM by introducing a complex scalar $SU(2)$
+field with four degrees of freedom, $\phi$, called the Higgs field:
+\begin{equation}
+\phi=\left(\begin{array}{c}\phi^+ \\ \phi^0 \end{array}\right).
+\end{equation}
+This is implemented into the theory through an additional term in the
+\SM lagrangrian:
+\begin{equation}
+\mathcal{L}_{Higgs} =
+\left(\mathcal{D}_{\mu}\phi\right)^{\dag}\left(\mathcal{D}^{\mu}\phi\right)
+- V(\phi),
+\end{equation}
+where the covariant derivative is chosen to keep the Higgs field
+invariant under $SU(2)\times U(1)$ transformations with a weak
+hypercharge of $y=-\frac{1}{2}$.
 
-%ewk unification etc.
+% of:
+% \begin{equation}
+% \mathcal{D}_{\mu}=\partial_{\mu}-\frac{i}{2}g_1W_{\mu}.
+% \end{equation}
+To spontaneously break the symmetry the potential, $V$, is chosen to
+take the form:
+\begin{equation}
+V(\phi)=-\mu^{2}\phi^{\dag}\phi+\lambda\left(\phi^{\dag}\phi\right)^{2},
+\end{equation}
+where $\mu^2<0$ and $\lambda>0$. 
 
-%put a bit about jet phenomenology from a QCD point of view
 
-%%%%%%%%% LEAVING THESE OUT FOR NOW %%%%%%%%%%%%%
-%\subsection{Gauge symmetries}
-%specific example of gauge symmetries put here by Mark and Robyn
-%\subsection{Electroweak unification}
-%only need this section if i put gauge symmetries
-%prefer to leave these out and be more technical and concise
-
-\subsection{The Higgs mechanism}
+% describe first half like robyn, second half like patrick, andrew
+% also v nice
 
 \subsection{Beyond the Standard Model}
 
