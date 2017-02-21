@@ -7,6 +7,7 @@
     - \ consider the btag track statement? think it's fair...
 
     - Check the weak isospin stuff
+    - Sort out the signs in the higgs potential!
 
 
 STUFF TO REMEMBER I DID:
@@ -44,3 +45,5 @@ POTENTIAL VIVA QUESTIONS/REVISION:
 - Difference between chirality and helicity and how that's manifest in
   the EWK stuff
 
+- how does one choose a specific gauge for the higgs stuff! (see
+robyn's thesis)

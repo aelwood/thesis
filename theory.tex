@@ -327,12 +327,11 @@ This is implemented into the theory through an additional term in the
 \SM lagrangrian:
 \begin{equation}
 \mathcal{L}_{Higgs} =
-\left(\mathcal{D}_{\mu}\phi\right)^{\dag}\left(\mathcal{D}^{\mu}\phi\right)
-- V(\phi),
+(\mathcal{D}_{\mu}\phi)^{\dag}(\mathcal{D}^{\mu}\phi) - V(\phi),
 \end{equation}
 where the covariant derivative is chosen to keep the Higgs field
 invariant under $SU(2)\times U(1)$ transformations with a weak
-hypercharge of $y=-\frac{1}{2}$.
+hypercharge of $y=\frac{1}{2}$.
 
 % of:
 % \begin{equation}
@@ -343,11 +342,32 @@ take the form:
 \begin{equation}
 V(\phi)=-\mu^{2}\phi^{\dag}\phi+\lambda\left(\phi^{\dag}\phi\right)^{2},
 \end{equation}
-where $\mu^2<0$ and $\lambda>0$. 
+where $\mu^2>0$ and $\lambda>0$. This leads to a potential with a
+non-zero expectation value that forms a circle in phase space. This
+leads to a continuous set of equivalent minima. By convention a
+particular minimum is chosen as:
+\begin{equation}
+\bra{0}\phi\ket{0}=\left(\begin{array}{c} 0 \\ \sqrt{\frac{\mu^{2}}{2\lambda}} \end{array}\right)=\frac{1}{\sqrt{2}}\left(\begin{array}{c} 0 \\ v \end{array}\right).
+\end{equation}
+Perturbations about this vacuum expectation value can be parametrised
+in the form of four real scalar fields. However, with an appropriate
+choice of gauge, three of these degrees of freedom, known as the
+\emph{Goldstone bosons} can be set to zero. This leaves one remaining
+field, $H$, and perturbations can be written as:
+\begin{equation}
+  \phi=\left(\begin{array}{c}0 \\ v+H \end{array}\right).
+\end{equation}
+This can then be inserted into the lagrangian to obtain at leading
+order:
+\begin{equation}
+  \mathcal{L}=\frac{1}{2}\partial_{\mu}H\partial^{\mu}H-\frac{1}{2}\mu^{2}H^{2}+\frac{v^{2}}{8}\left[g_{2}^{2}W_{\mu}^{+}W^{+\mu}+g_{2}^{2}W_{\mu}^{-}W^{-\mu}+\left(g_{1}^{2}+g_{2}^{2}\right)Z_{\mu}Z^{\mu}\right].
+\end{equation}
+This provides the weak vector bosons $W_{\mu}^{\pm}$ and $Z_{\mu}$
+with mass terms $g_2v/2$ and $\frac{v}{2}\sqrt{g_1^2+g_2^2}$
+respectively. This also introduces a massive scalar field, $H$, with a
+mass $\sqrt{2}\mu$, which is the Higgs boson.
 
-
-% describe first half like robyn, second half like patrick, andrew
-% also v nice
+%YUKAWA
 
 \subsection{Beyond the Standard Model}
 
