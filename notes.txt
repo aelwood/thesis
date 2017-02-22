@@ -47,3 +47,5 @@ POTENTIAL VIVA QUESTIONS/REVISION:
 
 - how does one choose a specific gauge for the higgs stuff! (see
 robyn's thesis)
+
+- how to add nu mass to the SM (for morgan...)
