@@ -479,7 +479,7 @@ account of in a final \BSM theory.
 
 The fundamental group of Minkowski spacetime isometries is known as
 the \emph{Poincar\'e group} \cite{Poincare1906}. The only possible
-remaining extension of this group is a symmetry between bosons, $b$
+remaining extension of this group is a symmetry between bosons, $b$,
 and fermions, $f$. This symmetry is postulated to exist in nature
 under the name of \emph{\acf{SUSY}} \cite{Martin:1997ns}. This theory
 postulates the existence of a supersymmetric partner for every \SM
@@ -522,19 +522,81 @@ favourite unification candidate.
 \subsection{The Minimal Supersymmetric Standard Model}
 \label{sec:MSSM}
 
-%mark's seems nice!
+The \acf{MSSM} is a model that incorporates \SUSY with the \SM in a
+way that adds the minimum number of new particles and interactions
+\cite{Csaki:1996ks}. The \MSSM has 105 free parameters in total, a
+significant increase from the 19 in the \SM. A summary of the extra
+particles, \emph{sparticles}, introduced by the \MSSM is available in Tab.~\ref{tab:susy}.
+The superpartners to the fermions are denoted with the same symbol as
+their associated fermion with a tilde above. The weak sector is
+extended within the \MSSM and the mixing of the new \SUSY fields
+associated to the electroweak and Higgs bosons leads to
+the existence of neutralinos, charginos and a total of five Higgs
+bosons, including two that carry an electromagnetic charge. 
+%Could add in more detail of the fields and things here but it's
+%probably not relevant...
 
-% 105 extra parameters
-
+\begin{table}
+\begin{tabular}{|l|c|c|}
+%\hline 
+Name & Sparticle & Spin \\
+\hline
+Up-type squarks & $\tilde{u},\tilde{c},\tilde{t}$ & 0  \\
+Down-type squarks & $\tilde{d},\tilde{s},\tilde{b}$ & 0  \\
+Charged sleptons & $\tilde{e},\tilde{\mu},\tilde{\tau}$ & 0  \\
+Sneutrinos & $\tilde{\nu_{e}},\tilde{\nu_{\mu}},\tilde{\nu_{\tau}}$ & 0  \\
+\hline
+%\hline
+Gluino & $\tilde{g}$ & $\frac{1}{2}$  \\
+Neutralinos &
+$\tilde{\chi_{1}}^0,\tilde{\chi_{2}}^0,\tilde{\chi_{3}}^0,\tilde{\chi_{4}}^0$ & $\frac{1}{2}$  \\
+Charginos & $\tilde{\chi_{1}}^{\pm},\tilde{\chi_{2}}^{\pm}$ & $\frac{1}{2}$  \\
+\hline
+Higgs bosons & $h^0,H^0,A^0,H^{\pm}$ & 0  \\
+\end{tabular}
+\caption{The extra particles introduced by the \MSSM. The symbol $h^0$
+is typically used to denote the \SM Higgs boson.
+% A subscript of
+% $L$ or $R$ denotes the left or right-handed states respectively
+\cite{Martin:1997ns}}
+\label{tab:susy}
+\end{table}
 % table from mark
 
+Unlike the \SM, the \MSSM permits lepton and baryon number violation,
+the total numbers of leptons and baryons do not need to be conserved.
+This could lead to interactions in which quarks can produce leptons,
+such of interactions would allow protons to spontaneously decay.
+However, stringent limits have been set on the lifetime of a proton,
+$\tau>10^{33}$~years, that should exclude or heavily suppress this
+kind of behaviour. This is dealt with in the \MSSM by introducing a
+new conserved quantity known as \emph{R-parity}, $R$:
+\begin{equation}
+R\equiv (-1)^{3(B-L)+2s}
+\end{equation}
+where $B$ is the baryon number, $L$ the lepton number and $s$ the spin
+of the particle. This leads to \SUSY particles having $R=-1$ and \SM
+particles have $R=+1$. The consequence of this is that \SUSY particles
+always decay to at least one other \SUSY particle. Additionally, any
+\SUSY particles produced by \SM interactions must be produced in
+pairs and vice versa. With R-parity conservation the \acf{LSP} is
+stable. This fact allows it to fulfil the role of \DM in the case that
+the \LSP is neutral, such as if it is a neutralino.
 % R-parity - put a note on DM
+% define lsp - neutralino in the case of DM
 
-% light stops
-% define lsp?
-
+For the \MSSM to successfully solve the hierarchy problem an
+additional constraint is applied to the \SUSY particles. As there is
+no explicit mass hierarchy in the squark generations predicted in
+\SUSY, the sparticles of the top-quark, the \emph{stop}, is typically
+required to be the lightest of the squarks. This ensures maximal
+cancellation of the contributions to the Higgs mass from the
+top-quark, which couples most strongly to the Higgs in the \SM.
+% light stops - to solve hierarchy problem
 
 \subsection{Signatures of supersymmetry at the \LHC}
+
+%despite lots of searches nothing yet... cite some papers?
 
 As the \LHC is a hadron collider, the highest cross section SUSY
 production processes occur via the strong force
