@@ -11,26 +11,25 @@
 The \acf{SM} describes the interaction of matter through the
 electromagnetic, weak nuclear and strong forces in the context of a
 renormalisable quantum field theory
-\cite{Salam:1964ry,Glashow:1961tr,PhysRevLett.19.1264}. The matter
+\cite{Salam:1964ry,Glashow:1961tr,PhysRevLett.19.1264}. Matter
 particles are represented as spin-$\frac{1}{2}$ fermionic fields and
 forces are represented as spin-1 bosonic fields. An additional spin-0
-\emph{Higgs} field is included to provide the bosons of the weak force
-with their mass. The \SM is built around the concept of local gauge
-invariance. When the symmetries of the \SM local gauge group,
-$SU(3)\times SU(2) \times U(1)$, are applied to the fermions they
-imply the existence of the force carrying bosons. This section will
-briefly explore how this leads to the particle phenomenology of the
-\SM.
+Higgs field is included to provide particles with their mass. The \SM
+is built around the concept of local gauge invariance. Taking the
+fermions and applying the symmetries of the \SM local gauge group,
+$SU(3)\times SU(2) \times U(1)$, implies the existence of the force
+carrying bosons. This section will briefly explore how this leads to
+the particle phenomenology of the \SM.
 
-The \SM is typically considered within a lagrangian formalsim. In a
+The \SM is typically considered within a Lagrangian formalism. In a
 quantum field theory all the the relevant fields and their
-interactions are described by a lagrangian density. The lagrangian
+interactions are described by a Lagrangian density. The Lagrangian
 density of the \SM can be divided into four parts:
 \begin{equation}
 \mathcal{L}_{SM}=\mathcal{L}_{gauge}+\mathcal{L}_{fermion}+\mathcal{L}_{Higgs}+\mathcal{L}_{Yukawa},
 \end{equation}
-$\mathcal{L}_{fermion}$ describes the fermion
-fields, their interactions with the bosons are described in
+where $\mathcal{L}_{fermion}$ describes the fermion
+fields and their interactions with the bosons are described in
 $\mathcal{L}_{gauge}$. The final two terms, $\mathcal{L}_{Higgs}$ and
 $\mathcal{L}_{Yukawa}$, describe how the particles within the \SM
 obtain mass through interactions with the Higgs field.
@@ -56,8 +55,8 @@ spin-$\frac{1}{2}$ particles they are described by the Dirac equation
 \begin{equation}
 (i\gamma^{\mu}\partial_{\mu}-m)\psi=0,
 \end{equation}
-where $\gamma^{\mu}$ are the Dirac matrices, defined by their
-anti-commutation relation:
+where $\psi$ is the wave function of the fermion and $\gamma^{\mu}$
+are the Dirac matrices, defined by their anti-commutation relation:
 \begin{equation}
 \{\gamma^{\mu},\gamma^{\nu}\}=\gamma^{\mu}\gamma^{\nu}+\gamma^{\nu}\gamma^{\mu}=2g^{\mu\nu},
 \end{equation}
@@ -65,7 +64,7 @@ where $g^{\mu\nu}$ is the Minkowski metric. The covariant derivative is denoted
 by $\partial_{\mu}$ and $m$ is the mass of the particle in question.
 
 There are five types of bosons that arise from the \SM gauge
-symmetries: photons, gluons, $W^{\pm}$, $Z^0$ and the Higgs. Their
+symmetries: the photon, gluon, $W^{\pm}$, $Z^0$ and the Higgs. Their
 properties will be discussed further in this section.
 
 %\begin{table}[htbp!]
@@ -124,28 +123,28 @@ derivation of observed interactions through the imposition of a few,
 fairly straightforward, symmetries.
 
 The effect of applying a symmetry within the \SM is demonstrated when
-imposing local $U(1)$ invariance on the Dirac lagrangian for a
+imposing local $U(1)$ invariance on the Dirac Lagrangian for a
 fermion, with wavefunction $\psi$ and mass $m$ \cite{Griffiths:111880}:
 \begin{equation}
 \mathcal{L}=i\bar{\psi}\cancel{\partial}\psi-m\bar{\psi}\psi.
 \end{equation}
 A global $U(1)$ transformation, $\psi\rightarrow e^{iq\theta}\psi$,
 where the phase $\theta$ and $q$ are constant,
-leaves the lagrangian invariant. If this $U(1)$ transformation is
+leaves the Lagrangian invariant. If this $U(1)$ transformation is
 local, i.e. the phase depends on spacetime position, $x$, then the
-lagrangian is no longer invariant. It now transforms as:
+Lagrangian is no longer invariant. It now transforms as:
 \begin{equation}
 \label{eq:uninvariance}
 \mathcal{L}\rightarrow\mathcal{L}-q(\partial_{\mu}\theta(x))\bar{\psi}\gamma^{\mu}\psi.
 \end{equation}
 However, one can add a vector field, $A_{\mu}$, that interacts with
-the fermion field through the lagrangian term:
+the fermion field through the Lagrangian term:
 \begin{equation}
 \mathcal{L}_{int}=q(\bar{\psi}\gamma^{\mu}\psi) A_{\mu},
 \end{equation}
 This vector field is chosen to transform as $A_{\mu}\rightarrow
 A_{\mu}+\partial_{\mu}\theta$ and is known as a \emph{gauge field} or
-\emph{gauge boson}. The interaction lagrangian term then transforms
+\emph{gauge boson}. The interaction Lagrangian term then transforms
 under a local gauge transformation as:
 \begin{equation}
 \mathcal{L}_{int}\rightarrow \mathcal{L}_{int}+q(\partial_{\mu}\theta)\bar{\psi}\gamma^{\mu}\psi,
@@ -163,65 +162,73 @@ self-coupling constant $g$. For
 the $U(1)$ group there is only one self-commuting generator so the
 structure constant is 0. For non-Abelian gauge groups, such as
 $SU(3)$, the structure constants can be non-zero, which introduces
-self interaction terms within the lagrangian. In this case the gauge
-boson will carry a charge and can interact with itself.
+self interaction terms within the Lagrangian. In this case the gauge
+boson is said to carry a \emph{charge} and can interact with itself.
 
-The final lagrangian for a Dirac fermion can then be written as:
+The final Lagrangian for a Dirac fermion can then be written as:
 \begin{equation}
-  \label{eq:localdiraclagrangian}
+  \label{eq:localdiracLagrangian}
   \mathcal{L}=i\bar{\psi}\gamma^{\mu}\mathcal{D}_{\mu}\psi-m\bar{\psi}\psi-\frac{1}{4}F_{\mu\nu}F^{\mu\nu},
 \end{equation}
 where $\mathcal{D}_{\mu}=\partial_{\mu}+iqA_{\mu}$ and is known as the
-\emph{covariant derivative}. This lagrangian will be invariant under
+\emph{covariant derivative}. This Lagrangian will be invariant under
 local $U(1)$ transformations. In this case, the addition of one extra
-gauge field maintains local invariance as $U(1)$ transformations have
-one degree of freedom, corresponding to a generator of the group.
-The local gauge invariance of symmetries with more degrees of freedom
-require the addition of one gauge boson per degree of freedom. 
+gauge field maintains local invariance. As $U(1)$ transformations have
+one degree of freedom this gauge field corresponds to the single
+generator of the group.  To maintain the local gauge invariance of
+any symmetry, a gauge boson per degree of 
+freedom must be introduced.
 
-The general principle of obtaining local gauge invariance method
-through gauge bosons is applied with great success to the gauge group
-of the \SM. With the choice of an appropriate gauge group,
+The method of obtaining local gauge invariance through the
+introduction of gauge bosons is applied with great success to the
+gauge group of the \SM. With the choice of an appropriate gauge group,
 $SU(3)\times SU(2) \times U(1)$, the bosons that describe the strong,
 weak and electromagnetic forces can all be obtained. In the example
-demonstrated in this section the final lagrangian
-(Eq.~\ref{eq:localdiraclagrangian}) is that which describes \ac{QED},
-predicting the massless photon field, $A_{\mu}$, from the $U(1)$ local
-gauge invariance of fermions with a coupling strength corresponding to
-the electric charge, represented by $q$. % check this!
+demonstrated in this section, the final Lagrangian
+(Eq.~\ref{eq:localdiracLagrangian}) is that which describes \ac{QED}.
+It predicts the massless photon field, $A_{\mu}$, from the $U(1)$
+local gauge invariance of fermions with a coupling strength
+corresponding to the electric charge, represented by $q$.
 
 \subsection{The strong force}
 
 The strong force can be described with the $SU(3)$ gauge group,
 resulting in the interaction of quark fields
-via eight massless gauge fields, the gluons. This theory is known as \QCD and
+via eight massless gauge fields, the gluons. This theory is known as
+\QCD in which
 the quark fields possess a colour charge, $C=(r,g,b)$. As the
 $SU(3)$ group is non-Abelian, the gluons also possess a colour and
 anti-colour charge. This leads to gluon-self couplings, which
 results in the short range of the strong force. Additionally,
-screening effects from virtual gluons, carrying the colour charge,
+screening effects from virtual gluons
 leads to the phenomena known as \emph{asymptotic freedom}
-\cite{PhysRevLett.30.1343}. This is characterised by the strong coupling constant, $\alpha_S$
-getting weaker over short ranges, which leads to quarks behaving as if
+\cite{PhysRevLett.30.1343}. It is characterised by the strong
+coupling constant, $\alpha_s$, 
+getting weaker over short ranges. This leads to quarks behaving as if
 they are unbound when they are very close but more strongly coupled as
-they move part. The fact that $\alpha_s$ can be small makes it very
+they move apart. The fact that $\alpha_s$ can be small makes it very
 challenging to calculate \QCD perturbatively using the well known
 techniques that work for electromagnetic and weak force calculations.
+This makes \QCD calculations difficult to do and less accurate as a
+result.
 
 One important property of the strong force is that quarks are
-confined to exist in colour-singlet states. This can lead to either
+confined to exist in \emph{colour-singlet} states. This can lead to either
 \emph{mesons} comprising a quark-antiquark pair or \emph{baryons} that are a
 triple quark or anti-quark bound state. These different bound states are known
 collectively as \emph{hadrons}. Despite being very strongly bound, if
 quarks in these states are given significant energy they can be
 liberated through the pair production of quark-antiquark pairs. This
 process is known as \emph{hadronisation} and occurs when the energy
-contained within the gluons binding the quarks more than the energy
-contained within the mass of the produced hadron. When this occurs in
-the environment of a particle collider, the quarks typically gain a
-significant momentum. This causes them to move out of the bound state,
-undergoing hadronisation. If the hadrons that are produced also have
-significant energy they can also undergo further fragmentation. This
+contained within the gluons binding the quarks exceeds the energy
+contained within the mass of the produced hadron. 
+
+Within
+the environment of a particle collider, quarks can gain a
+significant momentum, allowing them to escape their bound state via
+hadronisation. If the hadrons that are produced have
+significant energy they can also break apart, undergoing further
+hadronisation known as \emph{fragmentation}. This
 leads to a quark producing a collimated emission of hadrons from
 the collision point, known as a \emph{jet}.
 
@@ -234,8 +241,7 @@ forces being unified within this group in a landmark achievement in
 the 1960s \cite{Glashow:1961tr,PhysRevLett.19.1264,Salam:1964ry}.
 
 The $SU(2)$ group has three generators, $T_i=\tau_i/2$, where
-$i=1,2,3$ and $\tau_i$ are the Pauli spin matrices. As mentioned in
-Sec.~\ref{sec:gaugeSymmetries}, each of these generators is manifested
+$i=1,2,3$ and $\tau_i$ are the Pauli spin matrices. Each of these generators is manifested
 as a gauge field, labelled $W_{\mu}^i$. Within the electroweak theory
 these gauge fields only act on the left handed chiral component of the
 fermion field, $\psi_L$, where $\psi_L = (1-\gamma_5)\psi$ and
@@ -248,13 +254,12 @@ the gauge bosons are able to interact with themselves.
 
 The $U(1)$ group has a single generator, with an associated gauge
 field, $B_{\mu}$. This field interacts with particles that
-carry \emph{weak hypercharge}, $Y=2(Q-t_3)$. It is worth noting that this
+carry \emph{weak hypercharge}, $y=2(q-t_3)$. It is worth noting that this
 is a different charge to that of the $U(1)$ group in \ac{QED}, which was
-just the electromagnetic charge, $Q$. 
+just the electromagnetic charge, $q$. 
 %describe EWK as mark did
 
-The physical gauge bosons observed in experiments on the electroweak
-force are obtained by mixing the $W_{\mu}^i$ and $B_{\mu}$ gauge
+The physical gauge bosons are obtained by mixing the $W_{\mu}^i$ and $B_{\mu}$ gauge
 fields as follows:
 \begin{equation}
   \begin{split}
@@ -296,30 +301,29 @@ eigenstate. The mixing between these two eigenstates is described by
 the \ac{CKM} matrix \cite{Kobayashi:1973fv}. The matrix is diagonally
 dominant, meaning the $W^{\pm}$ fields are most likely to produce
 interactions of quarks in the same generation, however this allows for
-a non-zero intergenerational mixing of the quark fields.
+an intergenerational mixing of the quark fields.
 
 \subsection{Spontaneous symmetry breaking and the Higgs mechanism}
 
-Despite the success of the description of the \SM forces through a
-gauge theory, initial iterations did not provide a way for the
-fundamental \SM particles to have a gauge invariant mass term in the
-lagrangian. This problem was solved through a spontaneous breaking of
+Initial iterations of the \SM did not provide a way for the
+fundamental particles to have a gauge invariant mass term in the
+Lagrangian. This problem was solved through a breaking of
 the electroweak symmetry that became known as the \emph{Higgs
 mechanism}
 \cite{Englert:1964et,Higgs:1964ia,Higgs:1964pj,Guralnik:1964eu,Higgs:1966ev,Kibble:1967sv}.
-This spontaneous symmetry breaking allowed the vector bosons of the
+This \emph{spontaneous symmetry breaking} allowed the vector bosons of the
 weak force to obtain mass and provided a way to write gauge invariant
 mass terms for the fermions.
 
 A symmetry is spontaneously broken if the ground state of
-the vacuum does not share the symmetry of the lagrangian
+the vacuum does not share the symmetry of the Lagrangian
 \cite{Griffiths:111880}. Even though the collection of all states does
 share the symmetry, when the theory is in its ground state a
 particular vacuum energy must be chosen. This allows terms which are
 not gauge invariant to be added to the theory by coupling some of the
 fields to a new field with a non-zero vacuum expectation value. This
 is achieved within the \SM by introducing a complex scalar $SU(2)$
-field with four degrees of freedom, $\phi$, called the Higgs field:
+field with four degrees of freedom called the Higgs field, $\phi$:
 \begin{equation}
 \phi=\left(\begin{array}{c}\phi^+ \\ \phi^0 \end{array}\right).
 \end{equation}
@@ -337,7 +341,7 @@ hypercharge of $y=\frac{1}{2}$.
 % \begin{equation}
 % \mathcal{D}_{\mu}=\partial_{\mu}-\frac{i}{2}g_1W_{\mu}.
 % \end{equation}
-To spontaneously break the symmetry the potential, $V$, is chosen to
+To spontaneously break the symmetry, the potential, $V$, is chosen to
 take the form:
 \begin{equation}
 \label{eq:higgsPot}
@@ -359,7 +363,7 @@ field, $H$, and perturbations can be written as:
 \begin{equation}
   \phi=\left(\begin{array}{c}0 \\ v+H \end{array}\right).
 \end{equation}
-This can then be inserted into the lagrangian to obtain at leading
+This can then be inserted into the Lagrangian to obtain at leading
 order:
 \begin{equation}
   \mathcal{L}=\frac{1}{2}\partial_{\mu}H\partial^{\mu}H-\frac{1}{2}\mu^{2}H^{2}+\frac{v^{2}}{8}\left[g_{2}^{2}W_{\mu}^{+}W^{+\mu}+g_{2}^{2}W_{\mu}^{-}W^{-\mu}+\left(g_{1}^{2}+g_{2}^{2}\right)Z_{\mu}Z^{\mu}\right].
@@ -367,9 +371,8 @@ order:
 This provides the weak vector bosons $W_{\mu}^{\pm}$ and $Z_{\mu}$
 with mass terms $g_2v/2$ and $\frac{v}{2}\sqrt{g_1^2+g_2^2}$
 respectively. This also introduces a massive scalar field, $H$, with a
-mass $\sqrt{2\mu^2}$, which is the Higgs boson. The aim of providing
-the weak vector bosons with mass in a gauge invariant way has
-therefore been achieved with the introduction of a Higgs boson. This
+mass $\sqrt{2\mu^2}$, which is the Higgs boson. This achieves the aim of providing
+the weak vector bosons with mass in a gauge invariant way. The
 Higgs boson has subsequently been discovered by the ATLAS and \CMS
 collaborations with a mass of 125~\gev \cite{1207.7214,1207.7235}.
 
@@ -389,26 +392,25 @@ couples to the Higgs field.
 \label{sec:bsm}
 
 The \SM has been incredibly successful in describing the physics we
-observe up to the scale of electroweak unification, $O(100)$~\gev. It
-describes well the behaviour of most the observed fundamental
-particles and all its predictions so far have been verified by
+observe up to the scale of electroweak unification, $O(100~\gev)$. It
+describes the behaviour of most of the observed fundamental
+particles very well and all its predictions have been so far verified by
 experiments throughout the 20th and 21st centuries. However,
-inconsistencies between the \SM and some observations points to issues
+some inconsistencies between the \SM and experimental observations points to issues
 with the theory that can only be solved with a more fundamental \BSM
-theory. The fact that the \SM also provides no description of gravity,
-that would be expected to be consistent with \GR, is a convincing
-argument for new physics at the energy scale that gravity becomes
-relevant. This energy scale is typically referred to as the
-\emph{Planck scale}.
+theory. Also, the fact that the \SM also provides no description of
+gravity is a convincing argument for new physics at the energy scale
+that gravity becomes relevant. This energy scale is typically referred
+to as the \emph{Planck scale}.
 
 One of the most obvious experimental issues with the \SM is that it
 predicts neutrinos to be massless. Within the theory neutrinos are
-only produced by the weak force in their left-handed state, without
+only produced by the weak force in their left-handed state. Without
 the presence of a right-handed neutrino one cannot write a Yukawa mass
-term.  Experiments, however, have observed that neutrinos do in fact
-have a mass as they undergo flavour oscillations as they propagate in
+term. However, experiments have observed that neutrinos do 
+have a mass, as they undergo flavour oscillations while propagating in
 their mass eigenstates \cite{PhysRevLett.87.071301,Fukuda:1998mi}.
-This can, however, be included relatively straightforwardly within the
+This can be included relatively straightforwardly within the
 \SM with the addition of seven new parameters
 \cite{doi:10.1143/PTP.28.870}.  These include the neutrino masses and
 the \ac{PMNS} matrix that describes how the neutrino mass and flavour
@@ -539,7 +541,7 @@ bosons, including two that carry an electromagnetic charge.
 \begin{table}
 \begin{tabular}{|l|c|c|c|}
 %\hline 
-Name & Sparticle & Spin & Charge, $Q$ \\
+Name & Sparticle & Spin & Charge, $q$ \\
 \hline
 Up-type squarks & $\tilde{u},\tilde{c},\tilde{t}$ & 0 & $+\frac{2}{3}$ \\
 Down-type squarks & $\tilde{d},\tilde{s},\tilde{b}$ & 0 & $-\frac{1}{3}$ \\

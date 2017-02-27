@@ -49,3 +49,5 @@ POTENTIAL VIVA QUESTIONS/REVISION:
 robyn's thesis)
 
 - how to add nu mass to the SM (for morgan...)
+
+- Why do you have to mix the gauge fields to get the physical fields?
