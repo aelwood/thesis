@@ -34,7 +34,7 @@ $\mathcal{L}_{gauge}$. The final two terms, $\mathcal{L}_{Higgs}$ and
 $\mathcal{L}_{Yukawa}$, describe how the particles within the \SM
 obtain mass through interactions with the Higgs field.
 
-Throughout this section the convention $c=\hbar = 1$ is used and the
+Throughout this thesis the convention $c=\hbar = 1$ is used and the
 Einstein four-vector summation convention is assumed. Four-vector indices
 are labelled as $\mu$ and $\nu$.
 
@@ -42,12 +42,12 @@ are labelled as $\mu$ and $\nu$.
 
 The fundamental particles of the \SM comprise fermions and the force
 mediating bosons, a summary of them and their relevant
-electromagnetic, weak and strong force charges can be seen in
+electromagnetic, weak and strong force properties can be seen in
 Table~\ref{tab:smParticles}. 
 
 The fermions consist of three generations of charged leptons and their
 corresponding weak force partner, the neutrinos. There are
-additionally three generations of up-quarks and down-quarks. For all
+additionally three generations of up-type quarks and down-type quarks. For all
 of these twelve fermions there are corresponding antiparticles that
 have the same mass but opposite quantum numbers. As fermions are
 spin-$\frac{1}{2}$ particles they are described by the Dirac equation
@@ -65,7 +65,7 @@ by $\partial_{\mu}$ and $m$ is the mass of the particle in question.
 
 There are five types of bosons that arise from the \SM gauge
 symmetries: the photon, gluon, $W^{\pm}$, $Z^0$ and the Higgs. Their
-properties will be discussed further in this section.
+properties will be discussed further in this Chapter.
 
 %\begin{table}[htbp!]
 \begin{table}
@@ -104,14 +104,14 @@ Force & photon & $\gamma$ & 0 & 1 & 0 & 0 & 0 \\
 %\hline
 \end{tabular}
 \caption{All the fundamental Standard Model fermions and bosons and
-their charges \cite{PhysRevD.86.010001}}
+their properties \cite{PhysRevD.86.010001}}
 \label{tab:smParticles}
 \end{table}
 
 \subsection{Gauge symmetries}
 \label{sec:gaugeSymmetries}
 
-The insensitivity to the structure of a theory to a specific
+The insensitivity of the structure of a theory to a specific
 transformation constitutes a symmetry. This concept is very powerful
 for gaining insights into fundamental physical theories. For example,
 the fact that physical laws do not change over time,
@@ -185,7 +185,7 @@ gauge group of the \SM. With the choice of an appropriate gauge group,
 $SU(3)\times SU(2) \times U(1)$, the bosons that describe the strong,
 weak and electromagnetic forces can all be obtained. In the example
 demonstrated in this section, the final Lagrangian
-(Eq.~\ref{eq:localdiracLagrangian}) is that which describes \ac{QED}.
+(Eq.~\ref{eq:localdiracLagrangian}) describes \ac{QED}.
 It predicts the massless photon field, $A_{\mu}$, from the $U(1)$
 local gauge invariance of fermions with a coupling strength
 corresponding to the electric charge, represented by $q$.
@@ -206,9 +206,9 @@ leads to the phenomena known as \emph{asymptotic freedom}
 coupling constant, $\alpha_s$, 
 getting weaker over short ranges. This leads to quarks behaving as if
 they are unbound when they are very close but more strongly coupled as
-they move apart. The fact that $\alpha_s$ can be small makes it very
+they move apart. The fact that $\alpha_s$ can be large makes it very
 challenging to calculate \QCD perturbatively using the well known
-techniques that work for electromagnetic and weak force calculations.
+techniques that work for the electromagnetic and weak forces.
 This makes \QCD calculations difficult to do and less accurate as a
 result.
 
@@ -244,7 +244,7 @@ The $SU(2)$ group has three generators, $T_i=\tau_i/2$, where
 $i=1,2,3$ and $\tau_i$ are the Pauli spin matrices. Each of these generators is manifested
 as a gauge field, labelled $W_{\mu}^i$. Within the electroweak theory
 these gauge fields only act on the left handed chiral component of the
-fermion field, $\psi_L$, where $\psi_L = (1-\gamma_5)\psi$ and
+fermion field, $\psi_L$, where $\psi_L = \frac{1}{2}(1-\gamma_5)\psi$ and
 $\gamma^5=i\gamma^0\gamma^1\gamma^2\gamma^3$. This 
 \emph{left-handedness} of the electroweak theory leads to the parity violation
 that is observed in weak interactions. The charges associated with
@@ -398,7 +398,7 @@ particles very well and all its predictions have been so far verified by
 experiments throughout the 20th and 21st centuries. However,
 some inconsistencies between the \SM and experimental observations points to issues
 with the theory that can only be solved with a more fundamental \BSM
-theory. Also, the fact that the \SM also provides no description of
+theory. Also, the fact that the \SM provides no description of
 gravity is a convincing argument for new physics at the energy scale
 that gravity becomes relevant. This energy scale is typically referred
 to as the \emph{Planck scale}.
@@ -428,6 +428,7 @@ at loop level. If it is assumed that the Higgs couples, even indirectly, to
 any of the new physics that exists at energy scales above the \SM then the
 correction to the Higgs mass, $\Delta m_H$, are of the order:
 \begin{equation}
+\label{higgsmassscale}
 \Delta m_H^2 \sim \frac{\lambda}{4\pi^2}\Lambda^2+\delta M_H^2,
 \end{equation}
 where $\Lambda$ is the energy scale of the \BSM physics and additional
@@ -465,7 +466,7 @@ in a particle collider. %maybe put in bullet cluster?
 The \SM successfully unifies the electromagnetic and weak forces, but
 the strong force is not incorporated. For a full unification, the
 coupling constants of all the \SM forces would unify at a high energy
-scale known as the \emph{GUT} scale. This extra consideration is
+scale known as the \emph{\acf{GUT}} scale. This extra consideration is
 aesthetically appealing and can also help to motivate future \BSM
 theories.
 
@@ -482,7 +483,7 @@ account of in a final \BSM theory.
 The fundamental group of Minkowski spacetime isometries is known as
 the \emph{Poincar\'e group} \cite{Poincare1906}. The only possible
 remaining extension of this group is a symmetry between bosons, $b$,
-and fermions, $f$. This symmetry is postulated to exist in nature
+and fermions, $f$ \cite{PhysRev.159.1251}. This symmetry is postulated to exist in nature
 under the name of \emph{\acf{SUSY}} \cite{Martin:1997ns}. This theory
 postulates the existence of a supersymmetric partner for every \SM
 particle with identical quantum numbers except for a difference in the
@@ -492,7 +493,8 @@ observed, they must have a higher mass than their \SM
 counterparts. This implies that \SUSY must be a broken symmetry. As
 there is considerable freedom in how this symmetry breaking occurs,
 there exists a series of possible versions of \SUSY. The most popular
-and simplest versions of supersymmetry is the \MSSM, introduced in
+and simplest versions of supersymmetry is the Minimal Supersymmetric
+Standard Model, introduced in
 Sec.~\ref{sec:MSSM}.
 
 Along with this theoretical motivation, \SUSY can fully or partially
@@ -500,18 +502,27 @@ solve several of the problems with the \SM discussed in
 Sec.~\ref{sec:bsm}. In \SUSY the loop contributions to the mass of the
 Higgs are opposite in sign for fermions and scalars. If the partners
 of the \SM fermions are \SUSY scalars, then the contributions from the
-\SM fermions are cancelled out. Provided the mass of \SUSY particles
-have a value of $\sim1~\tev$, the hierarchy problem is resolved.
+\SM fermions are cancelled out. This results in Eq.~\ref{higgsmassscale} taking the
+form \cite{Martin:1997ns}:
+\begin{equation}
+\Delta m_H^2 = \frac{1}{8\pi^2}(\lambda_S-|\lambda_f|^2)\Lambda^2+....,
+\end{equation}
+where $\lambda_S$ and $\lambda_f$ are the respective coupling
+strengths of the scalars and fermion fields to the Higgs field.
+Provided the mass of \SUSY particles have a value of $\sim1~\tev$, the
+hierarchy problem is resolved with minimal fine-tuning.
+
 Additionally, many versions of \SUSY contain a weakly interacting and
 stable \acf{LSP}, which provides an excellent candidate for \DM. The
 addition of superpartners also helps to unify the coupling constants
 of the gauge groups within the \SM. Without \SUSY the different forces
 of the \SM do not unify at a fixed energy scale, however loop
 corrections from \SUSY particles results in a complete unification, as
-shown in Fig.~\ref{fig:runningCoupling}. This additionally hints at
-the existence of a unification of particle physics with \GR at high
-energy scales. The existence of \SUSY is a prerequisite for
-string theory, for example, a favourite unification candidate.
+shown in Fig.~\ref{fig:runningCoupling}. The fact that the forces can
+unify in this way points to the possibility of a more complete
+unification of particle physics with \GR at high energy scales. The
+existence of \SUSY is a prerequisite for string theory, for example, a
+favourite unification candidate.
 
 \begin{figure}
   \includegraphics[width=1.0\linewidth]{figs/runningCouplingSusy}
@@ -610,7 +621,7 @@ there have been no significant experimental hints of its existence.
 % excluding possible regions of parameter space. 
 For
 \SUSY to convincingly solve the hierarchy problem, it is expected to
-present itself at the TeV energy scale, which is just
+present itself at the TeV energy scale, which is
 starting to be explored by the \LHC. 
 % If \SUSY is to exist in the form
 % that is typically conceived it should therefore be evident in the
