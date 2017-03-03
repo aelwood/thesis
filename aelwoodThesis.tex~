@@ -54,15 +54,14 @@
 \begin{mainmatter}
   %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
   \input{introduction}
-  \input{theory}
-  \input{detector}
-  \input{reconstruction}
-  \input{l1trig}
-  % \input{eventSelection}
-  % \input{backgroundPred}
-  % \input{results}
-  %% To ignore a specific chapter while working on another, making the build faster, comment it out:
-  %\input{chap4}
+  % \input{theory}
+  % \input{detector}
+  % \input{reconstruction}
+  % \input{l1trig}
+  \input{eventSelection}
+  \input{backgroundPred}
+  \input{results}
+  % \input{conclusion}
 \end{mainmatter}
 
 %% Produce the appendices
