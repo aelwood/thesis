@@ -1,10 +1,29 @@
-\chapter{Event selection and analysis strategy}
+\chapter{Event selection and analysis strategy} %day1
 \label{chap:selection}
 
+Given the theoretical motivation for \BSM physics in
+Chapter~\ref{chap:theory}, the next Chapters of this thesis describe a
+search for \SUSY with the \CMS detector in $13~\tev$ proton collisions
+produced by the \LHC. The analysis is designed to target \SUSY
+produced in a strong force interaction that decays hadronically via
+\SM particles to a weakly interacting \LSP. The typical \SUSY models
+considered in this search are those with gluino or squark pair
+production. However, it is possible to generalise the search to look
+for any \BSM signatures that have a weakly interacting particle with
+significant momentum in the final state.
 % introduce analysis and what the next chapters are about
 % hadronic, inclusive, targets gluino and squark production but can be
 % generalised to DM
 
+As \SUSY has a significant number of free parameters, it can manifest
+itself in a wide range of decay topologies. For this reason the
+analysis is aimed to be as inclusive as possible, covering as much
+parameter space as is feasible.  This is dictated by an ability to
+predict the backgrounds from \SM processes with minimal uncertainties.
+The search then attempts to find statistically significant excesses in
+the data counts above those predicted for the various backgrounds. To
+maximise the chance of seeing \BSM phenomena events are typically
+required to have significant hadronic activity and missing momentum.  
 % Robust strategy - minimise background uncertainties and look for
 % excesses on top, in a conservative way (be very general here)
 
@@ -13,24 +32,78 @@
 \label{sec:challenge}
 
 %main challenge in limiting and understanding backgrounds
+The main challenge for a hadronic \BSM search is in limiting and
+understanding the backgrounds, while maximising acceptance of a wide
+range of potential \BSM signals. Within the analysis presented in this
+Chapter the backgrounds are considered in two separate categories,
+either as coming from a QCD multijet process or from a \SM process
+with genuine \MET. As the search can look for generic signs of
+excesses that are indicative of \BSM processes, considerations of the
+modelling of the signal models are not as important as constraining
+and understanding these backgrounds.
 
 \subsection{The QCD multijet background}
 
-% has high x section (refer back)
+The most abundant \SM process in $pp$-collisions at the \LHC is \QCD
+multijet production through strong force interactions. This background
+is orders of magnitude greater than other processes, as is evident
+from the total \LHC cross section in Fig.~\ref{fig:xsecs}. The
+majority of the \QCD background consists of events with multiple jets,
+most commonly two, produced in a balanced configuration, with no
+significant missing momentum, \MET or \MHT. A requirement on these
+variables therefore significantly reduces the background. As
+the abundance of such events is so large, however, mismeasurement of
+the jets can lead to a significant \QCD background passing such
+requirements. The fake missing energy can be introduced in a variety
+of ways:
+\begin{itemize}
+\item{Effects in the detector leading to inefficiencies, such as jets
+falling into regions of the detector that or uninstrumented or have a
+reduced response due to hardware issues.}
+\item{Fake additional energy being introduced. This can occur through
+detector malfunctions, for example from problems in the readout
+electronics. It can also be introduced through \PU that is attributed to
+the primary vertex. Additionally beam interactions that produce
+particles outside the detector can lead to mismeasurement.}
+\item{Issues at the reconstruction stage can also introduce fake \MET,
+such as through under or over-corrections of jet energies, or through
+the reconstruction algorithms missing physics objects that are
+produced.}
+\item{Physics objects with energies that fall below their selection
+threshold can also artificially introduce missing energy signatures,
+particularly when there is a collection of them pointing in a similar
+direction.}
+\end{itemize}
 
-% hard to simulate
+The ways in which this fake missing energy can be introduced are
+taken account of in as many ways as possible. However, due to the
+nature of these effects, which is often time dependent, they cannot be
+fully accounted for in simulation. This fact, coupled with the
+difficulty in accurately simulating \QCD processes due to theoretical
+uncertainties, makes constraining the multijet background a significant
+challenge. 
+
+It is also possible for the \QCD multijet background to be produced in
+association with genuine \MET. This occurs in the case of \emph{heavy
+flavour} \QCD, where a $b\bar{b}$ quark pair are produced and at least
+one the $b$-quarks decay via the weak force, producing a neutrino.
+This is subdominant to the mismeasured multijet background, but must
+still be accounted for. 
+% heavy flavour qcd
 
 % relevant to the trigger (cite back advantages from trigger chapter)
 
 \subsection{Backgrounds from standard model processes with genuine
 \MET}
 
+% can't be limited in the same way as QCD background
+
 % Z nu nu
 % W and ttbar from lost leptons
 
 
 %%%%%%%%%%%%%%%%%%%%
-\section{QCD multijet suppression with topological variables}
+\section{QCD multijet suppression with topological variables} %day2
 \label{sec:challenge}
 
 %why topological variables work!! - fake met from detector cock ups
@@ -97,7 +170,7 @@ Fig.~\ref{fig:alphaT}.
 % removes soft stuff! given jet threshold
 
 %%%%%%%%%%%%%%%%%%%%
-\section{Physics objects}
+\section{Physics objects} %day3
 
 %surely comes from the note?
 
@@ -114,6 +187,8 @@ Fig.~\ref{fig:alphaT}.
 %%%%%%%%%%%%%%%%%%%%
 \section{Trigger strategy}
 
+%big shit loads of QCD
+
 %L1
 
 %HLT
@@ -121,7 +196,7 @@ Fig.~\ref{fig:alphaT}.
 % justify corrections etc.
 
 %%%%%%%%%%%%%%%%%%%%
-\section{Event selection and categorisation}
+\section{Event selection and categorisation} %day4
 
 \subsection{Pre-selection}
 
@@ -156,14 +231,14 @@ $H_T$.
 
 \subsection{The control regions}
 
-%describe and motivate each of them
+%describe and motivate each of them as in AN
 
 \subsection{Event categorisation}
 
 %the jet topology, symmetric, asymmetric etc.
 
 %%%%%%%%%%%%%%%%%%%%
-\section{Corrections to simulation}
+\section{Corrections to simulation} %day5
 
 % mention tails of Njet and ETmiss are hard to simulate?
 
@@ -174,7 +249,7 @@ $H_T$.
 
 \subsection{Scale factors}
 
-% leads to sideband corrections to get better x section estimate
+% SFs from muons etc...
 
 %%%%%%%%%%%%%%%%%%%%
 %\section{Further optimisation of event selection}

@@ -6,8 +6,10 @@
     - \ Add the emulator stuff before conclusion of trigger chapter
     - \ consider the btag track statement? think it's fair...
 
-    - Check the weak isospin stuff
-    - Sort out the signs in the higgs potential!
+    - \ Check the weak isospin stuff
+    - \ Sort out the signs in the higgs potential!
+
+    - Add references to old alphaT searches?
 
 
 STUFF TO REMEMBER I DID:
@@ -15,6 +17,11 @@ STUFF TO REMEMBER I DID:
   - dPhi vs bDPhi plots (see ICHEP NOTE)
   - QCD method
   - MinChi studies? should i put this here?
+
+  to emphasise:
+    - optimisation?
+    - closure tests
+    - variations for systs (e.g. nisr etc)
 
 
 
