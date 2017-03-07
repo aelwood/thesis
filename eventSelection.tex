@@ -27,6 +27,7 @@ required to have significant hadronic activity and missing momentum.
 % Robust strategy - minimise background uncertainties and look for
 % excesses on top, in a conservative way (be very general here)
 
+
 %%%%%%%%%%%%%%%%%%%%
 \section{Challenges for a hadronic \BSM search}
 \label{sec:challenge}
@@ -43,6 +44,7 @@ modelling of the signal models are not as important as constraining
 and understanding these backgrounds.
 
 \subsection{The QCD multijet background}
+\label{sec:qcdMultijet}
 
 The most abundant \SM process in $pp$-collisions at the \LHC is \QCD
 multijet production through strong force interactions. This background
@@ -123,42 +125,76 @@ better simulation of electroweak processes compared to \QCD processes,
 this background can be understood with smaller uncertainties than the
 \QCD background.
 % Z nu nu
+%plots with backgrounds: http://www.hep.ph.ic.ac.uk/~mc3909/procs/
+
+%%%%%%%%%%%%%%%%%%%%
+\section{The \alphat analysis} 
+
+The search for \SUSY described within this thesis revolves around
+suppression of the \QCD multijet background to negligible levels
+through the use of topological variables, including \alphat,
+described in Sec.~\ref{sec:topoVars}. With negligible \QCD the
+large uncertainties that are usually prevalent when predicting this
+background are greatly reduce. The use of these topological variables
+also provides robustness against a wide range of mismeasurement
+effects, which are particularly relevant when looking at early data
+when the detector is not as well understood. The remaining background
+from electroweak processes is then estimated in a \emph{data-driven} way,
+minimising the uncertainties from relying on simulation.
+
+During Run~1 of the \LHC the \alphat analysis has been performed
+extensively to search for \SUSY. Datasets of $4.98~\ifb$ at
+$\sqrt{s}=7~\tev$ and $18.5~\ifb$ at $\sqrt{s}=7~\tev$ have been
+analysed, setting limits on \SUSY production within the context of
+simplified models
+\cite{Chatrchyan:2011zy,Khachatryan:2011tk,Chatrchyan:2012wa,Chatrchyan:2013mys,Khachatryan:2016pxa}.
+The analysis presented within this thesis is performed on the data
+collected during Run~2 of the \LHC at $\sqrt{s}=13~\tev$. The analysis
+has been redesigned and optimised to perform well at the higher centre
+of mass energy. Significant improvements have been made to improve the
+sensitivity of the analysis and in characterising the various
+backgrounds.
 
 %%%%%%%%%%%%%%%%%%%%
 \section{QCD multijet suppression with topological variables} %day2
-\label{sec:challenge}
+\label{sec:topoVars}
 
+As discussed in Sec.~\ref{sec:qcdMultijet}, a pure requirement on the
+\MET of an event is not always enough to remove the \QCD multijet
+background.  To effectively remove it, the mismeasurement that leads
+to the fake \MET signature must be identified and used to remove
+mismeasured events. This can be achieved by making use of topological
+variables, which use specific facts about the topology of an event to
+decide whether the \MET comes from mismeasurement or a weakly
+interacting particle. 
 %why topological variables work!! - fake met from detector cock ups
 
 \subsection{The \alphat variable}
 %introduce the variables and why they're useful
 
-%not finished, from 18 month report:
-Due to the very high cross sections of QCD processes at the LHC, there
-is a large multijet background. In the case that one of the jets is
-mismeasured, this results in fake missing energy, the signature left
-by SUSY production. To negate this effect, the dimensionless variable
-$\alpha_T$ is introduced
-\cite{AlphaTproposalCMS:2008vya,AlphaTproposalPhysRevLett.101.221803}.
-For a dijet system it is defined as: 
+The dimensionless variable, \alphat, was originally proposed as the
+$\alpha$ variable \cite{Randall:2008rw}, but changed to a transverse
+quantity to make it more suitable for use in a hadron collider.  For a
+dijet system, \alphat is defined as: 
 \begin{equation}
 \alpha_T=\frac{E_T^{j_2}}{M_T}, \end{equation} 
-where $E_T^{j_2}$ is
-the transverse energy of the lower energy jet and
+where $E_T^{j_2}$ is the transverse energy of the lower energy jet and
 $M_T=\sqrt{H_T^2-\cancel{H}_T^2}$ is the invariant mass of the dijet
 system. It is constructed from the jet characterising variables \HT
-and \MHT
-with $n_{jet}$ jets, $j_i$, with transverse momentum
-$\vec{p}_T^{j_i}$ and transverse energy $E_T^{j_i}$. For events with
-more than two jets, a pseudo dijet system is formed by combining jets.
-The system chosen is one that minimises $|\Delta H_T|$, this is the
-difference between the $E_T$ of each pseudo jet, where $E_T$ is the
-scalar sum of the transverse energies of all the jets in each pseudo
-jet. This leads to a generalised form of $\alpha_T$
+and \MHT with $n_{jet}$ jets, $j_i$, with transverse momentum
+$\vec{p}_T^{j_i}$ and transverse energy $E_T^{j_i}$. 
+
+For events with more than two jets, a pseudo dijet system is formed by
+combining jets.  The system chosen is one that minimises $|\Delta
+H_T|$, the difference between the $E_T$ of each pseudo jet,
+where $E_T$ is the scalar sum of the transverse energies of all the
+jets in each pseudo jet. This leads to a generalised form of
+$\alpha_T$
 \cite{AlphaT8TeVChatrchyan:2013lya}: 
 \begin{equation}
 \alpha_T=\frac{1}{2}\times\frac{H_T-\Delta
 H_T}{\sqrt{H_T^2-\cancel{H}_T^2}} \end{equation} 
+  
 Balanced and
 mismeasured multijet events have values of $\alpha_T\leq0.5$, while
 events with genuine missing energy have values of $\alpha_T>0.5$. By
@@ -167,17 +203,19 @@ multijet background to a negligible amount, this is evident in
 Fig.~\ref{fig:alphaT}. 
 
 % put more upt to date one here
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics[width=0.8\linewidth]{}%alphaT1_bkgd}
-% 	\end{center}
-%   \caption{The $\alpha_T$ values for events with $H_T>375$ GeV and 2
-%   to 3 jets that pass all other cuts imposed in the $\alpha_T$
-%   analysis. The green dotted line shows the expected multijet QCD
-%   background that can be removed with an appropriate cut on $\alpha_T$
-%   \cite{AlphaT8TeVChatrchyan:2013lya}}
-% 	\label{fig:alphaT}
-% \end{figure}
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.8\linewidth]{figs/analysis/eventSelection/CMS-PAS-SUS-16-016_Figure-aux_001}%alphaT1_bkgd}
+	\end{center}
+  \caption{The $\alpha_T$ distribution for events with $H_T>200$ GeV
+  that pass the pre-selection criteria (Sec.~\ref{sec:preselection}) when
+  $\alphat<0.55$ and the signal selection criteria
+  (Sec.~\ref{sec:signalregion}) when
+  $\alphat>0.55$. The green dotted line shows the expected multijet
+  QCD background that can be removed with an appropriate cut on
+  $\alpha_T$}
+	\label{fig:alphaT}
+\end{figure}
 
 \subsection{The \bdphi variable}
 
@@ -190,6 +228,7 @@ Fig.~\ref{fig:alphaT}.
 \subsection{$\MHT/\MET$}
 
 % removes soft stuff! given jet threshold
+
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Physics objects} %day3
@@ -221,6 +260,7 @@ Fig.~\ref{fig:alphaT}.
 \section{Event selection and categorisation} %day4
 
 \subsection{Pre-selection}
+\label{sec:preselection}
 
 %work in progress from 18 month:
 The only genuine source of missing transverse energy ($\cancel{E}_T$)
@@ -247,6 +287,7 @@ jets, the number of jets with a reconstructed b-quark and the value of
 $H_T$. 
 
 \subsection{The signal region}
+\label{sec:signalregion}
 
 %variable alphaT
 %bDphi
