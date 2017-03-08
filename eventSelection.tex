@@ -224,10 +224,9 @@ background is evident in Fig.~\ref{fig:alphaT}. By
 choosing an appropriate cut above $0.5$ it is possible to reduce the
 multijet background to a negligible level.
 
-% put more upt to date one here
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=0.8\linewidth]{figs/analysis/eventSelection/CMS-PAS-SUS-16-016_Figure-aux_001}%alphaT1_bkgd}
+		\includegraphics[width=0.7\linewidth]{figs/analysis/eventSelection/CMS-PAS-SUS-16-016_Figure-aux_001}%alphaT1_bkgd}
 	\end{center}
   \caption{The $\alpha_T$ distribution for events with $H_T>200$ GeV
   that pass the pre-selection criteria (Sec.~\ref{sec:preselection}) when
@@ -241,16 +240,149 @@ multijet background to a negligible level.
 
 \subsection{The \bdphi variable}
 
+To further suppress the \QCD multijet background after applying an
+\alphat cut the biased-$\Delta\phi$, \bdphi, variable is introduced.
+This is a variation on the $\Delta\phi$ variable, which is usually
+defined as the minimum azimuthal angle between the \MET and any jet in
+the event. When calculating \bdphi, each jet is compared to the
+\MHT, but the \MHT is recalculated as if the jet were not present in
+the event. This leads to the definition:
+\begin{equation}
+\bdphi = \rm{min}(\Delta\phi(\vec{p_T^{j_i}},\vec{\MHT^{j_i}})),
+\end{equation}
+where $vec{\MHT^{j_i}}=\vec{\MHT}+\vec{p_T^{j_i}}$. The removal of the
+probe jet from the event adds robustness to over-measurement, as well
+as under-measurement, of the jet energies.
 % introduce and explain
 
+The \bdphi variable acts to remove events in which the \MET is
+collinear with the jets, a typical feature of mismeasurement. However,
+it also helps to remove the heavy flavour \QCD multijet background,
+where a $b\bar{b}$ pair is produced and decays leptonically, producing
+neutrinos. These neutrinos are a genuine source of \MET that are
+typically boosted along the jet direction. In these cases the \bdphi
+helps to reject the \QCD background that may have passed an $\alphat$
+cut. The \bdphi distribution for multijet events and the remaining \SM
+backgrounds is shown in Fig.~\ref{bdphi}. A requirement on \bdphi
+close to 0.5 will significantly reduce any \QCD background.
+%bDPhi augments alphaT when considering mismeasurement in heavy
+%flavour qcd stuff
 % show the plot from Mark
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.7\linewidth]{figs/analysis/eventSelection/CMS-PAS-SUS-16-016_Figure-aux_002}%alphaT1_bkgd}
+	\end{center}
+  \caption{The \bdphi distribution for events with $H_T>800$ GeV that
+  pass the pre-selection criteria (Sec.~\ref{sec:preselection}). The
+  green dotted line shows the expected multijet QCD background that
+  can be removed with an appropriate cut on $\alpha_T$}
+	\label{fig:bdphi}
+\end{figure}
 
 %put the stuff about bDPhi over dPhi as in the ICHEP note
 
+In Fig.~\ref{fig:bDPhi_nominal} a comparison of the abilities of the
+\bdphi variable to control the \QCD multijet background with a similar
+jet-\mht angular variable \dphimhtj, the minimum azimuthal separation
+between the \mht-vector and the leading four jets, is presented. The
+\bdphi variable exhibits a distribution that is more sharply peaked
+for the \QCD multijet background at low values and faster falling than
+\dphimhtj,  \dphimhtj for QCD conversely has a broader distribution
+with a larger leakage for a comparable azimuthal selection. This
+demonstrates the ability of \bdphi to provide a better control of the
+\QCD background while retaining acceptance of events with genuine \mht,
+in this case represented by the V+jets, \ttbar and other residual SM
+backgrounds with genuine \met. 
+
+\begin{figure}[!h]
+ \centering
+ \subfloat[\bdphi distribution.\label{fig:bDPhi_dist}]{
+ \includegraphics[width=0.5\textwidth]{figs/analysis/eventSelection/biasedDPhi_all_800}
+ }
+ \subfloat[\dphimhtj distribution.\label{fig:DPhiMht_dist}]{
+ \includegraphics[width=0.5\textwidth]{figs/analysis/eventSelection/minDeltaPhiMht_all_800}
+ } \\
+ \caption{\bdphi and \dphimhtj distributions of MC simulation of the
+ dominant analysis backgrounds
+ after analysis selections for \scalht $> 800$ \GeV. }
+ \label{fig:bDPhi_nominal}
+\end{figure}
+
+This is further demonstrated in Fig.~\ref{fig:bDPhi_roc}, where the
+efficiency of retaining processes with genuine \mht is plotted against
+the background efficiency for a series of \bdphi, \dphimhtj and
+\dphimhtjall cuts, where \dphimhtjall considers all jets rather than
+just the leading four. The points with a cut of $0.5$ are highlighted
+as stars on the plot. As the general analysis strategy involves reducing
+the \QCD multijet background to a negligible level while maximising
+signal acceptance, these plots demonstrate that this is most
+achievable with a cut on \bdphi. For the same threshold requirement of
+$0.5$ on each variable, the \bdphi variable provides an efficiency for
+multijet events that is approximately three orders of magnitude lower
+than for \dphimhtj at the cost of approximately a factor $3$ reduction
+in signal efficiency. The threshold on \bdphi required to give an
+approximately equivalent suppression of QCD achieved with the
+\dphimhtj variable is larger than 1.5, at the cost of a loss of a
+factor $5$ in signal acceptance w.r.t. \bdphi. This also holds true in
+the extreme case of a high jet multiplicity signal model.
+Additionally, despite performing similarly to \bdphi for separating
+the non-multijet from multijet backgrounds, the \dphimhtjall variable
+performs worse for a high jet multiplicity signal model than \bdphi.
+
+\begin{figure}[!h]
+ \centering
+ \subfloat[Acceptance of SM backgrounds with genuine \met vs QCD
+ acceptance]{
+ \includegraphics[width=0.5\textwidth]{figs/analysis/eventSelection/rateEffEwkQCD}
+ }~
+ \subfloat[High jet multiplicity signal acceptance vs QCD acceptance]{
+ \includegraphics[width=0.5\textwidth]{figs/analysis/eventSelection/rateEffSignalQCD}
+ } \\
+ \caption{\bdphi, \dphimhtj and \dphimhtjall efficiency for simulation of processes with genuine
+ \met vs QCD multijet background efficiency. The stars correspond to
+ efficiencies with a cut of $0.5$ on each variable. A generic case of
+ non-multijet process efficiency is considered in (a). In (b) we
+ consider an uncompressed T1tttt model. This is the case in which \bdphi is
+ expected to have the lowest efficiency due to the very high jet
+ multiplicity of the model.}
+ \label{fig:bDPhi_roc}
+\end{figure}
+
+Additionally the \bdphi variable displays robustness in the presence
+of severe event mismeasurement. A mismeasurement is simulated by
+artificially lowering the \pt of the jet that minimises the azimuthal
+separation variable to 41~\gev. Due
+to the removal of the probe jet from the computation of \bdphi, the
+distribution of angular separation Fig.~\ref{fig:shifted_bDPhi_dist}
+is remains unchanged under severe mismeasurement. The \dphimhtj
+variable is sensitive to such mismeasurement as both \mht and the rank
+of the leading four jets are affected, resulting in a broader
+distribution with increased leakage
+Fig.~\ref{fig:shifted_DPhiMht_dist}.
+
+\begin{figure}[!h]
+ \centering
+ \subfloat[QCD \bdphi distribution with mismeasurement.\label{fig:shifted_bDPhi_dist}]{
+ \includegraphics[width=0.5\textwidth]{figs/analysis/eventSelection/shiftedMinBDPhi_all_800}
+ }
+ \subfloat[QCD \dphimhtj distribution with mismeasurement.\label{fig:shifted_DPhiMht_dist}]{
+ \includegraphics[width=0.5\textwidth]{figs/analysis/eventSelection/shiftedMinDeltaPhiMht_all_800}
+ } \\
+ \caption{\bdphi and \dphimhtj distributions of QCD multijet simulation
+ after analysis selections for \scalht $> 800$ \GeV in the case of
+ severe mismeasurement. The
+ total number of events that pass a $\Delta\phi > 0.5$ selection of the
+ respective quantity are indicated. (N.B. these plots were made with
+ an older iteration of the analysis and have not been fully updated,
+ although their conclusions remain true)}
+ \label{fig:bDPhi_mismeasured}
+\end{figure}
+
 \subsection{$\MHT/\MET$}
 
-% removes soft stuff! given jet threshold
 
+% removes soft stuff! given jet threshold
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Physics objects} %day3
