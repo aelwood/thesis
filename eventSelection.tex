@@ -174,33 +174,55 @@ interacting particle.
 
 The dimensionless variable, \alphat, was originally proposed as the
 $\alpha$ variable \cite{Randall:2008rw}, but changed to a transverse
-quantity to make it more suitable for use in a hadron collider.  For a
+quantity to make it more suitable for use in a hadron collider
+\cite{CMS-PAS-SUS-08-005,CMS-PAS-SUS-09-001}. It is intrinsically
+robust against jet energy mismeasurements in multijet systems. For a
 dijet system, \alphat is defined as: 
 \begin{equation}
-\alpha_T=\frac{E_T^{j_2}}{M_T}, \end{equation} 
+\alpha_T=\frac{E_T^{j_2}}{M_T}, 
+\end{equation} 
 where $E_T^{j_2}$ is the transverse energy of the lower energy jet and
-$M_T=\sqrt{H_T^2-\cancel{H}_T^2}$ is the invariant mass of the dijet
-system. It is constructed from the jet characterising variables \HT
-and \MHT with $n_{jet}$ jets, $j_i$, with transverse momentum
-$\vec{p}_T^{j_i}$ and transverse energy $E_T^{j_i}$. 
-
-For events with more than two jets, a pseudo dijet system is formed by
-combining jets.  The system chosen is one that minimises $|\Delta
-H_T|$, the difference between the $E_T$ of each pseudo jet,
-where $E_T$ is the scalar sum of the transverse energies of all the
-jets in each pseudo jet. This leads to a generalised form of
-$\alpha_T$
-\cite{AlphaT8TeVChatrchyan:2013lya}: 
+$M_T$ is the invariant mass of the dijet
+system, defined as:
 \begin{equation}
-\alpha_T=\frac{1}{2}\times\frac{H_T-\Delta
-H_T}{\sqrt{H_T^2-\cancel{H}_T^2}} \end{equation} 
+M_T=\sqrt{(\Sigma E_T^{j_i})^2-(\Sigma p_x^{j_i})^2-(\Sigma
+p_y^{j_i})^2},
+\end{equation}
+where $E_T^{j_i}$ is the transverse energy of jet, $j_i$ and the $x$
+and $y$ components of the transverse momentum are $p_x^{j_i}$ and
+$p_y^{j_i}$ respectively.
+
+In the case that the event in question is a perfectly measured dijet
+event $E_T^{j_1}=E_T^{j_2}$ and both jets are back-to-back in $\phi$.
+This results in a value of $\alphat=0.5$ when the momentum of each jet
+is large in comparison with its mass, as is usually the case in
+\QCD multijet events. If the jets are still back-to-back but one of
+them is mismeasured, this will result in a value of $\alphat<0.5$.
+However, in the case that the two jets are recoiling from a genuine
+source of \MET, they will not be back-to-back and generally $\alphat>0.5$.
+
+For events with more than two jets, a \emph{pseudo dijet} system is
+formed by summing jets vectorially to combine them.  The system chosen
+is one that minimises $|\Delta E_T|$, the difference between the $E_T$
+of each pseudo jet, where $E_T$ is the scalar sum of the transverse
+energies of all the jets in each pseudo jet. This form of clustering
+is chosen as it forms the most balanced configuration, making the
+pseudo dijet event appear as close to an event with no mismeasurement
+as possible. It leads to a generalised form of $\alpha_T$: 
+\begin{equation}
+\alpha_T=\frac{\Sigma E_T^{j_i}-\Delta
+E_T}{2\sqrt{(\Sigma E_T^{j_i})^2-\cancel{H}_T^2}}.
+\end{equation} 
+In the case that there is no mismeasurement or \MET, $\Delta
+E_T=\MET=0$ and $\alphat=0.5$. However, if the energy of the jets is
+mismeasured, the value of $\Delta E_T$ will be very close to \MET,
+resulting in $\alphat<0.5$. When the jets are recoiling from genuine
+\MET, $\Delta E_T\sim 0$ and $\alphat>0.5$.
   
-Balanced and
-mismeasured multijet events have values of $\alpha_T\leq0.5$, while
-events with genuine missing energy have values of $\alpha_T>0.5$. By
+The efficacy of an $\alphat$ cut in removing the \QCD multijet
+background is evident in Fig.~\ref{fig:alphaT}. By
 choosing an appropriate cut above $0.5$ it is possible to reduce the
-multijet background to a negligible amount, this is evident in
-Fig.~\ref{fig:alphaT}. 
+multijet background to a negligible level.
 
 % put more upt to date one here
 \begin{figure}
