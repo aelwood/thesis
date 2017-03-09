@@ -379,7 +379,8 @@ Fig.~\ref{fig:shifted_DPhiMht_dist}.
  \label{fig:bDPhi_mismeasured}
 \end{figure}
 
-\subsection{The missing energy ratio $\MHT/\MET$}
+\subsection{The missing energy ratio \mhtmet}
+\label{sec:mhtmet}
 
 After requirements are made on the \alphat and \bdphi variables, the
 majority of events with \MHT introduced from jet mismeasurement are
@@ -423,6 +424,7 @@ reconstructed to provide an extra type of lepton veto when the leptons
 are not fully reconstructed.
 
 \subsection{Jets}
+\label{sec:evSel_jets}
 
 Jets are defined as sets of particle-flow (PF) candidates clustered by
 the anti-$k_{T}$ jet clustering algorithm with
@@ -571,31 +573,35 @@ must have a $\pT>10~\gev$ and be within $|\eta|<2.5$.
 
 \subsection{Isolated tracks}
 \label{sec:SIT}
-A single isolated track (SIT) can be used to identify W bosons through their leptonic decays: 
-W $\rightarrow$ $\mu \nu$, W $\rightarrow$ $e\nu$, and W $\rightarrow$ $\tau$($\rightarrow l$) $\nu$. 
-Single prong decays of the tau lepton can also be identified: W $\rightarrow$ $\tau$ ($\rightarrow$ h$^{\pm}$ + n$\pi^{0}$) $\nu$. 
-A single isolated track comprises a charged PF candidate with $\Pt > 10 \gev$, $\Delta z(\mathrm{track}, \mathrm{PV}) < 0.05 \, \mathrm{cm}$ 
-and with a relative isolation smaller than 0.1, where the isolation is determined from the sum 
-of the \Pt of the charged PF candidates within $\Delta R < 0.3$.
+
+A \ac{SIT} can be used to identify W bosons through
+their leptonic decays: W $\rightarrow$ $\mu \nu$, W $\rightarrow$
+$e\nu$, and W $\rightarrow$ $\tau$($\rightarrow l$) $\nu$.  Single
+prong decays of the tau lepton can also be identified: W $\rightarrow$
+$\tau$ ($\rightarrow$ h$^{\pm}$ + n$\pi^{0}$) $\nu$.  A single
+isolated track comprises a charged PF candidate with $\Pt > 10 \gev$,
+$\Delta z(\mathrm{track}, \mathrm{PV}) < 0.05 \, \mathrm{cm}$ and with
+a relative isolation smaller than 0.1, where the isolation is
+determined from the sum of the \Pt of the charged PF candidates within
+$\Delta R < 0.3$.
 %Events in the signal region and all control regions (ignoring the
 %selected muons) containing a SIT candidate identified with these
 %criteria are vetoed.
 
 
-\subsection{Missing transverse momentum}
-Missing transverse momentum (\met) is defined as the magnitude of the vector sum
-of the transverse momentum of all particle-flow candidates in the event.
-The Type-I \met correction \cite{Khachatryan:2014gga} is applied, i.e., the transverse momentum of
-the particle-flow candidates clustered as jets are replaced with the
-transverse momentum of the jets that are scaled by the jet energy
-correction factors.
+\subsection{Energy sums}
 
+Missing transverse momentum (\MET) is reconstructed as described in
+Sec.~\ref{sec:met_reco} and the the Type-I \MET energy correction is applied.
 The \met is used in the definition of 
 the transverse mass, $M_{T}$, which is in turn used as part of
 the selection criteria that define the single muon control sample 
-(Sec.~\ref{sec:mucontrolSelection}), and for the $\mhtmet$ cleaning filter, 
-as described in Sec.~\ref{sec:selection}.
+(Sec.~\ref{sec:controlregions}), and for the $\mhtmet$ cleaning
+filter, described in Sec.~\ref{sec:mhtmet}.
 
+The \HT and \MHT energy sums are constructed with the jets outlined in
+Sec.~\ref{sec:evSel_jets} that are subject to the kinematic requirements of
+$pT>40$~\gev and $|\eta|<3$.
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Trigger strategy}
