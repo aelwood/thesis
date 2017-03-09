@@ -418,14 +418,14 @@ in this Section. Jets are reconstructed to characterise the
 hadronic activity within the event. Muons, electrons and photons are
 reconstructed for a signal region veto and for selecting the \emph{control
 regions} that are used for background estimation, detailed in
-Sec.~\ref{sec:controlregions}. \emph{Single isolated tracks} are additionally
+Sec.~\ref{sec:controlregions}. \emph{Isolated tracks} are additionally
 reconstructed to provide an extra type of lepton veto when the leptons
 are not fully reconstructed.
 
 \subsection{Jets}
 
 Jets are defined as sets of particle-flow (PF) candidates clustered by
-the anti-$k_{T}$ jet clustering algorithm \cite{Cacciari:2008gp} with
+the anti-$k_{T}$ jet clustering algorithm with
 a distance parameter of 0.4 (PFJets). \acf{CHS} is applied, charged
 hadrons that can be traced back to \PU vertices are not clustered. The
 four-vectors of the jets are then corrected with the procedure
@@ -444,7 +444,7 @@ effect.
 %maybe show plots here?
 
 \begin{table}[ht!]
-  \caption{The ``loose'' jet ID requirements. \label{tab:loose-jet-id}}
+  \caption{The \emph{loose} jet ID requirements. \label{tab:loose-jet-id}}
   \centering
   \begin{tabular}{ ccc }
     \hline
@@ -479,37 +479,41 @@ Two types of selection are made on muons depending on whether they are
 used to carry out the veto in the signal region or used for selecting
 one of the control regions. A tighter criteria is used for the control
 region and muons are required to be well isolated. The muon is must be
-reconstructed with the \emph{global} algorithm, as detailed
-in Sec.~\ref{sec:muons_reco}. . The isolation in
+reconstructed with the \emph{global} algorithm, as detailed in
+Sec.~\ref{sec:muons_reco}. The muon is required to consist of a track
+with at least 5 inner layer hits, a good fit, good compatibility with
+the primary vertex and significant muon chamber hits. The isolation in
 the control region uses the \emph{relative isolation} algorithm
 defined in Sec.~\ref{sec:reco_iso} with \emph{effective-area}
-correction, it is required that $I^{\textrm{rel}}<0.15$.   
+correction, it is required that $I^{\textrm{rel}}<0.15$.  
 
-For the purpose of vetoing muons in the signal region, a looser working point 
-is used, which provides $\sim$ 98 $\%$ efficiency. The muon is just
-required to be classified within the \PF algorithm and reconstructed
-with the \emph{global} or \emph{tracker} muon algorithms, as detailed
-in Sec.~\ref{sec:muons_reco}. The
+For the purpose of vetoing muons in the signal region, a looser
+working point is used, which provides $\sim$ 98 $\%$ efficiency. The
+muon is just required to be classified within the \PF algorithm and
+reconstructed with the \emph{global} or \emph{tracker} muon
+algorithms, as detailed in Sec.~\ref{sec:muons_reco}. The
 \emph{mini-isolation} isolation is utilised with effective-area \PU
-correction $I^{\textrm{rel}}_{\textrm{mini}} < 0.2$. 
+correction $I^{\textrm{rel}}_{\textrm{mini}} < 0.2$. The reconstructed
+muon must have a $\pT>10~\gev$ and be within $|\eta|<2.1$.
 
 \subsection{Photons}
 \label{sec:photon-id}
-Photons are identified according to the ``tight'' working point definition ($\sim$ 71 $\%$ efficiency) 
-of the simple cut-based photon identification algorithm \cite{photon-id} 
-and required to be well isolated. 
-A PF-based isolation is used with a cone size $\Delta R$ $<$ 0.3 and
-$\rho\times A_{eff}$ corrections are applied to remove the effects of pileup \cite{pf-photon}. 
-Table \ref{tab:photon-id-gamma} summarises the identification and isolation selection used. 
 
-Photons are vetoed in the definition of the hadronic signal region, 
-as described in Sec.~\ref{sec:preSelection}, while a 
-control region with one photon (``\gj'') is defined for the purpose of the background estimation, 
-as described in Sec.~\ref{subsec:photoncontrolSelection}.
-
+Photons are identified according to a \emph{tight} working point
+definition ($\sim$ 71 $\%$ efficiency) and required to be well
+isolated.  A \PF-based isolation which considers neutral and charged
+hadrons separately is used with a cone size $\Delta R$
+$<$ 0.3 and $\rho\times A_{eff}$ corrections are applied to remove the
+effects of pileup.  Table \ref{tab:photon-id-gamma}
+summarises the isolation selection used. There are additional
+requirements on the ratio of \HCAL and \ECAL deposits and the
+kinematics of the deposits within the \ECAL. The reconstructed
+photon must have a $\pT>25~\gev$ and be within $|\eta|<2.5$.
 
 \begin{table}[ht!]
-  \caption{Photon identification (``tight'' working point).\label{tab:photon-id-gamma}}
+  \caption{Photon isolation criteria (\emph{tight} working point). The
+  energy of particles within the isolation cone must be less than the
+  value in the column.\label{tab:photon-id-gamma}}
   \centering
   \footnotesize
   \begin{tabular}{ ccc }
@@ -517,10 +521,7 @@ as described in Sec.~\ref{subsec:photoncontrolSelection}.
     \hline
     Categories                    & Barrel                             & EndCap                             \\
     \hline
-    Conversion safe electron veto & Yes                                & Yes                                \\
-    Single Tower H/E              & 0.01                               & 0.015                               \\
-    $\sigma_{i\eta i\eta}$        & 0.01                               & 0.0265                               \\
-    PF charged hadron isolation   & 1.66                               & 1.04                               \\
+    PF charged hadron isolation   & 1.66 GeV & 1.04 GeV                          \\
     PF neutral hadron isolation   & 0.14 + $ e^{0.0028 \times \pt^{\gamma} + 0.5408}$  &  3.89 + 0.0172 $\times$ $\pt^{\gamma}$\\
     PF photon isolation           & 1.40 + 0.0014 $\times$ $\pt^{\gamma}$ & 1.40 + 0.0091 $\times$ $\pt^{\gamma}$ \\
     \hline
@@ -530,44 +531,45 @@ as described in Sec.~\ref{subsec:photoncontrolSelection}.
 
 \subsection{Electrons}
 \label{sec:electron-id}
-In order to veto electrons in the hadronic signal region and the muon
-and photon control regions, the ``loose'' working point definition
-($\sim$ 90 $\%$ efficiency) of the cut-based electron identification
-\cite{electron-id} is used.  Electrons are also require required to be
-isolated.  Similar to muons, in the hadronic signal regions a PF-based
-isolation \cite{pf-photon} is used with a cone size determined by the
-mini isolation algorithm (see Sec.~\ref{sec:muon-id}) and $\rho\times
-A_{eff}$ corrections are applied to remove the effects of pileup.
-Isolated electrons are defined by $I^{rel}_{comb} < 0.1$.
 
-Table \ref{tab:ele-id} summarises the identification 
-selection used. 
+In order to veto electrons a \emph{loose} working point definition
+($\sim$ 90 $\%$ efficiency) is used. There are requirements on the
+ratio of \HCAL and \ECAL deposits, criteria to remove photons that
+have converted within the tracker, a minimum number of tracks required
+and kinematic requirements on the deposit within the \ECAL. Electrons
+are also require required to be isolated with the effective-area
+corrected mini-isolation algorithm.  Isolated electrons are defined by
+$I^{\textrm{rel}}_{\textrm{mini}} < 0.1$. The reconstructed electron
+must have a $\pT>10~\gev$ and be within $|\eta|<2.5$.
 
-\begin{table}[h!]
-  \caption{Electron identification (``tight'' working point).\label{tab:ele-id}}
-  \centering
-  \footnotesize
-  \begin{tabular}{ lcc }
-    \hline
-    \hline
-    Categories                                               & Barrel    & EndCap    \\
-    \hline
-    $\Delta \eta_{In}$                                       & 0.0105   & 0.00814  \\
-    $\Delta \phi_{In}$                                       & 0.115    & 0.182  \\
-    $\sigma_{i\eta i\eta}$                                   & 0.0103    & 0.0301  \\
-    H/E                                                      & 0.104    & 0.0897   \\
-    d0 (vtx)                                                 & 0.0261    & 0.118  \\
-    dZ (vtx)                                                 & 0.041    & 0.822  \\
-    $\lvert(1/E_{\textrm{ECAL}} - 1/p_{\textrm{trk}})\rvert$ & 0.102     & 0.126  \\
-    Missing hits (inner tracker)                             & 2         & 1         \\
-    Conversion veto                                          & yes       & yes   \\
-    \hline
-    \hline
-  \end{tabular}
-  \end{table}
+% Table \ref{tab:ele-id} summarises the identification 
+% selection used. 
+%
+% \begin{table}[h!]
+%   \caption{Electron identification (``tight'' working point).\label{tab:ele-id}}
+%   \centering
+%   \footnotesize
+%   \begin{tabular}{ lcc }
+%     \hline
+%     \hline
+%     Categories                                               & Barrel    & EndCap    \\
+%     \hline
+%     $\Delta \eta_{In}$                                       & 0.0105   & 0.00814  \\
+%     $\Delta \phi_{In}$                                       & 0.115    & 0.182  \\
+%     $\sigma_{i\eta i\eta}$                                   & 0.0103    & 0.0301  \\
+%     H/E                                                      & 0.104    & 0.0897   \\
+%     d0 (vtx)                                                 & 0.0261    & 0.118  \\
+%     dZ (vtx)                                                 & 0.041    & 0.822  \\
+%     $\lvert(1/E_{\textrm{ECAL}} - 1/p_{\textrm{trk}})\rvert$ & 0.102     & 0.126  \\
+%     Missing hits (inner tracker)                             & 2         & 1         \\
+%     Conversion veto                                          & yes       & yes   \\
+%     \hline
+%     \hline
+%   \end{tabular}
+%   \end{table}
 
 
-\subsection{Single isolated tracks}
+\subsection{Isolated tracks}
 \label{sec:SIT}
 A single isolated track (SIT) can be used to identify W bosons through their leptonic decays: 
 W $\rightarrow$ $\mu \nu$, W $\rightarrow$ $e\nu$, and W $\rightarrow$ $\tau$($\rightarrow l$) $\nu$. 
