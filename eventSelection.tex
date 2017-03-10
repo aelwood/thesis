@@ -616,15 +616,48 @@ around maintaining as low an energy threshold as possible given the
 very high rate of \QCD multijet processes. To select for events with
 significant hadronic activity and missing energy, triggers are used
 that rely on the \HT and \MHT of the events. Additionally, including
-topological variables such as \alphat in the \HLT allow events to be
-collected with low as $\HT=200~\gev$, without a 
+topological variables, such as \alphat, in the \HLT allow events to be
+collected with $\HT$ as low as $200~\gev$.
 
+\bf{FIXME} The L1 paths we use and why - ask christian
 %L1
 
+To collect events that are of general use to hadronic analyses the
+$\HT$ of each event is reconstructed within the \HLT. This is carried
+out with a custom form of \PF, that is designed to work in a way that
+is quick enough given the time the trigger has to make a decision. To
+further help with this timing constraint, the \HT is calculated with
+jets clustered from only calorimeter deposits and a looser constraint
+is made, reducing the load on the \PF reconstruction. This allows for
+all events that pass $\HT>800~\gev$, calculated by the \HLT,
+to be collected. When carrying out full online reconstruction, this
+results in a $\sim 100\%$ efficiency for events with an offline
+$\HT>900~\gev$. 
+
+To be able to efficiently collect events with lower
+values of \HT, the \alphat variable is calculated within the \HLT. A
+requirement is made on both \alphat and \HT for a series of different
+\HT thresholds. These requirements are chosen to limit the rate of the
+\alphat-\HT triggers to an acceptable level, while maintaining low
+acceptance of events with low \HT. 
+
+There are also general purpose missing energy triggers that require
+both an \MHT and \MET threshold to be passed within the \HLT.
+Including events selected by these triggers helps to increase the
+efficiency across the board. However, they are quite sensitive to
+running conditions and mismeasurement, so are not as robust against
+the \HLT rate as the \alphat-\HT triggers. The full list of
+triggers used to collect data for the signal region of the \alphat
+analysis can be seen in Tab.~\ref{tab:triggers}.
+
+\bf{FIXME} The HLT paths we use (in a table)
 %HLT
 
-%corrections
-
+The control regions are triggered by standard muon or photon triggers,
+where the \HLT requires at least one of these objects above a
+threshold. Due to the lower rate of events containing leptons, these
+triggers are at full efficiency for their requirements in the
+analysis.
 %control regions
 
 %%%%%%%%%%%%%%%%%%%%
@@ -678,6 +711,7 @@ $H_T$.
 
 \subsection{Trigger efficiencies}
 
+%as we maintain low thresholds operate near the trigger turn on: corrections
 % put in trigger efficiency plots
 
 \subsection{Scale factors}
