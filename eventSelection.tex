@@ -709,8 +709,20 @@ used are designed to remove the instances of fake \MET while retaining
 a high efficiency for real physics events, they are described in the
 following.
 \begin{itemize}
-\item{}
-\item{}
+\item{The primary vertex must be well reconstructed within
+$|z|<=24$~cm of the proton collision region and $d_{xy}<2$~cm from the
+beam line}
+\item{Beam interactions exterior to the detector, beam halo effects,
+are removed by vetoing events with \ac{CSC} and calorimeter energy
+deposits consistent with interactions from particles outside the
+detector.}
+\item{Noise, caused by particle interactions with the read-out system,
+and dead regions within the \HCAL are removed with the \emph{HBHE
+noise and isolation filters}}
+\item{Anomalous signals within the \ECAL endcap supercrystals are removed
+with the \emph{\ECAL Endcap SC Noise filter}}
+\item{Events with misidentified straight tracks that are reconstructed
+to have a large \pT are removed by the \emph{bad track filter}.}
 \item{}
 \end{itemize}
 
@@ -728,8 +740,8 @@ Tab.~\ref{preselection}.
     Selection                     & Requirement                     \\
     \hline
     ``MET filters''               & \parbox[t]{10cm}{Primary Vertex, CSC Beam Halo,
-      HBHE Noise and Isolation, \\ ECAL Endcap SC Noise, ECAL TP, Bad
-      Muon, Bad Charged Hadron}         \\
+      HBHE Noise and Isolation, \\ ECAL Endcap SC Noise, ECAL TP, bad
+      track filter}         \\
     Jet acceptance                & $\PT > 40\gev$, $|\eta| < 2.4$                      \\
     Lead jet acceptance           & $\PT > 100\gev$, $|\eta| < 2.4$                   \\
     Forward jet veto              & $\PT > 40\gev$, $|\eta| > 2.4$                     \\
