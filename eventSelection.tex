@@ -607,8 +607,8 @@ $\pT>40$~\gev and $|\eta|<3$.
 %%%%%%%%%%%%%%%%%%%%
 \section{Trigger strategy}
 
-As \SUSY models have a lot of freedom in how they are manifest a
-guiding principle of the analysis is to maintain acceptance to as much
+As \SUSY models have a lot of freedom in how they are manifest, a
+guiding principle of the analysis is to maintain acceptance of as much
 phase space as possible. Despite some \SUSY models being ruled out at
 energies $O(100)$~\gev, models with compressed spectra are still poorly
 constrained in this regime. The trigger strategy therefore revolves
@@ -642,51 +642,104 @@ requirement is made on both \alphat and \HT for a series of different
 acceptance of events with low \HT. 
 
 There are also general purpose missing energy triggers that require
-both an \MHT and \MET threshold to be passed within the \HLT.
+both an \MHT and \MET threshold to be surpassed within the \HLT.
 Including events selected by these triggers helps to increase the
-efficiency across the board. However, they are quite sensitive to
+efficiency across the board. These variables, however, are quite sensitive to
 running conditions and mismeasurement, so are not as robust against
 the \HLT rate as the \alphat-\HT triggers. The full list of
 triggers used to collect data for the signal region of the \alphat
 analysis can be seen in Tab.~\ref{tab:triggers}.
 
-\bf{FIXME} The HLT paths we use (in a table)
-%HLT
+\bf{FIXME} The HLT paths we use (in a table) - including the CR
+triggers
 
-The control regions are triggered by standard muon or photon triggers,
-where the \HLT requires at least one of these objects above a
-threshold. Due to the lower rate of events containing leptons, these
-triggers are at full efficiency for their requirements in the
-analysis.
-%control regions
+The events in the control regions are collected with muon or photon
+triggers, where the \HLT requires at least one of these objects above
+a certain energy threshold threshold. Due to the lower rate of events
+containing leptons, these triggers are at full efficiency for their
+requirements in the analysis. The specific triggers used are listed in
+Tab.~\ref{tab:triggers}.
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Pre-selection}%day4
 \label{sec:preselection}
 
-%work in progress from 18 month:
-The only genuine source of missing transverse energy ($\cancel{E}_T$)
-in the SM is electroweak neutrino production. In these cases, with the
-exception of a $Z$ decaying via a pair of neutrinos, an associated
-lepton is simultaneously produced. This background is minimised by
-vetoing any events with isolated \footnote{A particle is isolated if
-the energy of other particles within a cone of
-$R\equiv\sqrt{(\Delta\phi)^2+(\Delta\eta)^2}=0.3$, where $\phi$ is the
-azimuthal angle and $\eta$ the pseudorapidity, do not add up to a
-significant proportion of the particle's momentum, typically
-$\sim10$\%} leptons of $p_T>10$~GeV. To ensure a fully hadronic final
-state there is also a veto on photons of $p_T>25$~GeV. Further, to
-reduce the ``lost lepton'' backgrounds from W~+~jets and $t\bar{t}$,
-events containing single isolated tracks with $p_T >10$~GeV and
-$|\eta| < 2.5$ are vetoed.
+To ensure that all events considered by the analysis have a
+significant hadronic activity and missing energy a pre-selection is
+carried out on all events considered in the signal and control
+regions. Events are required to contain at least one $p_T>100$~GeV,
+with all other jets being considered if they have $p_T>40$~GeV and are
+well reconstructed in the central region, $|\eta|<2.4$. If any jets
+fall outside the $\eta$ range, the event is vetoed. This ensures there
+is no significant energy deposited within the region of the detector
+with no tracker, which will not be reconstructed as well and is more
+prone to mismeasurement. As signatures of \BSM physics typically occur
+through particles at a high mass scale, they are expected to deposit
+most of their energy centrally. For this reason this \emph{forward jet
+veto} does not significantly effect the signal efficiency for most
+models. The \QCD multijet background consists of many
+soft scattering events, which typically deposit a significant
+proportion of energy within the forward region. As this is the case
+the forward jet veto helps to improve the ratio of signal to
+background.
 
-Events are also required to contain at least one $p_T>100$~GeV and one
-$p_T>40$~GeV jet, where the jets are well reconstructed in the central
-region, $|\eta|<3$. If any jets fall outside the $\eta$ range, the
-event is vetoed. Significant hadronic activity is selected by
-requiring $H_T>200$~GeV. Events are categorised based on the number of
-jets, the number of jets with a reconstructed b-quark and the value of
-$H_T$. 
+Significant hadronic activity is selected by requiring $H_T>200$~GeV.
+This cut is primarily motivated by the trigger threshold, it is the
+lowest \HT value that can be reached with a reasonable trigger rate
+and efficiency. To ensure there is significant missing energy, the
+main \BSM signature of interest, it is required that $\MHT>130~\gev$.
+This threshold is chosen as roughly equivalent to the magnitude of the
+\MET requirement made by the \alphat cuts within the signal region
+when there is no significant mismeasurement. 
+%could expand on this with formula?
+
+Additionally, to remove events with significant hadronic energy
+deposits that have not been reconstructed as jets a requirement is
+made on the \MHT and \MET ratio $\mhtmet<1.25$, motivated in
+Sec.~\ref{sec:mhtmet}. When this requirement is made for the control
+regions, the \MET is reconstructed without a contribution from the
+leptons or photons that define the region. This ensures a fair
+comparison with \MHT and allows the lepton to simulate the missing
+momentum in the events in the signal region.
+
+To further ensure the beam conditions or reconstruction effects have
+not, centrally defined filters are applied by analyses that rely
+on \MET, including the analysis defined in this chapter. The filters
+used are designed to remove the instances of fake \MET while retaining
+a high efficiency for real physics events, they are described in the
+following.
+\begin{itemize}
+\item{}
+\item{}
+\item{}
+\end{itemize}
+
+A summary of the pre-selection requirements is in
+Tab.~\ref{preselection}.
+
+\begin{table}[h!]
+  \topcaption{Summary of the pre-selection criteria.}
+  \label{tab:pre-selections}
+  \centering
+  \footnotesize
+  \begin{tabular}{ ll }
+    \hline
+    \hline
+    Selection                     & Requirement                     \\
+    \hline
+    ``MET filters''               & \parbox[t]{10cm}{Primary Vertex, CSC Beam Halo,
+      HBHE Noise and Isolation, \\ ECAL Endcap SC Noise, ECAL TP, Bad
+      Muon, Bad Charged Hadron}         \\
+    Jet acceptance                & $\PT > 40\gev$, $|\eta| < 2.4$                      \\
+    Lead jet acceptance           & $\PT > 100\gev$, $|\eta| < 2.4$                   \\
+    Forward jet veto              & $\PT > 40\gev$, $|\eta| > 2.4$                     \\
+    \HT requirement               & $\HT > 200\gev$                  \\
+    \mht requirement              & $>130\gev$         \\  
+    \mhtmet requirement              & $<1.25$         \\  
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
 
 \section{The signal region}
 \label{sec:signalregion}
@@ -700,7 +753,9 @@ $H_T$.
 %describe and motivate each of them as in AN
 
 \section{Event categorisation}
-
+Events are categorised based on the number of
+jets, the number of jets with a reconstructed b-quark and the value of
+$H_T$.
 %the jet topology, symmetric, asymmetric etc.
 
 %%%%%%%%%%%%%%%%%%%%
