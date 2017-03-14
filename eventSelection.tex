@@ -619,7 +619,7 @@ that rely on the \HT and \MHT of the events. Additionally, including
 topological variables, such as \alphat, in the \HLT allow events to be
 collected with $\HT$ as low as $200~\gev$.
 
-\bf{FIXME} The L1 paths we use and why - ask christian
+{\bf FIXME} The L1 paths we use and why - ask christian
 %L1
 
 To collect events that are of general use to hadronic analyses the
@@ -650,7 +650,7 @@ the \HLT rate as the \alphat-\HT triggers. The full list of
 triggers used to collect data for the signal region of the \alphat
 analysis can be seen in Tab.~\ref{tab:triggers}.
 
-\bf{FIXME} The HLT paths we use (in a table) - including the CR
+{\bf FIXME} The HLT paths we use (in a table) - including the CR
 triggers
 
 The events in the control regions are collected with muon or photon
@@ -664,50 +664,50 @@ Tab.~\ref{tab:triggers}.
 \section{Pre-selection}%day4
 \label{sec:preselection}
 
-To ensure that all events considered by the analysis have a
-significant hadronic activity and missing energy a pre-selection is
+To ensure that all events considered by the analysis have
+significant hadronic activity and missing energy, a pre-selection is
 carried out on all events considered in the signal and control
-regions. Events are required to contain at least one $p_T>100$~GeV,
+regions. It is described within this section.
+
+Events are required to contain at least one $p_T>100$~GeV jet,
 with all other jets being considered if they have $p_T>40$~GeV and are
 well reconstructed in the central region, $|\eta|<2.4$. If any jets
 fall outside the $\eta$ range, the event is vetoed. This ensures there
 is no significant energy deposited within the region of the detector
-with no tracker, which will not be reconstructed as well and is more
-prone to mismeasurement. As signatures of \BSM physics typically occur
-through particles at a high mass scale, they are expected to deposit
-most of their energy centrally. For this reason this \emph{forward jet
+with no tracker. As most \BSM physics scenarios result in the
+production of particles at a high mass scale, they are expected to deposit
+most of their energy centrally. Therefore, this \emph{forward jet
 veto} does not significantly effect the signal efficiency for most
 models. The \QCD multijet background consists of many
 soft scattering events, which typically deposit a significant
-proportion of energy within the forward region. As this is the case
-the forward jet veto helps to improve the ratio of signal to
+proportion of energy within the forward region. As this is the case,
+the forward jet veto also helps to reduce the multijet
 background.
 
 Significant hadronic activity is selected by requiring $H_T>200$~GeV.
 This cut is primarily motivated by the trigger threshold, it is the
 lowest \HT value that can be reached with a reasonable trigger rate
-and efficiency. To ensure there is significant missing energy, the
-main \BSM signature of interest, it is required that $\MHT>130~\gev$.
-This threshold is chosen as roughly equivalent to the magnitude of the
-\MET requirement made by the \alphat cuts within the signal region
-when there is no significant mismeasurement. 
+and efficiency. To ensure there is significant missing energy, it is
+required that $\MHT>130~\gev$.  This threshold is chosen as roughly
+equivalent to the magnitude of the \MET requirement made by the
+\alphat cuts within the signal region when there is no significant
+mismeasurement. 
 %could expand on this with formula?
 
-Additionally, to remove events with significant hadronic energy
-deposits that have not been reconstructed as jets a requirement is
-made on the \MHT and \MET ratio $\mhtmet<1.25$, motivated in
-Sec.~\ref{sec:mhtmet}. When this requirement is made for the control
-regions, the \MET is reconstructed without a contribution from the
-leptons or photons that define the region. This ensures a fair
-comparison with \MHT and allows the lepton to simulate the missing
-momentum in the events in the signal region.
+Additionally, to remove events with significant energy deposits that
+have not been reconstructed as jets, a requirement is made on the \MHT
+and \MET ratio $\mhtmet<1.25$, as motivated in Sec.~\ref{sec:mhtmet}.
+When this requirement is made for the control regions, the \MET is
+reconstructed after removing the leptons or photons that define the
+particular region. This ensures a fair comparison with \MHT and allows
+the lepton to simulate the missing momentum in the events in the
+signal region.
 
-To further ensure the beam conditions or reconstruction effects have
-not, centrally defined filters are applied by analyses that rely
-on \MET, including the analysis defined in this chapter. The filters
-used are designed to remove the instances of fake \MET while retaining
+To ensure that beam conditions or reconstruction effects have
+not produced a spurious \MET, extra filters are applied. The filters
+used are designed to remove instances of fake \MET while retaining
 a high efficiency for real physics events, they are described in the
-following.
+following \cite{1748-0221-10-02-P02006}.
 \begin{itemize}
 \item{The primary vertex must be well reconstructed within
 $|z|<=24$~cm of the proton collision region and $d_{xy}<2$~cm from the
@@ -715,22 +715,31 @@ beam line}
 \item{Beam interactions exterior to the detector, beam halo effects,
 are removed by vetoing events with \ac{CSC} and calorimeter energy
 deposits consistent with interactions from particles outside the
-detector.}
+detector}
 \item{Noise, caused by particle interactions with the read-out system,
 and dead regions within the \HCAL are removed with the \emph{HBHE
 noise and isolation filters}}
 \item{Anomalous signals within the \ECAL endcap supercrystals are removed
-with the \emph{\ECAL Endcap SC Noise filter}}
+with the \emph{\ECAL Endcap SC Noise filter} and \emph{\ECAL \ac{TP}
+filter}}
 \item{Events with misidentified straight tracks that are reconstructed
-to have a large \pT are removed by the \emph{bad track filter}.}
-\item{}
+to have a large \pT are removed by the \emph{bad track filter}}
 \end{itemize}
+
+Finally, two additional vetoes are applied to ensure events are purely
+hadronic with minimal misreconstruction. Any events that contain a
+\ac{SIT} with $\pT > 10\gev$ and within $|\eta| < 2.5$ is vetoed. This
+reduces the background from single pronged $\tau$ decays and
+misreconstructed leptons. Within the muon control regions this track
+is ignored if it is within $\Delta R <0.02$ of an identified lepton.
+Additionally, any events with jets that do not pass the loose
+requirements described in Sec.~\ref{sec:evSel_jets} are vetoed.
 
 A summary of the pre-selection requirements is in
 Tab.~\ref{preselection}.
 
 \begin{table}[h!]
-  \topcaption{Summary of the pre-selection criteria.}
+  \caption{Summary of the pre-selection criteria.}
   \label{tab:pre-selections}
   \centering
   \footnotesize
@@ -742,12 +751,13 @@ Tab.~\ref{preselection}.
     ``MET filters''               & \parbox[t]{10cm}{Primary Vertex, CSC Beam Halo,
       HBHE Noise and Isolation, \\ ECAL Endcap SC Noise, ECAL TP, bad
       track filter}         \\
-    Jet acceptance                & $\PT > 40\gev$, $|\eta| < 2.4$                      \\
-    Lead jet acceptance           & $\PT > 100\gev$, $|\eta| < 2.4$                   \\
-    Forward jet veto              & $\PT > 40\gev$, $|\eta| > 2.4$                     \\
+    Jet acceptance                & $\pT > 40\gev$, $|\eta| < 2.4$                      \\
+    Lead jet acceptance           & $\pT > 100\gev$, $|\eta| < 2.4$                   \\
+    Forward jet veto              & $\pT > 40\gev$, $|\eta| > 2.4$                     \\
     \HT requirement               & $\HT > 200\gev$                  \\
     \mht requirement              & $>130\gev$         \\  
     \mhtmet requirement              & $<1.25$         \\  
+    Single isolated track veto      & $\pT > 10\gev$, $|\eta| < 2.5$    \\  
     \hline
     \hline
   \end{tabular}

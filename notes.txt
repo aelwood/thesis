@@ -62,3 +62,4 @@ robyn's thesis)
 - Make sure I can show how the multijet alphaT comes from the dijet
   version
 
+- Work out alphaT formula show I can show it's MET equivalent
