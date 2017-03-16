@@ -9,7 +9,10 @@
     - \ Check the weak isospin stuff
     - \ Sort out the signs in the higgs potential!
 
-    - Add references to old alphaT searches?
+    - \ Add references to old alphaT searches?
+
+    - Make sure the cut values for the correct iteration of the
+      analysis are chosen
 
 
 STUFF TO REMEMBER I DID:
@@ -63,3 +66,5 @@ robyn's thesis)
   version
 
 - Work out alphaT formula show I can show it's MET equivalent
+
+- Revise basic relativity, what is a transverse mass etc.
