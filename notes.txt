@@ -11,8 +11,16 @@
 
     - \ Add references to old alphaT searches?
 
+    ******
     - Make sure the cut values for the correct iteration of the
       analysis are chosen
+        - put in alphat cut for photons if doing ICHEP
+        - make sure the HT bins are correct
+    ******
+
+    - Add plots to the event selection section
+
+
 
 
 STUFF TO REMEMBER I DID:
@@ -68,3 +76,5 @@ robyn's thesis)
 - Work out alphaT formula show I can show it's MET equivalent
 
 - Revise basic relativity, what is a transverse mass etc.
+
+- understand how beam halo effects arise 
