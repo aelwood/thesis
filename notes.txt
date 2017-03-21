@@ -19,8 +19,7 @@
     ******
 
     - Add plots to the event selection section
-
-
+    - put in the Btag formula method or not?
 
 
 STUFF TO REMEMBER I DID:

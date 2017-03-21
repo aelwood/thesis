@@ -2,52 +2,237 @@
 \label{chap:backgroundPred}
 
 %%%%%%%%%%%%%%%%%%%%
-\section{Background estimation for processes with genuine \MET}
+\section{Simulated event samples} %day 1
 
-\subsection{\MC simulation samples used}
+A selection of simulated \MC samples are used to help estimate the \SM
+backgrounds and possible signal within the analysis. The samples are
+generated with the methods discussed in Sec.~\ref{sec:mc_reco}. The
+majority of samples, including the signal model samples, are simulated
+with \textsc{MadGraph5} \cite{Alwall:2011uj,Alwall:2014hca} at \LO
+accuracy: \QCD multijet samples, Drell-Yan + jets, \wj, \zj and \gj.
+Using the same generator at \NLO accuracy, the s-channel single top,
+{\ttbar}W and {\ttbar}Z events are simulated. Additionally, the
+\textsc{powheg} \cite{Alioli:2010xd,Re:2010bp} generator is used at
+\NLO accuracy to describe the t-channel and tW-channel production of
+single top quarks. Diboson (WW, WZ, ZZ) production is simulated using
+\textsc{pythia} 8.2 \cite{Sjostrand:2014zea}. This generator is also
+used to simulate the decays of the sparticles within the signal
+models. The cross-sections used for total event yield normalisation
+are calculated at \NLO and \NNLO precision
+\cite{Alwall:2011uj,Re:2010bp,Alioli:2009je,Gavin:2010az,Melia:2011tj,Czakon:2011xx,Gavin:2012sy}.
+The detector response is simulated using \textsc{Geant4}
+\cite{Agostinelli:2002hh}.
+
+As the simulations cannot fully recreate all the effects within data a
+series of corrections are made on the event yields predicted by the
+simulation. They are described in the rest of this section.
+
+\subsection{Pileup reweighting}
+
+When the \MC samples are generated the number of \PU collisions are
+simulated as Poisson distributed about a particular average. As the
+simulation is produced before the data is collected, the actual \PU
+distribution cannot be accurately simulated. To correct for this
+effect the \MC events are reweighted to ensure their \PU profile
+matches that in data. 
+%Show PU reweighting plot here?
+
+\subsection{Scale factors}
+
+There are often small differences between the efficiencies of finding
+physics objects that is simulated to that which is observed in data.
+The difference between these efficiencies is measured using a known
+data sample, such as \zmumu events to measure muon efficiencies. A
+scale factor is then applied to the \MC to reweight the simulated
+events in a way that means they more accurately simulate the
+efficiency of finding various physics objects. These scale factors are
+typically determined as a function of \pT and \eta, two quantities in
+which the detector response can vary significantly. These scale
+factors are used to correct lepton, photon and $b$-tagging efficiencies.
+% lepton SFs from muons etc... eta pt etc...
+% btag SFs
+% top pt reweighting
+% more discussion in systematic section...
+
+\subsection{Top \pT reweighting}% or NISR??
+
+The \ttbar simulation predicts a softer top-quark \pT spectrum than is
+observed in data. This is corrected with a scale factor that is
+dependent on the \pT of the \ttbar system.
+
+\subsection{Trigger efficiencies}
+
+To account for inefficiencies in the trigger selection when collecting
+data, the \MC sample event yields are corrected down. For the muon control
+samples the trigger is simulated and the difference between the
+measured efficiency in data and simulation is corrected with a
+dedicated scale factor. For the \gj control sample the trigger
+efficiency is measured in a hadronic event sample and the \MC is
+corrected as a function of the photon \pT and \eta. Within the signal
+region, the efficiencies are measured as a function of \MHT using
+events that pass a reference electron trigger.  As one of the analysis goals
+is to maintain low thresholds to \HT and \MHT within the signal
+region, the efficiencies are found to be significantly less than 100\%
+in certain regions of phase space.
+%the efficienoperate near the trigger turn on: corrections
+% put in trigger efficiency plots
+
+{\bf FIXME} add in plots from Xtian
+
+\subsection{Cross-section corrections}
+
+The phase space of events considered within this search are selected
+to have a high-\HT and high-\MET. The total number of events predicted
+by the \MC samples within this phase space does not agree with that
+observed in data. To correct this normalisation correction factors are
+derived in \emph{sidebands} after all the other corrections have been
+applied. 
+
+{\bf FIXME} add in what we actually do here (when we know which
+analysis I'm writing...)
+
+{\bf FIXME} do we do anything about the \gj cross section? where it's
+normalised to mu mu?
+% data driven cross section calculation
+
+%%%%%%%%%%%%%%%%%%%%
+\section{Background estimation for processes with genuine \MET} %day 2
+
+The accurate determination of the \SM backgrounds is of utmost
+importance when searching for the indications of \BSM phenomena. So as
+not to rely too heavily on the modelling of the backgrounds in
+simulation, a \emph{data-driven} approach is utilised wherever
+possible. As this analysis is carried out with the requirement of
+significant hadronic activity, mismodelling effects are particularly
+prevalent due to the difficulties in simulating strong force
+interactions to a high degree of accuracy.
+
+Given that the analysis selections are chosen to reduce the \QCD
+multijet background to a negligible level, the significant \SM
+backgrounds that must be predicted are those with genuine \MET in
+their final state. The data-driven method used for predicting these
+backgrounds is described in this section.
 
 \subsection{Transfer factor method}
 
-\subsection{The \MHT dimension} %day 2
+The control samples, defined in Sec.~\ref{sec:controlregions}, are
+chosen to provide a collection of events in data that are in a phase
+space that is close to that of the signal region. The control samples
+are split into $(\HT,\nj,\nb)$ bins in a way that is equivalent to the
+signal region, as introduced in Sec.~\ref{sec:categorisation}. Each
+bin in a control region can then be extrapolated to the signal region
+through the use of \emph{\TFs} that are derived from
+simulation.  Each \TF is defined as a ratio of the yields
+obtained from \MC simulation for the same bin of the signal region and
+a given control sample:
+\begin{equation}
+  \label{equ:tf-ratio}
+  {\rm TF} = \frac{N_{\rm MC}^{\rm signal}(\njet,\nb,\scalht)}{N_{\rm
+      MC}^{\rm control}(\njet,\nb,\scalht)}, 
+\end{equation}
+where $N_{\rm MC}^{\rm signal}$ is the total simulated event yield for
+all background processes in the signal region and $N_{\rm MC}^{\rm
+control}$ is the equivalent event yield in a particular control
+region.
+
+Making use of these \TFs, predictions of background counts from \SM
+processes, $\npre^{\rm signal}$, can then be made made based on the
+various control samples:
+\begin{equation}
+  \label{equ:pred-method}
+  \npre^{\rm signal}(\njet,\nb,\scalht) = \frac{N_{\rm MC}^{\rm
+      signal}(\njet,\nb,\scalht)}{N_{\rm MC}^{\rm
+      control}(\njet,\nb,\scalht)} \times \nobs^{\rm
+    control}(\njet,\nb,\scalht),
+\end{equation}
+where $\nobs^{\rm control}$ is the number of events that are observed
+within the bin of a control region.
+
+When constructing the \TFs, the \MC expectations for the following \SM
+processes are considered: W + jets ($N_{\rm W}$), \ttbar + jets
+($N_{\ttbar}$), \znunu\ + jets ($N_{\znunu}$), DY + jets ($N_{\mathrm
+DY}$), \gj ($N_\gamma$), single top + jets production via the $s$,
+$t$, and $tW$-channels ($N_{\rm top}$), $WW+$~jets, $WZ~+$~jets, and
+$ZZ + \textrm{jets}$ ($N_{\rm di-boson}$), and $\ttbar$V or $\ttbar$H
+($N_{\rm {\ttbar}X}$). 
+
+The \TFs account for differences in cross sections, acceptance,
+reconstruction efficiencies and kinematic requirements between the
+signal and control regions. One big advantage of using \TFs is that
+any mismodelling effects that are consistent within a particular bin
+across relevant \MC samples will cancel out. It is seen that the
+mismodelling of hadronic effects typically vary as a function of \HT
+and \nj. An example of this mismodelling is visible in Fig.~\ref{} for
+example (FIXME refer back to one of the characterisation plots, or put
+the plots here? a la mark). The fact that the control samples are
+binned within these variables helps to negate this issue, which is
+cancelled out within the \TF in each bin.
+
+Many systematic problems within the simulation are expected to mostly
+cancel in each \TF. However, a systematic uncertainty is assigned to
+each transfer factor to account for theoretical uncertainties and
+other mismodelling effects, such as in the acceptances and
+reconstruction efficiencies. Details of the specific systematic
+uncertainties are given in Sec.~\ref{sec:systematics}.
+
+% which CRs are used to predict which..
+
+% Any dependence on \njet, \nb, or \HT is
+% largely attributable to differences in acceptance due to the presence
+% or otherwise of \alphat
+% or \mht requirements.
+
+\subsection{The \MHT dimension}
 \label{sec:mhtDim}
 
 %put uncertainties here?
 
-\subsection{The $b$-tag formula method}
+% determine the binning constraints based on a minimum number of
+% events for stats in the CRs
 
-\subsection{The likelihood model} %day3
+% \subsection{The $b$-tag formula method}
+
+\subsection{The likelihood model}  % day 3
+
+In the end, a fitting procedure that provides the final result is
+defined formally by the likelihood model described in
+Sec.~\ref{sec:likelihood}. In summary, the observation in each bin
+(defined in terms of the variables \njet, \nb, and \scalht) of the
+signal sample is modelled as Poisson-distributed about the sum of a SM
+expectation (and a potential signal contribution). The components of
+this SM expectation are related to the expected yields in the control
+samples via transfer factors derived from simulation. The observations
+in each bin (again defined by \njet, \nb, and \scalht) of the control
+samples are similarly modelled as Poisson-distributed about the
+expected yields for each control sample. In this way, for a given
+bin, the observed yields in the signal and control samples are
+connected via the transfer factors derived from simulation. 
+%
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Background estimation for QCD multijet processes} %day4
 \label{sec:qcdEstimation}
+
+ To ensure that the multijet
+background is ind
 
 \subsection{QCD-enriched sidebands}
 %trigger efficiencies?
 
 \subsection{The method}
 
-\subsection{Validation} %day5
+\subsection{Validation} 
 
 \subsection{The \MHT and \nb dimensions}
 
 
 %%%%%%%%%%%%%%%%%%%%
-\section{Corrections to simulation and their systematic uncertainties}
+\section{Systematic uncertainties} % day 5
+\label{sec:systematics}
 
-%\subsection{Sideband corrections}
+\subsection{Uncertainties derived from simulation}
 
-%\subsection{Trigger efficiencies}
+\subsection{Uncertainties derived from data driven tests}
 
-%as we maintain low thresholds operate near the trigger turn on: corrections
-% put in trigger efficiency plots
-
-%\subsection{Scale factors}
-
-% SFs from muons etc...
-
-
-
-\section{Systematic uncertainties derived from data driven tests}
-
-%\section{Uncertainties in the \MHT dimension}
+\subsection{Uncertainties in the \MHT dimension}
 
