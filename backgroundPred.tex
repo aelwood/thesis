@@ -127,8 +127,8 @@ obtained from \MC simulation for the same bin of the signal region and
 a given control sample:
 \begin{equation}
   \label{equ:tf-ratio}
-  {\rm TF} = \frac{N_{\rm MC}^{\rm signal}(\njet,\nb,\scalht)}{N_{\rm
-      MC}^{\rm control}(\njet,\nb,\scalht)}, 
+  {\rm TF} = \frac{N_{\rm MC}^{\rm signal}(\HT,\nj,\nb)}{N_{\rm
+      MC}^{\rm control}(\HT,\nj,\nb)}, 
 \end{equation}
 where $N_{\rm MC}^{\rm signal}$ is the total simulated event yield for
 all background processes in the signal region and $N_{\rm MC}^{\rm
@@ -140,10 +140,10 @@ processes, $\npre^{\rm signal}$, can then be made made based on the
 various control samples:
 \begin{equation}
   \label{equ:pred-method}
-  \npre^{\rm signal}(\njet,\nb,\scalht) = \frac{N_{\rm MC}^{\rm
-      signal}(\njet,\nb,\scalht)}{N_{\rm MC}^{\rm
-      control}(\njet,\nb,\scalht)} \times \nobs^{\rm
-    control}(\njet,\nb,\scalht),
+  \npre^{\rm signal}(\HT,\nj,\nb) = \frac{N_{\rm MC}^{\rm
+      signal}(\HT,\nj,\nb)}{N_{\rm MC}^{\rm
+      control}(\HT,\nj,\nb)} \times \nobs^{\rm
+    control}(\HT,\nj,\nb),
 \end{equation}
 where $\nobs^{\rm control}$ is the number of events that are observed
 within the bin of a control region.
@@ -167,6 +167,10 @@ example (FIXME refer back to one of the characterisation plots, or put
 the plots here? a la mark). The fact that the control samples are
 binned within these variables helps to negate this issue, which is
 cancelled out within the \TF in each bin.
+% Any dependence on \njet, \nb, or \HT is
+% largely attributable to differences in acceptance due to the presence
+% or otherwise of \alphat
+% or \mht requirements.
 
 Many systematic problems within the simulation are expected to mostly
 cancel in each \TF. However, a systematic uncertainty is assigned to
@@ -175,17 +179,64 @@ other mismodelling effects, such as in the acceptances and
 reconstruction efficiencies. Details of the specific systematic
 uncertainties are given in Sec.~\ref{sec:systematics}.
 
-% which CRs are used to predict which..
-
-% Any dependence on \njet, \nb, or \HT is
-% largely attributable to differences in acceptance due to the presence
-% or otherwise of \alphat
-% or \mht requirements.
+Within the analysis the \TF method is used with different control
+regions to predict two different categories of background, the \znunu
+and all the other remaining backgrounds. The \znunu background is
+predicted with the \gj and \mmj control samples, the transfer factor
+just consisting of \znunu simulation. The W, \ttbar and other residual
+backgrounds are predicted with the \mj control sample. This method is
+ultimately implemented within a fitting procedure that is defined
+formally by the likelihood model described in
+Sec.~\ref{sec:likelihood}. This procedure allows the appropriate
+systematic uncertainties to be taken into a way that takes account of
+their correlations across all samples and bins.
 
 \subsection{The \MHT dimension}
 \label{sec:mhtDim}
 
-%put uncertainties here?
+The \TF method is used to estimate the total background counts in each
+of the (\HT,\nj,\nb) bins. However, to maximise the sensitivity to
+\BSM signatures that produce high \MET, events in the analysis are also
+categorised based on their \MHT. Due to limitations on the
+number of events available in each control sample, it is
+disadvantageous to add another binning
+dimension. This would result in statistical uncertainties of the
+control region event counts dominating the background prediction.
+Instead, the shape of the \MHT distribution is taken directly from
+simulation in the signal region for each of the (\HT,\nj,\nb) bins.
+This is justified by the fact that binning in these variables helps to
+isolate hadronic mismodelling effects within each bin, which then
+cancel in the \TFs. 
+
+% When looking at the \mht dimension inclusively in \scalht there are
+% large theoretical uncertainties that originate from mixing events
+% at different scales. These uncertainties can be mitigated if the events 
+% are binned according to a variable, such as \scalht, 
+% which is strongly correlated with the scale of the event. 
+% After this categorisation is applied, the uncertainty in 
+% the distribution of the \mht variable
+% (as well as any other MET-like variable) is expected to be 
+% mainly affected by the MC modelling of the particle 
+% decays and, to a lesser extent, by jet reconstruction effects, 
+% such as jet energy scale and resolution. 
+% This approach, which will be often referred to as \textit{scale anchoring}
+% in the following, is used in this analysis. The distribution in \mht
+% is measured in data using the control regions and compared to MC
+% to determine the validity of the zero bias hypothesis after scale anchoring.
+
+To make sure that this approach is valid, the assumption that the \MHT
+dimension is well modelled in each bin must be tested. This testing is
+carried out within the \gj, \mj and \mmj control regions. Within each
+analysis bin of each of the control regions the shape of the \MHT
+distribution in data is compared to the distribution in \MC
+simulation. The normalisation be disregarded as it is set through the
+\TF method.  Provided the modelling is reasonable the ratio of the
+normalised shapes is expected to have a value of 1, consistently
+across the \MHT dimension, in each of the (\HT,\nj,\nb) bins. Any
+difference is used to derive a systematic uncertainty on the \MHT
+shape as described in Sec.~\ref{sec:systMht}.
+
+{\bf FIXME} put some plots of the MHT validation
 
 % determine the binning constraints based on a minimum number of
 % events for stats in the CRs
@@ -193,6 +244,7 @@ uncertainties are given in Sec.~\ref{sec:systematics}.
 % \subsection{The $b$-tag formula method}
 
 \subsection{The likelihood model}  % day 3
+\label{sec:likelihood}
 
 In the end, a fitting procedure that provides the final result is
 defined formally by the likelihood model described in
@@ -213,6 +265,7 @@ connected via the transfer factors derived from simulation.
 \section{Background estimation for QCD multijet processes} %day4
 \label{sec:qcdEstimation}
 
+% copy and paste in from AN?
  To ensure that the multijet
 background is ind
 
@@ -235,4 +288,5 @@ background is ind
 \subsection{Uncertainties derived from data driven tests}
 
 \subsection{Uncertainties in the \MHT dimension}
+\label{sec:systMht}
 

@@ -16,6 +16,7 @@
       analysis are chosen
         - put in alphat cut for photons if doing ICHEP
         - make sure the HT bins are correct
+        - make sure the TF and likelihood description is correct
     ******
 
     - Add plots to the event selection section
