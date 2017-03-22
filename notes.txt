@@ -17,6 +17,7 @@
         - put in alphat cut for photons if doing ICHEP
         - make sure the HT bins are correct
         - make sure the TF and likelihood description is correct
+          - Get the bit about the number of rate parameters right
     ******
 
     - Add plots to the event selection section
@@ -78,3 +79,5 @@ robyn's thesis)
 - Revise basic relativity, what is a transverse mass etc.
 
 - understand how beam halo effects arise 
+
+- read asymptotic paper from Glen Cowan

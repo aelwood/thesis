@@ -114,6 +114,7 @@ their final state. The data-driven method used for predicting these
 backgrounds is described in this section.
 
 \subsection{Transfer factor method}
+\label{sec:TF}
 
 The control samples, defined in Sec.~\ref{sec:controlregions}, are
 chosen to provide a collection of events in data that are in a phase
@@ -191,6 +192,18 @@ Sec.~\ref{sec:likelihood}. This procedure allows the appropriate
 systematic uncertainties to be taken into a way that takes account of
 their correlations across all samples and bins.
 
+To summarise the fitting procedure, the observation in each bin of the
+signal region is modelled as Poisson-distributed about the sum of a
+\SM expectation (and a potential signal contribution). The components
+of this SM expectation are related to the expected yields in the
+control samples via the \TFs. The observations in each bin of the
+control samples are similarly modelled as Poisson-distributed about
+the expected yields for each control sample. In this way, for a given
+bin, the observed yields in the signal and control samples are
+connected via the transfer factors derived from simulation.  This
+allows multiple control samples to modify the predicted yields in the
+signal region within the constraints of their uncertainties.
+
 \subsection{The \MHT dimension}
 \label{sec:mhtDim}
 
@@ -238,28 +251,21 @@ shape as described in Sec.~\ref{sec:systMht}.
 
 {\bf FIXME} put some plots of the MHT validation
 
+The size of the \MHT bins within the signal region are chosen to
+contain enough data counts within each of the control regions to
+perform the validation. Taking \MHT bin widths of 100~\gev are found
+to be enough to satisfy this condition. In most cases the \MHT bins
+are naturally bounded from above by maximum value of \HT in a
+particular bin.  However, the highest \HT bin is unbounded from above,
+the final \MHT bin is therefore limited to sit at $\MHT>1000~\gev$ to
+ensure the requisite statistics.
 % determine the binning constraints based on a minimum number of
 % events for stats in the CRs
 
+{\bf FIXME} put in the MHT bins
+
 % \subsection{The $b$-tag formula method}
 
-\subsection{The likelihood model}  % day 3
-\label{sec:likelihood}
-
-In the end, a fitting procedure that provides the final result is
-defined formally by the likelihood model described in
-Sec.~\ref{sec:likelihood}. In summary, the observation in each bin
-(defined in terms of the variables \njet, \nb, and \scalht) of the
-signal sample is modelled as Poisson-distributed about the sum of a SM
-expectation (and a potential signal contribution). The components of
-this SM expectation are related to the expected yields in the control
-samples via transfer factors derived from simulation. The observations
-in each bin (again defined by \njet, \nb, and \scalht) of the control
-samples are similarly modelled as Poisson-distributed about the
-expected yields for each control sample. In this way, for a given
-bin, the observed yields in the signal and control samples are
-connected via the transfer factors derived from simulation. 
-%
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Background estimation for QCD multijet processes} %day4
@@ -274,6 +280,12 @@ background is ind
 
 \subsection{The method}
 
+The
+\QCD multijet contamination is included as a
+fraction of the other \SM backgrounds with genuine \MET, that are
+determined with the \TF method described in Sec.~\ref{}. It is typically a negligible
+contribution and is added to the total \SM background.
+
 \subsection{Validation} 
 
 \subsection{The \MHT and \nb dimensions}
@@ -284,9 +296,124 @@ background is ind
 \label{sec:systematics}
 
 \subsection{Uncertainties derived from simulation}
+\label{sec:simUnc}
 
 \subsection{Uncertainties derived from data driven tests}
+\label{sec:closureTests}
 
 \subsection{Uncertainties in the \MHT dimension}
 \label{sec:systMht}
+
+
+%%%%%%%%%%%%%%%%%%%%
+\section{The likelihood model}  % day 3
+\label{sec:likelihood}
+
+To carry out a full interpretation of the results of the analysis with
+appropriate treatment of systematic uncertainties, a likelihood model
+is constructed. Events are categorised based on their (\HT,\nj,\nb)
+bin, labelled \htcat, in both the signal region and control regions. Additionally, the
+signal region is categorised based on the \MHT bins discussed in
+Sec.~\ref{sec:mhtDim}. These bins are represented with an additional
+index, $i$. Given
+that $n^{\htcat}_{\mathrm{had},i}$ is the number of observed events,
+$b^{\htcat}_{\mathrm{had},i}$ is the number of predicted background
+events and $s^{\htcat}_{\mathrm{had},i}$ is the expected number of
+signal events, the likelihood function in each \htcat category is
+defined as the product of poisson distributions for each \MHT bin:
+% had likelihood
+\begin{equation}
+\mathcal{L}^{\htcat}_{\mathrm{had}}=\prod_i
+\mathrm{Poisson}(n^{\htcat}_{\mathrm{had},i} |\,
+b^{\htcat}_{\mathrm{had},i} + s^{\htcat}_{\mathrm{had},i}).
+\label{eq:hadronicLikelihood}
+\end{equation}
+
+For each control region, indexed $j$, an independent likelihood
+function can be constructed, given $n^{\htcat}_{\mathrm{CR},j}$ is
+the number of observed events, $b^{\htcat}_{\mathrm{CR},j}$ is the
+number of predicted background events and
+$s^{\htcat}_{\mathrm{had},j}$ is the expected signal contamination in
+the control region:
+% CR likelihood
+\begin{equation}
+\mathcal{L}^{\htcat}_{\mathrm{CR,j}}=\mathrm{Pois}(n^{\htcat}_{\mathrm{CR,j}}
+|\, b^{\htcat}_{\mathrm{CR,j}} + s^{\htcat}_{\mathrm{CR,j}}).
+\label{eq:controlLikelihood}
+\end{equation}
+Due to the way the control regions are selected, the expected signal
+contamination is usually found to be negligible.
+
+This results in a total likelihood that is the product over all the
+\htcat bins and all the control regions. It can be defined as:
+% combined likelihood
+\begin{equation}
+\label{eq:total_likelihood}
+\mathcal{L} = \prod_{\htcat} (\mathcal{L}_{\text{had}}^{\htcat} \times
+\prod_{\text{j}} \mathcal{L}_{\text{CR,j}}^{\htcat})
+\end{equation}
+
+\subsection{Incorporation of systematic uncertainties}
+
+The background yields in the signal region are connected to the yields
+in the control regions through the use of \TFs, as discussed in
+Sec.~\ref{sec:TF}. To incorporate this into the fit of the likelihood
+model, the yields of the \znunu and combined \ttbar/W backgrounds in
+the signal region are correlated with the yields in the control
+regions. This is implemented through a single floating parameter
+within the fit, which alters the background prediction in the signal
+region based on the control region yields and the \TF for each
+category. With this implementation, the systematic uncertainties on
+each \TF can be properly taken into account when making the background
+prediction in the signal region. 
+
+The data-driven uncertainties on the \TFs, described in
+Sec.~\ref{sec:closureTests}, are incorporated into the likelihood
+model as Gaussian distributed nuisance parameters that act on the
+floating parameter. They depend on the background process and the
+control region used and are uncorrelated between each of the \htcat
+bins.
+
+The uncertainties on the \TFs determined from simulation, described in
+Sec.~\ref{sec:simUnc}, are included as \emph{shape} uncertainties on
+the \TFs. This means they are fully correlated across all of the
+\htcat bins but their magnitude is different depending on the bin. 
+Additionally, an uncertainty on the expected signal contribution can
+also be taken account as shape uncertainties. These extra
+uncertainties depend on the signal model in question and are discussed
+in Sec.~\ref{sec:signalModel}.
+
+The uncertainties derived from simulation can also cause bin migration
+of events within the \MHT dimension of the signal region. This is
+incorporated as a \emph{template} uncertainty, i.e. alternative \MHT
+distributions for the $\pm1\sigma$ variation for each of the sources
+of uncertainty. 
+
+({\bf FIXME} check this is correct with Matt)
+To take account of the uncertainties in the \MHT
+distribution, explained in Sec.~\ref{sec:systMht}, additional template
+uncertainties are introduced that are decorrelated in \nj and \HT.
+Their $\pm1\sigma$ is determined by the uncertainty on the linear fit
+used when determining the magnitude of the \MHT uncertainty.
+% what about other MHT problem?
+
+Finally, the uncertainty from the limited statistical power of the \MC
+samples used is incorporated as an additional nuisance parameter per
+\htcat and \MHT bin. This is taken as uncorrelated across all bins.
+
+\subsection{Fitting}
+
+The fit of the likelihood model to find the final result is carried
+out in two steps. Firstly, the predicted background yields in the
+signal region, $b^{\htcat}_{\mathrm{had}}$, are determined with a fit
+in only the control regions, Eq.~\ref{eq:controlLikelihood}. This is
+followed by a full fit using the full likelihood model, Eq.~\ref{},
+taking account of all the correlations between the control regions and
+signal region, along with the statistical uncertainties from the
+finite number of events in the control region. Within the fit the
+likelihood is profiled against all nuisance parameters, which allows
+the determination of limits on various signal models. This is
+discussed further in Sec.~\ref{sec:signalModel}.
+
+% how the fit is done - split into two components
 
