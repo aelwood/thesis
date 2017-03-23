@@ -2,6 +2,12 @@
 \label{chap:backgroundPred}
 
 %%%%%%%%%%%%%%%%%%%%
+\section{Dataset} %day 1
+\label{sec:dataset}
+
+{\bf FIXME} describe the dataset used (when we know)
+
+%%%%%%%%%%%%%%%%%%%%
 \section{Simulated event samples} %day 1
 
 A selection of simulated \MC samples are used to help estimate the \SM
@@ -272,13 +278,51 @@ ensure the requisite statistics.
 \label{sec:qcdEstimation}
 
 % copy and paste in from AN?
- To ensure that the multijet
-background is ind
+As discussed extensively in Chapter~\ref{chap:selection}, the strategy
+of the analysis is based around reducing the \QCD multijet background
+to a negligible level. However, it is necessary to confirm that the
+multijet contribution within the signal region is indeed small. This
+is confirmed with the method described in this section. To remain
+sensitive to small contributions in the signal region from \BSM
+phenomena it is imperative to keep the uncertainties on the level of
+\QCD contamination small. The method therefore utilises data-driven
+techniques, similar to those used for the estimation of processes with
+genuine \MET described in Sec.~\ref{sec:TF}.
 
 \subsection{QCD-enriched sidebands}
 %trigger efficiencies?
 
+To be able to carry out a data-driven estimate, three data sidebands
+to the signal region are defined. They are chosen to be heavily \QCD
+contaminated, but still close in phase space to the signal region.  To
+achieve this, the signal region selection is applied with the
+requirements on two of the variables used to remove the multijet
+background inverted. They are defined by the requirement $1.25 <
+\mhtmet < 5.0$, $\bdphi<0.5$ and both these requirements as
+illustrated in Table~\ref{tab:qcd_sidebands}.
+
+\begin{table}[h!]
+  \caption{Definition of sidebands used in the determination of the
+    QCD background contributions in the signal region. }
+  \label{tab:qcd_sidebands}
+  \centering
+  \footnotesize
+  \begin{tabular}{ l|l|l }
+                           & $\bdphi < 0.5$           & $\bdphi > 0.5$                  \\[0.2ex]
+    \hline
+    $1.25 < \mhtmet < 3.0$ & \textbf{A} ``Double sideband'' & \textbf{B} ``\mhtmet sideband'' \\[0.2ex]
+    \hline
+    $\mhtmet < 1.25$       & \textbf{C} ``\bdphi sideband'' & \textbf{D} ``Signal region''    \\[0.2ex]
+  \end{tabular}
+\end{table}
+
+{\bf FIXME} put something here from Xtian's studies? ie how they're
+broken down into different mismeasurements?
+
 \subsection{The method}
+
+{\bf FIXME} really need to know which analysis before I write this and
+the following sections
 
 The
 \QCD multijet contamination is included as a
@@ -295,11 +339,21 @@ contribution and is added to the total \SM background.
 \section{Systematic uncertainties} % day 5
 \label{sec:systematics}
 
+% why systs
+
+% introduction to different types - known, unknown data driven,  used for the the TFs
+
+% then MHT
+
 \subsection{Uncertainties derived from simulation}
 \label{sec:simUnc}
 
+% see Mark and AN
+
 \subsection{Uncertainties derived from data driven tests}
 \label{sec:closureTests}
+
+% see Mark and AN
 
 \subsection{Uncertainties in the \MHT dimension}
 \label{sec:systMht}
@@ -389,7 +443,7 @@ incorporated as a \emph{template} uncertainty, i.e. alternative \MHT
 distributions for the $\pm1\sigma$ variation for each of the sources
 of uncertainty. 
 
-({\bf FIXME} check this is correct with Matt)
+({\bf FIXME} check this is correct with Matt - depends on the analysis)
 To take account of the uncertainties in the \MHT
 distribution, explained in Sec.~\ref{sec:systMht}, additional template
 uncertainties are introduced that are decorrelated in \nj and \HT.

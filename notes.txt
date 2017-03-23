@@ -22,13 +22,21 @@
 
     - Add plots to the event selection section
     - put in the Btag formula method or not?
+    - check the ICHEP approval talk for plots?
+
+    Optional extras to add:
+      - minChi optimisation
+      - new working point scans?
+      - stuff on variable optimisation
+      - qcd breakdown from Xtian
 
 
 STUFF TO REMEMBER I DID:
   - other optimisation (maybe remake? see my talks)
-  - dPhi vs bDPhi plots (see ICHEP NOTE)
+  - \ dPhi vs bDPhi plots (see ICHEP NOTE)
   - QCD method
-  - MinChi studies? should i put this here?
+  - MinChi studies? should i put this here? - probably not but it's
+    possible
 
   to emphasise:
     - optimisation?
