@@ -9,6 +9,7 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Simulated event samples} %day 1
+\label{sec:simEvents}
 
 A selection of simulated \MC samples are used to help estimate the \SM
 backgrounds and possible signal within the analysis. The samples are
@@ -36,11 +37,12 @@ simulation. They are described in the rest of this section.
 \subsection{Pileup reweighting}
 
 When the \MC samples are generated the number of \PU collisions are
-simulated as Poisson distributed about a particular average. As the
-simulation is produced before the data is collected, the actual \PU
-distribution cannot be accurately simulated. To correct for this
-effect the \MC events are reweighted to ensure their \PU profile
-matches that in data. 
+simulated as Poisson distributed about a chosen rate that is expected
+to be close to that obtained in data. As the simulation is produced
+before the data is collected and the true \PU distribution varies with
+time, the actual distribution cannot be accurately simulated. To
+correct for this effect the \MC events are reweighted to ensure their
+\PU profile matches that in data. 
 %Show PU reweighting plot here?
 
 \subsection{Scale factors}
@@ -372,34 +374,36 @@ Tab.~\ref{tab:systs}.
 \subsection{Uncertainties derived from simulation}
 \label{sec:simUnc}
 
-A set of corrections are applied to the MC samples in order to improve the modelling 
-of detector effects (b-tagging efficiency, jet energy response, etc.) 
-as well as the simulation of the kinematics of certain processes (top $p_{T}$). 
-These corrections are described in Sec.~\ref{sec:datasets}. \\
-In this section the effect of varying these corrections within their uncertainties is 
-presented, focusing on the relative change in the 4 type of transfer factors which are of interest 
+A set of corrections are applied to simulation that are described in
+Sec.~\ref{sec:simEvents}. There is an uncertainty associated with each
+of these corrections, based on the way in which they are derived and
+uncertainties in any theoretical calculations that may be relevant. To
+make sure these uncertainties are taken account of, their effect on
+the \TFs is studied for the four transfer factors which are of interest 
 for the background prediction, namely: $\mj \rightarrow (\znunu)$,
 $\mmj \rightarrow (\znunu)$, $\gj \rightarrow (\znunu)$ and $\mj
 \rightarrow \mathrm{\ttbar+W}$. 
-The binning of the analysis is chosen in order to minimise the impact of 
-these systematic sources, which are expected to be sub-dominant. 
-However, they are propagated to the final results, taking into account correlations and bin migration effects.
+% Due to the fact that the control
+% regions and signal region are finely binned in the same way, the
+% systematics caused by t
+% The binning of the analysis is chosen in order to minimise the impact of 
+% these systematic sources, which are expected to be sub-dominant.
+% However, they are propagated to the final results, taking into
+% account correlations and bin migration effects.
 
 
 \subsubsection*{Jet energy scale}
 \label{sec:tfSyst_jec}
-The effect of varying the jet energy scale in
-the \mj and \mmj control regions is investigated.  The energies of
-jets used in the analysis are corrected as a function of their \pt and
-$\eta$ via the procedure recommended by the JetMET POG. These
-corrections have an associated uncertainty, which is propagated through the analysis. 
-As the \scalht and jet multiplicity binning is mirrored in signal and control regions, 
-the effect of jet energy scale on the transfer factor is expected to be small. 
-However, the jet energy scale can still have an
-effect due to jets moving in and out acceptance (above and below
-$40\gev$). The relative change in the transfer factors is presented as a function of \scalht and jet category 
-in Fig. ~\ref{fig:tfSyst_jec_muToZinv}-\ref{fig:tfSyst_jec_muToTtw}.
-The changes are typically in the range of $1-15\%$.
+The effect of varying the jet energy corrections by their uncertainty
+in the \mj and \mmj control regions is studied.  As the \scalht and
+jet multiplicity binning is mirrored in signal and control regions,
+the effect of jet energy scale on the transfer factor is expected to
+be small.  However, the jet energy scale can still have an effect due
+to jets moving in and out acceptance (above and below $40\gev$). The
+relative change in the transfer factors is presented as a function of
+\scalht and jet category in
+Fig.~\ref{fig:tfSyst_jec_muToZinv}-\ref{fig:tfSyst_jec_muToTtw}.  The
+changes are typically in the range of $1-15\%$.
 
 \subsubsection*{B-tagging efficiency}
 \label{sec:tfSyst_btag}
