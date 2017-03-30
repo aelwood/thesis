@@ -21,8 +21,9 @@
     ******
 
     - Add plots to the event selection section
-    - put in the Btag formula method or not?
+    - \ put in the Btag formula method or not? - not
     - check the ICHEP approval talk for plots?
+    - rework systematics section
 
     Optional extras to add:
       - minChi optimisation
@@ -91,3 +92,5 @@ robyn's thesis)
 - read asymptotic paper from Glen Cowan
 
 - make sure to understand the lost lepton stuff for the systematic
+
+- explain why W polarisation effects may be a thing

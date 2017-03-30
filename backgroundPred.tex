@@ -533,47 +533,85 @@ variation is small (\~1-5\%) and shown in each analysis bin in Fig.
 \subsection{Uncertainties derived from data driven tests}
 \label{sec:closureTests}
 
-This analysis aims to rely as much as possible on the data control samples
-to check for sources of bias in the transfer factors due to potential limitations in
-the simulation modelling. 
-Therefore, along with the MC variations mentioned above, tests are performed 
-in which the number of events in a given data control sample is predicted 
-using events from another data control sample and the corresponding transfer factor built in MC. 
-The agreement between the predicted and observed yields is
-expressed as the ratio $(\nobs - \npre)/\npre$ while considering only
-the statistical uncertainties on \npre and \nobs. Therefore, the level
-of closure is defined by the statistical significance of a deviation
-in the ratio from zero.
-These tests are performed separately for each \njet category, as a function of \scalht. 
-The systematic uncertainty in each \scalht bin is derived by summing in quadrature the ratio 
-defined above with its statistical error, after merging the \njet categories into symmetric and asymmetric topologies. 
-Pairs of \scalht bins are merged when the $\mu\mu$+jets sample is used, in order to gain statistics. \\
-Since the uncertainties derived with this approach are statistical in nature, 
-these systematics are considered un-correlated in each \scalht bin and jet topology. 
+To be able to take account of sources of systematic uncertainty that
+are not taken account of through the variation of known sources, an
+additional procedure to derive uncertainties through a data driven
+method is defined.  This allows assumptions and extrapolations
+within the analysis to be covered with an uncertainty that does not
+rely on potential limitations in the simulation modelling. To carry
+out this data-driven uncertainty estimation process, a suite of
+\emph{closure tests} are performed. In each test in which the number
+of events in a given data control (sub-)sample is predicted using
+events from another data control (sub-)sample through the
+corresponding \TF, in a way that tests a particular assumption made
+within the analysis.  The agreement between the predicted and observed
+yields is expressed as the ratio $(\nobs - \npre)/\npre$ while
+considering only the statistical uncertainties on \npre and \nobs,
+where \npre is the number of predicted events in the (sub-)sample and
+\nobs the number observed.  This allows one to define a level of
+\emph{closure}, which encapsulates the statistical significance of a
+deviation in the ratio from zero. The degree of uncertainty with which
+this closure deviates from zero can then be used to approximate the
+systematic uncertainty associated to the assumption the procedure is
+testing within the analysis.
 
+These closure tests are performed separately for each \njet category,
+as a function of \HT. The systematic uncertainty in each \HT bin
+is derived by summing in quadrature the ratio $(\nobs - \npre)/\npre$
+with its statistical error, after merging the \njet categories into
+their symmetric and asymmetric topologies. Pairs of \HT bins are merged
+when the $\mu\mu$+jets sample is used, in order to increase the
+statistical power of the sample.  Since the uncertainties derived with
+this approach are statistical in nature, these systematics are
+considered un-correlated in each \HT bin and jet topology. 
 
 \subsubsection*{Extrapolation in \alphat and \bdphi}
 \label{sec:tfSyst_alphaT}
-The modelling of the \alphat and
-\bdphi extrapolations are also tested with dedicated tests in data. 
-In both cases, it is checked that events with genuine \met found in the core
-of the variable distribution below some threshold value can be used to
-predict the events in the tail (above the same threshold value).
-This is important to verify the
-approach of using \mj and \mmj samples without an \alphat requirement
-to make background predictions in the signal region. The tests
-confront data yields in a \mj  samples with an \alphat /\bdphi
-requirement against predictions determined in a \mj sample with
-the \alphat /\bdphi requirement inverted. 
-The contribution to the systematic error for \met extrapolation is taken
-from the \alphat closure tests for bins with $\scalht<800\gev$ and from 
-the \bdphi tests for bins with $\scalht>800\gev$. 
 
-The result of these tests are shown in Fig.~\ref{fig:closureAlphaT} as a function of \scalht and \njet. 
-The grey band is the systematic uncertainty propagated through the analysis, 
-taken as un-correlated per each \scalht bin and jet topology
-(symmetric/asymmetric). The systematic derived from these tests is
-in the range $4-32\%$.
+There is no \bdphi cut made in any of the control regions and no
+\alphat cut in the muon control regions. As this is the case, it is
+implicitly assumed that the simulation correctly models the
+distribution of both of these variables when the \TFs are constructed.
+To provide an estimate of the systematic uncertainty related to this
+assumption, dedicated closure tests are carried out.  
+% In both cases, it is checked that
+% events with genuine \met found in the core of the variable
+% distribution below some threshold value can be used to predict the
+% events in the tail (above the same threshold value).  This is
+% important to verify the approach of using \mj and \mmj samples without
+% an \alphat requirement to make background predictions in the signal
+% region. 
+The tests are carried out in the \mj control region, using data yields
+with an \alphat or \bdphi requirement to predict the data yield of
+events with this requirement inverted. Explicitly for the \alphat
+closure tests, the number of
+predicted events, $N^{\alphat>x}_{pred}$, is: 
+\begin{equation}
+N^{\alphat>x}_{pred} =
+\frac{N^{\alphat>x}_{MC}}{N^{\alphat<x}_{MC}}\times N^{\alphat<x}_{obs} 
+\end{equation}
+where $N^{\alphat<x}_{obs}$ is the number of events that fail the
+\alphat requirement $x$, $N^{\alphat<x}_{MC}$ is the number of simulated
+events that fail the requirement and $N^{\alphat>x}_{MC}$ is the
+number of events that pass the requirement. The closure is then
+defined as:
+\begin{equation}
+(N^{\alphat>x}_{obs}-N^{\alphat>x}_{pred})/N^{\alphat>x}_{pred},
+\end{equation}
+where $N^{\alphat>x}_{obs}$ is the number of observed events that pass
+the \alphat requirement.
+
+The result of these tests are shown in Fig.~\ref{fig:closureAlphaT} as
+a function of \scalht and \njet.  The grey band is the systematic
+uncertainty propagated through the analysis, taken as un-correlated
+per each \scalht bin and jet topology (symmetric/asymmetric). The
+systematic derived from these tests is in the range $4-32\%$.
+
+The \bdphi and \alphat closure tests are testing the same kind of
+extrapolation, in a topological \met based variable. As this is the
+case the contribution to the systematic error is taken from only the
+\alphat closure tests for bins with $\scalht<800\gev$ and from the
+\bdphi tests for bins with $\scalht>800\gev$.
 
 \begin{figure}[h!]
   \begin{center}
@@ -595,18 +633,20 @@ in the range $4-32\%$.
 
 \subsubsection*{Modelling of the W/Z ratio}
 \label{sec:tfSyst_WZratio}
-To validate the use of \wmj and \ttbar dominated \mj events to predict the \znunu
-background, tests are performed in data using single-muon and double-muon control regions. 
-The events in the \mj control are used to predict events in the \mmj control regions, 
-using transfer factors from simulation. 
-These tests target the modelling of the W/Z ratio in simulation and 
-also indirectly test muon acceptance effects, which 
-are expected to be sub-dominant and whose uncertainties are already addressed elsewhere.
+To validate the use of \wmj and \ttbar dominated \mj events to predict
+the \znunu background, tests are performed in data using single-muon
+and double-muon control regions.  The events in the \mj control region are
+used to predict events in the \mmj control region, using transfer
+factors from simulation.  These tests target the modelling of the W/Z
+ratio in simulation and also indirectly test muon acceptance effects,
+which are expected to be sub-dominant and whose uncertainties are
+already addressed elsewhere.
 
-The result are shown in Fig.~\ref{fig:closureMuToMuMu} as a function of \scalht and \njet. 
-The grey band is the systematic uncertainty propagated through the analysis, 
-taken as un-correlated per each \scalht bin and jet topology (symmetric/asymmetric). The systematic derived from these tests is
-in the range $3-20\%$.
+The result are shown in Fig.~\ref{fig:closureMuToMuMu} as a function
+of \scalht and \njet.  The grey band is the systematic uncertainty
+propagated through the analysis, taken as un-correlated per each
+\scalht bin and jet topology (symmetric/asymmetric). The systematic
+derived from these tests is in the range $3-20\%$.
 
 \begin{figure}[h!]
   \begin{center}
@@ -625,26 +665,27 @@ in the range $3-20\%$.
 
 \subsubsection*{Modelling of the W/Z acceptance due to polarisation effects}
 \label{sec:tfSyst_Wpol}
-A data-driven test is introduced to check the modelling of the W polarisation in simulation. 
-In this study, carried on using events in the single-muon control region, $\mu^{+}$ events 
-are used to predict $\mu^{-}$ events, using transfer factor built in MC. 
-The polarisation of the W boson has an impact on the prediction 
-of the \znunu background using the \mj control region, as explained in the following. 
-The production mechanism of $W$ from pp
-collisions means high $p_T$ $W$ bosons are predominantly left handed
-\cite{WPol}.  For high $p_T$ bosons, this implies that $W^+$ decays to
-the left handed neutrino along its direction of motion while the
-lepton is pointing backward. The opposite behaviour is expected for
-the $W^-$. The lepton is therefore more boosted (and the neutrino less
-boosted) in $W^+$ decays than $W^-$ decays.  This leads to a larger
-number of $W^+$ decays in the single lepton control regions (which
-relies on the lepton $p_T$ for acceptance) than in the signal region
-(which relies on the neutrino $p_T$ for acceptance).
 
-The results are shown in Fig.~\ref{fig:closureMuPToMuM} as a function of \scalht and \njet. 
-The grey band is the systematic uncertainty propagated through the analysis, 
-taken as un-correlated per each \scalht bin and jet topology (symmetric/asymmetric). The systematic derived from these tests is
-in the range $3-12\%$.
+As the kinematics of $W^+$ and $W^-$ decays are subtly different, a
+data-driven test is introduced to check the modelling of this W
+polarisation in simulation. In this study, carried on using events in
+the \mj control region, $\mu^{+}$ events are used to predict $\mu^{-}$
+events.  The production mechanism of W bosons from pp collisions means
+high $p_T$ $W$ bosons are predominantly left handed \cite{WPol}.  For
+high $p_T$ bosons, this implies that $W^+$ decays to the left handed
+neutrino along its direction of motion while the lepton is pointing
+backward.  The opposite behaviour is expected for the $W^-$. The
+lepton is therefore more boosted (and the neutrino less boosted) in
+$W^+$ decays than $W^-$ decays.  This leads to a larger number of
+$W^+$ decays in the single lepton control regions (which relies on the
+lepton $p_T$ for acceptance) than in the signal region (which relies
+on the neutrino $p_T$ for acceptance).
+
+The results are shown in Fig.~\ref{fig:closureMuPToMuM} as a function
+of \scalht and \njet.  The grey band is the systematic uncertainty
+propagated through the analysis, taken as un-correlated per each
+\scalht bin and jet topology (symmetric/asymmetric). The systematic
+derived from these tests is in the range $3-12\%$.
 
 \begin{figure}[h!]
   \begin{center}
@@ -664,18 +705,20 @@ in the range $3-12\%$.
 
 \subsubsection*{Modelling of the Z/$\gamma$ ratio}
 \label{sec:tfSyst_ZGratio}
-To validate the use of \gj events to predict the \znunu
-background, tests are performed in data using the photon and double-muon control regions. 
-The events in the \gj control are used to predict events in the \mmj control regions, 
-using transfer factors from simulation. 
-These tests target the modelling of the Z/$\gamma$ ratio in simulation and 
-also indirectly test muon/photon acceptance effects, which, however, 
-are expected to be sub-dominant and whose uncertainties are already addressed elsewhere. 
+To validate the use of \gj events to predict the \znunu background,
+tests are performed in data using the photon and double-muon control
+regions. The events in the \gj control are used to predict events in
+the \mmj control regions, again using transfer factors from simulation.
+These tests target the modelling of the Z/$\gamma$ ratio in simulation
+and also indirectly test muon/photon acceptance effects, which,
+however, are expected to be sub-dominant and whose uncertainties are
+already addressed elsewhere. 
 
-The result are shown in Fig.~\ref{fig:closurePhoToMuMu} as a function of \scalht and \njet. 
-The grey band is the systematic uncertainty propagated through the analysis, 
-taken as un-correlated per each \scalht bin and jet topology (symmetric/asymmetric). The systematic derived from these tests is
-in the range $7-15\%$.
+The result are shown in Fig.~\ref{fig:closurePhoToMuMu} as a function
+of \scalht and \njet.  The grey band is the systematic uncertainty
+propagated through the analysis, taken as un-correlated per each
+\scalht bin and jet topology (symmetric/asymmetric). The systematic
+derived from these tests is in the range $7-15\%$.
 
 \begin{figure}[h!]
   \begin{center}
@@ -694,23 +737,26 @@ in the range $7-15\%$.
 
 \subsubsection*{Modelling of the W/\ttbar admixture}
 \label{sec:tfSyst_WttAd}
-The $0$ b-tag $\rightarrow1$ b-tag data-driven tests in the \mj control region 
-probe the sensitivity of the transfer factors to the relative
-admixture of events from the $W$ + jets and \ttbar processes, 
-since they utilise a W-eniched sample to predict a \ttbar-enriched sample. 
-These tests indirectly probe also the modelling of the b-tagging efficiency, 
-although this systematic effect is expected to be smaller and is already addressed 
-by the dedicated study presented in Sec. ~\ref{sec:tfSyst_btag}.
-These tests are believed to give a conservative uncertainty, 
-as the admixture changes little between the \mj sample and the signal region, 
-given that no extrapolation between different b-tag multiplicities is performed 
-in the estimation of the background. 
-The uncertainty derived is therefore driven by the limited statistics available in the control sample. 
 
-The result are shown in Fig.~\ref{fig:closureBTag} as a function of \scalht and \njet. 
-The grey band is the systematic uncertainty propagated through the analysis, 
-taken as un-correlated per each \scalht bin and jet topology (symmetric/asymmetric). The systematic derived from these tests is
-in the range $4-25\%$.
+The $0$ b-tag $\rightarrow1$ b-tag data-driven tests in the \mj
+control region probe the sensitivity of the transfer factors to the
+relative admixture of events from the \wj and \ttbar processes,
+since they utilise a W-eniched sample to predict a \ttbar-enriched
+sample.  These tests indirectly probe also the modelling of the
+b-tagging efficiency, although this systematic effect is expected to
+be smaller and is already addressed by the dedicated study presented
+in Sec.~\ref{sec:tfSyst_btag}.  These tests can slightly overestimate
+the uncertainty, as the admixture changes little between the
+\mj sample and the signal region, given that no extrapolation between
+different b-tag multiplicities is performed in the estimation of the
+background. The uncertainty derived is therefore driven by the
+limited statistics available in the control sample. 
+
+The result are shown in Fig.~\ref{fig:closureBTag} as a function of
+\HT and \njet.  The grey band is the systematic uncertainty
+propagated through the analysis, taken as un-correlated per each
+\scalht bin and jet topology (symmetric/asymmetric). The systematic
+derived from these tests is in the range $4-25\%$.
 
 \begin{figure}[h!]
   \begin{center}
@@ -730,7 +776,6 @@ in the range $4-25\%$.
 \subsection{Uncertainties in the \MHT dimension}
 \label{sec:systMht}
 
-%\subsection{Summary of systematic uncertainties}
 
 \newpage
 \begin{landscape}
@@ -854,9 +899,9 @@ incorporated as a \emph{template} uncertainty, i.e. alternative \MHT
 distributions for the $\pm1\sigma$ variation for each of the sources
 of uncertainty. 
 
-({\bf FIXME} check this is correct with Matt - depends on the
-analysis, for ICHEP do a simulataneous fit separately for Zinv and
-ttW, uncertainty made from adding p1 in quadrature to p1 unc)
+% (checked this is correct with Matt - depends on the
+% analysis, for ICHEP do a simulataneous fit separately for Zinv and
+% ttW, uncertainty made from adding p1 in quadrature to p1 unc)
 To take account of the uncertainties in the \MHT
 distribution, explained in Sec.~\ref{sec:systMht}, additional template
 uncertainties are introduced that are decorrelated in \nj and \HT.
@@ -874,9 +919,10 @@ The fit of the likelihood model to find the final result is carried
 out in two steps. Firstly, the predicted background yields in the
 signal region, $b^{\htcat}_{\mathrm{had}}$, are determined with a fit
 in only the control regions, Eq.~\ref{eq:controlLikelihood}. This is
-followed by a full fit using the full likelihood model, Eq.~\ref{},
-taking account of all the correlations between the control regions and
-signal region, along with the statistical uncertainties from the
+followed by a full fit using the full likelihood model,
+Eq.~\ref{eq:total_likelihood}, taking account of all the correlations
+between the control regions and signal region, along with the
+statistical uncertainties from the
 finite number of events in the control region. Within the fit the
 likelihood is profiled against all nuisance parameters, which allows
 the determination of limits on various signal models. This is
