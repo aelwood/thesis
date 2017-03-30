@@ -405,60 +405,57 @@ relative change in the transfer factors is presented as a function of
 Fig.~\ref{fig:tfSyst_jec_muToZinv}-\ref{fig:tfSyst_jec_muToTtw}.  The
 changes are typically in the range of $1-15\%$.
 
+{\bf FIXME} put in an example here and refer to the rest in the
+appendix
+
 \subsubsection*{B-tagging efficiency}
 \label{sec:tfSyst_btag}
-Scale factors provided by the BTV POG are applied to the MC samples
-to correct for differences in the b-tagging efficiencies and 
-misidentifications between simulation and data. 
-The method employed is based on simple event reweighting as described in
-Ref.~\cite{btagSFMethods}. 
-Events are reweighted according to the probability of obtaining a particular jet configuration in data
-and simulation, as determined by the b-tagging efficiencies computed
-in the MC samples and the scale factors measured in data.
-Since no extrapolation is performed in the background prediction across different 
-\nb multiplicities, the analysis is expected to be robust against variations in the 
-b-tagging efficiency. 
-To test this effect the change in the transfer factors is measured
-by varying the scale factors within their uncertainties. The scale factors
-associated with b and c jets are varied together (since their measurements are
-correlated), while those associated with light jets are varied separately.
-The relative change in the transfer factors is presented as a function of \scalht and jet category 
-in Fig. ~\ref{fig:tfSyst_bsf_muToZinv}-\ref{fig:tfSyst_bsfl_muToTtw}.
-They are typically in the range of $1-5\%$.
+The scale factors that take account of the b-tagging efficiencies and
+misidentification between simulation and data have associated
+uncertainties.  Since no extrapolation is performed in the background
+prediction across different \nb multiplicities, the analysis is
+expected to be robust against variations in the b-tagging efficiency.
+The scale factors associated with b and c jets are varied together
+(since their measurements are correlated), while those associated with
+light jets are varied separately.  The relative change in the transfer
+factors is presented as a function of \scalht and jet category in Fig.
+~\ref{fig:tfSyst_bsf_muToZinv}-\ref{fig:tfSyst_bsfl_muToTtw}.  They
+are typically in the range of $1-5\%$.
 
-\subsubsection*{Lepton and photon trigger/identification/isolation efficiency}
+\subsubsection*{Lepton and photon efficiencies}
 \label{sec:tfSyst_lepton}
-Leptons out of $p_{T}$ and $\eta$ acceptance, or within detector
-acceptance but not identified properly by lepton identification or isolation
-requirements contribute to the so-called ``lost-lepton background'', 
-which mainly stem from W and \ttbar events. 
+% Leptons out of $p_{T}$ and $\eta$ acceptance, or within detector
+% acceptance but not identified properly by lepton identification or isolation
+% requirements contribute to the so-called ``lost-lepton background'', 
+% which mainly stem from W and \ttbar events. 
+The main way in which W and \ttbar events can enter the signal region
+is when one of the leptons is not identified, by falling out of
+acceptance or a reconstruction error. There is an uncertainty
+associated with these acceptance and reconstruction effects that must
+be taken account of.
 The fraction of events with leptons out of acceptance ($f_{sample}$)
-is calculated from generator truth level information for each MC
-sample. Differences in efficiencies between data and simulation are
-accounted for with data/MC scale
-factors for trigger, lepton identification and isolation~\cite{twiki-leptonSF}. 
-The uncertainties on the transfer factors associated 
-with these scale factors are determined as described in the following.
-
-The effect of lepton reconstruction in the $\mj \rightarrow \mathrm{tt+W}$ 
-transfer factors is factorised in the following expression: 
+is calculated from generator truth level information for each \MC
+sample. The uncertainties on the trigger, lepton identification and
+isolation efficiencies are encoded in the variable $y$:
 \begin{equation}
     \label{eq:lostLepTF}
-    y = \frac{\sum_{sample} [ R_{sample} \times f_{sample} \times N^{GEN}_{sample} \times ( 1 - \epsilon_{Loose} ) + ( 1 - f_{sample} ) \times N^{GEN}_{sample} ]}{ \sum_{sample} N^{GEN}_{sample} \times \epsilon_{Tight} \times R_{sample} }
+    y = \frac{\sum_{sample} [ R_{sample} \times f_{sample} \times
+    N^{GEN}_{sample} \times ( 1 - \epsilon_{Loose} ) + ( 1 -
+    f_{sample} ) \times N^{GEN}_{sample} ]}{ \sum_{sample}
+    N^{GEN}_{sample} \times \epsilon_{Tight} \times R_{sample} },
 \end{equation}
 where $R_{sample}$ is the cross section reweighting factor for each
-sample, $N^{GEN}_{sample}$ is the total MC events for the category,
+sample, $N^{GEN}_{sample}$ is the total \MC yield for the category,
 $\epsilon_{Tight}$ and $\epsilon_{Loose}$ are the lepton efficiency
-for Tight and Loose working point. The variable $y$ is computed for
-each category. For the numerator, full signal selection except the
-lepton veto to mimic signal region phase space as closely as possible.
-For the denominator, the full selection for the \mj control sample is
-applied.
+for the tight and loose working points that are used separately in the
+muon control region and signal region respectively. The variable $y$ is computed for
+each category. For the numerator, the full signal selection is
+applied.  For the denominator, the full selection for the \mj control
+sample is applied.
 
 The variation on the variable $y$ is computed by varying the lepton
 scale factor up and down according to each source of uncertainty.
-Data/MC lepton scale factors have negligible statistical
-uncertainties.  The procedure is repeated separately for muons and
+The procedure is repeated separately for muons and
 electrons.  Systematic uncertainties of 2\% are assigned to the
 efficiency of the muon and electron veto working point efficiency and
 taken as correlated across all the signal region bins. 
@@ -471,63 +468,66 @@ define the single and double muon control regions can be seen in
 Figs.~\ref{fig:tfSyst_muon scale
 factor_muToZinv}~to~\ref{fig:tfSyst_muon scale factor_muToTtw}.
 
-Finally, the $\eta$-dependent muon tracking scale factors provided by the muon 
-POG to cover the effect of HIP inefficiencies have been applied and their 
-uncertainties taken into consideration. Their effect on the transfer factors
-is found to be less than 1\%.
-
+% Finally, the $\eta$-dependent muon tracking scale factors provided by the muon 
+% POG to cover the effect of HIP inefficiencies have been applied and their 
+% uncertainties taken into consideration. Their effect on the transfer factors
+% is found to be less than 1\%.
+%
 \subsubsection*{Photon trigger uncertainty}
 \label{sec:tfSyst_photonTrigger}
 
-Variations in the trigger weight for the signal region are studied. A conservative systematic
-uncertainty on this correction is taken as the size of the inefficiency. 
-The relative change in the \gj transfer factor is presented in Fig.~\ref{fig:tfSyst_photonTrigger_gjToZinv}
-variation is typically in the range $0-3\%$.
+To take account of uncertainties in the photon trigger efficiency, the
+effect of varying them on the \gj \TF is investigated. To make a
+conservative estimate of the systematic, the uncertainty on this
+correction is taken as the size of the inefficiency.  The relative
+change in the \gj transfer factor is presented in
+Fig.~\ref{fig:tfSyst_photonTrigger_gjToZinv} variation is typically in
+the range $0-3\%$.
 
 \subsubsection*{Signal trigger uncertainty}
 \label{sec:tfSyst_trigger}
 
-Variations in the trigger weight for the signal region are studied. A systematic is taken
-as the difference in the efficiency measured using muon and electron reference triggers.
-The relative change in transfer factors is presented in Fig.
-~\ref{fig:tfSyst_trigger_muToZinv}-\ref{fig:tfSyst_trigger_muToTtw}. The
-variation is typically in the range $0-5\%$.
+Additionally, the uncertainties on the signal trigger efficiency
+measurements are taken into account. This is most relevant in the low
+\HT and \MHT regions of the analysis, where the triggers are not fully
+efficient. As it is possible to measure the efficiency with both muon
+and electron reference triggers, a systematic is taken as the
+difference in the measurement between the two.  The relative change in
+transfer factors is presented in Fig.
+~\ref{fig:tfSyst_trigger_muToZinv}-\ref{fig:tfSyst_trigger_muToTtw}.
+The variation is typically in the range $0-5\%$.
 
 \subsubsection*{Top $p_T$ reweighting}
 \label{sec:tfSyst_topPt}
 
-Variations in the reweighting of top $p_{T}$ distribution, as first outlined in 
-Sec.~\ref{sec:SMxs}, are studied. A conservative systematic
-uncertainty on this correction is taken as the size of the correction itself. 
-The relative change in transfer factors is presented in Fig.
+To account for the uncertainty on the top \pT reweighting an 
+uncertainty on this correction is taken as the difference of the
+correction from unity. The relative change in transfer factors is
+presented in Fig.
 ~\ref{fig:tfSyst_topPt_muToZinv}-\ref{fig:tfSyst_topPt_muToTtw}. The
 variation is typically in the range $0-15\%$.
 
-\subsubsection*{QCD contamination}
+\subsubsection*{QCD contamination in the \gj control sample}
 \label{sec:tfSyst_qcdCont}
 
-A check has also been performed on the systematic effect on the
-background prediction due to QCD contamination in the control samples,
-which has been found to be at the ~5\% level for the \gj
-control region. Applying an arbitrarily large variation of $\pm
-100\%$ on the number of Monte Carlo QCD events leads to a systematic
-variation on the transfer factors of at most 5\% in the majority of bins.
-This preliminary study suggests that effect from QCD
-contamination in the \gj control region is small compared 
-to the total uncertainty assigned to transfer factors. 
-This systematic source is covered in the data-driven study  
-using the photon control region, described in Sec. ~\ref{sec:tfSyst_ZGratio}.
+Due to the greater prevalence of \QCD multijet background in the \gj
+control sample, which has been found to be at the ~5\% level, an
+uncertainty is applied on this contamination. An arbitrarily large
+variation of $\pm 100\%$ on the number of simulated \QCD is chosen and
+leads to a systematic variation on the transfer factors of at most 5\%
+in the majority of bins. This value is small enough to remain
+subdominant to other uncertainties and is found to be covered in the
+data-driven study using the photon control region, described in Sec.
+~\ref{sec:tfSyst_ZGratio}.
 
-\subsubsection*{PU reweighting}
+\subsubsection*{\PU reweighting}
 \label{sec:tfSyst_pu}
 
-Events in simulation are reweighted in order to match the distribution 
-of the primary vertex multiplicity observed in data, as described in Sec. ~\ref{sec:pileup-reweighting}.
-A systematic uncertainty is derived by propagating 
-the 5\% uncertainty on the minimum bias cross section used in the reweighting procedure. 
-The relative change in the transfer factors under this variation is
-small (\~1-5\%)
-and shown in each analysis bin in Fig. ~\ref{fig:tfSyst_pu_muToZinv}-\ref{fig:tfSyst_pu_muToTtw}.
+There are uncertainties in the minimum bias cross section used when
+carrying out the \PU reweighting procedure.  This 5\% uncertainty is
+propagated and the relative change in the transfer factors under this
+variation is small (\~1-5\%) and shown in each analysis bin in Fig.
+~\ref{fig:tfSyst_pu_muToZinv}-\ref{fig:tfSyst_pu_muToTtw}.
 
 %%%%%%%%%%%%%%
 \subsection{Uncertainties derived from data driven tests}
@@ -854,7 +854,9 @@ incorporated as a \emph{template} uncertainty, i.e. alternative \MHT
 distributions for the $\pm1\sigma$ variation for each of the sources
 of uncertainty. 
 
-({\bf FIXME} check this is correct with Matt - depends on the analysis)
+({\bf FIXME} check this is correct with Matt - depends on the
+analysis, for ICHEP do a simulataneous fit separately for Zinv and
+ttW, uncertainty made from adding p1 in quadrature to p1 unc)
 To take account of the uncertainties in the \MHT
 distribution, explained in Sec.~\ref{sec:systMht}, additional template
 uncertainties are introduced that are decorrelated in \nj and \HT.

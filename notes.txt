@@ -89,3 +89,5 @@ robyn's thesis)
 - understand how beam halo effects arise 
 
 - read asymptotic paper from Glen Cowan
+
+- make sure to understand the lost lepton stuff for the systematic
