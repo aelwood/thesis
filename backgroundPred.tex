@@ -92,23 +92,53 @@ in certain regions of phase space.
 
 \subsection{Cross-section corrections}
 
-The phase space of events considered within this search are selected
+The events considered within this search are selected
 to have a high-\HT and high-\MET. The total number of events predicted
 by the \MC samples within this phase space does not agree with that
 observed in data. To correct this normalisation correction factors are
 derived in \emph{sidebands} after all the other corrections have been
-applied. 
+applied. This is particularly true in the case of the \gj simulation,
+dominant in the \gj control
+region, as the cross section for this process is only calculated to \LO
+accuracy. For the other processes the cross section is calculated to
+at least \NLO accuracy.
 
-{\bf FIXME} add in what we actually do here (when we know which
-analysis I'm writing...)
+To derive the correction in the \gj control region a sideband is used
+in the \alphat variable. The same selection is applied as for the \gj
+control region, other than the requirement that $0.50<\alphat<0.52$.
+Within the \mj and \mmj control regions a sideband in \MHT is used,
+requiring $100<\MHT<130~\gev$. A simulataneous fit across all the
+sidebands is performed, where the yields for the \wj, \gj, \zmumu and
+\ttbar are allowed to float. A summary of the correction factors can
+be seen in Table~\ref{tab:sideband-corrs}.
 
-{\bf FIXME} do we do anything about the \gj cross section? where it's
-normalised to mu mu?
+\begin{table}[!h]
+  \footnotesize
+  \centering
+  \caption{Cross section corrections for SM processes determined from
+    data sidebands.}
+  \label{tab:sideband-corrs}
+  \begin{tabular}
+    {lllc}
+    \hline
+    SM process & Control sample & Data sideband           & Corrrection\T\B   \\
+    \hline                   
+    \gj        & \gj            & $0.50 < \alphat < 0.52$ & $1.33 \pm 0.03$\T \\
+    \wj       & \mj            & $100 < \mht < 130\GeV$  & $1.13 \pm 0.01$   \\
+    \zj      & \mmj           & $100 < \mht < 130\GeV$  & $0.99 \pm 0.02$   \\
+    \ttbar     & \mj, \mmj      & $100 < \mht < 130\GeV$  & $0.86 \pm 0.01$\B \\
+    \hline
+  \end{tabular}
+\end{table}
+
+
+% {\bf FIXME} do we do anything about the \gj cross section? where it's
+% normalised to mu mu?
 % data driven cross section calculation
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Background estimation for processes with genuine \MET} %day 2
-\lable{sec:bkgdMet}
+\label{sec:bkgdMet}
 
 The accurate determination of the \SM backgrounds is of utmost
 importance when searching for the indications of \BSM phenomena. So as
@@ -517,7 +547,7 @@ disagreement between simulation and data.
 
 \begin{figure}[h!]
   \begin{center}        
-    \includegraphics[width=\textwidth]{figs/analysis/qcd/doubleQcdSbSrRatio1D}
+    \includegraphics[width=\textwidth]{figs/analysis/qcdMethod/doubleQcdSbSrRatio1D}
     \caption{ Ratio of the measurement of \rmhtmet, the pass/fail
     ratio for the \mhtmet selection, from data and Monte Carlo in the
     $\bdphi < 0.5$ sideband in (\scalht, \njet) bins.  }
