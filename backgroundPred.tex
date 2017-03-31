@@ -250,9 +250,9 @@ dimension is well modelled in each bin must be tested. This testing is
 carried out within the \gj, \mj and \mmj control regions. Within each
 analysis bin of each of the control regions the shape of the \MHT
 distribution in data is compared to the distribution in \MC
-simulation. The normalisation be disregarded as it is set through the
-\TF method.  Provided the modelling is reasonable the ratio of the
-normalised shapes is expected to have a value of 1, consistently
+simulation. The normalisation can be disregarded as it is set through the
+\TF method.  Provided the modelling is reasonable, the ratio of the
+normalised shapes is expected to have a value of one consistently
 across the \MHT dimension, in each of the (\HT,\nj,\nb) bins. Any
 difference is used to derive a systematic uncertainty on the \MHT
 shape as described in Sec.~\ref{sec:systMht}.
@@ -776,6 +776,35 @@ derived from these tests is in the range $4-25\%$.
 \subsection{Uncertainties in the \MHT dimension}
 \label{sec:systMht}
 
+Along with the uncertainty on the \TFs, described above, additional
+uncertainties in the shape of the \MHT distribution that is taken from
+simulation are derived. For all the known sources of systematic
+uncertainty, discussed in Sec.~\ref{sec:simUnc}, the effect of the $\pm 1\sigma$
+variation is propagated as uncertainty that varies the \MHT shape.
+Due to the fact that the analysis is binned in \HT and \nj bin
+migration effects are minimised and these sources of uncertainty are
+found to be subdominant.
+
+There is also an uncertainty associated with the fact that the \MHT shape
+is taken directly from simulation. To estimate this, a data-driven
+method is devised, based on the validation of the \MHT shapes
+described in Sec.~\ref{sec:mhtDim}. Within the \mj, \mmj and \gj
+control regions the data-simulation ratio of the \MHT shape is
+constructed for each (\HT,\nj,\nb) bin. The agreement between the two
+distributions is parameterised with a linear orthogonal polynomial.
+This function is chosen as it allows one to make a linear fit with
+just one parameter as the total overall normalisation is preserved.
+To derive the uncertainty for each of the background sources
+a simultaneous fit of the \MHT shapes is performed across
+all the relevant control regions. This gives a value for the fit
+parameter, $p$, which should be compatible with flat, i.e.
+$p\approx0$. The uncertainty is then taken as the quadrature sum of
+the value of $p$ with its one sigma deviation. This allows alternative
+\MHT shapes to be derived based on the $\pm 1\sigma$ variation of this
+uncertainty. These alternative shapes are used to encode the
+data-driven uncertainty when it is propagated to the final result.
+
+FIXME put in plots comparing to other uncertainties
 
 \newpage
 \begin{landscape}

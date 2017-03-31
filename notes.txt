@@ -94,3 +94,5 @@ robyn's thesis)
 - make sure to understand the lost lepton stuff for the systematic
 
 - explain why W polarisation effects may be a thing
+
+- describe a linear orthogonal polynomial
