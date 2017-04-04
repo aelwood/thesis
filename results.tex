@@ -12,16 +12,135 @@ different \SUSY models.
 %%%%%%%%%%%%%%%%%%%%
 \section{Results}
 
-% introduce all the plots
+The total predicted \SM yields for each of the (\HT,\nj,\nb) bins,
+integrated over the \MHT dimension, are shown in
+Figs.~\ref{fig:mono},~\ref{fig:asym} and \ref{fig:sym} for the
+monojet, asymmetric and symmetric jet categories respectively. In the
+top panel of each figure the data counts with a representative
+statistical uncertainty are shown as black circles with error bars.
+The coloured histogram shows the result of the \SM background
+prediction with the \TF methods described in
+Chapter~\ref{chap:backgroundPred}, the uncertainty of this prediction
+is represented with a shaded box (CR-only fit uncertainty). The
+predictions are split into the \znunu, \QCD multijet and other
+remaining \SM backgrounds. On the bottom panel of each plot the
+significance of the deviation of the data from the predicted \SM
+background is plotted. The red circles show the deviation of the
+control region only background fit (Eq.~\ref{eq:controlLikelihood}),
+while the blue circles show the deviation of the fit that includes the
+signal region (Eq.~\ref{eq:total_likelihood}). The deviation is
+represented as a \emph{pull} that is defined as the number of observed
+events, minus the number of predicted events, divided by the total
+uncertainty.
 
-% mountain range
+Along with the background prediction in each of the (\HT,\nj,\nb)
+categories, simulation is used to predict the \MHT shapes. The result
+of this prediction for a series of representative bins is shown in
+Fig.~\ref{fig:mht-templates}. The data yields and statistical errors
+are displayed by the black markers. The \MHT shape taken from
+simulation normalised based on the results from the control region
+only fit is displayed as the green histogram.
 
-% MHT templates
+Overall, no significant deviation from the \SM backgrounds is observed
+in the data. The results are well described by a \SM-only hypothesis.
+There are a few large pulls $\sim 3\sigma$ that are observed in the
+control-region only fit. However, after a fit including the signal
+region is carried out the pulls are significantly reduced. This
+suggests that such effects are properly covered by systematic
+uncertainties.
 
-% some representative systematics
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{figs/analysis/results/summaryPlot_Monojet_prefit_overlay_fit_b}
+    \caption{The total event yields in data (solid black circles)
+      and the \SM expectations with their associated uncertainties (black
+      histogram with shaded band) as a function of
+      \nb and \HT for the monojet topology ($\njet = 1$) in the
+      signal region. Under this is the significance of deviations
+      (pulls) observed in data with respect to the \SM expectations
+      from the fit with only the control regions (red circles) and a
+      full fit including the signal region (blue circles).}
+    \label{fig:mono}
+  \end{center}
+\end{figure}
+
+\begin{figure*}[!h]
+  \begin{center}
+    \includegraphics[angle=90,width=0.7\textwidth]{figs/analysis/results/summaryPlot_Asymmetric_prefit_overlay_fit_b}
+    \caption{The total event yields in data (solid black circles)
+      and the \SM expectations with their associated uncertainties (black
+      histogram with shaded band) integrated over \MHT as a function of
+      \nj,\nb and \HT for the asymmetric topology in the
+      signal region. Under this is the significance of deviations
+      (pulls) observed in data with respect to the \SM expectations
+      from the fit with only the control regions (red circles) and a
+      full fit including the signal region (blue circles).}
+    % \caption{(Top panel) Event yields observed in data (solid circles)
+    %   and SM expectations with their associated uncertainties (black
+    %   histogram with shaded band) from a CR-only fit, integrated over
+    %   \MHT, as a function of \njet, \nb, and \scalht for the
+    %   asymmetric topology in the signal region. (Bottom panel). The
+    %   significance of deviations (pulls) observed in data with respect
+    %   to the SM expectations from the CR-only (red circles) and full
+    %   fit (blue circles). The pulls are indicative only and cannot be
+    %   considered independently.}
+    \label{fig:asym}
+  \end{center}
+\end{figure*}
+
+\begin{figure*}[!h]
+  \begin{center}
+    \includegraphics[angle=90,width=0.7\textwidth]{figs/analysis/results/summaryPlot_Symmetric_prefit_overlay_fit_b}
+    % \caption{(Top panel) Event yields observed in data (solid circles)
+    %   and SM expectations with their associated uncertainties (black
+    %   histogram with shaded band) from a CR-only fit, integrated over
+    %   \MHT, as a function of \njet, \nb, and \scalht for the
+    %   symmetric topology in the signal region. (Bottom panel). The
+    %   significance of deviations (pulls) observed in data with respect
+    %   to the SM expectations from the CR-only (red circles) and full
+    %   fit (blue circles). The pulls are indicative only and cannot be
+    %   considered independently.}
+    \caption{The total event yields in data (solid black circles)
+      and the \SM expectations with their associated uncertainties (black
+      histogram with shaded band) integrated over \MHT as a function of
+      \nj,\nb and \HT for the symmetric topology in the
+      signal region. Under this is the significance of deviations
+      (pulls) observed in data with respect to the \SM expectations
+      from the fit with only the control regions (red circles) and a
+      full fit including the signal region (blue circles).}
+    \label{fig:sym}
+  \end{center}
+\end{figure*}
+
+\begin{figure*}[tbhp]
+  \begin{center}
+  \subfloat[Symmetric topology, medium \HT, low \nj]{
+    \includegraphics[width=0.49\textwidth]{figs/analysis/results/mhtShape_eq0b_eq2j_600_800_fit_b.pdf}
+    }~~
+  \subfloat[Asymmetric topology, low \HT]{
+    \includegraphics[width=0.49\textwidth]{figs/analysis/results/mhtShape_eq1b_eq3a_300_350_fit_b.pdf}
+    }\\
+  \subfloat[Symmetric topology, high \nj and \HT]{
+    \includegraphics[width=0.49\textwidth]{figs/analysis/results/mhtShape_eq0b_ge5j_800_Inf_fit_b.pdf}
+    }~~
+  \subfloat[Symmetric topology, high \nj, \nb and \HT]{
+    \includegraphics[width=0.49\textwidth]{figs/analysis/results/mhtShape_ge3b_ge5j_800_Inf_fit_b.pdf}
+    }
+  \end{center}
+  \caption{The total event yields in data (solid black circles) and
+  the \SM expectations with their associated uncertainties (green
+  histogram with shaded band) as a function of \MHT for events in the
+  signal region for four representative signal region categories. The
+  final bin of each histogram is an overflow bin. Under this is the
+  significance of deviations (pulls) observed in data with respect to
+  the \SM expectations. \label{fig:mht-templates} 
+  }
+\end{figure*}
+
+% some representative systematics or not...
 
 %%%%%%%%%%%%%%%%%%%%
-\section{Signal model interpretation}
+\section{Interpretation of the results}
 \label{sec:signalModel}
 
 % introduce the signal models used

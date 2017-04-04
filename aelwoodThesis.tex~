@@ -53,13 +53,13 @@
 %% Start the content body of the thesis
 \begin{mainmatter}
   %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
-  \input{introduction}
-  \input{theory}
-  \input{detector}
-  \input{reconstruction}
-  \input{l1trig}
-  \input{eventSelection}
-  \input{backgroundPred}
+  % \input{introduction}
+  % \input{theory}
+  % \input{detector}
+  % \input{reconstruction}
+  % \input{l1trig}
+  % \input{eventSelection}
+  % \input{backgroundPred}
   \input{results}
   % \input{conclusion}
 \end{mainmatter}

@@ -96,3 +96,9 @@ robyn's thesis)
 - explain why W polarisation effects may be a thing
 
 - describe a linear orthogonal polynomial
+
+- make sure i can describe the subtleties of the fit, ie difference
+  between CR only and SR only fit and why the pulls change
+
+- which systematics are pulled in each of the cases
+
