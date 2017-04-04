@@ -102,3 +102,5 @@ robyn's thesis)
 
 - which systematics are pulled in each of the cases
 
+- the ISR correction covers pdf uncertainties
+

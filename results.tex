@@ -7,7 +7,7 @@ Sec.~\ref{sec:dataset}, the results are described in this chapter. The
 \SM backgrounds have been predicted using the likelihood fit discussed
 in Sec.~\ref{sec:likelihood}. The data has then been compared to the expected
 background yields and limits are set on the production of an array of
-different \SUSY models.
+different \SUSY models. This result has been released as a public document at \cite{CMS-PAS-SUS-16-016}.
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Results}
@@ -49,7 +49,7 @@ region is carried out the pulls are significantly reduced. This
 suggests that such effects are properly covered by systematic
 uncertainties.
 
-\begin{figure}[!h]
+\begin{figure}[!htb]
   \begin{center}
     \includegraphics[width=0.9\textwidth]{figs/analysis/results/summaryPlot_Monojet_prefit_overlay_fit_b}
     \caption{The total event yields in data (solid black circles)
@@ -64,7 +64,7 @@ uncertainties.
   \end{center}
 \end{figure}
 
-\begin{figure*}[!h]
+\begin{figure*}[!htb]
   \begin{center}
     \includegraphics[angle=90,width=0.7\textwidth]{figs/analysis/results/summaryPlot_Asymmetric_prefit_overlay_fit_b}
     \caption{The total event yields in data (solid black circles)
@@ -88,7 +88,7 @@ uncertainties.
   \end{center}
 \end{figure*}
 
-\begin{figure*}[!h]
+\begin{figure*}[!htb]
   \begin{center}
     \includegraphics[angle=90,width=0.7\textwidth]{figs/analysis/results/summaryPlot_Symmetric_prefit_overlay_fit_b}
     % \caption{(Top panel) Event yields observed in data (solid circles)
@@ -112,7 +112,7 @@ uncertainties.
   \end{center}
 \end{figure*}
 
-\begin{figure*}[tbhp]
+\begin{figure*}[!tbhp]
   \begin{center}
   \subfloat[Symmetric topology, medium \HT, low \nj]{
     \includegraphics[width=0.49\textwidth]{figs/analysis/results/mhtShape_eq0b_eq2j_600_800_fit_b.pdf}
@@ -143,9 +143,32 @@ uncertainties.
 \section{Interpretation of the results}
 \label{sec:signalModel}
 
-% introduce the signal models used
+As there is no excess observed in the data above that expected from
+the \SM background production, limits are set on the parameters of
+possible \SUSY models. For the interpretation of the results, the
+simplified models discussed in Sec.~\ref{sec:simplifiedModels} are
+utilised. Six particular models are used to interpret the results of
+the analysis. The models are named based on their production topology,
+with gluino pair produced models being prefixed with \emph{T1} and
+squark pair produced models being prefixed with \emph{T2}. Two
+varieties of the gluino pair produced models are shown in
+Fig.~\ref{fig:simplified-models-feyn-gluino}, in which the gluino
+decays via third generation quarks. Their corresponding squark pair
+produced models are shown in
+Fig.~\ref{fig:simplified-models-feyn-3rdGen}.  
+% Finally, models in
+% which the gluinos or squarks decay to light quarks are considered and
+% shown in Fig.~\ref{fig:simplified-models-feyn-light}.
 
-% feynman diagrams of the models
+The predicted yields for each of these signal models are taken
+directly from \MC simulation. To be able to understand which mass
+range of these models is excluded by the result, a large number of
+different simulations are produced for a range of gluino, squark and
+neutralino masses $m_{\tilde{g}}$, $m_{\tilde{q}}$ and
+$m_{\tilde{\chi^0_1}}$ respectively. For each of these mass points it
+is considered whether the model is compatible with the observed
+results or not. If it is not, it is deemed to be excluded to a certain
+degree of certainty.
 
 \begin{figure}[h!]
   \begin{center}
@@ -158,28 +181,10 @@ uncertainties.
       \label{fig:T1tttt_feyn}
     } ~~
     \caption{
-      Graphical representation of the production and decay of supersymmetric particles 
-      in gluino models with decoupled third generation squarks. 
+      Feynman diagram of simplified models in which gluinos are pair
+      produced and decay to an \LSP via third generation squarks. 
     }
     \label{fig:simplified-models-feyn-gluino}
-  \end{center}
-\end{figure}
-
-\begin{figure}[h!]
-  \begin{center}
-    \subfloat[T1qqqq]{
-      \includegraphics[width=0.3\textwidth]{figs/analysis/interpretation/T1qqqq_feyn}
-      \label{fig:T1qqqq_feyn}
-    } ~~
-    \subfloat[T2qq]{
-      \includegraphics[width=0.3\textwidth]{figs/analysis/interpretation/T2qq_feyn}
-      \label{fig:T2qq_feyn}
-    }
-    \caption{
-      Graphical representation of the production and decay of supersymmetric particles 
-      in ``light-flavour models'', i.e. with gluinos/squarks decaying to light quarks. 
-    }
-    \label{fig:simplified-models-feyn-light}
   \end{center}
 \end{figure}
 
@@ -194,30 +199,118 @@ uncertainties.
       \label{fig:T2bb_feyn}
     }
     \caption{
-      Graphical representation of the production and decay of supersymmetric particles 
-      in models with the production of third generation squarks (stops and sbottoms). 
+      Feynman diagram of simplified models in which stops or sbottoms are pair
+      produced and decay to an \LSP via third generation squarks. 
     }
     \label{fig:simplified-models-feyn-3rdGen}
   \end{center}
 \end{figure}
 
-
-
+% \begin{figure}[h!]
+%   \begin{center}
+%     \subfloat[T1qqqq]{
+%       \includegraphics[width=0.3\textwidth]{figs/analysis/interpretation/T1qqqq_feyn}
+%       \label{fig:T1qqqq_feyn}
+%     } ~~
+%     \subfloat[T2qq]{
+%       \includegraphics[width=0.3\textwidth]{figs/analysis/interpretation/T2qq_feyn}
+%       \label{fig:T2qq_feyn}
+%     }
+%     \caption{
+%       Graphical representation of the production and decay of supersymmetric particles 
+%       in ``light-flavour models'', i.e. with gluinos/squarks decaying to light quarks. 
+%     }
+%     \label{fig:simplified-models-feyn-light}
+%   \end{center}
+% \end{figure}
 
 \subsection{Uncertainties on signal models}
 
-% list the uncertainties as in the AN
+Sources of systematic uncertainty are propagated to the predicted
+yields from the \MC simulation of the signal models. These
+uncertainties are considered across all the (\HT,\nj,\nb) categories,
+as well as the \MHT shapes. Most of the uncertainties are considered
+in the same way as those in the \SM background prediction,
+Sec.~\ref{}. Due to the fact that the signal model yields come from
+simulation, an additional uncertainty on the total integrated
+luminosity is included. Additionally, an extra correction factor is
+applied to the number of jets from initial state radiation. This also
+has an associated uncertainty. Each of these uncertainties must be
+determined for each independent simplified model. A summary of the
+uncertainties for a representative T2bb simplified model and their
+correlation across all categories is shown in
+Tab.~\ref{tab:signal_systs}. The \emph{normalisation} uncertainties
+just effect the total yield in each (\HT,\nj,\nb), while the
+\emph{shape} uncertainties include variations in the \MHT shape.  
+
+\begin{table}[h!]
+  \caption{ The magnitude of uncertainties in the signal model yields
+  in the case of a T2bb simplified model.
+    }  
+  \label{tab:signal_systs}
+  \centering
+  \footnotesize
+  \begin{tabular}{ lccc }
+    \hline
+    Systematic source\T\B          & Type          & Correlated & Typical magnitude (\%) \\
+    \hline
+    Luminosity\T                   & Normalisation & Yes        & 6.2                    \\
+    Monte Carlo statistics         & Norm. + shape & No         & 1--50                  \\
+    Jet energy scale               & Norm. + shape & Yes        & 3--10                  \\
+    b-tag efficiency scale factors & Norm. + shape & Yes        & 5--40                  \\
+    Lepton scale factors           & Normalisation & Yes        & 1--5                   \\
+    Pile-up                        & Norm. + shape & Yes        & 0--5                   \\
+    Trigger efficiency             & Norm. + shape & Yes        & 0--4                   \\
+    Initial state radiation        & Norm. + shape & Yes        & 1--20                  \\
+    Modelling of \MHT         & Normalisation & Yes        & 1--5                   \\
+%    Renormalisation/factorisation & Norm. + shape & No         & 10                     \\
+    \hline
+  \end{tabular}
+\end{table}
+
+% \begin{itemize}
+%   \item Luminosity: 6.2 \%, taken as correlated across all bins.
+%   \item Trigger: systematic measured using the difference between the
+%   electron and muon reference triggers (see Sec.~\ref{sec:triggers}).
+%   \item MC statistics:  uncorrelated bin-by-bin uncertainty, affecting
+%   the shape of the signal.  \item Pileup reweighting: 5\% uncertainty
+%   on the minimum bias cross section (see
+%   Sec.~\ref{sec:pileup-reweighting}).  \item b-tag efficiency:
+%   uncertainties on the FullSim and FastSim b-tag scale factors are
+%   propagated and taken as correlated across the bins. These are
+%   uncorrelated for mis-tag and efficiency systematics.  \item Lepton
+%   efficiency: uncertainty on the lepton scale factors is propagated
+%   and taken as correlated across the bins.  \item Jet energy scale:
+%   uncertainty on the jet energy corrections is propagated and taken as
+%   correlated across the bins.  \item Initial State Radiation (ISR): A
+%   systematic of half the correction factor applied to the MC per
+%   number of ISR jets is taken as correlated across the bins.
+% \end{itemize}
 
 \subsection{Exclusion limits}
 
-% describe and show the limits
+For each of the mass points for all the simplified models introduced
+in Sec.~\ref{sec:signalModel} an upper limit at a 95\% \CL on the
+cross section to produce the pair of sparticles considered in the
+model is determined. This limit is produced under a background plus
+signal hypothesis with a modified frequentist approach. The potential
+contribution of the simplified models to each of the analysis bins in
+the signal region is considered. The statistical approach uses a
+one-sided profile likelihood ratio as the test statistic, the
+\emph{CL$_S$} criterion ~\cite{junk, read} and the asymptotic
+formulae~\cite{Cowan:2010js} are used to approximate the distributions
+of the test statistics under the relevant hypothesis (either
+background only or signal plus background). 
+
+% FIXME describe the limits
 
 \begin{figure}[h!]
   \begin{center}
-    \subfloat[T2tt: Upper limit on the cross section in the $(m_{\mathrm{Gluino}},m_{\mathrm{Susy}})$ plane]{
-      \includegraphics[width=0.6\textwidth]{figs/analysis/interpretation/T2ttXSEC}
+    \subfloat[T2tt: Upper limit on the cross section in the
+    $(m_{\mathrm{stop}},m_{\mathrm{\LSP}})$ plane]{
+      \includegraphics[width=0.5\textwidth]{figs/analysis/interpretation/T2ttXSEC}
       \label{fig:T2tt_excl}
-    } \\
+    } ~~
     % \subfloat[T2tt: $\epsilon_{sig}^{\mathrm{4\,cat}}$]{
     %   \includegraphics[width=0.45\textwidth]{figures/jetRanking/T2tt/eff/T2tt_merging_4_cats}
     %   \label{fig:T2tt_eff}
@@ -226,19 +319,10 @@ uncertainties.
     %   \includegraphics[width=0.45\textwidth]{figures/susyResults/T2tt_doubleRatioAcceptance}
     %   \label{fig:T2tt_eff_doubleRatio}
     % }
-    \caption{
-      The 95\% C.L. observed upper limit on the cross section (histogram), with the expected (solid black line) observed (solid red line) exclusion contours. 
-      % Bottom left: signal acceptance including the 4 most excluding jet categories. 
-      % Bottom right: ratio of the signal acceptance including 4 categories to the acceptance including the whole signal region. 
-    }
     \label{fig:T2tt}
-  \end{center}
-\end{figure}
-
-\begin{figure}[h!]
-  \begin{center}
-    \subfloat[T2bb: Upper limit on the cross section in the $(m_{\mathrm{Gluino}},m_{\mathrm{Susy}})$ plane]{
-      \includegraphics[width=0.6\textwidth]{figs/analysis/interpretation/T2bbXSEC}
+    \subfloat[T2bb: Upper limit on the cross section in the
+    $(m_{\mathrm{sbottom}},m_{\mathrm{\LSP}})$ plane]{
+      \includegraphics[width=0.5\textwidth]{figs/analysis/interpretation/T2bbXSEC}
       \label{fig:T2bb_excl}
     } \\
     % \subfloat[T2bb: $\epsilon_{sig}^{\mathrm{4\,cat}}$]{
@@ -249,42 +333,25 @@ uncertainties.
     %   \includegraphics[width=0.45\textwidth]{figures/susyResults/T2bb_doubleRatioAcceptance}
     %   \label{fig:T2bb_eff_doubleRatio}
     % }
-    \caption{
-      The 95\% C.L. observed upper limit on the cross section (histogram), with the expected (solid black line) observed (solid red line) exclusion contours. 
-      % Bottom left: signal acceptance including the 4 most excluding jet categories. 
-      % Bottom right: ratio of the signal acceptance including 4 categories to the acceptance including the whole signal region. 
-    }
+    
     \label{fig:T2bb}
-  \end{center}
-\end{figure}
-
-\begin{figure}[h!]
-  \begin{center}
-    \subfloat[T2qq: Upper limit on the cross section in the $(m_{\mathrm{Gluino}},m_{\mathrm{Susy}})$ plane]{
-      \includegraphics[width=0.6\textwidth]{figs/analysis/interpretation/T2qqXSEC}
-      \label{fig:T2qq_excl}
-    } \\
-    % \subfloat[T2qq: $\epsilon_{sig}^{\mathrm{4\,cat}}$]{
-    %   \includegraphics[width=0.45\textwidth]{figures/jetRanking/T2qq/eff/T2qq_merging_4_cats}
-    %   \label{fig:T2qq_eff}
+    \subfloat[T1bbbb: Upper limit on the cross section in the
+    $(m_{\mathrm{Gluino}},m_{\mathrm{\LSP}})$ plane]{
+      \includegraphics[width=0.5\textwidth]{figs/analysis/interpretation/T1bbbbXSEC}
+      \label{fig:T1bbbb_excl}
+    } ~~
+    % \subfloat[T1bbbb: $\epsilon_{sig}^{\mathrm{4\,cat}}$]{
+    %   \includegraphics[width=0.45\textwidth]{figures/jetRanking/T1bbbb/eff/T1bbbb_merging_4_cats}
+    %   \label{fig:T1bbbb_eff}
     % } ~~
-    % \subfloat[T2qq: $\epsilon_{sig}^{\mathrm{4\,cat}}/\epsilon_{sig}^{\mathrm{tot}}$]{
-    %   \includegraphics[width=0.45\textwidth]{figures/susyResults/T2qq_doubleRatioAcceptance}
-    %   \label{fig:T2qq_eff_doubleRatio}
+    % \subfloat[T1bbbb: $\epsilon_{sig}^{\mathrm{4\,cat}}/\epsilon_{sig}^{\mathrm{tot}}$]{
+    %   \includegraphics[width=0.45\textwidth]{figures/susyResults/T1bbbb_doubleRatioAcceptance}
+    %   \label{fig:T1bbbb_eff_doubleRatio}
     % }
-    \caption{
-      The 95\% C.L. observed upper limit on the cross section (histogram), with the expected (solid black line) observed (solid red line) exclusion contours. 
-      % Bottom left: signal acceptance including the 4 most excluding jet categories. 
-      % Bottom right: ratio of the signal acceptance including 4 categories to the acceptance including the whole signal region. 
-    }
-    \label{fig:T2qq}
-  \end{center}
-\end{figure}
-
-\begin{figure}[h!]
-  \begin{center}
-    \subfloat[T1tttt: Upper limit on the cross section in the $(m_{\mathrm{Gluino}},m_{\mathrm{Susy}})$ plane]{
-      \includegraphics[width=0.6\textwidth]{figs/analysis/interpretation/T1ttttXSEC}
+    \label{fig:T1bbbb}
+    \subfloat[T1tttt: Upper limit on the cross section in the
+    $(m_{\mathrm{Gluino}},m_{\mathrm{\LSP}})$ plane]{
+      \includegraphics[width=0.5\textwidth]{figs/analysis/interpretation/T1ttttXSEC}
       \label{fig:T1tttt_excl}
     } \\
     % \subfloat[T1tttt: $\epsilon_{sig}^{\mathrm{4\,cat}}$]{
@@ -296,57 +363,56 @@ uncertainties.
     %   \label{fig:T1tttt_eff_doubleRatio}
     % }
     \caption{
-      The 95\% C.L. observed upper limit on the cross section (histogram), with the expected (solid black line) observed (solid red line) exclusion contours. 
+      The 95\% observed upper limit on the cross section (histogram),
+      with the expected (dotted red line) and observed (black line)
+      exclusion contours. For a selection of \SUSY models discussed in
+      Sec.~\ref{sec:signalModel}.
       % Bottom left: signal acceptance including the 4 most excluding jet categories. 
       % Bottom right: ratio of the signal acceptance including 4 categories to the acceptance including the whole signal region. 
     }
     \label{fig:T1tttt}
   \end{center}
 \end{figure}
-\begin{figure}[h!]
-  \begin{center}
-    \subfloat[T1bbbb: Upper limit on the cross section in the $(m_{\mathrm{Gluino}},m_{\mathrm{Susy}})$ plane]{
-      \includegraphics[width=0.6\textwidth]{figs/analysis/interpretation/T1bbbbXSEC}
-      \label{fig:T1bbbb_excl}
-    } \\
-    % \subfloat[T1bbbb: $\epsilon_{sig}^{\mathrm{4\,cat}}$]{
-    %   \includegraphics[width=0.45\textwidth]{figures/jetRanking/T1bbbb/eff/T1bbbb_merging_4_cats}
-    %   \label{fig:T1bbbb_eff}
-    % } ~~
-    % \subfloat[T1bbbb: $\epsilon_{sig}^{\mathrm{4\,cat}}/\epsilon_{sig}^{\mathrm{tot}}$]{
-    %   \includegraphics[width=0.45\textwidth]{figures/susyResults/T1bbbb_doubleRatioAcceptance}
-    %   \label{fig:T1bbbb_eff_doubleRatio}
-    % }
-    \caption{
-      The 95\% C.L. observed upper limit on the cross section (histogram), with the expected (solid black line) observed (solid red line) exclusion contours. 
-      % Bottom left: signal acceptance including the 4 most excluding jet categories. 
-      % Bottom right: ratio of the signal acceptance including 4 categories to the acceptance including the whole signal region. 
-    }
-    \label{fig:T1bbbb}
-  \end{center}
-\end{figure}
 
-\begin{figure}[h!]
-  \begin{center}
-    \subfloat[T1qqqq: Upper limit on the cross section in the $(m_{\mathrm{Gluino}},m_{\mathrm{Susy}})$ plane]{
-      \includegraphics[width=0.6\textwidth]{figs/analysis/interpretation/T1qqqqXSEC}
-      \label{fig:T1qqqq_excl}
-    } \\
-    % \subfloat[T1qqqq: $\epsilon_{sig}^{\mathrm{4\,cat}}$]{
-    %   \includegraphics[width=0.45\textwidth]{figures/jetRanking/T1qqqq/eff/T1qqqq_merging_4_cats}
-    %   \label{fig:T1qqqq_eff}
-    % } ~~
-    % \subfloat[T1qqqq: $\epsilon_{sig}^{\mathrm{4\,cat}}/\epsilon_{sig}^{\mathrm{tot}}$]{
-    %   \includegraphics[width=0.45\textwidth]{figures/susyResults/T1qqqq_doubleRatioAcceptance}
-    %   \label{fig:T1qqqq_eff_doubleRatio}
-    % }
-    \caption{
-      The 95\% C.L. observed upper limit on the cross section (histogram), with the expected (solid black line) observed (solid red line) exclusion contours. 
-      % Bottom left: signal acceptance including the 4 most excluding jet categories. 
-      % Bottom right: ratio of the signal acceptance including 4 categories to the acceptance including the whole signal region. 
-    }
-    \label{fig:T1qqqq}
-  \end{center}
-\end{figure}
+
+% \begin{figure}[h!]
+%   \begin{center}
+%     \subfloat[T2qq: Upper limit on the cross section in the
+%     $(m_{\mathrm{squark}},m_{\mathrm{\LSP}})$ plane]{
+%       \includegraphics[width=0.5\textwidth]{figs/analysis/interpretation/T2qqXSEC}
+%       \label{fig:T2qq_excl}
+%     } ~~
+%     % \subfloat[T2qq: $\epsilon_{sig}^{\mathrm{4\,cat}}$]{
+%     %   \includegraphics[width=0.45\textwidth]{figures/jetRanking/T2qq/eff/T2qq_merging_4_cats}
+%     %   \label{fig:T2qq_eff}
+%     % } ~~
+%     % \subfloat[T2qq: $\epsilon_{sig}^{\mathrm{4\,cat}}/\epsilon_{sig}^{\mathrm{tot}}$]{
+%     %   \includegraphics[width=0.45\textwidth]{figures/susyResults/T2qq_doubleRatioAcceptance}
+%     %   \label{fig:T2qq_eff_doubleRatio}
+%     % }
+%     \label{fig:T2qq}
+%         \subfloat[T1qqqq: Upper limit on the cross section in the
+%     $(m_{\mathrm{Gluino}},m_{\mathrm{\LSP}})$ plane]{
+%       \includegraphics[width=0.5\textwidth]{figs/analysis/interpretation/T1qqqqXSEC}
+%       \label{fig:T1qqqq_excl}
+%     } \\
+%     % \subfloat[T1qqqq: $\epsilon_{sig}^{\mathrm{4\,cat}}$]{
+%     %   \includegraphics[width=0.45\textwidth]{figures/jetRanking/T1qqqq/eff/T1qqqq_merging_4_cats}
+%     %   \label{fig:T1qqqq_eff}
+%     % } ~~
+%     % \subfloat[T1qqqq: $\epsilon_{sig}^{\mathrm{4\,cat}}/\epsilon_{sig}^{\mathrm{tot}}$]{
+%     %   \includegraphics[width=0.45\textwidth]{figures/susyResults/T1qqqq_doubleRatioAcceptance}
+%     %   \label{fig:T1qqqq_eff_doubleRatio}
+%     % }
+%     \caption{
+%       The 95\% observed upper limit on the cross section (histogram),
+%       with the expected (dotted red line) and observed (black line)
+%       exclusion contours. For a selection of \SUSY models discussed in
+%       Sec.~\ref{sec:signalModel}.
+%       % Bottom right: ratio of the signal acceptance including 4 categories to the acceptance including the whole signal region. 
+%     }
+%     \label{fig:T1qqqq}
+%   \end{center}
+% \end{figure}
 
 
