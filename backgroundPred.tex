@@ -74,7 +74,7 @@ dependent on the \pT of the \ttbar system.
 \subsection{Trigger efficiencies}
 
 To account for inefficiencies in the trigger selection when collecting
-data, the \MC sample event yields are corrected down. For the muon control
+data, the \MC sample event yields are corrected. For the muon control
 samples the trigger is simulated and the difference between the
 measured efficiency in data and simulation is corrected with a
 dedicated scale factor. For the \gj control sample the trigger
@@ -83,12 +83,20 @@ corrected as a function of the photon \pT and \eta. Within the signal
 region, the efficiencies are measured as a function of \MHT using
 events that pass a reference electron trigger.  As one of the analysis goals
 is to maintain low thresholds to \HT and \MHT within the signal
-region, the efficiencies are found to be significantly less than 100\%
-in certain regions of phase space.
-%the efficienoperate near the trigger turn on: corrections
-% put in trigger efficiency plots
+region, their are some inefficiencies at low values of \HT and \MHT.
+The trigger efficiency for a representative bin can be seen in
+Fig.~\ref{fig:trigEffsAt}. Additionally, the efficiency for one of the \gj control
+sample bins is also shown.
 
-{\bf FIXME} add in plots from Xtian
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[Signal region symmetric jet category $200 < \HT <
+    250~\gev$]{\includegraphics[width=0.4\textwidth]{figs/analysis/trigger/HLT_IsoMu22/HLT_AlphaTMonoAll_MoM_200to250_mht}} ~~\
+    \subfigure[$\scalht > 800$]{\includegraphics[width=0.4\textwidth]{figures/Trigger/HLT_IsoMu22/HLT_AlphaTHT800MonoAll_MoM_800to999999_mht}} \\ ~~\
+    \caption{Signal trigger efficiency in the \mht dimension measured with a muon sample, for symmetric categories.}
+    \label{fig:trigEffsAt}
+  \end{center}
+\end{figure}
 
 \subsection{Cross-section corrections}
 
