@@ -90,24 +90,25 @@ sample bins is also shown.
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[Signal region symmetric jet category $200 < \HT <
-    250~\gev$]{\includegraphics[width=0.4\textwidth]{figs/analysis/trigger/HLT_IsoMu22/HLT_AlphaTMonoAll_MoM_200to250_mht}} ~~\
-    \subfigure[$\scalht > 800$]{\includegraphics[width=0.4\textwidth]{figures/Trigger/HLT_IsoMu22/HLT_AlphaTHT800MonoAll_MoM_800to999999_mht}} \\ ~~\
-    \caption{Signal trigger efficiency in the \mht dimension measured with a muon sample, for symmetric categories.}
+    \subfloat[Signal region symmetric jet category $400 < \HT <
+    600~\gev$]{\includegraphics[width=0.4\textwidth]{figs/analysis/trigger/HLT_IsoMu22/HLT_AlphaTMonoAll_MoM_400to600_mht}} ~~\
+    \subfloat[\gj region over all \HT]{\includegraphics[width=0.4\textwidth]{figs/analysis/trigger/Photon/HLT_PhotonECALHT800_MoM_all_800to999999_gammapt}} \\ 
+    \caption{Signal trigger efficiency in the \mht dimension measured
+    with a muon sample (a) and \gj trigger efficiency measured with a
+    hadronic sample.}
     \label{fig:trigEffsAt}
   \end{center}
 \end{figure}
 
 \subsection{Cross-section corrections}
 
-The events considered within this search are selected
+The events considered within this analysis are selected
 to have a high-\HT and high-\MET. The total number of events predicted
 by the \MC samples within this phase space does not agree with that
-observed in data. To correct this normalisation correction factors are
+observed in data. To correct this, normalisation correction factors are
 derived in \emph{sidebands} after all the other corrections have been
-applied. This is particularly true in the case of the \gj simulation,
-dominant in the \gj control
-region, as the cross section for this process is only calculated to \LO
+applied. This is particularly important in the case of the \gj simulation,
+as the cross section for this process is only calculated to \LO
 accuracy. For the other processes the cross section is calculated to
 at least \NLO accuracy.
 
@@ -117,8 +118,11 @@ control region, other than the requirement that $0.50<\alphat<0.52$.
 Within the \mj and \mmj control regions a sideband in \MHT is used,
 requiring $100<\MHT<130~\gev$. A simulataneous fit across all the
 sidebands is performed, where the yields for the \wj, \gj, \zmumu and
-\ttbar are allowed to float. A summary of the correction factors can
-be seen in Table~\ref{tab:sideband-corrs}.
+\ttbar are allowed to float. The fit then finds the best scale factor
+for each sample to produce the best data-simulation agreement within
+the sideband. These correction factors can then be applied to the
+simulation throughout the rest of the analysis. A summary of the
+correction factors can be seen in Table~\ref{tab:sideband-corrs}.
 
 \begin{table}[!h]
   \footnotesize
@@ -138,11 +142,6 @@ be seen in Table~\ref{tab:sideband-corrs}.
     \hline
   \end{tabular}
 \end{table}
-
-
-% {\bf FIXME} do we do anything about the \gj cross section? where it's
-% normalised to mu mu?
-% data driven cross section calculation
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Background estimation for processes with genuine \MET} %day 2
@@ -666,49 +665,48 @@ are typically in the range of $1-5\%$.
 
 \subsubsection*{Lepton and photon efficiencies}
 \label{sec:tfSyst_lepton}
-% Leptons out of $p_{T}$ and $\eta$ acceptance, or within detector
-% acceptance but not identified properly by lepton identification or isolation
-% requirements contribute to the so-called ``lost-lepton background'', 
-% which mainly stem from W and \ttbar events. 
+
 The main way in which W and \ttbar events can enter the signal region
 is when one of the leptons is not identified, by falling out of
 acceptance or a reconstruction error. There is an uncertainty
 associated with these acceptance and reconstruction effects that must
 be taken account of.
-The fraction of events with leptons out of acceptance ($f_{sample}$)
-is calculated from generator truth level information for each \MC
-sample. The uncertainties on the trigger, lepton identification and
-isolation efficiencies are encoded in the variable $y$:
-\begin{equation}
-    \label{eq:lostLepTF}
-    y = \frac{\sum_{sample} [ R_{sample} \times f_{sample} \times
-    N^{GEN}_{sample} \times ( 1 - \epsilon_{Loose} ) + ( 1 -
-    f_{sample} ) \times N^{GEN}_{sample} ]}{ \sum_{sample}
-    N^{GEN}_{sample} \times \epsilon_{Tight} \times R_{sample} },
-\end{equation}
-where $R_{sample}$ is the cross section reweighting factor for each
-sample, $N^{GEN}_{sample}$ is the total \MC yield for the category,
-$\epsilon_{Tight}$ and $\epsilon_{Loose}$ are the lepton efficiency
-for the tight and loose working points that are used separately in the
-muon control region and signal region respectively. The variable $y$ is computed for
-each category. For the numerator, the full signal selection is
-applied.  For the denominator, the full selection for the \mj control
-sample is applied.
 
-The variation on the variable $y$ is computed by varying the lepton
-scale factor up and down according to each source of uncertainty.
-The procedure is repeated separately for muons and
-electrons.  Systematic uncertainties of 2\% are assigned to the
-efficiency of the muon and electron veto working point efficiency and
-taken as correlated across all the signal region bins. 
+The uncertainties on the trigger, lepton identification and isolation
+efficiencies are varied by $\pm1\sigma$ and their effects on the
+acceptance of leptons is propagated as an uncertainty on the \TFs.
+The procedure is repeated separately for muons and electrons.
+Systematic uncertainties of 2\% are assigned to the efficiency of the
+muon and electron veto working point efficiency and taken as
+correlated across all the signal region bins. 
 
-Along with the considerations of variations made in the modelling of
-the lost lepton background, uncertainties in the scale factors can
+Along with the considerations of the uncertainties on the simulated
+acceptance of leptons, uncertainties in the scale factors can directly
 effect yields in the muon control regions. The change in the transfer
 factors with the upwards and downwards variations of the muons used to
 define the single and double muon control regions can be seen in
 Figs.~\ref{fig:tfSyst_muon scale
 factor_muToZinv}~to~\ref{fig:tfSyst_muon scale factor_muToTtw}.
+
+% The fraction of events with leptons out of acceptance ($f_{sample}$)
+% is calculated from generator truth level information for each \MC
+% sample. The uncertainties on the trigger, lepton identification and
+% isolation efficiencies are encoded in the variable $y$:
+% \begin{equation}
+%     \label{eq:lostLepTF}
+%     y = \frac{\sum_{sample} [ R_{sample} \times f_{sample} \times
+%     N^{GEN}_{sample} \times ( 1 - \epsilon_{Loose} ) + ( 1 -
+%     f_{sample} ) \times N^{GEN}_{sample} ]}{ \sum_{sample}
+%     N^{GEN}_{sample} \times \epsilon_{Tight} \times R_{sample} },
+% \end{equation}
+% where $R_{sample}$ is the cross section reweighting factor for each
+% sample, $N^{GEN}_{sample}$ is the total \MC yield for the category,
+% $\epsilon_{Tight}$ and $\epsilon_{Loose}$ are the lepton efficiency
+% for the tight and loose working points that are used separately in the
+% muon control region and signal region respectively. The variable $y$ is computed for
+% each category. For the numerator, the full signal selection is
+% applied.  For the denominator, the full selection for the \mj control
+% sample is applied.
 
 % Finally, the $\eta$-dependent muon tracking scale factors provided by the muon 
 % POG to cover the effect of HIP inefficiencies have been applied and their 
