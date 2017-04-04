@@ -619,9 +619,6 @@ that rely on the \HT and \MHT of the events. Additionally, including
 topological variables, such as \alphat, in the \HLT allow events to be
 collected with $\HT$ as low as $200~\gev$.
 
-{\bf FIXME} The L1 paths we use and why - ask christian
-%L1
-
 To collect events that are of general use to hadronic analyses, the
 $\HT$ of each event is reconstructed within the \HLT. This is carried
 out with a custom form of \PF, that is designed to work in a way that
@@ -644,21 +641,42 @@ acceptance of events with low \HT.
 There are also general purpose missing energy triggers that require
 both an \MHT and \MET threshold to be surpassed within the \HLT.
 Including events selected by these triggers helps to increase the
-efficiency across the board. These variables, however, are quite sensitive to
+efficiency across the phase space. These variables, however, are quite sensitive to
 running conditions and mismeasurement, so are not as robust against
 the \HLT rate as the \alphat-\HT triggers. The full list of
 triggers used to collect data for the signal region of the \alphat
 analysis can be seen in Tab.~\ref{tab:triggers}.
 
-{\bf FIXME} The HLT paths we use (in a table) - including the CR
-triggers
-
 The events in the control regions are collected with muon or photon
 triggers, where the \HLT requires at least one of these objects above
-a certain energy threshold threshold. Due to the lower rate of events
+a certain energy threshold. Due to the lower rate of events
 containing leptons, these triggers are at full efficiency for their
 requirements in the analysis. The specific triggers used are also listed in
 Tab.~\ref{tab:triggers}.
+
+\begin{table}[h!]
+\caption{Trigger thresholds of the Level-1 and \HLT paths for the
+hadronic signal region and the leptonic control regions. {\bf FIXME} check the CR l1 thresholds }
+\footnotesize
+\centering
+\begin{tabular}{c|c|c} 
+Analysis region   & Level-1 requirements & \HLT requirements                                                \\
+\hline
+ & $\HT>240~\gev~\textrm{or}~\MET>70~\gev$ & $\HT>200~\gev,~\alphat>0.57,\MET>90~\gev$ \\
+ & $\HT>240~\gev~\textrm{or}~\MET>70~\gev$ & $\HT>250~\gev,~\alphat>0.55,\MET>90~\gev$ \\
+ & $\HT>240~\gev~\textrm{or}~\MET>70~\gev$ & $\HT>300~\gev,~\alphat>0.53,\MET>90~\gev$ \\
+Signal & $\HT>240~\gev~\textrm{or}~\MET>70~\gev$ & $\HT>350~\gev,~\alphat>0.52,\MET>90~\gev$ \\
+ & $\HT>240~\gev~\textrm{or}~\MET>70~\gev$ & $\HT>400~\gev,~\alphat>0.51,\MET>90~\gev$ \\
+ & $\HT>240~\gev$ & $\HT>800~\gev$ \\
+ & $\MET>70~\gev$ & $\MET>90~\gev~\textrm{or}~\MHT>90~\gev$ \\
+\hline
+\mj& $\pT^{\mu}>10~\gev$ & $\pT^{\mu}>22~\gev$ \\
+\mmj& $\pT^{\mu}>10~\gev$ & $\pT^{\mu}>22~\gev$ \\
+\gj& $\HT>240~\gev~\textrm{or}~\pT^{\gamma}>25~\gev$ & $\HT>800~\gev~\textrm{or}~\pT^{\gamma}>175~\gev$ \\
+
+\end{tabular}
+\label{tab:triggers}
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Pre-selection}%day4
@@ -963,8 +981,7 @@ selecting events with significant \ac{ISR} or \ac{FSR} that have
 recoiled from the invisible \SUSY system. This topology is targeted by
 the monojet and asymmetric jet category which require the second jet
 to have $\pT<40~\gev$ or $40<\pT<100~\gev$ respectively.
-
-{\bf FIXME add something that differentiates the different categories}
+%{\bf FIXME} add something that differentiates the different categories?
 
 A summary of the event categorisation for the \nb, \njet and \HT
 variables is shown in Tab.~\ref{tab:eventCategorisation}. This is
