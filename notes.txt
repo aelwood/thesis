@@ -104,3 +104,8 @@ robyn's thesis)
 
 - the ISR correction covers pdf uncertainties
 
+- explain where the excesses in T1tttt come from etc.
+
+- remember about the blank region of T2tt - difference in MET
+  modelling between fast and full sim, there is no MET here due to
+  decaying directly to a top

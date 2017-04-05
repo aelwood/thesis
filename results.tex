@@ -2,12 +2,13 @@
 \label{chap:results}
 
 The analysis described in the previous chapters has been carried out
-on the $12.9~\ifb$ dataset that was introduced in
+on the $12.9\pm0.8~\ifb$ dataset that was introduced in
 Sec.~\ref{sec:dataset}, the results are described in this chapter. The
 \SM backgrounds have been predicted using the likelihood fit discussed
 in Sec.~\ref{sec:likelihood}. The data has then been compared to the expected
 background yields and limits are set on the production of an array of
-different \SUSY models. This result has been released as a public document at \cite{CMS-PAS-SUS-16-016}.
+different \SUSY models. This result has been released publicly
+at \cite{CMS-PAS-SUS-16-016}.
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Results}
@@ -138,6 +139,7 @@ uncertainties.
 \end{figure*}
 
 % some representative systematics or not...
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Interpretation of the results}
@@ -296,13 +298,40 @@ model is determined. This limit is produced under a background plus
 signal hypothesis with a modified frequentist approach. The potential
 contribution of the simplified models to each of the analysis bins in
 the signal region is considered. The statistical approach uses a
-one-sided profile likelihood ratio as the test statistic, the
-\emph{CL$_S$} criterion ~\cite{junk, read} and the asymptotic
-formulae~\cite{Cowan:2010js} are used to approximate the distributions
-of the test statistics under the relevant hypothesis (either
-background only or signal plus background). 
+one-sided profile likelihood ratio as the test statistic. The limit is
+set using the \emph{CL$_S$} criterion ~\cite{junk, read} and the
+asymptotic formulae~\cite{Cowan:2010js} are used to approximate the
+distributions of the test statistics under the relevant hypothesis
+(either background only or signal plus background). 
 
-% FIXME describe the limits
+The results of the exclusion of two gluino models (T1tttt and T1bbbb)
+and two squark models (T2tt and T2tt) are shown in
+Fig.~\ref{sec:signalModel}. The 95\% \CL upper limit on the cross
+section is plotted as a two dimensional histogram with a colour scale
+for a range of different sparticle and \LSP masses. The theoretical
+cross sections of the models are determined theoretically with \NLO
+accuracy and their is an assumption of a 100\% branching ratio to
+final state of each model. Based on this, observed (black) and
+expected (red) exclusion contours are plotted with their $\pm1\sigma$
+uncertainty bands, encapsulating the experimental uncertainty for the
+limit and the theoretical uncertainties of the signal model cross
+section. For the T2tt model, the low mass region is blanked out when
+the mass of the stop, $m_{\tilde{t}}$, is close to the mass of the top
+quark and the total \MET in the event is small. This is due to issues
+in the \MET reconstruction of the simulated \SUSY model events in this
+regime.
+
+In gluino mediated models, the gluino mass is excluded up to 
+$1775~\gev$ and the \LSP, $\tilde{\chi}^0$, up to $1175~\gev$. In the
+squark mediated models, the sbottom mass is excluded up to $1025~\gev$
+and the stop mass is excluded up to $875~\gev$ with \LSP exclusions of
+$525~\gev$ and $350~\gev$ respectively. The strongest observed
+exclusions are summarised in Tab.~\ref{tab:simplified-models-limits}.
+This presents a significant improvement on some of the limits found
+with the $19.5~\ifb$ result made with $\sqrt{s}=8~\tev$ proton
+collisions from Run~1. In the best cases the gluino masses were
+excluded at $<1400~\gev$ and the sbottom masses to $<800~\gev$
+\cite{smsTwiki}.
 
 \begin{figure}[h!]
   \begin{center}
@@ -365,7 +394,7 @@ background only or signal plus background).
     \caption{
       The 95\% observed upper limit on the cross section (histogram),
       with the expected (dotted red line) and observed (black line)
-      exclusion contours. For a selection of \SUSY models discussed in
+      exclusion contours. Shown for a selection of \SUSY models discussed in
       Sec.~\ref{sec:signalModel}.
       % Bottom left: signal acceptance including the 4 most excluding jet categories. 
       % Bottom right: ratio of the signal acceptance including 4 categories to the acceptance including the whole signal region. 
@@ -415,4 +444,27 @@ background only or signal plus background).
 %   \end{center}
 % \end{figure}
 
-
+\newcommand{\ph}{\ensuremath{\phantom{1}}}
+\begin{table}[tb]
+  \caption{A summary of the strongest observed (expected) mass
+  exclusions for the simplified models introduced in
+  Sec.~\ref{sec:signalModel}. The limit on the mass of the relevant
+  gluino or squark and the \LSP, $\tilde{\chi^0_1}$, are quoted and
+  all have uncertainties of $\pm$25\GeV.  
+  }
+  \label{tab:simplified-models-limits}
+  \centering
+  \footnotesize
+  \begin{tabular}{ llcc }
+    \hline
+    Production mode & Squark        & \multicolumn{2}{c}{Strongest obs. (exp.) mass exclusion [GeV]}\T\B \\
+    \cline{3-4}                     
+                    &               & Gluino or squark\T\B & $\tilde{\chi^0}$                                               \\
+    \hline                          
+    Gluino-mediated & Bottom        & 1775 \ph(1850)       & 1175 \ph(1200)                                      \\ 
+    Gluino-mediated & Top           & 1450 \ph(1600)       & \ph750 \ph\ph(800)                                  \\ 
+    Direct          & Bottom        & 1025 \ph\ph(975)     & \ph525 \ph\ph(500)                                  \\ 
+    Direct\B        & Top           & \ph875 \ph\ph(925)   & \ph350 \ph\ph(350)                                  \\
+    \hline
+ \end{tabular}
+\end{table}
