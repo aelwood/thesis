@@ -266,7 +266,7 @@ disadvantageous to add another binning
 dimension. This would result in statistical uncertainties of the
 control region event counts dominating the background prediction.
 Instead, the shape of the \MHT distribution is taken directly from
-simulation in the signal region for each of the (\HT,\nj,\nb) bins.
+simulation for each of the (\HT,\nj,\nb) bins in the signal region.
 This is justified by the fact that binning in these variables helps to
 isolate hadronic mismodelling effects within each bin, which then
 cancel in the \TFs. 
@@ -290,32 +290,74 @@ cancel in the \TFs.
 To make sure that this approach is valid, the assumption that the \MHT
 dimension is well modelled in each bin must be tested. This testing is
 carried out within the \gj, \mj and \mmj control regions. Within each
-analysis bin of each of the control regions the shape of the \MHT
+analysis bin of each of the control regions, the shape of the \MHT
 distribution in data is compared to the distribution in \MC
 simulation. The normalisation can be disregarded as it is set through the
 \TF method.  Provided the modelling is reasonable, the ratio of the
 normalised shapes is expected to have a value of one consistently
 across the \MHT dimension, in each of the (\HT,\nj,\nb) bins. Any
 difference is used to derive a systematic uncertainty on the \MHT
-shape as described in Sec.~\ref{sec:systMht}.
+shape as described in Sec.~\ref{sec:systMht}. 
 
-{\bf FIXME} put some plots of the MHT validation
+An example of the data/\MC ratio as a function of the \MHT for two
+representative bins is shown in Fig.~\ref{fig:linearFitExamples}. The
+result of a constant and linear fit and their respective uncertainties
+are drawn on the plots in blue and red respectively. To ensure that a
+flat hypothesis of the ratio is valid across all bins the significance
+of the deviation from zero of the linear parameters of the data/\MC
+fits is shown in Fig.~\ref{fig:pulls}. As they are compatible with no
+linear dependence, the use of simulation to determine the \MHT shape
+in each (\HT,\nj,\nb) category is considered valid.
+
+\begin{figure}[h!]
+  \centering
+  \subfloat[\gj, $\nb=1$, $\nj=2$ symmetric category and \scalht 400-500\GeV bin]{
+    \includegraphics[width=0.5\textwidth]{figs/analysis/mhtShape/mht_eq1b_eq2j_ht_400_500_SinglePhoton_Graph}
+  }~~
+  \subfloat[\mmj, $\nb=0$, $\nj=3$ asymmetric category and \scalht 300-350\GeV bin]{
+    \includegraphics[width=0.5\textwidth]{figs/analysis/mhtShape/mht_eq0b_eq3a_ht_300_350_DoubleMu_Graph}
+  }\\
+  \caption{ 
+  The data/MC distribution against \mht (denoted $H_T^{miss}$) for two
+  representative categories in the \gj (a) and \mjj (b) control regions.
+  Linear and constant fits are made to the ratio and their p-value and
+  fit parameters are shown on the plot.
+  }
+  \label{fig:linearFitExamples}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \subfloat[\mj]{
+    \includegraphics[width=0.5\textwidth]{figs/analysis/mhtShape/pull_Linear2DShiftMean_p1_SingleMu.pdf}
+  }~~
+  \subfloat[\gj]{
+    \includegraphics[width=0.5\textwidth]{figs/analysis/mhtShape/pull_Linear2DShiftMean_p1_SinglePhoton.pdf}
+  }\\
+  \subfloat[\mmj]{
+    \includegraphics[width=0.5\textwidth]{figs/analysis/mhtShape/pull_Linear2DShiftMean_p1_DoubleMu.pdf}
+  }~~
+  \\
+  \caption{
+  The distribution of the significance of the deviation from zero of
+  the linear parameters of the . As all these pulls for each of the
+  control regions are statistically compatible with one, a linear
+  hypothesis for the \MHT data/\MC ratio is valid.}
+  \label{fig:pulls} 
+\end{figure}
 
 The size of the \MHT bins within the signal region are chosen to
 contain enough data counts within each of the control regions to
-perform the validation. Taking \MHT bin widths of 100~\gev are found
-to be enough to satisfy this condition. In most cases the \MHT bins
+perform the validation. Taking \MHT bin widths of 50~\gev are found
+to be enough to satisfy this condition, while not being limited by the
+measured \MHT resolution. In most cases the \MHT bins
 are naturally bounded from above by maximum value of \HT in a
 particular bin.  However, the highest \HT bin is unbounded from above,
-the final \MHT bin is therefore limited to sit at $\MHT>1000~\gev$ to
-ensure the requisite statistics.
+the final \MHT bin is therefore limited to sit at $\MHT>800~\gev$ to
+ensure the requisite statistics. All of the bins used are listed in
+the appendix, Sec.~\ref{sec:mhtBinning}.
 % determine the binning constraints based on a minimum number of
 % events for stats in the CRs
-
-{\bf FIXME} put in the MHT bins
-
-% \subsection{The $b$-tag formula method}
-
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Background estimation for QCD multijet processes} %day4
@@ -333,7 +375,7 @@ phenomena it is imperative to keep the uncertainties on the level of
 techniques, similar to those used for the estimation of processes with
 genuine \MET described in Sec.~\ref{sec:TF}.
 
-\subsection{QCD-enriched sidebands}
+\subsection{\QCD-enriched sidebands}
 %trigger efficiencies?
 
 To be able to carry out a data-driven estimate, three data sidebands
@@ -367,6 +409,7 @@ transfer factor, the \bdphi and double sidebands are used.
 % {\bf FIXME} put something here from Xtian's studies? ie how they're
 % broken down into different mismeasurements?
 
+%\subsection{The \QCD multijet background estimation method}
 \subsection{The method}
 
 The method makes use of the ratio of simulated \QCD counts in the
@@ -1045,7 +1088,7 @@ the value of $p$ with its one sigma deviation. This allows alternative
 uncertainty. These alternative shapes are used to encode the
 data-driven uncertainty when it is propagated to the final result. An
 example of the kind of fit that occurs in a particular bin was shown
-in Fig.~\ref{FIXME}. The uncertainty of the linear fit is shown as a red
+in Fig.~\ref{fig:linearFitExamples}. The uncertainty of the linear fit is shown as a red
 shaded region.
 
 The size of the systematic uncertainty for the data-driven orthogonal
