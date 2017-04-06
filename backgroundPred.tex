@@ -213,15 +213,25 @@ signal and control regions. One big advantage of using \TFs is that
 any mismodelling effects that are consistent within a particular bin
 across relevant \MC samples will cancel out. It is seen that the
 mismodelling of hadronic effects typically vary as a function of \HT
-and \nj. An example of this mismodelling is visible in Fig.~\ref{} for
-example (FIXME refer back to one of the characterisation plots, or put
-the plots here? a la mark). The fact that the control samples are
-binned within these variables helps to negate this issue, which is
-cancelled out within the \TF in each bin.
+and \nj. An example of this mismodelling is visible in
+Fig.~\ref{fig:distribution_signal}, the disagreement in the data and
+simulation is continuous as a function of the \HT or \nj. The fact
+that the control samples are binned within these variables helps to
+negate this issue, which is cancelled out within the \TF in each bin.
 % Any dependence on \njet, \nb, or \HT is
 % largely attributable to differences in acceptance due to the presence
 % or otherwise of \alphat
 % or \mht requirements.
+
+\begin{figure}
+    \begin{center}
+        \subfloat {\includegraphics[width=0.5\textwidth]{figs/analysis/distributions/Signal/nJet40_sym.pdf}} ~~
+        \subfloat {\includegraphics[width=0.5\textwidth]{figs/analysis/distributions/Signal/ht40_sym.pdf}} \\
+        \caption{The \HT and \nj distributions in all categories of
+        the signal region that have a symmetric jet topology}
+        \label{fig:distribution_signal}
+    \end{center}
+\end{figure}
 
 Many systematic problems within the simulation are expected to mostly
 cancel in each \TF. However, a systematic uncertainty is assigned to
