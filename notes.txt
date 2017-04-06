@@ -14,10 +14,10 @@
     ******
     - Make sure the cut values for the correct iteration of the
       analysis are chosen
-        - put in alphat cut for photons if doing ICHEP
-        - make sure the HT bins are correct
-        - make sure the TF and likelihood description is correct
-          - Get the bit about the number of rate parameters right
+        - \ put in alphat cut for photons if doing ICHEP
+        - \ make sure the HT bins are correct
+        - \ make sure the TF and likelihood description is correct
+          - \ Get the bit about the number of rate parameters right
     ******
 
     - Add plots to the event selection section
