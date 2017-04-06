@@ -679,19 +679,86 @@ $\mmj \rightarrow (\znunu)$, $\gj \rightarrow (\znunu)$ and $\mj
 
 \subsubsection*{Jet energy scale}
 \label{sec:tfSyst_jec}
-The effect of varying the jet energy corrections by their uncertainty
-in the \mj and \mmj control regions is studied.  As the \scalht and
-jet multiplicity binning is mirrored in signal and control regions,
-the effect of jet energy scale on the transfer factor is expected to
-be small.  However, the jet energy scale can still have an effect due
-to jets moving in and out acceptance (above and below $40\gev$). The
-relative change in the transfer factors is presented as a function of
-\scalht and jet category in
-Fig.~\ref{fig:tfSyst_jec_muToZinv}-\ref{fig:tfSyst_jec_muToTtw}.  The
-changes are typically in the range of $1-15\%$.
+The effect of varying the jet energy corrections (JECs) by their uncertainty
+in the \mj and \mmj control regions on the \TFs is investigated.  As
+the \scalht and jet multiplicity binning is mirrored in signal and
+control regions, the effect of jet energy scale on the transfer factor
+is expected to be small.  However, the jet energy scale can still have
+an effect due to jets moving in and out acceptance (above and below
+$40\gev$). The relative change in the transfer factors is presented as
+a function of \scalht and jet category in
+Fig.~\ref{fig:tfSyst_jec_muToZinv}-\ref{fig:tfSyst_jec_muToTtw}. These
+plots show the change in transfer factors for the \mj,\mmj and \gj control
+samples as they are used to predict the \znunu and the W+\ttbar
+backgrounds. The plots for the other sources of systematics can be
+found in the Appendix~\ref{app:tfSysts}. The
+changes are typically in the range of 1-15\%.
 
-{\bf FIXME} put in an example here and refer to the rest in the
-appendix
+\begin{figure}[!h]
+  \centering
+  \subfloat[JEC up variation]{
+    \includegraphics[width=0.5\textwidth]{figs/analysis/systsTf/Zinv/mu/ratiotfh_ht_mht_alljecWeight_Up.pdf}
+  } ~~
+  \subfloat[JEC down variation]{
+    \includegraphics[width=0.5\textwidth]{figs/analysis/systsTf/Zinv/mu/ratiotfh_ht_mht_alljecWeight_Down.pdf}
+  }\\
+
+  \caption{\label{fig:tfSyst_jec_muToZinv} The relative change in the
+  $\mj \rightarrow (\znunu)$ transfer
+  factors when varying JEC in MC within its uncertainties, as a
+  function of \scalht (GeV) and jet category.
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  }
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \subfloat[JEC up variation]{
+    \includegraphics[width=0.5\textwidth]{figs/analysis/systsTf/Zinv/mumu/ratiotfh_ht_mht_alljecWeight_Up.pdf}
+  } ~~
+  \subfloat[JEC down variation]{
+    \includegraphics[width=0.5\textwidth]{figs/analysis/systsTf/Zinv/mumu/ratiotfh_ht_mht_alljecWeight_Down.pdf}
+  }\\
+
+  \caption{\label{fig:tfSyst_jec_mumuToZinv} The relative change in
+  the $\mmj \rightarrow (\znunu)$ transfer
+  factors when varying JEC in MC within its uncertainties, as a function of \scalht (GeV) and jet category. 
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  }
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \subfloat[JEC up variation]{
+    \includegraphics[width=0.5\textwidth]{figs/analysis/systsTf/Zinv/gj/ratiotfh_ht_mht_alljecWeight_Up.pdf}
+  } ~~
+  \subfloat[JEC down variation]{
+    \includegraphics[width=0.5\textwidth]{figs/analysis/systsTf/Zinv/gj/ratiotfh_ht_mht_alljecWeight_Down.pdf}
+  }\\
+
+  \caption{\label{fig:tfSyst_jec_gjToZinv} The relative change in the
+  $\gj \rightarrow (\znunu)$ transfer
+  factors when varying JEC in MC within its uncertainties, as a function of \scalht (GeV) and jet category. 
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  }
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \subfloat[JEC up variation]{
+    \includegraphics[width=0.5\textwidth]{figs/analysis/systsTf/Ttw/mu/ratiotfh_ht_mht_alljecWeight_Up.pdf}
+  } ~~
+  \subfloat[JEC down variation]{
+    \includegraphics[width=0.5\textwidth]{figs/analysis/systsTf/Ttw/mu/ratiotfh_ht_mht_alljecWeight_Down.pdf}
+  }\\
+
+  \caption{\label{fig:tfSyst_jec_muToTtw} The relative change in the
+  $\mj \rightarrow \mathrm{\ttbar+W}$ transfer
+  factors when varying JEC in MC within its uncertainties, as a function of \scalht (GeV) and jet category. 
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  }
+\end{figure}
+
 
 \subsubsection*{B-tagging efficiency}
 \label{sec:tfSyst_btag}
