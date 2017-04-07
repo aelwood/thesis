@@ -5,11 +5,11 @@
 \section{Dataset} %day 1
 \label{sec:dataset}
 
-The data used by this version of the analysis comprises
-$12.9\pm0.8~\ifb$ of proton-proton collisions produced by the \LHC and
-recorded by \CMS during the first few months of 2016. The data for
-this analysis are collected with the triggers described in
-Sec.~\ref{sec:trigStrat}.
+The dataset used by this version of the analysis comprises
+$12.9\pm0.8~\ifb$ of $\sqrt{s}=13~\tev$ proton-proton collisions
+produced by the \LHC and recorded by \CMS during the first few months
+of 2016. The data for this analysis are collected with the triggers
+described in Sec.~\ref{sec:trigStrat}.
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Simulated event samples} %day 1
@@ -46,13 +46,14 @@ to be close to that obtained in data. As the simulation is produced
 before the data is collected and the true \PU distribution varies with
 time, the actual distribution cannot be accurately simulated. To
 correct for this effect the \MC events are reweighted to ensure their
-\PU profile matches that in data. 
+\PU profile, characterised by the number of reconstructed vertices, matches that in data. 
 %Show PU reweighting plot here?
 
 \subsection{Scale factors}
+\label{sec:sfs}
 
 There are often small differences between the efficiencies of finding
-physics objects that is simulated to that which is observed in data.
+physics objects that are simulated to those that are observed in data.
 The difference between these efficiencies is measured using a known
 data sample, such as \zmumu events to measure muon efficiencies. A
 scale factor is then applied to the \MC to reweight the simulated
@@ -84,7 +85,7 @@ corrected as a function of the photon \pT and \eta. Within the signal
 region, the efficiencies are measured as a function of \MHT using
 events that pass a reference electron trigger.  As one of the analysis goals
 is to maintain low thresholds to \HT and \MHT within the signal
-region, their are some inefficiencies at low values of \HT and \MHT.
+region, there are some inefficiencies at low values of \HT and \MHT.
 The trigger efficiency for a representative bin can be seen in
 Fig.~\ref{fig:trigEffsAt}. Additionally, the efficiency for one of the \gj control
 sample bins is also shown.
@@ -96,7 +97,7 @@ sample bins is also shown.
     \subfloat[\gj region over all \HT]{\includegraphics[width=0.4\textwidth]{figs/analysis/trigger/Photon/HLT_PhotonECALHT800_MoM_all_800to999999_gammapt}} \\ 
     \caption{Signal trigger efficiency in the \mht dimension measured
     with a muon sample (a) and \gj trigger efficiency measured with a
-    hadronic sample.}
+    hadronic sample (b).}
     \label{fig:trigEffsAt}
   \end{center}
 \end{figure}
@@ -113,7 +114,7 @@ as the cross section for this process is only calculated to \LO
 accuracy. For the other processes the cross section is calculated to
 at least \NLO accuracy.
 
-To derive the correction in the \gj control region a sideband is used
+To derive the correction in the \gj control region, a sideband is used
 in the \alphat variable. The same selection is applied as for the \gj
 control region, other than the requirement that $0.50<\alphat<0.52$.
 Within the \mj and \mmj control regions a sideband in \MHT is used,
@@ -143,6 +144,11 @@ correction factors can be seen in Table~\ref{tab:sideband-corrs}.
     \hline
   \end{tabular}
 \end{table}
+
+The distributions of data and \MC simulated events for key analysis
+variables in the major analysis regions are shown in Appendix~\ref{app:charac}. 
+All of these plots are made after all these corrections have been
+applied.
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Background estimation for processes with genuine \MET} %day 2
@@ -215,7 +221,7 @@ across relevant \MC samples will cancel out. It is seen that the
 mismodelling of hadronic effects typically vary as a function of \HT
 and \nj. An example of this mismodelling is visible in
 Fig.~\ref{fig:distribution_signal}, the disagreement in the data and
-simulation is continuous as a function of the \HT or \nj. The fact
+simulation changes as a function of the \HT or \nj. The fact
 that the control samples are binned within these variables helps to
 negate this issue, which is cancelled out within the \TF in each bin.
 % Any dependence on \njet, \nb, or \HT is
@@ -243,8 +249,7 @@ uncertainties are given in Sec.~\ref{sec:systematics}.
 Within the analysis the \TF method is used with different control
 regions to predict two different categories of background, the \znunu
 and all the other remaining backgrounds. The \znunu background is
-predicted with the \gj and \mmj control samples, the transfer factor
-just consisting of \znunu simulation. The W, \ttbar and other residual
+predicted with the \mmj, \gj and \mj control samples. The W, \ttbar and other residual
 backgrounds are predicted with the \mj control sample. This method is
 ultimately implemented within a fitting procedure that is defined
 formally by the likelihood model described in
@@ -269,7 +274,7 @@ signal region within the constraints of their uncertainties.
 
 The \TF method is used to estimate the total background counts in each
 of the (\HT,\nj,\nb) bins. However, to maximise the sensitivity to
-\BSM signatures that produce high \MET, events in the analysis are also
+\BSM signatures with large missing momentum, events in the analysis are also
 categorised based on their \MHT. Due to limitations on the
 number of events available in each control sample, it is
 disadvantageous to add another binning
@@ -313,7 +318,7 @@ An example of the data/\MC ratio as a function of the \MHT for two
 representative bins is shown in Fig.~\ref{fig:linearFitExamples}. The
 result of a constant and linear fit and their respective uncertainties
 are drawn on the plots in blue and red respectively. To ensure that a
-flat hypothesis of the ratio is valid across all bins the significance
+flat hypothesis of the ratio is valid across all bins, the significance
 of the deviation from zero of the linear parameters of the data/\MC
 fits is shown in Fig.~\ref{fig:pulls}. As they are compatible with no
 linear dependence, the use of simulation to determine the \MHT shape
@@ -365,7 +370,7 @@ are naturally bounded from above by maximum value of \HT in a
 particular bin.  However, the highest \HT bin is unbounded from above,
 the final \MHT bin is therefore limited to sit at $\MHT>800~\gev$ to
 ensure the requisite statistics. All of the bins used are listed in
-the appendix, Sec.~\ref{sec:mhtBinning}.
+Appendix~\ref{app:mhtBinning}.
 % determine the binning constraints based on a minimum number of
 % events for stats in the CRs
 
@@ -380,7 +385,7 @@ to a negligible level. However, it is necessary to verify that the
 multijet contribution within the signal region is indeed small. This
 is confirmed with the method described in this section. To remain
 sensitive to small contributions in the signal region from \BSM
-phenomena it is imperative to keep the uncertainties on the level of
+phenomena, it is imperative to keep the uncertainties on the level of
 \QCD contamination small. The method therefore utilises data-driven
 techniques, similar to those used for the estimation of processes with
 genuine \MET described in Sec.~\ref{sec:TF}.
@@ -393,11 +398,11 @@ to the signal region are defined. They are chosen to be heavily \QCD
 contaminated, but still close in phase space to the signal region. To
 achieve this, the signal region selection is applied with the
 requirements on two of the variables used to remove the multijet
-background inverted. They are defined by the requirement $1.25 <
-\mhtmet$, $\bdphi<0.5$ and both these requirements as
+background inverted. They are defined by the requirement 
+$\mhtmet>1.25$, $\bdphi<0.5$ and both these requirements as
 illustrated in Table~\ref{tab:qcd_sidebands}.
 
-For the core \QCD multijet background prediction the \mhtmet sideband
+For the core \QCD multijet background prediction, the \mhtmet sideband
 is used to estimate the \QCD yields in the signal region through an
 extrapolation with a \TF. To then carry out a validation of the
 transfer factor, the \bdphi and double sidebands are used.
@@ -411,9 +416,9 @@ transfer factor, the \bdphi and double sidebands are used.
   \begin{tabular}{ l|l|l }
                            & $\bdphi < 0.5$           & $\bdphi > 0.5$                  \\[0.2ex]
     \hline
-    $1.25 < \mhtmet < 3.0$ & \textbf{A} ``Double sideband'' & \textbf{B} ``\mhtmet sideband'' \\[0.2ex]
+    $1.25 < \mhtmet < 3.0$ & \textbf{A} Double sideband & \textbf{B} \mhtmet sideband \\[0.2ex]
     \hline
-    $\mhtmet < 1.25$       & \textbf{C} ``\bdphi sideband'' & \textbf{D} ``Signal region''    \\[0.2ex]
+    $\mhtmet < 1.25$       & \textbf{C} \bdphi sideband & \textbf{D} Signal region    \\[0.2ex]
   \end{tabular}
 \end{table}
 % {\bf FIXME} put something here from Xtian's studies? ie how they're
@@ -421,6 +426,7 @@ transfer factor, the \bdphi and double sidebands are used.
 
 %\subsection{The \QCD multijet background estimation method}
 \subsection{The method}
+\label{sec:qcdMethod}
 
 The method makes use of the ratio of simulated \QCD counts in the
 signal region to the \mhtmet sideband, \rmhtmet, per (\HT,\nj) bin.
@@ -429,7 +435,7 @@ Each ratio is used as a multiplier on the predicted \QCD counts per
 bin in the \mhtmet data sideband.  These data counts are collected
 with the signal region triggers described in Sec.~\ref{sec:trigStrat}. 
 
-In order to obtain an estimate of the number of \QCD multijet events in
+The prediction of the number of \QCD multijet events in
 the sideband, $\mathcal{Q}$, is carried out with a maximum likelihood fit analagous to
 that described in Sec.~\ref{sec:likelihood}, but in the \mhtmet
 sideband and with the total number of \QCD events free to be
@@ -458,7 +464,7 @@ provides an estimate of the level of QCD multijet events in each
   \subfloat[Ratio \rmhtmet for simulated \QCD events.\label{fig:qcd_ratio}]{
     \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/signalQcdDivSbQcd_MC}
   } 
-  \subfloat[Simulated electroweak backgrounds in the \mhtmet sideband.\label{fig:ewk_fail}]{
+  \subfloat[Predicted electroweak backgrounds in the \mhtmet sideband.\label{fig:ewk_fail}]{
     \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/qcdSbEwk_MC}
    %    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/Ewk/SigTrig_FailMoM_NJet_vs_HT_bDPhigt0p5_Log}
   } \\
@@ -466,10 +472,11 @@ provides an estimate of the level of QCD multijet events in each
     simulation, binned according to \njet and \scalht, that (a) satisfy
     and (b) fail the requirement $\mhtmet < 1.25$. Also shown in (c)
     is the ratio \rmhtmet for QCD multijets, again determined from
-    simulation. Finally, (d) shows the expected number of EWK events
+    simulation. Finally, (d) shows the expected number of non-multijet
+    eventsevents
     (V+jets and \ttbar, plus other residual non-multijet backgrounds)
-    that fail the $\mhtmet < 1.25$ requirement, again determined from
-    simulation and binned according to \njet and \scalht.}
+    that fail the $\mhtmet < 1.25$ requirement, predicted using the
+    \TF method and binned according to \njet and \scalht.}
   \label{fig:qcd_plots}
 \end{figure}
 
@@ -491,7 +498,8 @@ determined from simulation.
   \subfloat[QCD multijet predictions in the signal region.\label{fig:qcd_pred}]{
     \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/predictedQcdYields_Signal}
   } 
-  \subfloat[Ratio of predicted multijet and non-multijet yields.\label{fig:qcd_ewk_ratio}]{
+  \subfloat[Ratio of predicted multijet and non-multijet yields in the
+  signal region.\label{fig:qcd_ewk_ratio}]{
     \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/predictedQcdDivEwk_Signal}
   } \\
   \caption{The number of events observed in the $\mhtmet>1.25$ sideband, 
@@ -557,25 +565,25 @@ defined in Sec.~\ref{sec:bkgdMet}.
 %% larger. 
 
 The predictions summarised in Fig.~\ref{fig:qcd_ewk_ratio} show that 
-the \HT-dependent \alphat thresholds defined in Table~\ref{tab:sr-selections} 
+the \HT-dependent \alphat thresholds defined in Table~\ref{tab:atCut} 
 and the requirement of $\bdphi > 0.5$ suppress the multijet
 contamination in all bins of the signal region to percent-level or smaller with
 respect to the total non-multijet background. These predicted multijet events are 
 included as a background contribution to the likelihood model
 described in Sec~\ref{sec:likelihood}.
 
-As the prediction of QCD in the signal region is carried out
-inclusively over \nb and \mht, the QCD shapes for these variables are
-taken from the electroweak simulation and normalised to the QCD counts. A
-lack of statistics in the \QCD MC led to the adoption of this approach.
+As the prediction of \QCD in the signal region is carried out
+inclusively over \nb and \mht, the \QCD shapes for these variables are
+taken from the non-multijet simulation and normalised to the \QCD counts. A
+lack of statistics in the \QCD simulation led to the adoption of this approach.
 Within uncertainties, the level of
 agreement is deemed acceptable given the small total \QCD contribution to the
-signal region and its large systematic uncertainty. 
+signal region.
 
 \subsection{Validation} 
 
 Despite using a predominantly data-driven method, the prediction of
-the \QCD contaminatio relies on the ratio of \QCD counts, \rmhtmet,
+the \QCD contamination relies on the ratio of \QCD counts, \rmhtmet,
 that is derived with simulation. This ratio is validated with data in
 a \QCD enriched sideband, where full signal region selection is used
 other than an inversion of the \bdphi cut to $\bdphi<0.5$. In this
@@ -583,9 +591,9 @@ sideband a data driven estimation of the \QCD counts is carried out in
 two regions, the \bdphi sideband with \mhtmet values less than 1.25
 and the double sideband with
 values greater than 1.25. These predictions are again made with a maximum
-likelihood fit, analagous to that described in
+likelihood fit, analogous to that described in
 Sec.~\ref{sec:qcdMethod}. This fit estimates the counts in the
-non-\QCD backgrounds with single muon, double muon and single
+non-multijet backgrounds with single muon, double muon and single
 photon control regions and all relevant systematic errors. The
 remaining data counts in each sideband are then attributed to \QCD.
 With this estimation of \QCD it is possible to derive a data driven
@@ -598,7 +606,7 @@ To validate the ratio \rmhtmet it is assumed that if the simulation of
 the ratio in the \bdphi sideband agrees with that derived from data,
 the simulated ratio that is not in the sideband is valid. Any
 disagreement is covered by a systematic error on the signal region QCD
-prediction. The double ratio of $\rmhtmet_{\bdphi<0.5}$ and
+prediction. The ratio of $\rmhtmet_{\bdphi<0.5}$ and
 $\rmhtmet_{\bdphi<0.5}^{data}$ in \scalht and \njet bins is shown in
 Fig.~\ref{fig:RR_qcd}. Bins in which there are insufficient statistics
 in data or simulation to make the calculation are left out. This plot
@@ -649,16 +657,16 @@ There are those that affect the total number of events in each
 Sections~\ref{sec:simUnc} and~\ref{sec:closureTests}. Most of these
 systematics are treated as uncertainties on the \TFs used to predict
 the \SM backgrounds with genuine \MET. There is also one other
-systematic uncertainty added to take account of variations in the \QCD
+systematic uncertainty added to take account of uncertainties in the \QCD
 multijet background prediction. Additionally, systematic uncertainties
 are included that encode the limited knowledge on how the events
 distribute in the \mht dimension, described in Sec.~\ref{sec:systMht}.
 
 % introduction to different types - known, unknown data driven,  used for the the TFs
 There are two approaches that are used to derive uncertainties
-different sources. There are uncertainties associated with the
+from different sources. There are uncertainties associated with the
 correction factors that are applied to the simulation, which allows
-them to be derived with simulation (Sec.~\ref{sec:mc-variations}).
+the systematic uncertainties to be derived by varying the simulation (Sec.~\ref{sec:sfs}).
 However, these sort of systematics only encode known and simulated
 sources of systematic uncertainty. To be able to account for unknown
 sources, additional data-driven uncertainties are derived  with the
@@ -692,13 +700,13 @@ $\mmj \rightarrow (\znunu)$, $\gj \rightarrow (\znunu)$ and $\mj
 The effect of varying the jet energy corrections (JECs) by their uncertainty
 in the \mj and \mmj control regions on the \TFs is investigated.  As
 the \scalht and jet multiplicity binning is mirrored in signal and
-control regions, the effect of jet energy scale on the transfer factor
+control regions, the effect of jet energy scale on the \TFs
 is expected to be small.  However, the jet energy scale can still have
 an effect due to jets moving in and out acceptance (above and below
-$40\gev$). The relative change in the transfer factors is presented as
+$40\gev$). The relative change in the \TFs is presented as
 a function of \scalht and jet category in
 Fig.~\ref{fig:tfSyst_jec_muToZinv}-\ref{fig:tfSyst_jec_muToTtw}. These
-plots show the change in transfer factors for the \mj,\mmj and \gj control
+plots show the change in \TFs for the \mj, \mmj and \gj control
 samples as they are used to predict the \znunu and the W+\ttbar
 backgrounds. The plots for the other sources of systematics can be
 found in the Appendix~\ref{app:tfSysts}. The
@@ -774,14 +782,14 @@ changes are typically in the range of 1-15\%.
 \label{sec:tfSyst_btag}
 The scale factors that take account of the b-tagging efficiencies and
 misidentification between simulation and data have associated
-uncertainties.  Since no extrapolation is performed in the background
-prediction across different \nb multiplicities, the analysis is
-expected to be robust against variations in the b-tagging efficiency.
-The scale factors associated with b and c jets are varied together
+uncertainties. Since no extrapolation is performed in the background
+prediction across different \nb multiplicities, these uncertainties
+are expected to only have a small effect.  The scale factors
+associated with the identification of b and c jets are varied together
 (since their measurements are correlated), while those associated with
-light jets are varied separately.  The relative change in the transfer
-factors is presented as a function of \scalht and jet category in Fig.
-~\ref{fig:tfSyst_bsf_muToZinv}-\ref{fig:tfSyst_bsfl_muToTtw}.  They
+light jets are varied separately. The relative change in the \TFs is
+presented as a function of \HT and jet category in
+Fig.~\ref{fig:tfSyst_bsf_muToZinv}-\ref{fig:tfSyst_bsfl_muToTtw}. They
 are typically in the range of $1-5\%$.
 
 \subsubsection*{Lepton and photon efficiencies}
@@ -837,7 +845,7 @@ factor_muToZinv}~to~\ref{fig:tfSyst_muon scale factor_muToTtw}.
 \subsubsection*{Photon trigger uncertainty}
 \label{sec:tfSyst_photonTrigger}
 
-To take account of uncertainties in the photon trigger efficiency, the
+To take account of uncertainties in the photon trigger efficiencies, the
 effect of varying them on the \gj \TF is investigated. To make a
 conservative estimate of the systematic, the uncertainty on this
 correction is taken as the size of the inefficiency.  The relative
@@ -854,8 +862,7 @@ measurements are taken into account. This is most relevant in the low
 efficient. As it is possible to measure the efficiency with both muon
 and electron reference triggers, a systematic is taken as the
 difference in the measurement between the two.  The relative change in
-transfer factors is presented in Fig.
-~\ref{fig:tfSyst_trigger_muToZinv}-\ref{fig:tfSyst_trigger_muToTtw}.
+transfer factors is presented in Fig.~\ref{fig:tfSyst_trigger_muToZinv}-\ref{fig:tfSyst_trigger_muToTtw}.
 The variation is typically in the range $0-5\%$.
 
 \subsubsection*{Top $p_T$ reweighting}
@@ -864,8 +871,7 @@ The variation is typically in the range $0-5\%$.
 To account for the uncertainty on the top \pT reweighting an 
 uncertainty on this correction is taken as the difference of the
 correction from unity. The relative change in transfer factors is
-presented in Fig.
-~\ref{fig:tfSyst_topPt_muToZinv}-\ref{fig:tfSyst_topPt_muToTtw}. The
+presented in Fig.~\ref{fig:tfSyst_topPt_muToZinv}-\ref{fig:tfSyst_topPt_muToTtw}. The
 variation is typically in the range $0-15\%$.
 
 \subsubsection*{QCD contamination in the \gj control sample}
@@ -887,15 +893,14 @@ data-driven study using the photon control region, described in Sec.
 There are uncertainties in the minimum bias cross section used when
 carrying out the \PU reweighting procedure.  This 5\% uncertainty is
 propagated and the relative change in the transfer factors under this
-variation is small (\~1-5\%) and shown in each analysis bin in Fig.
-~\ref{fig:tfSyst_pu_muToZinv}-\ref{fig:tfSyst_pu_muToTtw}.
+variation is small (1-5\%) and shown in each analysis bin in Fig.~\ref{fig:tfSyst_pu_muToZinv}-\ref{fig:tfSyst_pu_muToTtw}.
 
 %%%%%%%%%%%%%%
 \subsection{Uncertainties derived from data driven tests}
 \label{sec:closureTests}
 
 To be able to take account of sources of systematic uncertainty that
-are not taken account of through the variation of known sources, an
+are not included in the variation of known sources, an
 additional procedure to derive uncertainties through a data driven
 method is defined.  This allows assumptions and extrapolations
 within the analysis to be covered with an uncertainty that does not
@@ -924,7 +929,7 @@ their symmetric and asymmetric topologies. Pairs of \HT bins are merged
 when the $\mu\mu$+jets sample is used, in order to increase the
 statistical power of the sample.  Since the uncertainties derived with
 this approach are statistical in nature, these systematics are
-considered un-correlated in each \HT bin and jet topology. 
+considered uncorrelated in each \HT bin and jet topology. 
 
 \subsubsection*{Extrapolation in \alphat and \bdphi}
 \label{sec:tfSyst_alphaT}
@@ -1029,9 +1034,9 @@ derived from these tests is in the range $3-20\%$.
 
 As the kinematics of $W^+$ and $W^-$ decays are subtly different, a
 data-driven test is introduced to check the modelling of this W
-polarisation in simulation. In this study, carried on using events in
+polarisation in simulation. In this study, carried out with events in
 the \mj control region, $\mu^{+}$ events are used to predict $\mu^{-}$
-events.  The production mechanism of W bosons from pp collisions means
+events.  The production mechanism of W bosons from $pp$-collisions means
 high $p_T$ $W$ bosons are predominantly left handed \cite{WPol}.  For
 high $p_T$ bosons, this implies that $W^+$ decays to the left handed
 neutrino along its direction of motion while the lepton is pointing
@@ -1277,7 +1282,7 @@ This results in a total likelihood that is the product over all the
 The background yields in the signal region are connected to the yields
 in the control regions through the use of \TFs, as discussed in
 Sec.~\ref{sec:TF}. To incorporate this into the fit of the likelihood
-model, the yields of the \znunu and combined \ttbar/W backgrounds in
+model, the yields of the \znunu and combined W+\ttbar backgrounds in
 the signal region are correlated with the yields in the control
 regions. This is implemented through a single floating parameter
 within the fit, which alters the background prediction in the signal
@@ -1298,7 +1303,7 @@ Sec.~\ref{sec:simUnc}, are included as \emph{shape} uncertainties on
 the \TFs. This means they are fully correlated across all of the
 \htcat bins but their magnitude is different depending on the bin. 
 Additionally, an uncertainty on the expected signal contribution can
-also be taken account as shape uncertainties. These extra
+also be taken account of with shape uncertainties. These extra
 uncertainties depend on the signal model in question and are discussed
 in Sec.~\ref{sec:signalModel}.
 
