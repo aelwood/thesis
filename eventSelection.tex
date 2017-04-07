@@ -3,9 +3,9 @@
 
 Given the theoretical motivation for \BSM physics presented in
 Chapter~\ref{chap:theory}, the next Chapters of this thesis describe a
-search for \SUSY with the \CMS detector in $13~\tev$ proton collisions
+search for \SUSY with the \CMS detector in $\sqrt{s}=13~\tev$ proton collisions
 produced by the \LHC. The analysis is designed to target \SUSY
-produced through a strong force $pp$-interaction that decays hadronically via
+produced through a strong force proton interaction that decays hadronically via
 \SM particles to a weakly interacting \LSP. The typical \SUSY models
 considered in this search are those with gluino or squark pair
 production. However, it is possible to generalise the search to look
@@ -22,7 +22,7 @@ parameter space as is feasible.  This is dictated by an ability to
 predict the backgrounds from \SM processes with minimal uncertainties.
 The search then attempts to find statistically significant excesses in
 the data counts above those predicted for the various backgrounds. To
-maximise the chance of seeing \BSM phenomena events are typically
+maximise the chance of seeing \BSM phenomena, events are typically
 required to have significant hadronic activity and missing momentum.  
 % Robust strategy - minimise background uncertainties and look for
 % excesses on top, in a conservative way (be very general here)
@@ -33,7 +33,7 @@ required to have significant hadronic activity and missing momentum.
 \label{sec:challenge}
 
 %main challenge in limiting and understanding backgrounds
-The main challenge for a hadronic \BSM search is in limiting and
+The main challenge for a \BSM search is in limiting and
 understanding the backgrounds, while maximising acceptance of a wide
 range of potential \BSM signals. Within the analysis presented in this
 Chapter the backgrounds are considered in two separate categories,
@@ -67,26 +67,26 @@ detector malfunctions, for example from problems in the readout
 electronics. It can also be introduced through \PU that is attributed to
 the primary vertex. Additionally, beam interactions that produce
 particles outside the detector can introduce fake \MET signatures.}
-\item{Issues at the reconstruction stage can also introduce fake \MET,
-such as through under or over-corrections of jet energies, or through
+\item{Issues at the reconstruction stage,
+such as under or over-corrections of jet energies, or through
 the reconstruction algorithms missing physics objects that were
 produced.}
-\item{Through the measured energy of physics objects falling below
-their selection threshold. }
+\item{The energy of physics objects can be lost if their total energy
+is below a specific selection threshold. }
 \end{itemize}
 
-Various techniques are applied to remove the background from these
+Various techniques are applied to reduce the impact of these
 effects, as described throughout this Chapter. Due to the nature of
 these effects, which are often time dependent, they cannot be fully
 accounted for in simulation. This fact, coupled with the difficulty in
-accurately simulating \QCD processes due to uncertainties in the
+accurately simulating \QCD processes, due to uncertainties in the
 theoretical calculations, makes constraining the multijet background a
 significant challenge. 
 
 It is also possible for the \QCD multijet background to be produced in
 association with genuine \MET. This most often occurs in the case of
 \emph{heavy flavour} \QCD, where a $b\bar{b}$ quark pair are produced
-and at least one the $b$-quarks decay via the weak force, producing a
+and at least one the $b$-quarks decays through the production of a
 neutrino.  This is subdominant to the mismeasured multijet background,
 but must still be accounted for. 
 % heavy flavour qcd
@@ -99,7 +99,7 @@ but must still be accounted for.
 The other class of \SM backgrounds are those produced with genuine
 \MET. These processes only occur in the \SM through the electroweak
 production of neutrinos. Due to the
-mass scale of such electroweak processes, they commonly occur in
+mass scale of the W and Z bosons, they are commonly produced in
 association with jets of significant momenta. The dominant
 processes that constitute this background are \wj, \zj and \ttbar,
 with residual backgrounds from other, lower cross section,
@@ -107,10 +107,10 @@ vector-boson or top production processes.
 
 As a hadronic analysis does not look for leptons in the final state,
 vetoing isolated leptons can help to reduce the background from the
-\wj and \ttbar processes. In these cases a lepton is always produced
+\wj and \ttbar processes. In these cases, a lepton is always produced
 in association with the neutrino that results in the significant \MET.
 Such events will only present a problem when the leptons are not
-reconstructed, or do not appear to be isolated.  If the W boson
+reconstructed, or do not appear to be isolated. Additionally, if the W boson
 decays via a \tau-lepton that subsequently decays hadronically, the
 event will not be removed by the lepton veto.  This is a comparably
 small background, however.
@@ -118,7 +118,7 @@ small background, however.
 The major irreducible background in \BSM searches with \MET comes from 
 \znunu processes. They produce a pure missing energy signature with no
 associated leptons to veto. Understanding this background to a high
-degree of accuracy constitutes a significant challenge. However, due
+degree of accuracy is of great importance in hadronic \BSM searches. However, due
 to the better simulation of electroweak processes compared to \QCD
 processes, the simulation can be used to help understand this
 background with smaller uncertainties than the \QCD background.
@@ -135,15 +135,15 @@ in Sec.~\ref{sec:topoVars}. With negligible \QCD, the large
 uncertainties that are usually prevalent when predicting this
 background are greatly reduced. The use of these topological variables
 also provides robustness against a wide range of mismeasurement
-effects, which are particularly relevant when looking at early data,
-when the issues present within the detector are not as well
-understood. The remaining background from electroweak processes is
-then estimated in a \emph{data-driven} way, minimising the
-uncertainties from simulation.
+effects. These effects are particularly relevant when looking at early
+data, when there is a limited understanding of potential detector
+issues. The remaining background from electroweak processes is then
+estimated in a \emph{data-driven} way, minimising the uncertainties
+from the use of simulation.
 
-During Run~1 of the \LHC, the \alphat analysis was performed
-extensively to search for \SUSY. Datasets of $4.98~\ifb$ at
-$\sqrt{s}=7~\tev$ and $18.5~\ifb$ at $\sqrt{s}=7~\tev$ have been
+During Run~1 of the \LHC, the \alphat analysis was used
+to search for \SUSY. Datasets of $4.98~\ifb$ at
+$\sqrt{s}=7~\tev$ and $18.5~\ifb$ at $\sqrt{s}=8~\tev$ have been
 analysed, setting limits on \SUSY production within the context of
 simplified models
 \cite{Chatrchyan:2011zy,Khachatryan:2011tk,Chatrchyan:2012wa,Chatrchyan:2013mys,Khachatryan:2016pxa}.
@@ -193,7 +193,7 @@ and $y$ components of the transverse momentum are $p_x^{j_i}$ and
 $p_y^{j_i}$ respectively.
 
 In the case that the event in question is a perfectly measured dijet
-event $E_T^{j_1}=E_T^{j_2}$ and both jets are back-to-back in $\phi$.
+event, $E_T^{j_1}=E_T^{j_2}$ and both jets are back-to-back in $\phi$.
 This results in a value of $\alphat=0.5$ when the momentum of each jet
 is large in comparison with its mass, as is usually the case in
 \QCD multijet events. If the jets are still back-to-back but one of
@@ -229,8 +229,8 @@ multijet background to a negligible level.
 		\includegraphics[width=0.7\linewidth]{figs/analysis/eventSelection/CMS-PAS-SUS-16-016_Figure-aux_001}%alphaT1_bkgd}
 	\end{center}
   \caption{The $\alpha_T$ distribution for events with $H_T>200$ GeV
-  that pass the pre-selection criteria (Sec.~\ref{sec:preselection}) when
-  $\alphat<0.55$ and the signal selection criteria
+  that pass a pre-selection criteria (Sec.~\ref{sec:preselection}) when
+  $\alphat<0.55$ and a signal selection criteria
   (Sec.~\ref{sec:signalregion}) when
   $\alphat>0.55$. The green dotted line shows the expected multijet
   QCD background that can be removed with an appropriate cut on
@@ -241,7 +241,7 @@ multijet background to a negligible level.
 \subsection{The \bdphi variable}
 
 To further suppress the \QCD multijet background after applying an
-\alphat cut the biased-$\Delta\phi$, \bdphi, variable is introduced.
+\alphat cut, the biased-$\Delta\phi$, \bdphi, variable is introduced.
 This is a variation on the $\Delta\phi$ variable, which is usually
 defined as the minimum azimuthal angle between the \MET and any jet in
 the event. When calculating \bdphi, each jet is compared to the
@@ -275,7 +275,7 @@ above $\sim 0.5$ will significantly reduce any \QCD multijet background.
 		\includegraphics[width=0.7\linewidth]{figs/analysis/eventSelection/CMS-PAS-SUS-16-016_Figure-aux_002}%alphaT1_bkgd}
 	\end{center}
   \caption{The \bdphi distribution for events with $H_T>800$ GeV that
-  pass the pre-selection criteria (Sec.~\ref{sec:preselection}). The
+  pass a pre-selection criteria (Sec.~\ref{sec:preselection}). The
   green dotted line shows the expected multijet QCD background that
   can be removed with an appropriate cut on \bdphi}
 	\label{fig:bdphi}
@@ -294,8 +294,7 @@ similar jet-\mht angular variable \dphimhtj, the minimum azimuthal
 separation between the \mht-vector and the leading four jets. The
 \bdphi variable exhibits a distribution that is more sharply peaked
 for the \QCD multijet background at low values and faster falling than
-\dphimhtj,  \dphimhtj for QCD conversely has a broader distribution
-with a larger leakage for a comparable azimuthal selection. This
+\dphimhtj. This
 demonstrates the ability of \bdphi to provide a better control of the
 \QCD background while retaining acceptance of events with genuine
 \mht, in this case represented by the V+jets, \ttbar and other
@@ -332,7 +331,7 @@ approximately equivalent suppression of QCD achieved with the
 \dphimhtj variable is larger than 1.5, at the cost of a loss of a
 factor $5$ in signal acceptance w.r.t. \bdphi. This also holds true in
 the extreme case of a high jet multiplicity signal model.
-Additionally, despite performing similarly to \bdphi for separating
+Despite performing similarly to \bdphi for separating
 the non-multijet from multijet backgrounds, the \dphimhtjall variable
 performs worse for a high jet multiplicity signal model than \bdphi.
 
@@ -358,7 +357,7 @@ performs worse for a high jet multiplicity signal model than \bdphi.
  \label{fig:bDPhi_roc}
 \end{figure}
 
-Additionally the \bdphi variable displays robustness in the presence
+Additionally, the \bdphi variable displays robustness in the presence
 of severe event mismeasurement, which is not present in \dphimhtj. A
 mismeasurement is simulated by artificially lowering the \pt of the
 jet that minimises the azimuthal separation variable to 41~\gev. Due
@@ -397,9 +396,10 @@ in Sec.~\ref{sec:physobj}. If several jets fall just below threshold
 they can fake a significant \MHT. There is a much lower threshold
 on the particles that go into the \MET calculation than the jets that
 go into the \MHT threshold. Therefore, a requirement on the ratio of
-these two variables helps to remove the background from mismeasurement
-that falls below threshold. The extent to which this can remove the
-remaining \QCD multijet backgroudn after the \alphat and \bdphi cuts
+these two variables helps to remove the background from physics
+objects
+that fall below threshold. The extent to which this can remove the
+remaining \QCD multijet background after the \alphat and \bdphi cuts
 is shown in Fig.~\ref{fig:mhtDivMet}.
 % removes soft stuff! given jet threshold
 
@@ -420,7 +420,7 @@ is shown in Fig.~\ref{fig:mhtDivMet}.
 
 The analysis makes use of physics objects that are reconstructed with
 the algorithms described in Chapter~\ref{chap:reconstruction}. As
-there are many different input parameters within each of the
+there are many different input parameters for each of the
 algorithms, the specific details relevant to the analysis are
 described in this section. Jets are reconstructed to characterise the
 hadronic activity within the event. Muons, electrons and photons are
@@ -459,8 +459,6 @@ rate of $\sim$10 \% and a b-quark b-tag efficiency of about 60 \%.
   \caption{The \emph{loose} jet ID requirements. \label{tab:loose-jet-id}}
   \centering
   \begin{tabular}{ ccc }
-    \hline
-    \hline
     Variable & cut & notes \\ \hline
     \multicolumn{3}{c}{$-3.0 < \eta_{\mathrm{jet}} < 3.0$} \\ \hline    
     Neutral Hadron Fraction & $<0.99$ & - \\
@@ -472,8 +470,6 @@ rate of $\sim$10 \% and a b-quark b-tag efficiency of about 60 \%.
     \multicolumn{3}{c}{$|\eta_{\mathrm{jet}}| > 3.0$} \\ \hline        
     Neutral Electromagnetic Fraction & $<0.90$ & - \\
     Number of Neutral Particles & $>10$ & - \\
-    \hline
-    \hline
   \end{tabular}
 \end{table}
 
@@ -517,19 +513,16 @@ photon must have a $\pT>25~\gev$ and be within $|\eta|<2.5$.
 \begin{table}[ht!]
   \caption{Photon isolation criteria (\emph{tight} working point). The
   energy of particles within the isolation cone must be less than the
-  value in the column.\label{tab:photon-id-gamma}}
+  value in the column, where $p_T^{\gamma}$ is the \pT of the photon
+  in \gev.\label{tab:photon-id-gamma}}
   \centering
   \footnotesize
   \begin{tabular}{ ccc }
-    \hline
-    \hline
     Categories                    & Barrel                             & EndCap                             \\
     \hline
     PF charged hadron isolation   & 1.66 GeV & 1.04 GeV                          \\
     PF neutral hadron isolation   & 0.14 + $ e^{0.0028 \times \pt^{\gamma} + 0.5408}$  &  3.89 + 0.0172 $\times$ $\pt^{\gamma}$\\
     PF photon isolation           & 1.40 + 0.0014 $\times$ $\pt^{\gamma}$ & 1.40 + 0.0091 $\times$ $\pt^{\gamma}$ \\
-    \hline
-    \hline
   \end{tabular}
   \end{table}
 
@@ -537,7 +530,7 @@ photon must have a $\pT>25~\gev$ and be within $|\eta|<2.5$.
 \label{sec:electron-id}
 
 In order to veto electrons a \emph{loose} working point definition
-($\sim$ 90 $\%$ efficiency) is used. There are requirements on the
+($\sim90\%$ efficiency) is used. There are requirements on the
 ratio of \HCAL and \ECAL deposits, criteria to remove photons that
 have converted within the tracker, a minimum number of tracks required
 and kinematic requirements on the deposit within the \ECAL. Electrons
@@ -576,16 +569,17 @@ must have a $\pT>10~\gev$ and be within $|\eta|<2.5$.
 \subsection{Isolated tracks}
 \label{sec:SIT}
 
-A single isolated track comprises a charged PF candidate with $\Pt >
-10 \gev$, $\Delta z(\mathrm{track}, \mathrm{\ac{PV}}) < 0.05 \,
+A single isolated track comprises a charged \PF candidate with $\Pt >
+10 \gev$,\\ $\Delta z(\mathrm{track}, \mathrm{PV}) < 0.05 \,
 \mathrm{cm}$ and with a relative isolation smaller than 0.1, where the
-isolation is determined from the sum of the \Pt of the charged PF
+isolation is determined from the sum of the \Pt of the charged \PF
 candidates within $\Delta R < 0.3$. It is useful for identifying W
 bosons through their leptonic decays, when the lepton is not fully
-reconstructed: W $\rightarrow$ $\mu \nu$, W $\rightarrow$ $e\nu$, and
-W $\rightarrow$ $\tau$($\rightarrow l$) $\nu$.  Single prong decays of
-the tau lepton can also be identified: W $\rightarrow$ $\tau$
-($\rightarrow$ h$^{\pm}$ + n$\pi^{0}$) $\nu$. 
+reconstructed.% W $\rightarrow$ $\mu \nu$, W $\rightarrow$ $e\nu$, and
+%W $\rightarrow$ $\tau$($\rightarrow l$) $\nu$.  
+Single prong decays of
+the tau lepton can also be identified: $\tau$
+$\rightarrow$ h$^{\pm}$ + n$\pi^{0}$ $\nu$. 
 %Events in the signal region and all control regions (ignoring the
 %selected muons) containing a SIT candidate identified with these
 %criteria are vetoed.
@@ -595,9 +589,9 @@ the tau lepton can also be identified: W $\rightarrow$ $\tau$
 Missing transverse momentum (\MET) is reconstructed as described in
 Sec.~\ref{sec:met_reco} and the the Type-I \MET energy correction is applied.
 The \met is used in the definition of 
-the transverse mass, $M_{T}$, which is in turn used as part of
+the transverse mass of potential W bosons, $M_{T}$, which is in turn used as part of
 the selection criteria that define the single muon control sample 
-(Sec.~\ref{sec:controlregions}), and for the $\mhtmet$ cleaning
+(Sec.~\ref{sec:controlregions}). It is also used for the $\mhtmet$ cleaning
 filter, described in Sec.~\ref{sec:mhtmet}.
 
 The \HT and \MHT energy sums are constructed with the jets outlined in
@@ -610,8 +604,8 @@ $\pT>40$~\gev and $|\eta|<3$.
 
 As \SUSY models have a lot of freedom in how they are manifest, a
 guiding principle of the analysis is to maintain acceptance of as much
-phase space as possible. Despite some \SUSY models being ruled out at
-energies $O(100~\gev)$, models with compressed spectra are still poorly
+phase space as possible. Despite many \SUSY models being ruled out at
+$O(100~\gev)$ energies, models with compressed spectra are still poorly
 constrained in this regime. The trigger strategy therefore revolves
 around maintaining as low an energy threshold as possible given the
 very high rate of \QCD multijet processes. To select for events with
@@ -656,7 +650,7 @@ requirements in the analysis. The specific triggers used are also listed in
 Tab.~\ref{tab:triggers}.
 
 \begin{table}[h!]
-\caption{Trigger thresholds of the Level-1 and \HLT paths for the
+\caption{Trigger thresholds of the Level-1 hardware trigger and \HLT for the
 hadronic signal region and the leptonic control regions. }
 %{\bf FIXME} check the CR l1 thresholds 
 \footnotesize
@@ -704,11 +698,11 @@ proportion of energy within the forward region. As this is the case,
 the forward jet veto also helps to reduce the multijet
 background.
 
-Significant hadronic activity is selected by requiring $H_T>130$~GeV.
+Significant hadronic activity is selected by requiring $H_T>200$~GeV.
 This cut is primarily motivated by the trigger threshold, it is the
 lowest \HT value that can be reached with a reasonable trigger rate
 and efficiency. To ensure there is significant missing energy, it is
-required that $\MHT>200~\gev$.  This threshold is chosen as roughly
+required that $\MHT>130~\gev$.  This threshold is chosen as roughly
 equivalent to the magnitude of the \MHT requirement made by the
 \alphat cuts on dijet events within the signal region when there is no
 significant mismeasurement. 
@@ -763,7 +757,6 @@ Tab.~\ref{tab:preselection}.
   \centering
   \footnotesize
   \begin{tabular}{ ll }
-    \hline
     Selection                     & Requirement                     \\
     \hline
     ``MET filters''               & \parbox[t]{10cm}{Primary Vertex, CSC Beam Halo,
@@ -776,7 +769,6 @@ Tab.~\ref{tab:preselection}.
     \mht requirement              & $>200\gev$         \\  
     \mhtmet requirement              & $<1.25$         \\  
     Single isolated track veto      & $\pT > 10\gev$, $|\eta| < 2.5$    \\  
-    \hline
   \end{tabular}
   \label{tab:preselection}
 \end{table}
@@ -784,7 +776,7 @@ Tab.~\ref{tab:preselection}.
 \section{The signal region}
 \label{sec:signalregion}
 
-The signal region selection is chosen to be as inclusive to potential
+The signal region selection is chosen to be inclusive to potential
 \BSM signatures in the jets and missing momentum final state, while
 minimising the effects of mismeasurement and contributions from \SM
 processes with genuine \MET. To reduce the background from decays via
@@ -825,14 +817,12 @@ the leading jet $\phi$ distribution at these values.
   \centering
   \footnotesize
   \begin{tabular}{ l|ccccccccc }
-    \hline
     \scalht (GeV)      & 200       & 250       & 300       & 350       & 400       & 500       & 600 &  $>$900    \\
     \hline                                                                                     
     \alphat threshold  & 0.65      & 0.60      & 0.55      & 0.53      & 0.52      & 0.52      & 0.52 & --    \\
     \hline
     \bdphi threshold  & 0.5      & 0.5      & 0.5      & 0.5      &
     0.5      & 0.5      & 0.5 & 0.5    \\
-    \hline
   \end{tabular}
   \caption{The \alphat and \bdphi thresholds versus
     lower bound of \scalht bin. For all \HT bins satisfying $\HT >
@@ -887,7 +877,7 @@ in Chapter~\ref{chap:backgroundPred}. The pre-selection criteria
 is applied to each control region and ensures they are in a similar
 phase-space to the signal region. As the requirement of an isolated
 lepton or photon already selects electroweak processes and rejects
-\QCD multijet processes there is no need for an \alphat or \bdphi
+\QCD multijet processes, there is no need for an \alphat or \bdphi
 requirement in these control regions. Removing these requirements
 significantly increases the number of events available within each
 control region. This reduces statistical uncertainties when they are
@@ -904,7 +894,7 @@ separated from other jets by $\Delta R(\mu,\mathrm{jet})>0.5$. If any
 other leptons or photons are present in the event then it is vetoed, as
 in the signal region.
 
-To help ensure events containing W bosons are selected a requirement
+To help ensure events containing W bosons are selected, a requirement
 is also made on the transverse mass of the W candidate. It is
 approximated by taking the transverse mass between the \MET and the
 muon, and is then required to be compatible with the muon mass,
