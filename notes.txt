@@ -23,6 +23,7 @@
     - check the ICHEP approval talk for plots?
 
     - Go through the systematics section again
+    - say something about compressed spectra in results?
 
     more attention to:
       - systematics!
@@ -30,15 +31,11 @@
       - rest of bkgd prediction
       - reread results
 
-
     Optional extras to add:
       - minChi optimisation
       - new working point scans?
       - stuff on variable optimisation
       - qcd breakdown from Xtian
-
-
-
 
 STUFF TO REMEMBER I DID:
   - other optimisation (maybe remake? see my talks)
