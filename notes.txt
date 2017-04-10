@@ -11,19 +11,26 @@
 
     - \ Add references to old alphaT searches?
 
-    - Make sure the cut values for the correct iteration of the
+    - \ Make sure the cut values for the correct iteration of the
       analysis are chosen
         - \ put in alphat cut for photons if doing ICHEP
         - \ make sure the HT bins are correct
         - \ make sure the TF and likelihood description is correct
           - \ Get the bit about the number of rate parameters right
 
-    - Add plots to the event selection section
+    - \ Add plots to the event selection section
     - \ put in the Btag formula method or not? - not
-    - check the ICHEP approval talk for plots?
 
     - Go through the systematics section again
     - say something about compressed spectra in results?
+
+    *****************
+    Remaining bits to do:
+      - Abstract
+      - Acknowledgements
+      - Tidy references
+      - Uncolour hyperlinks
+    *****************
 
     more attention to:
       - systematics!
@@ -31,11 +38,13 @@
       - rest of bkgd prediction
       - reread results
 
+
     Optional extras to add:
       - minChi optimisation
       - new working point scans?
       - stuff on variable optimisation
       - qcd breakdown from Xtian
+      - check the ICHEP approval talk for plots?
 
 STUFF TO REMEMBER I DID:
   - other optimisation (maybe remake? see my talks)
