@@ -22,15 +22,14 @@
     - \ put in the Btag formula method or not? - not
 
     - \ Go through the systematics section again
-    - Tidy up other QCD plots
 
     *****************
     Remaining bits to do:
-      - Abstract
       - Acknowledgements
       - Uncolour hyperlinks
       - say something about compressed spectra in results?
       - explain the MHT syst more in the signal model syst bit?
+      - Tidy up other QCD plots
       (- Tidy references)
     *****************
 
