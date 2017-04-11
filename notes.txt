@@ -24,6 +24,7 @@
     - Go through the systematics section again
     - say something about compressed spectra in results?
     - explain the MHT syst more in the signal model syst bit?
+    - Tidy up other QCD plots
 
     *****************
     Remaining bits to do:
@@ -31,14 +32,14 @@
       - Acknowledgements
       - Tidy references
       - Uncolour hyperlinks
-      - Remove tailing dot
+      - Remove tailing dot on titles
     *****************
 
     more attention to:
       - systematics!
-      - \ QCD bit dphi vs bdphi
       - rest of bkgd prediction
-      - reread results
+      - \ reread results
+      - \ QCD bit dphi vs bdphi
 
 
     Optional extras to add:

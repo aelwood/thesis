@@ -70,8 +70,9 @@ factors are used to correct lepton, photon and $b$-tagging efficiencies.
 \subsection{Top \pT reweighting}% or NISR??
 
 The \ttbar simulation predicts a softer top-quark \pT spectrum than is
-observed in data. This is corrected with a scale factor that is
-dependent on the \pT of the \ttbar system.
+observed in data \cite{topptrwt}. This is corrected with a scale factor that is
+dependent on the \pT of the \ttbar system. The scale factor was
+derived from the $8~\tev$ \LHC result and is in the range 0-15\%.
 
 \subsection{Trigger efficiencies}
 
@@ -83,7 +84,7 @@ dedicated scale factor. For the \gj control sample the trigger
 efficiency is measured in a hadronic event sample and the \MC is
 corrected as a function of the photon \pT and \eta. Within the signal
 region, the efficiencies are measured as a function of \MHT using
-events that pass a reference electron trigger.  As one of the analysis goals
+events that pass a reference electron trigger. As one of the analysis goals
 is to maintain low thresholds to \HT and \MHT within the signal
 region, there are some inefficiencies at low values of \HT and \MHT.
 The trigger efficiency for a representative bin can be seen in
@@ -105,8 +106,8 @@ sample bins is also shown.
 \subsection{Cross-section corrections}
 
 The events considered within this analysis are selected
-to have a high-\HT and high-\MET. The total number of events predicted
-by the \MC samples within this phase space does not agree with that
+to have a high \HT and high \MET. The total number of events predicted
+by the \MC simulation within this phase space does not agree with that
 observed in data. To correct this, normalisation correction factors are
 derived in \emph{sidebands} after all the other corrections have been
 applied. This is particularly important in the case of the \gj simulation,
@@ -118,13 +119,15 @@ To derive the correction in the \gj control region, a sideband is used
 in the \alphat variable. The same selection is applied as for the \gj
 control region, other than the requirement that $0.50<\alphat<0.52$.
 Within the \mj and \mmj control regions a sideband in \MHT is used,
-requiring $100<\MHT<130~\gev$. A simulataneous fit across all the
+requiring $100<\MHT<130~\gev$. A maximum likelihood fit across all the
 sidebands is performed, where the yields for the \wj, \gj, \zmumu and
-\ttbar are allowed to float. The fit then finds the best scale factor
-for each sample to produce the best data-simulation agreement within
-the sideband. These correction factors can then be applied to the
-simulation throughout the rest of the analysis. A summary of the
-correction factors can be seen in Table~\ref{tab:sideband-corrs}.
+\ttbar processes are modelled as Poisson distributions. Within the fit
+they are each allowed to be scaled by a free parameter. The
+fit then finds the best scale factor for each sample to produce the
+best data-simulation agreement within the sideband. These correction
+factors can then be applied to the simulation throughout the rest of
+the analysis. A summary of the correction factors can be seen in
+Table~\ref{tab:sideband-corrs}.
 
 \begin{table}[!h]
   \footnotesize
@@ -134,21 +137,19 @@ correction factors can be seen in Table~\ref{tab:sideband-corrs}.
   \label{tab:sideband-corrs}
   \begin{tabular}
     {lllc}
-    \hline
     SM process & Control sample & Data sideband           & Correction\T\B   \\
     \hline                   
     \gj        & \gj            & $0.50 < \alphat < 0.52$ & $1.33 \pm 0.03$\T \\
     \wj       & \mj            & $100 < \mht < 130\GeV$  & $1.13 \pm 0.01$   \\
     \zj      & \mmj           & $100 < \mht < 130\GeV$  & $0.99 \pm 0.02$   \\
     \ttbar     & \mj, \mmj      & $100 < \mht < 130\GeV$  & $0.86 \pm 0.01$\B \\
-    \hline
   \end{tabular}
 \end{table}
 
 The distributions of data and \MC simulated events for key analysis
-variables in the major analysis regions are shown in Appendix~\ref{app:charac}. 
-All of these plots are made after all these corrections have been
-applied.
+variables in the major analysis regions are shown in
+Appendix~\ref{app:charac}.  All of these plots are made after all the
+corrections described in this section have been applied.
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Background estimation for processes with genuine \MET} %day 2
@@ -470,13 +471,13 @@ provides an estimate of the level of QCD multijet events in each
   } \\
   \caption{Expected number of QCD multijet events determined from
     simulation, binned according to \njet and \scalht, that (a) satisfy
-    and (b) fail the requirement $\mhtmet < 1.25$. Also shown in (c)
+    and (b) fail the requirement $\mhtmet < 1.25$. The bins are
+    labelled as described in App.~\ref{app:plotKey}. Also shown in (c)
     is the ratio \rmhtmet for QCD multijets, again determined from
     simulation. Finally, (d) shows the expected number of non-multijet
-    eventsevents
-    (V+jets and \ttbar, plus other residual non-multijet backgrounds)
-    that fail the $\mhtmet < 1.25$ requirement, predicted using the
-    \TF method and binned according to \njet and \scalht.}
+    eventse (V+jets and \ttbar, plus other residual non-multijet
+    backgrounds) that fail the $\mhtmet < 1.25$ requirement, predicted
+    using the \TF method and binned according to \njet and \scalht.}
   \label{fig:qcd_plots}
 \end{figure}
 
@@ -503,7 +504,8 @@ determined from simulation.
     \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/predictedQcdDivEwk_Signal}
   } \\
   \caption{The number of events observed in the $\mhtmet>1.25$ sideband, 
-    binned according to \njet and \scalht are shown in (a). In
+    binned according to \njet and \scalht are shown in (a). The bins are
+    labelled as described in App.~\ref{app:plotKey}. In
     (b) these yields are corrected by subtracting the expected
     electroweak component. Shown in
     (c) is the result of multiplying the observed multijet events predicted
@@ -619,7 +621,10 @@ disagreement between simulation and data.
     \includegraphics[width=\textwidth]{figs/analysis/qcdMethod/doubleQcdSbSrRatio1D}
     \caption{ Ratio of the measurement of \rmhtmet, the pass/fail
     ratio for the \mhtmet selection, from data and Monte Carlo in the
-    $\bdphi < 0.5$ sideband in (\scalht, \njet) bins.  }
+    $\bdphi < 0.5$ sideband in (\scalht, \njet) bins. Dotted red lines
+    demonstrate that disagreement is covered by a 100\% systematic
+    uncertainty on the ratio. The bins are
+    labelled as described in App.~\ref{app:plotKey}.}
     \label{fig:RR_qcd}
   \end{center} 
 \end{figure}
@@ -725,7 +730,8 @@ changes are typically in the range of 1-15\%.
   $\mj \rightarrow (\znunu)$ transfer
   factors when varying JEC in MC within its uncertainties, as a
   function of \scalht (GeV) and jet category.
-  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. The bins are
+  labelled as described in App.~\ref{app:plotKey}.
   }
 \end{figure}
 
@@ -741,7 +747,8 @@ changes are typically in the range of 1-15\%.
   \caption{\label{fig:tfSyst_jec_mumuToZinv} The relative change in
   the $\mmj \rightarrow (\znunu)$ transfer
   factors when varying JEC in MC within its uncertainties, as a function of \scalht (GeV) and jet category. 
-  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. The bins are
+    labelled as described in App.~\ref{app:plotKey}.
   }
 \end{figure}
 
@@ -757,7 +764,8 @@ changes are typically in the range of 1-15\%.
   \caption{\label{fig:tfSyst_jec_gjToZinv} The relative change in the
   $\gj \rightarrow (\znunu)$ transfer
   factors when varying JEC in MC within its uncertainties, as a function of \scalht (GeV) and jet category. 
-  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. The bins are
+    labelled as described in App.~\ref{app:plotKey}.
   }
 \end{figure}
 
@@ -773,7 +781,8 @@ changes are typically in the range of 1-15\%.
   \caption{\label{fig:tfSyst_jec_muToTtw} The relative change in the
   $\mj \rightarrow \mathrm{\ttbar+W}$ transfer
   factors when varying JEC in MC within its uncertainties, as a function of \scalht (GeV) and jet category. 
-  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. The bins are
+    labelled as described in App.~\ref{app:plotKey}.
   }
 \end{figure}
 
