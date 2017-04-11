@@ -21,7 +21,7 @@
     - \ Add plots to the event selection section
     - \ put in the Btag formula method or not? - not
 
-    - Go through the systematics section again
+    - \ Go through the systematics section again
     - say something about compressed spectra in results?
     - explain the MHT syst more in the signal model syst bit?
     - Tidy up other QCD plots
@@ -36,7 +36,7 @@
     *****************
 
     more attention to:
-      - systematics!
+      - \ systematics!
       - rest of bkgd prediction
       - \ reread results
       - \ QCD bit dphi vs bdphi
@@ -126,3 +126,5 @@ robyn's thesis)
 - remember about the blank region of T2tt - difference in MET
   modelling between fast and full sim, there is no MET here due to
   decaying directly to a top
+
+- understand PU reweighting procedure

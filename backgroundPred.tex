@@ -583,6 +583,7 @@ agreement is deemed acceptable given the small total \QCD contribution to the
 signal region.
 
 \subsection{Validation} 
+\label{sec:qcdVal}
 
 Despite using a predominantly data-driven method, the prediction of
 the \QCD contamination relies on the ratio of \QCD counts, \rmhtmet,
@@ -662,19 +663,19 @@ There are those that affect the total number of events in each
 Sections~\ref{sec:simUnc} and~\ref{sec:closureTests}. Most of these
 systematics are treated as uncertainties on the \TFs used to predict
 the \SM backgrounds with genuine \MET. There is also one other
-systematic uncertainty added to take account of uncertainties in the \QCD
-multijet background prediction. Additionally, systematic uncertainties
-are included that encode the limited knowledge on how the events
+systematic uncertainty added to take account of uncertainties in the
+\QCD multijet background prediction, described in
+Sec.~\ref{sec:qcdVal}. Additionally, systematic uncertainties are
+included that encode the limited knowledge on how the events
 distribute in the \mht dimension, described in Sec.~\ref{sec:systMht}.
 
-% introduction to different types - known, unknown data driven,  used for the the TFs
 There are two approaches that are used to derive uncertainties
 from different sources. There are uncertainties associated with the
 correction factors that are applied to the simulation, which allows
 the systematic uncertainties to be derived by varying the simulation (Sec.~\ref{sec:sfs}).
 However, these sort of systematics only encode known and simulated
-sources of systematic uncertainty. To be able to account for unknown
-sources, additional data-driven uncertainties are derived  with the
+sources of systematic uncertainty. To be able to account of unknown
+sources, additional data-driven uncertainties are derived with the
 use of the control samples (Sec.~\ref{sec:closureTests}). After their
 descriptions below, a summary of the all the uncertainties is given in
 Tab.~\ref{tab:systs}.
@@ -685,12 +686,11 @@ Tab.~\ref{tab:systs}.
 A set of corrections are applied to simulation that are described in
 Sec.~\ref{sec:simEvents}. There is an uncertainty associated with each
 of these corrections, based on the way in which they are derived and
-uncertainties in any theoretical calculations that may be relevant. To
-make sure these uncertainties are taken account of, their effect on
-the \TFs is studied for the four transfer factors which are of interest 
-for the background prediction, namely: $\mj \rightarrow (\znunu)$,
-$\mmj \rightarrow (\znunu)$, $\gj \rightarrow (\znunu)$ and $\mj
-\rightarrow \mathrm{\ttbar+W}$. 
+uncertainties in any theoretical calculations that may be relevant.
+These uncertainties are propagated to each of the \TFs which are of
+interest for the background prediction, namely: $\mj \rightarrow
+(\znunu)$, $\mmj \rightarrow (\znunu)$, $\gj \rightarrow (\znunu)$ and
+$\mj \rightarrow \mathrm{\ttbar+W}$. 
 % Due to the fact that the control
 % regions and signal region are finely binned in the same way, the
 % systematics caused by t
@@ -790,41 +790,43 @@ changes are typically in the range of 1-15\%.
 \subsubsection*{B-tagging efficiency}
 \label{sec:tfSyst_btag}
 The scale factors that take account of the b-tagging efficiencies and
-misidentification between simulation and data have associated
+misidentification between simulation and data also have associated
 uncertainties. Since no extrapolation is performed in the background
 prediction across different \nb multiplicities, these uncertainties
 are expected to only have a small effect.  The scale factors
-associated with the identification of b and c jets are varied together
+associated with the identification of $b$ and c jets are varied together
 (since their measurements are correlated), while those associated with
-light jets are varied separately. The relative change in the \TFs is
-presented as a function of \HT and jet category in
+the misidentification of light jets are varied separately. The
+relative change in the \TFs is presented as a function of \HT and jet
+category in
 Fig.~\ref{fig:tfSyst_bsf_muToZinv}-\ref{fig:tfSyst_bsfl_muToTtw}. They
-are typically in the range of $1-5\%$.
+are typically in the range of 1-5\%.
 
 \subsubsection*{Lepton and photon efficiencies}
 \label{sec:tfSyst_lepton}
 
-The main way in which W and \ttbar events can enter the signal region
-is when one of the leptons is not identified, by falling out of
-acceptance or a reconstruction error. There is an uncertainty
+Events from W and \ttbar processes can enter the signal region
+when one of the leptons is not identified, by falling out of
+acceptance or not being properly reconstructed. There is an uncertainty
 associated with these acceptance and reconstruction effects that must
 be taken account of.
 
 The uncertainties on the trigger, lepton identification and isolation
-efficiencies are varied by $\pm1\sigma$ and their effects on the
-acceptance of leptons is propagated as an uncertainty on the \TFs.
-The procedure is repeated separately for muons and electrons.
-Systematic uncertainties of 2\% are assigned to the efficiency of the
-muon and electron veto working point efficiency and taken as
-correlated across all the signal region bins. 
+efficiencies are varied by $\pm1\sigma$ and their effects on the yield
+of W and \ttbar event vetoes is studied.  The procedure is repeated
+separately for muons and electrons. There is found to be at most a 2\%
+difference in the W and \ttbar yields in the signal region when these
+uncertainties are varied. This is propagated as an uncertainty to the
+\TFs and taken as correlated across all the signal region bins. 
 
 Along with the considerations of the uncertainties on the simulated
 acceptance of leptons, uncertainties in the scale factors can directly
-effect yields in the muon control regions. The change in the transfer
-factors with the upwards and downwards variations of the muons used to
-define the single and double muon control regions can be seen in
-Figs.~\ref{fig:tfSyst_muon scale
-factor_muToZinv}~to~\ref{fig:tfSyst_muon scale factor_muToTtw}.
+effect yields in the muon control regions. The change in the \TFs with
+the upwards and downwards variations of the scale factors of the muons
+used to define the single and double muon control regions can be seen
+in Figs.~\ref{fig:tfSyst_muon scale
+factor_muToZinv}~to~\ref{fig:tfSyst_muon scale factor_muToTtw}. They
+are typically in the range 0-3\%.
 
 % The fraction of events with leptons out of acceptance ($f_{sample}$)
 % is calculated from generator truth level information for each \MC
@@ -857,75 +859,76 @@ factor_muToZinv}~to~\ref{fig:tfSyst_muon scale factor_muToTtw}.
 To take account of uncertainties in the photon trigger efficiencies, the
 effect of varying them on the \gj \TF is investigated. To make a
 conservative estimate of the systematic, the uncertainty on this
-correction is taken as the size of the inefficiency.  The relative
+correction is taken as the size of the inefficiency. The relative
 change in the \gj transfer factor is presented in
 Fig.~\ref{fig:tfSyst_photonTrigger_gjToZinv} variation is typically in
-the range $0-3\%$.
+the range 0-3\%.
 
 \subsubsection*{Signal trigger uncertainty}
 \label{sec:tfSyst_trigger}
 
-Additionally, the uncertainties on the signal trigger efficiency
-measurements are taken into account. This is most relevant in the low
+The uncertainties on the signal trigger efficiency
+measurements must also be taken into account. This is most relevant in the low
 \HT and \MHT regions of the analysis, where the triggers are not fully
 efficient. As it is possible to measure the efficiency with both muon
 and electron reference triggers, a systematic is taken as the
 difference in the measurement between the two.  The relative change in
 transfer factors is presented in Fig.~\ref{fig:tfSyst_trigger_muToZinv}-\ref{fig:tfSyst_trigger_muToTtw}.
-The variation is typically in the range $0-5\%$.
+The variation is typically in the range 0-5\%.
 
 \subsubsection*{Top $p_T$ reweighting}
 \label{sec:tfSyst_topPt}
 
-To account for the uncertainty on the top \pT reweighting an 
+To account for the uncertainty on the top \pT reweighting, an 
 uncertainty on this correction is taken as the difference of the
 correction from unity. The relative change in transfer factors is
 presented in Fig.~\ref{fig:tfSyst_topPt_muToZinv}-\ref{fig:tfSyst_topPt_muToTtw}. The
-variation is typically in the range $0-15\%$.
+variation is typically in the range 0-15\%.
 
 \subsubsection*{QCD contamination in the \gj control sample}
 \label{sec:tfSyst_qcdCont}
 
 Due to the greater prevalence of \QCD multijet background in the \gj
-control sample, which has been found to be at the ~5\% level, an
+control sample, which is expected to be at the $\sim5\%$ level, an
 uncertainty is applied on this contamination. An arbitrarily large
 variation of $\pm 100\%$ on the number of simulated \QCD is chosen and
-leads to a systematic variation on the transfer factors of at most 5\%
+leads to a systematic variation on the \TFs of at most 5\%
 in the majority of bins. This value is small enough to remain
 subdominant to other uncertainties and is found to be covered in the
-data-driven study using the photon control region, described in Sec.
-~\ref{sec:tfSyst_ZGratio}.
+data-driven study using the photon control region, described in 
+Sec.~\ref{sec:tfSyst_ZGratio}.
 
 \subsubsection*{\PU reweighting}
 \label{sec:tfSyst_pu}
 
-There are uncertainties in the minimum bias cross section used when
-carrying out the \PU reweighting procedure.  This 5\% uncertainty is
+There are uncertainties in the minimum bias cross section which is
+used to calculate the scale factors for \PU reweighting. This 5\% uncertainty is
 propagated and the relative change in the transfer factors under this
-variation is small (1-5\%) and shown in each analysis bin in Fig.~\ref{fig:tfSyst_pu_muToZinv}-\ref{fig:tfSyst_pu_muToTtw}.
+variation is small (1-5\%) and shown in each analysis bin in
+Fig.~\ref{fig:tfSyst_pu_muToZinv}-\ref{fig:tfSyst_pu_muToTtw}.
 
 %%%%%%%%%%%%%%
 \subsection{Uncertainties derived from data driven tests}
 \label{sec:closureTests}
 
 To be able to take account of sources of systematic uncertainty that
-are not included in the variation of known sources, an
+are not included in the variation of known scale factors, an
 additional procedure to derive uncertainties through a data driven
-method is defined.  This allows assumptions and extrapolations
+method is defined. This allows assumptions and extrapolations
 within the analysis to be covered with an uncertainty that does not
 rely on potential limitations in the simulation modelling. To carry
 out this data-driven uncertainty estimation process, a suite of
-\emph{closure tests} are performed. In each test in which the number
+\emph{closure tests} are performed. In each test the number
 of events in a given data control (sub-)sample is predicted using
-events from another data control (sub-)sample through the
-corresponding \TF, in a way that tests a particular assumption made
-within the analysis.  The agreement between the predicted and observed
+events from another data control (sub-)sample through a
+corresponding \TF. The tests are defined in a way that tests a particular assumption made
+within the analysis. The agreement between the predicted and observed
 yields is expressed as the ratio $(\nobs - \npre)/\npre$ while
 considering only the statistical uncertainties on \npre and \nobs,
 where \npre is the number of predicted events in the (sub-)sample and
 \nobs the number observed.  This allows one to define a level of
 \emph{closure}, which encapsulates the statistical significance of a
-deviation in the ratio from zero. The degree of uncertainty with which
+deviation in the ratio from zero. The significance with which
 this closure deviates from zero can then be used to approximate the
 systematic uncertainty associated to the assumption the procedure is
 testing within the analysis.
@@ -938,7 +941,7 @@ their symmetric and asymmetric topologies. Pairs of \HT bins are merged
 when the $\mu\mu$+jets sample is used, in order to increase the
 statistical power of the sample.  Since the uncertainties derived with
 this approach are statistical in nature, these systematics are
-considered uncorrelated in each \HT bin and jet topology. 
+considered uncorrelated in each \HT bin and event topology category. 
 
 \subsubsection*{Extrapolation in \alphat and \bdphi}
 \label{sec:tfSyst_alphaT}
@@ -1042,19 +1045,19 @@ derived from these tests is in the range $3-20\%$.
 \label{sec:tfSyst_Wpol}
 
 As the kinematics of $W^+$ and $W^-$ decays are subtly different, a
-data-driven test is introduced to check the modelling of this W
-polarisation in simulation. In this study, carried out with events in
-the \mj control region, $\mu^{+}$ events are used to predict $\mu^{-}$
-events.  The production mechanism of W bosons from $pp$-collisions means
-high $p_T$ $W$ bosons are predominantly left handed \cite{WPol}.  For
-high $p_T$ bosons, this implies that $W^+$ decays to the left handed
-neutrino along its direction of motion while the lepton is pointing
-backward.  The opposite behaviour is expected for the $W^-$. The
-lepton is therefore more boosted (and the neutrino less boosted) in
-$W^+$ decays than $W^-$ decays.  This leads to a larger number of
-$W^+$ decays in the single lepton control regions (which relies on the
-lepton $p_T$ for acceptance) than in the signal region (which relies
-on the neutrino $p_T$ for acceptance).
+data-driven test is introduced to check the modelling of this effect
+in simulation. In this study, carried out with events in the \mj
+control region, yields $\mu^{+}$ events are used to predict the yields
+of $\mu^{-}$ events.  The production mechanism of W bosons from
+$pp$-collisions means high $p_T$ W-bosons are predominantly left
+handed \cite{WPol}.  For high $p_T$ bosons, this implies that $W^+$
+decays to the left handed neutrino along its direction of motion while
+the lepton is pointing backward.  The opposite behaviour is expected
+for the $W^-$. The lepton is therefore more boosted (and the neutrino
+less boosted) in $W^+$ decays than $W^-$ decays.  This leads to a
+larger number of $W^+$ decays in the single lepton control regions
+(which relies on the lepton $p_T$ for acceptance) than in the signal
+region (which relies on the neutrino $p_T$ for acceptance).
 
 The results are shown in Fig.~\ref{fig:closureMuPToMuM} as a function
 of \scalht and \njet.  The grey band is the systematic uncertainty
@@ -1114,18 +1117,19 @@ derived from these tests is in the range $7-15\%$.
 \label{sec:tfSyst_WttAd}
 
 The $0$ b-tag $\rightarrow1$ b-tag data-driven tests in the \mj
-control region probe the sensitivity of the transfer factors to the
+control region probe the sensitivity of the \TFs to the
 relative admixture of events from the \wj and \ttbar processes,
 since they utilise a W-eniched sample to predict a \ttbar-enriched
-sample.  These tests indirectly probe also the modelling of the
+sample.  These tests also indirectly probe the modelling of the
 b-tagging efficiency, although this systematic effect is expected to
 be smaller and is already addressed by the dedicated study presented
 in Sec.~\ref{sec:tfSyst_btag}.  These tests can slightly overestimate
 the uncertainty, as the admixture changes little between the
 \mj sample and the signal region, given that no extrapolation between
 different b-tag multiplicities is performed in the estimation of the
-background. The uncertainty derived is therefore driven by the
-limited statistics available in the control sample. 
+background. 
+% The uncertainty derived is therefore driven by the
+% limited statistics available in the control sample. 
 
 The result are shown in Fig.~\ref{fig:closureBTag} as a function of
 \HT and \njet.  The grey band is the systematic uncertainty
