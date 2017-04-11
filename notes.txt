@@ -22,25 +22,17 @@
     - \ put in the Btag formula method or not? - not
 
     - \ Go through the systematics section again
-    - say something about compressed spectra in results?
-    - explain the MHT syst more in the signal model syst bit?
     - Tidy up other QCD plots
 
     *****************
     Remaining bits to do:
       - Abstract
       - Acknowledgements
-      - Tidy references
       - Uncolour hyperlinks
-      - Remove tailing dot on titles
+      - say something about compressed spectra in results?
+      - explain the MHT syst more in the signal model syst bit?
+      (- Tidy references)
     *****************
-
-    more attention to:
-      - \ systematics!
-      - rest of bkgd prediction
-      - \ reread results
-      - \ QCD bit dphi vs bdphi
-
 
     Optional extras to add:
       - minChi optimisation

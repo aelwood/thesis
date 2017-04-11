@@ -161,7 +161,7 @@ not to rely too heavily on the modelling of the backgrounds in
 simulation, a \emph{data-driven} approach is utilised wherever
 possible. As this analysis is carried out with the requirement of
 significant hadronic activity, mismodelling effects are particularly
-prevalent due to the difficulties in simulating strong force
+prevalent due to the difficulties in simulating strong-force
 interactions to a high degree of accuracy.
 
 Given that the analysis selections are chosen to reduce the \QCD
@@ -240,14 +240,12 @@ negate this issue, which is cancelled out within the \TF in each bin.
     \end{center}
 \end{figure}
 
-Many systematic problems within the simulation are expected to mostly
-cancel in each \TF. However, a systematic uncertainty is assigned to
-each transfer factor to account for theoretical uncertainties and
-other mismodelling effects, such as in the acceptances and
-reconstruction efficiencies. Details of the specific systematic
-uncertainties are given in Sec.~\ref{sec:systematics}.
+A systematic uncertainty is assigned to each \TF to account for
+theoretical uncertainties and other mismodelling effects that do not
+cancel in the ratio. Details of the specific systematic uncertainties
+are given in Sec.~\ref{sec:systematics}.
 
-Within the analysis the \TF method is used with different control
+Within the analysis, the \TF method is used with different control
 regions to predict two different categories of background, the \znunu
 and all the other remaining backgrounds. The \znunu background is
 predicted with the \mmj, \gj and \mj control samples. The W, \ttbar and other residual
@@ -369,7 +367,8 @@ to be enough to satisfy this condition, while not being limited by the
 measured \MHT resolution. In most cases the \MHT bins
 are naturally bounded from above by maximum value of \HT in a
 particular bin.  However, the highest \HT bin is unbounded from above,
-the final \MHT bin is therefore limited to sit at $\MHT>800~\gev$ to
+the final \MHT bin is therefore limited to sit at $\MHT>800~\gev$
+($\MHT>600~\gev$) for symmetric (asymmetric) topologies to
 ensure the requisite statistics. All of the bins used are listed in
 Appendix~\ref{app:mhtBinning}.
 % determine the binning constraints based on a minimum number of
@@ -401,7 +400,7 @@ achieve this, the signal region selection is applied with the
 requirements on two of the variables used to remove the multijet
 background inverted. They are defined by the requirement 
 $\mhtmet>1.25$, $\bdphi<0.5$ and both these requirements as
-illustrated in Table~\ref{tab:qcd_sidebands}.
+illustrated in Table~\ref{tab:qcd_sidebands}. 
 
 For the core \QCD multijet background prediction, the \mhtmet sideband
 is used to estimate the \QCD yields in the signal region through an
@@ -431,7 +430,7 @@ transfer factor, the \bdphi and double sidebands are used.
 
 The method makes use of the ratio of simulated \QCD counts in the
 signal region to the \mhtmet sideband, \rmhtmet, per (\HT,\nj) bin.
-This is essentially a \TF constructed from only the \QCD simulation.
+This is essentially a \TF constructed from the \QCD simulation.
 Each ratio is used as a multiplier on the predicted \QCD counts per
 bin in the \mhtmet data sideband.  These data counts are collected
 with the signal region triggers described in Sec.~\ref{sec:trigStrat}. 
@@ -442,16 +441,16 @@ that described in Sec.~\ref{sec:likelihood}, but in the \mhtmet
 sideband and with the total number of \QCD events free to be
 determined. In this fit,
 the electroweak backgrounds within the sideband are determined with the method described
-in Sec.~\ref{sec:bkgdMet} with single muon, double muon and single
-photon control regions that have the same selection as the control
+in Sec.~\ref{sec:bkgdMet} with \mj, \mmj and \gj
+control regions that have the same selection as the control
 regions described in Sec.~\ref{sec:controlregions}, apart from an inverted
 \mhtmet cut. All relevant systematic uncertainties on the \TFs,
 described in Sec.~\ref{sec:systematics} are taken into account.  After the
 contribution of the electroweak backgrounds is estimated, the
 remaining data counts are attributed to \QCD. In this prediction, all
 counts and predictions are inclusive in \nb and \MHT. The product of these
-predicted QCD counts and the ratio, $\mathcal{Q} \times \rmhtmet$,
-provides an estimate of the level of QCD multijet events in each
+predicted \QCD counts and the ratio, $\mathcal{Q} \times \rmhtmet$,
+provides an estimate of the level of \QCD multijet events in each
 (\HT,\nj) bin of the signal region. 
 
 \begin{figure}[!h]
@@ -485,8 +484,8 @@ The number of counts from \QCD multijet events satisfying and failing the
 requirement $\mhtmet < 1.25$, \rmhtmet, are
 summarised in Fig.~\ref{fig:qcd_pass}, \ref{fig:qcd_fail}, and
 \ref{fig:qcd_ratio}. Figure~\ref{fig:ewk_fail} shows the expected
-counts from non-multijet backgrounds in the \mhtmet sideband, as
-determined from simulation.
+counts from non-multijet backgrounds in the \mhtmet sideband,
+predicted with the \TF method.
 
 \begin{figure}[!h]
   \centering
@@ -501,6 +500,7 @@ determined from simulation.
   } 
   \subfloat[Ratio of predicted multijet and non-multijet yields in the
   signal region.\label{fig:qcd_ewk_ratio}]{
+
     \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/predictedQcdDivEwk_Signal}
   } \\
   \caption{The number of events observed in the $\mhtmet>1.25$ sideband, 
@@ -568,7 +568,7 @@ defined in Sec.~\ref{sec:bkgdMet}.
 
 The predictions summarised in Fig.~\ref{fig:qcd_ewk_ratio} show that 
 the \HT-dependent \alphat thresholds defined in Table~\ref{tab:atCut} 
-and the requirement of $\bdphi > 0.5$ suppress the multijet
+and the requirement of $\bdphi > 0.5$ suppress the \QCD multijet
 contamination in all bins of the signal region to percent-level or smaller with
 respect to the total non-multijet background. These predicted multijet events are 
 included as a background contribution to the likelihood model
@@ -596,8 +596,8 @@ and the double sideband with
 values greater than 1.25. These predictions are again made with a maximum
 likelihood fit, analogous to that described in
 Sec.~\ref{sec:qcdMethod}. This fit estimates the counts in the
-non-multijet backgrounds with single muon, double muon and single
-photon control regions and all relevant systematic errors. The
+non-multijet backgrounds with \mj, \mmj and \gj
+control regions and all relevant systematic errors. The
 remaining data counts in each sideband are then attributed to \QCD.
 With this estimation of \QCD it is possible to derive a data driven
 ratio of \QCD counts with $\mhtmet<1.25$ and those with $\mhtmet>1.25$,
@@ -605,7 +605,7 @@ $\rmhtmet_{\bdphi<0.5}^{data}$. By taking \MC counts in the \bdphi
 sideband it is also possible to calculate the \mhtmet simulation
 ratio, $\rmhtmet_{\bdphi<0.5}$. 
 
-To validate the ratio \rmhtmet it is assumed that if the simulation of
+To validate the ratio \rmhtmet, it is assumed that if the simulation of
 the ratio in the \bdphi sideband agrees with that derived from data,
 the simulated ratio that is not in the sideband is valid. Any
 disagreement is covered by a systematic error on the signal region QCD
