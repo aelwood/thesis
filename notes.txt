@@ -119,3 +119,5 @@ robyn's thesis)
   decaying directly to a top
 
 - understand PU reweighting procedure
+
+- know something about the compressed spectra improvements
