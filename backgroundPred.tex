@@ -113,7 +113,14 @@ derived in \emph{sidebands} after all the other corrections have been
 applied. This is particularly important in the case of the \gj simulation,
 as the cross section for this process is only calculated to \LO
 accuracy. For the other processes the cross section is calculated to
-at least \NLO accuracy.
+at least \NLO accuracy. 
+
+As will be described in Sec.~\ref{sec:bkgdMet}, the backgrounds in the
+analysis are mostly predicted from data yields in the control regions.
+The simulation is not used to set the exact yields, however it is used
+to determine the admixture of the different processes in each of the
+analysis regions.  It is for this reason that these corrections are
+important.
 
 To derive the correction in the \gj control region, a sideband is used
 in the \alphat variable. The same selection is applied as for the \gj
@@ -257,16 +264,17 @@ systematic uncertainties to be taken into a way that takes account of
 their correlations across all samples and bins.
 
 To summarise the fitting procedure, the observation in each bin of the
-signal region is modelled as Poisson-distributed about the sum of a
-\SM expectation (and a potential signal contribution). The components
-of this SM expectation are related to the expected yields in the
-control samples via the \TFs. The observations in each bin of the
-control samples are similarly modelled as Poisson-distributed about
-the expected yields for each control sample. In this way, for a given
-bin, the observed yields in the signal and control samples are
-connected via the transfer factors derived from simulation.  This
-allows multiple control samples to modify the predicted yields in the
-signal region within the constraints of their uncertainties.
+signal region is modelled with a Poisson distribution that has a mean
+of the sum of \SM expectations (and a potential signal contribution).
+The components of this \SM expectation are related to the expected
+yields in the control samples via the \TFs. The observations in each
+bin of the control samples are similarly modelled as
+Poisson-distributed about the expected yields for each control sample.
+In this way, for a given bin, the observed yields in the signal and
+control samples are connected via the transfer factors derived from
+simulation.  This allows multiple control samples to modify the
+predicted yields in the signal region within the constraints of their
+uncertainties.
 
 \subsection{The \MHT dimension}
 \label{sec:mhtDim}
@@ -462,10 +470,10 @@ provides an estimate of the level of \QCD multijet events in each
     \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/qcdSbQCD_MC}
   } \\
   \subfloat[Ratio \rmhtmet for simulated \QCD events.\label{fig:qcd_ratio}]{
-    \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/signalQcdDivSbQcd_MC}
+    \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/signalQcdDivSbQcd_MC_edited}
   } 
   \subfloat[Predicted electroweak backgrounds in the \mhtmet sideband.\label{fig:ewk_fail}]{
-    \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/qcdSbEwk_MC}
+    \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/qcdSbEwk_MC_edited}
    %    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/Ewk/SigTrig_FailMoM_NJet_vs_HT_bDPhigt0p5_Log}
   } \\
   \caption{Expected number of QCD multijet events determined from
@@ -490,18 +498,18 @@ predicted with the \TF method.
 \begin{figure}[!h]
   \centering
   \subfloat[Binned data counts in \mhtmet sideband.\label{fig:data_fail}]{
-    \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/obsYields_QcdSb}
+    \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/obsYields_QcdSb_edited}
   } 
   \subfloat[Predicted QCD counts in \mhtmet sideband.\label{fig:data_corr}]{
-    \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/postFitQcdYields_QcdSb}
+    \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/postFitQcdYields_QcdSb_edited}
   } \\
   \subfloat[QCD multijet predictions in the signal region.\label{fig:qcd_pred}]{
-    \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/predictedQcdYields_Signal}
+    \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/predictedQcdYields_Signal_png}
   } 
   \subfloat[Ratio of predicted multijet and non-multijet yields in the
   signal region.\label{fig:qcd_ewk_ratio}]{
 
-    \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/predictedQcdDivEwk_Signal}
+    \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/predictedQcdDivEwk_Signal_png}
   } \\
   \caption{The number of events observed in the $\mhtmet>1.25$ sideband, 
     binned according to \njet and \scalht are shown in (a). The bins are
@@ -908,7 +916,7 @@ variation is small (1-5\%) and shown in each analysis bin in
 Fig.~\ref{fig:tfSyst_pu_muToZinv}-\ref{fig:tfSyst_pu_muToTtw}.
 
 %%%%%%%%%%%%%%
-\subsection{Uncertainties derived from data driven tests}
+\subsection{Uncertainties derived from data-driven tests}
 \label{sec:closureTests}
 
 To be able to take account of sources of systematic uncertainty that
@@ -1274,7 +1282,7 @@ $s^{\htcat}_{\mathrm{had},j}$ is the expected signal contamination in
 the control region:
 % CR likelihood
 \begin{equation}
-\mathcal{L}^{\htcat}_{\mathrm{CR,j}}=\mathrm{Pois}(n^{\htcat}_{\mathrm{CR,j}}
+\mathcal{L}^{\htcat}_{\mathrm{CR,j}}=\mathrm{Poisson}(n^{\htcat}_{\mathrm{CR,j}}
 |\, b^{\htcat}_{\mathrm{CR,j}} + s^{\htcat}_{\mathrm{CR,j}}).
 \label{eq:controlLikelihood}
 \end{equation}

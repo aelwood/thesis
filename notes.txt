@@ -26,12 +26,18 @@
     *****************
     Remaining bits to do:
       - Acknowledgements
+      - Disclaimer
       - Uncolour hyperlinks
+      - Tidy up other QCD plots
+        - add HT to the QCD yield plots
+      - Check references
+
+    optional:
       - say something about compressed spectra in results?
       - explain the MHT syst more in the signal model syst bit?
-      - Tidy up other QCD plots
-      (- Tidy references)
     *****************
+
+
 
     Optional extras to add:
       - minChi optimisation
@@ -122,4 +128,7 @@ robyn's thesis)
 
 - know something about the compressed spectra improvements
 
-- justify why high mass scale events deposit their energy centrally
+Recommendations from Alex:
+
+  - justify why high mass scale events deposit their energy centrally
+  - know all the MET filters well!!, ie sec 6.6

@@ -34,7 +34,7 @@ required to have significant hadronic activity and missing momentum.
 
 %main challenge in limiting and understanding backgrounds
 The main challenge for a \BSM search is in limiting and
-understanding the backgrounds, while maximising acceptance of a wide
+understanding the backgrounds, while maximising acceptance to a wide
 range of potential \BSM signals. Within the analysis presented in this
 Chapter the backgrounds are considered in two separate categories,
 either as coming from a \QCD multijet process or from another \SM process
@@ -164,7 +164,7 @@ As discussed in Sec.~\ref{sec:qcdMultijet}, a pure requirement on the
 background.  To effectively remove it, the mismeasurement that leads
 to the fake \MET signature must be identified and used to remove
 mismeasured events. This can be achieved by making use of topological
-variables, which use specific facts about the topology of an event to
+variables, which use specific properties of the topology of an event to
 decide whether the \MET comes from mismeasurement or a weakly
 interacting particle. 
 %why topological variables work!! - fake met from detector cock ups
@@ -207,8 +207,9 @@ is one that minimises $|\Delta E_T|$, the difference between the $E_T$
 of each pseudo-jet, where $E_T$ is the scalar sum of the transverse
 energies of all the jets in each pseudo-jet. This form of clustering
 is chosen as it forms the most balanced configuration, making the
-pseudo dijet event appear as close to an event with no mismeasurement
-as possible. It leads to a generalised form of $\alpha_T$: 
+pseudo-dijet event appear as close to an event with no mismeasurement
+as possible. %minimising background at the cost of signal efficiency.
+It leads to a generalised form of $\alpha_T$: 
 \begin{equation}
 \alpha_T=\frac{\Sigma E_T^{j_i}-\Delta
 E_T}{2\sqrt{(\Sigma E_T^{j_i})^2-\cancel{H}_T^2}}.
@@ -591,7 +592,7 @@ $\rightarrow$ h$^{\pm}$ + n$\pi^{0}$ $\nu$.
 
 \subsection{Energy sums}
 
-Missing transverse momentum (\MET) is reconstructed as described in
+The \MET is reconstructed as described in
 Sec.~\ref{sec:met_reco} and the the Type-I \MET energy correction is applied.
 The \met is used in the definition of 
 the transverse mass of potential W bosons, $M_{T}$, which is in turn used as part of
@@ -678,9 +679,9 @@ Signal & $\HT>240~\gev~\textrm{or}~\MET>70~\gev$ & $\HT>350~\gev,~\alphat>0.52,\
  & $\HT>240~\gev$ & $\HT>800~\gev$ \\
  & $\MET>70~\gev$ & $\MET>90~\gev~\textrm{or}~\MHT>90~\gev$ \\
 \hline
-\mj& $\pT^{\mu}>10~\gev$ & $\pT^{\mu}>22~\gev$ \\
-\mmj& $\pT^{\mu}>10~\gev$ & $\pT^{\mu}>22~\gev$ \\
-\gj& $\HT>240~\gev~\textrm{or}~\pT^{\gamma}>25~\gev$ & $\HT>800~\gev~\textrm{or}~\pT^{\gamma}>175~\gev$ \\
+\mj& $\pT^{\mu}>20~\gev$ & $\pT^{\mu}>22~\gev$ \\
+\mmj& $\pT^{\mu}>20~\gev$ & $\pT^{\mu}>22~\gev$ \\
+\gj& $\HT>240~\gev~\textrm{or}~\pT^{\gamma}>30~\gev$ & $\HT>800~\gev~\textrm{or}~\pT^{\gamma}>175~\gev$ \\
 
 \end{tabular}
 \label{tab:triggers}
@@ -735,7 +736,7 @@ a high efficiency for real physics events, they are described in the
 following \cite{1748-0221-10-02-P02006}.
 \begin{itemize}
 \item{The primary vertex must be well reconstructed, within
-$|z|<=24$~cm of the proton collision region and $d_{xy}<2$~cm from the
+$|z|\leq24$~cm of the proton collision region and $d_{xy}<2$~cm from the
 beam line}
 \item{Beam interactions exterior to the detector, \emph{beam halo} effects,
 are removed by vetoing events with \ac{CSC} and calorimeter energy
@@ -787,7 +788,7 @@ Tab.~\ref{tab:preselection}.
 \section{The signal region}
 \label{sec:signalregion}
 
-The signal region selection is chosen to be inclusive to potential
+The signal region selection is chosen to be inclusive for potential
 \BSM signatures in the jets and missing momentum final state, while
 minimising the effects of mismeasurement and contributions from \SM
 processes with genuine \MET. To reduce the background from decays via
@@ -796,7 +797,7 @@ described in Sec.~\ref{sec:physobj}. To maintain a fully hadronic
 final state any events containing reconstructed photons are also
 vetoed.
 
-After the pre-selection requirements, there is still a significant
+After the pre-selection requirements, there is still expected to be a significant
 multijet background in the signal region. This is reduced to a
 negligible level with a \HT dependent cut on the \alphat of the event.
 Along with this, a cut is made on the \bdphi variable to ensure any
@@ -927,14 +928,14 @@ is vetoed.
 
 To maximise the selection of events containing Z bosons the
 invariant mass of the two muons is required to be compatible with the
-Z mass, $m_Z$. Events are used if they are within a 25~\gev window,
+Z mass, $m_Z$. Events are used if they are within a 25~\gev mass window,
 $m_Z-25<M_{\mu_1\mu_2}<m_Z+25~\gev$.
 
 \subsection{The \gj control region}
 
 The \gj control region is defined to provide a sample of photon events
-with significant hadronic energy. High energy photons have similar
-kinematic properties to $Z$ bosons, which allows this control region
+with significant hadronic energy. Events with high energy photons have similar
+kinematic properties to events with $Z$ bosons, which allows this control region
 to augment the prediction of the \znunu background. To
 ensure the mass of the Z boson has a negligible effect when making
 this assumption, a single photon is required with $\pT>200~\gev$ and
