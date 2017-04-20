@@ -121,3 +121,5 @@ robyn's thesis)
 - understand PU reweighting procedure
 
 - know something about the compressed spectra improvements
+
+- justify why high mass scale events deposit their energy centrally

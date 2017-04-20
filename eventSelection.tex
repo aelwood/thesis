@@ -219,7 +219,7 @@ mismeasured, the value of $\Delta E_T$ will be very close to \MET,
 resulting in $\alphat<0.5$. When the jets are recoiling from genuine
 \MET, $\Delta E_T\sim 0$ and $\alphat>0.5$.
   
-The efficacy of an $\alphat$ cut in removing the \QCD multijet
+The ability of an $\alphat$ requirement to remove the \QCD multijet
 background is evident in Fig.~\ref{fig:alphaT}. By
 choosing an appropriate cut above $0.5$ it is possible to reduce the
 multijet background to a negligible level.
@@ -263,9 +263,13 @@ where a $b\bar{b}$ pair is produced and decays leptonically, producing
 neutrinos. These neutrinos are a genuine source of \MET that are
 typically boosted along the jet direction. In these cases the \bdphi
 helps to reject the \QCD background that may have passed an $\alphat$
-cut. The \bdphi distribution for multijet events and the remaining \SM
+cut. This can happen in events with more than two jets, where the
+jet collinear to the \MET is combined into a pseudojet in the \alphat
+calculation in a way that masks the fact that it is mismeasured. The
+\bdphi distribution for multijet events and the remaining \SM
 backgrounds is shown in Fig.~\ref{fig:bdphi}. A requirement on \bdphi
-above $\sim 0.5$ will significantly reduce any \QCD multijet background.
+above $\sim 0.5$ will significantly reduce any \QCD multijet
+background.
 %bDPhi augments alphaT when considering mismeasurement in heavy
 %flavour qcd stuff
 % show the plot from Mark
@@ -397,7 +401,7 @@ they can fake a significant \MHT. There is a much lower threshold
 on the particles that go into the \MET calculation than the jets that
 go into the \MHT threshold. Therefore, a requirement on the ratio of
 these two variables helps to remove the background from physics
-objects
+objects 
 that fall below threshold. The extent to which this can remove the
 remaining \QCD multijet background after the \alphat and \bdphi cuts
 is shown in Fig.~\ref{fig:mhtDivMet}, where a typical requirement is
@@ -613,7 +617,14 @@ very high rate of \QCD multijet processes. To select for events with
 significant hadronic activity and missing energy, triggers are used
 that rely on the \HT and \MHT of the events. Additionally, including
 topological variables, such as \alphat, in the \HLT allow events to be
-collected with $\HT$ as low as $200~\gev$.
+collected with $\HT$ as low as $200~\gev$. 
+
+So the rate of events that is processed by the \HLT is not too high,
+\HLT triggers are seeded with a Level-1 trigger requirement that is
+based on \HT or \MET. The upgrade of the hadronic trigger algorithms,
+described in Chapter~\ref{chap:l1trig}, has allowed low thresholds to
+be maintained in the challenging Run~2 environment. The exact
+requirements made are given in Tab.~\ref{tab:triggers}.
 
 To collect events that are of general use to hadronic analyses, the
 $\HT$ of each event is reconstructed within the \HLT. This is carried
@@ -684,20 +695,19 @@ significant hadronic activity and missing energy, a pre-selection is
 carried out on all events considered in the signal and control
 regions. It is described within this section.
 
-Events are required to contain at least one $p_T>100$~GeV jet,
-with all other jets being considered if they have $p_T>40$~GeV and are
-well reconstructed in the central region, $|\eta|<3$. If any jets
-fall outside the $\eta$ range, the event is vetoed. This ensures there
-is no significant energy deposited within the region of the detector
-with no tracker. As most \BSM physics scenarios result in the
-production of particles at a high mass scale, they are expected to deposit
-most of their energy centrally. Therefore, this \emph{forward jet
-veto} does not significantly effect the signal efficiency for most
-models. The \QCD multijet background consists of many
-soft scattering events, which typically deposit a significant
+Events are required to contain at least one $p_T>100$~GeV jet, with
+all other jets being considered if they have $p_T>40$~GeV and are well
+reconstructed in the central region, $|\eta|<3$. If any jets fall
+outside the $\eta$ range, the event is vetoed. This ensures there is
+no significant energy deposited within the region of the detector with
+no tracker. As most \BSM physics scenarios result in the production of
+particles at a high mass scale, they are more likely to deposit their
+energy centrally than many of the \SM backgrounds. Therefore, this
+\emph{forward jet veto} does not significantly effect the signal
+efficiency for most models. The \QCD multijet background consists of
+many soft scattering events, which typically deposit a significant
 proportion of energy within the forward region. As this is the case,
-the forward jet veto also helps to reduce the multijet
-background.
+the forward jet veto also helps to reduce the multijet background.
 
 Significant hadronic activity is selected by requiring $H_T>200$~GeV.
 This cut is primarily motivated by the trigger threshold, it is the
@@ -875,7 +885,7 @@ cases in which the lepton is not properly reconstructed. Extrapolation
 from these control regions with guidance from simulation is then used
 to estimate the background counts in the signal region, as described
 in Chapter~\ref{chap:backgroundPred}. The pre-selection criteria
-is applied to each control region and ensures they are in a similar
+are applied to each control region, which ensures they are in a similar
 phase-space to the signal region. As the requirement of an isolated
 lepton or photon already selects electroweak processes and rejects
 \QCD multijet processes, there is no need for an \alphat or \bdphi
@@ -898,7 +908,7 @@ in the signal region.
 To help ensure events containing W bosons are selected, a requirement
 is also made on the transverse mass of the W candidate. It is
 approximated by taking the transverse mass between the \MET and the
-muon, and is then required to be compatible with the muon mass,
+muon, and is then required to be compatible with the W mass,
 $30<M_T(\mu,\MET)<125~\gev$. This effectively suppresses any residual
 \QCD multijet background that pass the muon requirement.
 %plots??
