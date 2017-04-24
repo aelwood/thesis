@@ -46,6 +46,7 @@
 
 %% Start the document
 \begin{document}
+%\pagenumbering{arabic}
 
 %% Define the un-numbered front matter (cover pages, rubrik and table of contents)
 \begin{frontmatter}
@@ -55,27 +56,28 @@
 %% Start the content body of the thesis
 \begin{mainmatter}
   %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
-  % \input{introduction}
-  % \input{theory}
-  % \input{detector}
-  % \input{reconstruction}
-  % \input{l1trig}
+  \input{introduction}
+  \input{theory}
+  \input{detector}
+  \input{reconstruction}
+  \input{l1trig}
   \input{eventSelection}
   \input{backgroundPred}
   \input{results}
   \input{conclusion}
 \end{mainmatter}
 
-%% Produce the appendices
-\begin{appendices}
-  \input{appendices}
-\end{appendices}
-
 %% Produce the un-numbered back matter (e.g. colophon,
 %% bibliography, tables of figures etc., index...)
 \begin{backmatter}
   \input{backmatter}
 \end{backmatter}
+
+%% Produce the appendices
+\begin{appendices}
+  \input{appendices}
+\end{appendices}
+
 
 %% Close
 \end{document}
