@@ -40,7 +40,10 @@
   pdfsubject = {Adam Elwood's PhD Thesis},
   pdfkeywords = {CMS, supersymmetry, physics, LHC, trigger},
   pdfauthor = {\textcopyright\ Adam Elwood}
+  linkcolor=black,
+  colorlinks=false
 }}{}
+%hidelinks=true,
 \makeatother
 
 
@@ -67,17 +70,16 @@
   \input{conclusion}
 \end{mainmatter}
 
-%% Produce the un-numbered back matter (e.g. colophon,
-%% bibliography, tables of figures etc., index...)
-\begin{backmatter}
-  \input{backmatter}
-\end{backmatter}
-
 %% Produce the appendices
 \begin{appendices}
   \input{appendices}
 \end{appendices}
 
+%% Produce the un-numbered back matter (e.g. colophon,
+%% bibliography, tables of figures etc., index...)
+\begin{backmatter}
+  \input{backmatter}
+\end{backmatter}
 
 %% Close
 \end{document}
