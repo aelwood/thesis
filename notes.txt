@@ -25,10 +25,16 @@
 
     *****************
     Remaining bits to do:
-      - Uncolour hyperlinks
-      - Tidy up other QCD plots
-        - add HT to the QCD yield plots
-      - Check references
+
+      - Sort out references
+      - read through
+
+      then...
+
+      send to alex with the declaration form for him to sign
+      ask him to check:
+        - Abstract, acknowledgements, declaration
+        - Bibliography style
 
     optional:
       - say something about compressed spectra in results?
