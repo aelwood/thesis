@@ -1,7 +1,7 @@
 \documentclass[12pt]{scrartcl}
 \usepackage{maybemath,xspace,setspace,fancyvrb,fancybox}
 \usepackage{a4wide,url,relsize,underscore}
-\usepackage[colorlinks=true,bookmarks=true]{hyperref}
+\usepackage[colorlinks=false,bookmarks=true,hidelinks]{hyperref}
 \newcommand{\maybemath}{\texttt{maybemath}\xspace}
 \newcommand{\hepthesis}{\texttt{hepthesis}\xspace}
 
@@ -261,8 +261,8 @@ The |hyper| option is used to activate the |hyperref| package, with some reasona
 sensible default options. Essentially, it's equivalent to putting
 %
 \begin{snippet}
-\usepackage[colorlinks=true,pdfpagemode=FullScreen, \
-            bookmarks=true]{hyperref}
+\usepackage[colorlinks=false,pdfpagemode=FullScreen, \
+            bookmarks=true,hidelinks]{hyperref}
 \end{snippet}
 %
 in the preamble of your document.

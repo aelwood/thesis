@@ -8,7 +8,7 @@
 %%For Cambridge soft-bound version
 %\documentclass[hyperpdf,bindnopdf]{hepthesis}
 %% For Cambridge hard-bound version (must be one-sided)
-\documentclass[hyperpdf,oneside]{hepthesis}
+\documentclass[hyperpdf,oneside,hidelinks]{hepthesis}
 
 %% Load special font packages here if you wish
 %\usepackage{lmodern}
@@ -41,10 +41,12 @@
   pdfsubject = {Adam Elwood's PhD Thesis},
   pdfkeywords = {CMS, supersymmetry, physics, LHC, trigger},
   pdfauthor = {\textcopyright\ Adam Elwood}
-  linkcolor=black,
-  colorlinks=false
+  colorlinks=false,
+  linkcolor=black
 }}{}
 \makeatother
+% citecolor=black,
+% urlcolor=black
 
 
 %% Start the document
