@@ -2,7 +2,7 @@
 \label{chap:selection}
 
 Given the theoretical motivation for \BSM physics presented in
-Chapter~\ref{chap:theory}, the next Chapters of this thesis describe a
+Chapter~\ref{chap:theory}, the next chapters of this thesis describe a
 search for \SUSY with the \CMS detector in $\sqrt{s}=13~\tev$ proton collisions
 produced by the \LHC. The analysis is designed to target \SUSY
 produced through a strong force proton interaction that decays hadronically via
@@ -29,14 +29,14 @@ required to have significant hadronic activity and missing momentum.
 
 
 %%%%%%%%%%%%%%%%%%%%
-\section{Challenges for a hadronic BSM search}
+\section{Challenges for a BSM search with jets and \MET}
 \label{sec:challenge}
 
 %main challenge in limiting and understanding backgrounds
 The main challenge for a \BSM search is in limiting and
 understanding the backgrounds, while maximising acceptance to a wide
 range of potential \BSM signals. Within the analysis presented in this
-Chapter the backgrounds are considered in two separate categories,
+chapter, the backgrounds are considered in two separate categories,
 either as coming from a \QCD multijet process or from another \SM process
 with neutrinos in the final state. As the search can look for generic
 signatures that are indicative of \BSM processes, considerations of
@@ -76,7 +76,7 @@ is below a specific selection threshold. }
 \end{itemize}
 
 Various techniques are applied to reduce the impact of these
-effects, as described throughout this Chapter. Due to the nature of
+effects, as described throughout this chapter. Due to the nature of
 these effects, which are often time dependent, they cannot be fully
 accounted for in simulation. This fact, coupled with the difficulty in
 accurately simulating \QCD processes, due to uncertainties in the
@@ -203,7 +203,7 @@ source of \MET, they will not be back-to-back and generally $\alphat>0.5$.
 
 For events with more than two jets, a \emph{pseudo-dijet} system is
 formed by summing jets vectorially to combine them.  The system chosen
-is one that minimises $|\Delta E_T|$, the difference between the $E_T$
+is one that minimises $\Delta E_T$, the difference between the $E_T$
 of each pseudo-jet, where $E_T$ is the scalar sum of the transverse
 energies of all the jets in each pseudo-jet. This form of clustering
 is chosen as it forms the most balanced configuration, making the
@@ -266,7 +266,8 @@ typically boosted along the jet direction. In these cases the \bdphi
 helps to reject the \QCD background that may have passed an $\alphat$
 cut. This can happen in events with more than two jets, where the
 jet collinear to the \MET is combined into a pseudojet in the \alphat
-calculation in a way that masks the fact that it is mismeasured. The
+calculation in a way that masks fact that there is \MET along a jet
+axis. The
 \bdphi distribution for multijet events and the remaining \SM
 backgrounds is shown in Fig.~\ref{fig:bdphi}. A requirement on \bdphi
 above $\sim 0.5$ will significantly reduce any \QCD multijet
@@ -371,7 +372,7 @@ distribution of angular separation Fig.~\ref{fig:shifted_bDPhi_dist}
 is remains unchanged under severe mismeasurement. The \dphimhtj
 variable is sensitive to such mismeasurement as both \mht and the rank
 of the leading four jets are affected, resulting in a broader
-distribution with increased leakage
+distribution with increased leakage, shown in
 Fig.~\ref{fig:shifted_DPhiMht_dist}.
 
 \begin{figure}[!h]
@@ -414,9 +415,7 @@ $\mhtmet<1.25$.
 		\includegraphics[width=0.5\linewidth]{figs/analysis/eventSelection/mht40_pt_Div_metNoX_pt_all_all_80X_noOverflow_scaled0p6}%alphaT1_bkgd}
 	\end{center}
   \caption{The \mhtmet distribution for \MC simulation with
-  2.3~\ifb of $\sqrt{s}=13~\tev$ data overlaid. The
-  normalisation of the \MC simulation is scaled so the data and \MC
-  match.}
+  2.3~\ifb of $\sqrt{s}=13~\tev$ data overlaid.}
 	\label{fig:mhtDivMet}
 \end{figure}
 
@@ -439,12 +438,12 @@ are not fully reconstructed.
 \subsection{Jets}
 \label{sec:evSel_jets}
 
-Jets are defined as sets of \PF candidates clustered by
-the anti-$k_{T}$ jet clustering algorithm with
-a distance parameter of 0.4. Additionally, \ac{CHS} is applied, charged
-hadrons that can be traced back to \PU vertices are not clustered. The
-four-vectors of the jets are then corrected with the procedure
-outlined in Sec.~\ref{sec:reco_jec}.
+Jets are defined as sets of \PF candidates clustered by the
+anti-$k_{T}$ jet clustering algorithm with a distance parameter of 0.4
+and they are cross-cleaned of leptons. Additionally, \ac{CHS} is
+applied, charged hadrons that can be traced back to \PU vertices are
+not clustered. The four-vectors of the jets are then corrected with
+the procedure outlined in Sec.~\ref{sec:reco_jec}.
 
 The \emph{loose} working point jet quality criteria is chosen, defined
 by the selections listed in Tab.~\ref{tab:loose-jet-id}. All jets are
@@ -581,9 +580,7 @@ A single isolated track comprises a charged \PF candidate with $\Pt >
 isolation is determined from the sum of the \Pt of the charged \PF
 candidates within $\Delta R < 0.3$. It is useful for identifying W
 bosons through their leptonic decays, when the lepton is not fully
-reconstructed.% W $\rightarrow$ $\mu \nu$, W $\rightarrow$ $e\nu$, and
-%W $\rightarrow$ $\tau$($\rightarrow l$) $\nu$.  
-Single prong decays of
+reconstructed. Single prong decays of
 the tau lepton can also be identified: $\tau$
 $\rightarrow$ h$^{\pm}$ + n$\pi^{0}$ $\nu$. 
 %Events in the signal region and all control regions (ignoring the
@@ -928,8 +925,8 @@ is vetoed.
 
 To maximise the selection of events containing Z bosons the
 invariant mass of the two muons is required to be compatible with the
-Z mass, $m_Z$. Events are used if they are within a 25~\gev mass window,
-$m_Z-25<M_{\mu_1\mu_2}<m_Z+25~\gev$.
+Z mass. Events are used if they are within a 25~\gev mass window,
+$66.2<M_{\mu_1\mu_2}<116.2~\gev$.
 
 \subsection{The \gj control region}
 
@@ -943,7 +940,7 @@ $|\eta|<1.45$. This selection also maintains a high trigger
 efficiency, the photon trigger rate is significantly greater than the
 muon rate so has a higher \pT threshold. To ensure the photon did not
 originate from a hadronic jet, events with $\Delta
-R(\mathrm{jet},\gamma)<0.5$ are vetoed. Events containing any photons
+R(\mathrm{jet},\gamma)<1.0$ are vetoed. Events containing any photons
 or lepton other than the single selected photon are vetoed. Photon
 samples are more easily contaminated with misidentification of \QCD
 multijet events than the muon samples. To mitigate this and maintain a
