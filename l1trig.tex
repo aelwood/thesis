@@ -35,7 +35,7 @@ every bunch
 crossing is analysed in as much detail as possible. To be able to
 carry out this sort of processing, the Level-1 trigger makes use of custom
 \FPGA boards, as described in Sec.~\ref{sec:triggers}. The complexity
-and structure of the trigger algorithms is therefore limited to ensure
+and structure of the trigger algorithms is limited to ensure
 they can run quickly enough on the \FPGA boards. An upgrade to the
 trigger hardware therefore allows more sophisticated algorithms to be
 carried out, while still being able to process every bunch crossing.
@@ -51,7 +51,7 @@ processing different sections of the calorimeter in separate boards,
 necessitating duplication of information at the detector section
 boundaries. However, by time multiplexing the calorimeter data, it is
 possible to have individual \FPGA boards that each process one bunch
-crossing with minimal information duplication. To achieve this 10
+crossing with minimal information duplication. To achieve this, 10
 \FPGA boards are utilised in a round-robin configuration. The data
 collected from the first bunch crossing is processed by one board, the
 data from the second bunch crossing by another board and so on. Each
@@ -61,7 +61,13 @@ crossing. This would not be possible without the timing information
 provided by time multiplexing the data. As well as increasing the
 total possible information bandwidth, this allows greater flexibility
 in the algorithms used as each \FPGA has access to the full event
-information \cite{1748-0221-9-10-C10034,1748-0221-7-01-C01060}. 
+information \cite{1748-0221-9-10-C10034,1748-0221-7-01-C01060}. The
+upgrade architecture of the Level-1 trigger is therefore that of a
+\TMT, a representation of the difference between this architecture and
+that of the \ac{GCT} can be seen in Fig.~\ref{fig:tmt}. The hardware
+is also upgraded, exploiting the recent technological improvement in
+the performance of \FPGA processors and high-speed optical links
+\cite{tp}.
 
 \begin{figure}
   \centering
@@ -77,12 +83,6 @@ information \cite{1748-0221-9-10-C10034,1748-0221-7-01-C01060}.
   rather than just parts of the detector for each board \cite{1748-0221-9-10-C10034}}
   \label{fig:tmt}
 \end{figure}
-
-The upgrade to the Level-1 trigger exploits the recent technological
-improvement in the performance of \FPGA processors and high-speed
-optical links \cite{tp}. The upgrade architecture is that of a \TMT, a
-representation of the difference between this architecture and that of
-the \ac{GCT} can be seen in Fig.~\ref{fig:tmt}. 
 
 The inputs to the Calorimeter Trigger from the various \ECAL and \HCAL
 components are split into a $56\times 72$ grid of \TTs in $\eta$ and
@@ -128,13 +128,13 @@ in Fig.~\ref{fig:sunnyJim}.
 To make use of the potential brought by the Level-1 trigger upgrade,
 new trigger algorithms are developed to improve the selection of
 interesting physics processes. With a better view of the substructure
-of energy deposits within the calorimeters the identification of three
+of energy deposits within the calorimeters, the identification of three
 pronged tau jets and isolated electrons can be significantly improved,
 for example \cite{egllr,taullr}. 
 
 One area in which algorithm improvements can have a significant impact
 is in the jet finding algorithm. As the Level-1 trigger must be of a
-fixed latency, it cannot make use of an iterative algorithm, such as
+fixed latency, it cannot make use of an iterative algorithm such as
 those used during offline jet-finding (described in
 Sec.~\ref{sec:jets_reco}). In the algorithm used during Run~1, the jet
 candidates are created from a $3\times3$ \ac{RCT} region sliding
@@ -147,10 +147,10 @@ reconstruction of jets originating from \PU, the central region of the
 jet finder is also required to exceed a minimum energy, known as the
 \emph{seed threshold}. Due to latency and processing power
 constraints, there is no way in which contribution to the energy of
-the jet from \PU is subtracted dynamically. Along with the relatively
+the jet from \PU can be subtracted dynamically. Along with the relatively
 large jet size, this means the performance of the algorithm will be
 severely reduced by the conditions present during Run~2. An upgrade
-will provide the extra processing power to carry out a dynamic \PUS,
+provides the extra processing power to carry out a dynamic \PUS,
 correcting the energy of each jet from the influence of \PU. The
 increased position resolution will also allow for a more accurate
 determination of the direction of the jets.
@@ -158,9 +158,9 @@ determination of the direction of the jets.
 Once a jet algorithm is chosen, the jets can be used to make Level-1
 trigger decisions. This typically involves selecting events that are
 observed to have jets, or sums of jets, with an energy above a certain
-threshold. The particular selection made on the Level-1 trigger is
+threshold. The selection made within the Level-1 trigger is
 designed to pick out interesting physical processes, while removing
-the background events. The particular configuration of jets that lead
+background events. The particular configuration of jets that lead
 to an acceptance of an event is known as a \emph{trigger}. For
 example, a single-jet trigger would require at least one jet above a
 certain \pT threshold, or a quad-jet trigger would require at least
@@ -206,8 +206,8 @@ The veto conditions applied on the central \TT ensure that no two
 overlapping jets are reconstructed, avoiding the duplication of energy
 deposits. However, the algorithm can introduce inefficiencies in very
 specific jet topologies. In these cases a high energy \TT vetoes a
-medium energy \TT which then vetoes a lower energy \TT. In this case
-the medium \TT is included in the jet constructed by the high energy
+medium energy \TT which then vetoes a lower energy \TT. 
+The medium energy \TT is included in the jet constructed by the high energy
 \TT, however the lower energy \TT is lost. This is not usually a
 problem when making decisions with the Level-1 trigger, as the high
 energy \TT will usually ensure that the event is triggered, despite
@@ -260,7 +260,7 @@ of the detector acceptance.
 Along with finding jets in an event, the Level-1 trigger is required
 to calculate energy sums, analogous to those discussed in
 Sec.~\ref{sec:met_reco}.  These energy sums can take either the jets
-or \TTs as input. They currently include:
+or \TTs as input. They include:
 \begin{itemize}
 \item{total $E_T$, the scalar sum of the transverse energy in all the
 \TTs}
@@ -277,7 +277,7 @@ or \TTs as input. They currently include:
  
 On average, the decays from \PU are expected to be isotropically
 distributed around the detector. However, there will be significant
-event-by-event differences due to poisson fluctuations in the number
+event-by-event differences due to Poisson fluctuations in the number
 of \PU collisions. While the number of simultaneous interactions is
 such that these fluctuations are significant, it is advantageous to
 correct for the \PU on a per-event basis. To be able to remove the
@@ -285,7 +285,7 @@ effects of \PU in the Level-1 trigger there needs to be a way to remove
 the objects that originate from \PU. Additionally, an
 estimate of the average energy deposited in each event should be used
 to correct the $E_T$ of the remaining objects. These procedures are
-known collectively as \emph{\PUS}.
+known collectively as \emph{\acf{PUS}}.
 
 It is observed that the density of decays from \PU 
 depend on their position in $\eta$ \cite{Cacciari2011}. This is
@@ -403,11 +403,12 @@ been applied in the analysis of heavy ion collisions at the \LHC
 	\end{center}
 \end{figure}
 
-This approach only works for correcting isolated jets, if one jet is
-in the vicinity of another the energy in the donut can be increased to
+This approach only works for correcting isolated jets, if one jet from
+the hard-scatter is
+in the vicinity of another, the energy in the donut can be increased to
 above that of \PU. To mitigate this, only the median two $4\times1$
 \TT strips of the four that make up the donut are used to calculate
-the PU energy density. This reduces the chance that energy from
+the \PU energy density. This reduces the chance that energy from
 another jet will be counted as \PU and also removes strips that have
 very little energy in them from a downward fluctuation in \PU
 contamination. An example of the two strips that could be selected can
@@ -432,11 +433,8 @@ be seen in purple in Fig.~\ref{fig:medianstrips}.
   \label{fig:alldonutstrips}
 \end{figure}
 
-One of the main issues with the donut subtraction algorithm is its
-sensitivity to fluctuations. Contamination from other jets from the
-hard scatter cause too much energy to be subtracted. In the case
-that there are no \PU particles in the donut too little energy is
-subtracted. This is mitigated by taking the median energy two strips
+One of the main issues with the donut subtraction algorithm is this
+sensitivity to fluctuations. It is mitigated by taking the median energy two strips
 but can be further reduced by increasing the area covered by the
 strips. The rings of \TTs can be extended to be three towers wide,
 known as a \emph{chunky} donut and illustrated in
@@ -530,7 +528,8 @@ reconstruction.
 The calibration is performed using QCD dijet \MC simulation with an
 average \PU of 40. Samples were generated with a range of generator
 scales from 10 to 600~\gev. These energies characterise the \pT of the
-leading jet and ensure a wide range of jet energies are available. From this sample \emph{generator jets} are clustered from
+leading jet and ensure a wide range of jet energies are available.
+From this sample, \emph{generator jets} are clustered from
 the truth-level particles, the final result of the procedure
 described in Sec.~\ref{sec:mc_reco}. Clustering is performed with the
 anti-$k_T$ algorithm with $R=0.4$, after removing any muon and
@@ -637,7 +636,7 @@ this case the corrected response was reasonably compatible with unity.
 In future upgrades of the \LHC it is proposed to increase the \PU to
 $\sim 140$. This will provide a much higher instantaneous luminosity,
 but presents a significant challenge for reconstruction. To help
-inform this upgrade the Level-1 jets were produced and calibrated on a
+inform this upgrade, the Level-1 jets were produced and calibrated on a
 sample with an average \PU of 140. The resulting jet response as a
 function of generator jet \pT and Level-1 jet \eta can be seen in
 Fig.~\ref{fig:pu140calibclosure}. The calibration was performed on
@@ -683,7 +682,7 @@ different \PUS algorithms are shown. All of the upgrade Level-1 jet
 algorithms have close to $100\%$ efficiency above $70$~GeV. The
 application of a seed threshold significantly reduces the efficiency
 for low $p_T$ jets, but the donut subtraction does not remove any
-signal jets.
+extra signal jets.
 %Checked matching to gen, dr 32, inefficiencies caused by algorithm - gct bad
 \begin{figure}
 	\begin{center}
@@ -733,8 +732,8 @@ removing low \pT jets that originate from \PU.
 \end{figure}
 
 To characterise the energy resolution of the Level-1 jets with
-different \PUS algorithms, the efficiency turn on curves are plotted
-in Fig.~\ref{fig:turnons}. The lead jet efficiency turn on,
+different \PUS algorithms, the efficiency turn-on curves are plotted
+in Fig.~\ref{fig:turnons}. The lead jet efficiency turn-on,
 Fig.~\ref{fig:leadJetTurnon}, is
 made by matching the generator jets to Level-1 jets, requiring $\Delta
 R<0.5$ and taking the ratio of the matched generator jet $p_T$
@@ -766,7 +765,7 @@ improve the energy resolution of Level-1 $\HT$.
   } \label{fig:turnons}
 \end{figure}
 
-In the turn on curves, a change in offset along the $x$-axis results
+In the turn-on curves, a change in offset along the $x$-axis results
 from a difference in jet energy scale with respect to the generator
 quantity. As the \GCT jets do not have any calibration applied and the
 UCT has a different type of calibration, this can differ
@@ -781,7 +780,7 @@ quantities.
 To better characterise the different Level-1 jet algorithms independently of energy
 scale, the efficiency of selecting events with a particular generator
 level jet quantity is plotted against the rate from a minimum bias
-sample. In each case a range of thresholds for the equivalent Level-1
+sample. In each case, a range of thresholds for the equivalent Level-1
 quantity are scanned through and the rate and efficiency for that
 threshold is plotted. The rate is calculated for an instantaneous luminosity
 of $7\times10^{33}$~cm$^{-2}$s$^{-1}$ with a 50~ns \LHC bunch crossing
@@ -792,10 +791,10 @@ selecting $t\bar{t}$ events containing a generator jet with
 $\pT>150~\gev$ is plotted against the minimum bias rate for an
 equivalent Level-1 threshold. The rate and efficiency are plotted for
 a range of cuts on the lead Level-1 jet for all the jet algorithms
-discussed in this Chapter. In Fig.~\ref{fig:fourthJetTurnon} the
+discussed in this chapter. In Fig.~\ref{fig:fourthJetTurnon} the
 efficiency of selecting events with a fourth leading generator jet
 with $\pT>50~\gev$ are plotted for a range of cuts on the fourth Level-1
-jet. As was observed in the turn on curves, the efficiencies for the
+jet. As was observed in the turn-on curves, the efficiencies for the
 lead jet triggers do not depend so much on the type of \PUS, although
 there is a moderate improvement for all the upgrade algorithms over
 that used in the \GCT. The difference becomes more evident when
@@ -822,7 +821,7 @@ thresholds on the Level-1 $\HT$ is plotted against the minimum bias
 rate. When many jets are summed in this way the application of \PUS
 makes a significant difference. Applying a seed threshold on the
 selected jets performs well. Applying the chunky donut or
-$\rho$-area \PUS methods on top of the seed obtains the best result.
+$\rho$-area \PUS methods on top of a seed threshold obtains the best result.
 
 Figure~\ref{fig:mhtTurnon} shows a similar rate and efficiency curve
 for the \MHT variable. For reference on this plot the \MET rate and
@@ -833,7 +832,7 @@ uses the full granularity \TT information without any clustering it
 has an improved resolution, but loses robustness as the inputs are not
 calibrated and are more susceptible to influence from detector noise.
 Of the rate and efficiency curves constructed from a vector sum of
-jets it is again observed that a seed threshold with chunky donut or
+jets, it is again observed that a seed threshold with chunky donut or
 \rho-area \PUS give the best performance.
 
 \begin{figure}
@@ -886,7 +885,7 @@ scatter with both local and global \PUS methods. The chunky donut
 algorithm performs most effectively for local \PUS. The $\rho$-area
 form of \PUS seems to perform slightly better, but comes with
 significant latency penalties when implemented in hardware. This is
-particularly true when $\rho$-area \PUS is applied with a seed,as two
+particularly true when $\rho$-area \PUS is applied with a seed, as two
 jet collections must be made, those with a seed and those without for
 the $\rho$ calculation. Local forms of \PUS are also more robust
 against localised detector faults, which can lead to issues with the
@@ -897,7 +896,7 @@ $9\times9$ \TT jets with a 2.5~\gev seed threshold and chunky donut
 \section{Firmware emulation and testing}
 \label{sec:emu}
 
-After choosing a promising jet finder algorithm it must be implemented
+After choosing a promising jet finder algorithm, it must be implemented
 within the firmware of the \FPGA boards that will be used within the
 Level-1 trigger. To provide a reference for validation of the
 algorithm in firmware, a version is implemented in software, known as

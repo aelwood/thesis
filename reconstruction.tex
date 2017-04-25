@@ -3,7 +3,8 @@
 
 After the results of proton collisions have been observed in the
 various subdetectors that comprise \CMS, the physical objects produced
-in each collision event are reconstructed. Through this reconstruction
+in each collision event are reconstructed. Through this
+reconstruction,
 an overall analysis of the underlying physical process can be carried
 out. To aid in classifying the types of collision events, \MC
 simulations are also carried out. The reconstruction algorithms and
@@ -25,7 +26,7 @@ determine its momentum. The steps of the algorithm are as follows:
 \begin{itemize}
 \item{Initially two or three hits in the inner layers of the tracker
 are taken as seeds for initial track candidates. Quality
-criteria are applied on the selected hits that retain only promising
+criteria are applied on the selected hits, which retain only promising
 seeds.} 
 \item{Each seed is extrapolated along the expected trajectory using a
 Kalman filter \cite{Fruhwirth:1987fm} with a helical tracking
@@ -59,7 +60,7 @@ transition and endcap regions are defined by the $\eta$ intervals of
 \cite{Chatrchyan:2014fea}}
 \label{fig:tracks_reco} \end{figure}
 
-After charged particle tracks are reconstructed they can be used to
+After charged particle tracks are reconstructed, they can be used to
 infer the positions of the different proton-proton collisions in the
 event, known as interaction vertices. Tracks are required to originate
 from a region that is compatible with the \LHC \emph{beamspot}, the area
@@ -143,7 +144,7 @@ significant deposits in the \HCAL with no associated track.
 
 Electrons and photons interact with the \ECAL in a similar way.
 The reconstruction techniques used for both are therefore very similar, with
-the main difference being the lack of track in photon reconstruction.
+the main difference being the lack of a track in photon reconstruction.
 As electrons interact with the tracker, they lose on average $33\%$ of
 their energy before reaching the \ECAL \cite{1748-0221-10-06-P06005}.
 Most of this energy loss occurs through bremsstrahlung, which has a
@@ -174,7 +175,7 @@ photons are identified through an unmatched supercluster. After
 this, additional selection criteria are applied to suppress
 backgrounds. The major backgrounds come from misreconstructed hadronic
 jets or semi-leptonic decays of heavy quarks. To suppress these
-backgrounds cuts
+backgrounds, cuts
 are made on the ratio of energy deposits in the \HCAL and the \ECAL, the
 difference in direction between the track and supercluster (in the
 case of electrons) and the width of the cluster, which is larger for
@@ -308,7 +309,7 @@ photons or electrons; and at least one charged track.
 \subsection{Jet energy corrections}
 \label{sec:reco_jec}
 
-Due to the imperfect resolution of the \CMS detector the initial
+Due to the imperfect resolution of the \CMS detector, the initial
 measured transverse momentum, $p_T^{raw}$, of a jet does not
 necessarily match the energy of the particle that initiated the jet.
 The difference between the \emph{raw} \pT and the \emph{true} \pT typically
@@ -466,7 +467,7 @@ helps to signficantly improve the \met resolution.
 It is also advantageous to define other energy sums that take only
 jets as input, which are typically better understood and calibrated
 than each unclustered \PF candidate. To gain a measure of the scale of
-hadronic energy in an event the \HT variable is defined as the scalar
+hadronic energy in an event, the \HT variable is defined as the scalar
 sum of jet momenta, $\pT^{\textrm{jet}}$. To gain an alternative
 measure of the missing energy the negative vector sum of jet momenta,
 $\vec{\pT}^{\textrm{jet}}$, denoted  \MHT is defined.
@@ -490,7 +491,7 @@ stages that split up the theoretical simulation and detector modelling
 \cite{Buckley:2011ms}. 
 
 In the first stage, the hard scattering of the colliding constituents,
-\emph{partons} of the incoming protons through electroweak or QCD
+\emph{partons}, of the incoming protons through electroweak or QCD
 interactions is modelled. The fraction of the proton momentum carried
 by each parton is sampled from a \ac{PDF}. This modelling involves a
 calculation with perturbation theory to a fixed order, typically \LO
@@ -502,7 +503,7 @@ carried out. Simulated QCD radiation from the hard scatter decay
 products is carried out until the particles in the shower reach the
 QCD cut-off scale, $\Lambda_{\textrm{QCD}}\sim 1~\gev$, where
 perturbation theory breaks down. After the parton showering the
-remaining particles undergo hadronisation where colourless hadrons are
+remaining particles undergo hadronisation, where colourless hadrons are
 formed and allowed to decay, resulting in \emph{generator-level}
 particles with well defined four-momenta. The hadronisation is carried
 out with MC generators such as \textsc{Pythia} \cite{Sjostrand:2007gs,Sjostrand:2014zea}

@@ -129,7 +129,7 @@ energy of electrons and photons. Surrounding this is the \HCAL that
 absorbs the remaining hadronic particles that have punched through the
 \ECAL. Built around the tracker and calorimeters is the superconducting
 solenoid. In the final layer are the muon chambers and iron return
-yoke. The chambers are designed to detect the presence of muons that
+yoke. The chambers are designed to detect the presence of muons, which
 will not be absorbed by the central components of the detector. The
 data from all these subdetectors are read out by dedicated front end
 electronics and passed through the \CMS trigger system, which
@@ -141,10 +141,10 @@ interpreted in a three dimensional coordinate system that originates
 from the centre of the detector. The $x$-axis points to the
 centre of the \LHC ring, the $y$-axis points vertically upwards and
 the $z$-axis points along the direction of the \LHC beam pipe. It is
-then helpful to define the azimuthal angle $\phi$ which is in the
+then helpful to define the azimuthal angle, $\phi$, which is in the
 $x$-$y$ plane and measured relative to the $x$-axis. Measurements of
 momentum and energy in this plane are described as transverse and
-known as \pt and \Et respectively. The polar angle $\theta$ is then
+known as \pt and \Et respectively. The polar angle, $\theta$, is then
 defined as relative to the $z$-axis. This angle is used to construct
 the pseudorapidity, defined as $\eta=-\ln(\tan(\theta/2))$. Distances in
 the $\eta$-$\phi$ plane are then given as $\Delta R =
@@ -292,7 +292,7 @@ replaces the plastic due to the very high radiation environment
 present in the forward region of the detector. The total time to
 collect a \HCAL signal pulse is large with respect to the collision
 rate of the \LHC, only $68\%$ of the pulse is collected within 25~ns.
-This leads to cases of \ac{OOTPU} where signal from a bunch
+This leads to cases of \ac{OOTPU}, where signal from a bunch
 crossing can influence the read out of future bunch crossings. This
 is also an issue for the read-out from the \ECAL.
 
@@ -332,8 +332,8 @@ tiles in the \ac{HB} and \ac{HE}.
 
 \subsection{The muon system} 
 
-As muons are heavier than electrons they are minimally ionising,
-losing little energy via bremsstrahlung. They therefore mostly pass
+As muons are heavier than electrons, they are minimally ionising and
+lose little energy through bremsstrahlung. They therefore mostly pass
 through the \ECAL and \HCAL. As muons are a key component of many
 electroweak decays, \CMS has a dedicated muon system interleaved with
 the iron return yoke surrounding the solenoid. This muon system
@@ -390,7 +390,7 @@ rate of $<0.1\%$ for $\pT<100\gev$ muons.
 
 At 40\mhz, the rate of collisions at the LHC is so high that it would
 be too computationally expensive to reconstruct and store the
-$O(1)$~MB detector read-out for every bunch crossing. As the majority
+$\sim1$~MB detector read-out for every bunch crossing. As the majority
 of proton collisions at the \LHC are soft scattering QCD processes,
 they are not useful in the search for new physics at the electroweak
 energy scale. This necessitates a multi-level trigger system that is
@@ -427,7 +427,7 @@ muons with a reasonably high energy to aid the trigger decision.
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.8\linewidth]{figs/cms_triggerflowchart} \end{center}
-\caption{ Dataflow of the trigger used to collect data in Run~2 of the
+\caption{ Data-flow of the Level-1 trigger used to collect data in Run~2 of the
 \LHC \cite{Tapper:1556311}.}
 \label{fig:l1t} \end{figure}
 
@@ -445,8 +445,8 @@ Events that are finally accepted by the \ac{HLT} are then transmitted
 to the Tier-0 data centre, located at CERN, for permanent storage and
 event reconstruction. This data is distributed and stored around the
 world through a GRID computing infrastructure \cite{Bayatyan:838359}.
-This infrastructure has a four tier organisation that represents the importance
-and accessibility of the user at each site. From the Tier-0 data are
+This infrastructure has a four tier structure that represents the importance
+and accessibility of the user at each site. From the Tier-0, data are
 transferred to 13 Tier-1 computing centres. These data are then
 available to Tier-2 and Tier-3 sites where offline data analysis can be
 performed by different members of the \CMS collaboration anywhere on
