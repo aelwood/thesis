@@ -32,7 +32,7 @@
 
       send to alex with the declaration form for him to sign
       ask him to check:
-        - Abstract, acknowledgements, declaration
+        - Abstract, declaration
         - Bibliography style
 
     optional:
@@ -131,7 +131,10 @@ robyn's thesis)
 
 - know something about the compressed spectra improvements
 
+- how tag and probe works for b jets?
+
 Recommendations from Alex:
 
   - justify why high mass scale events deposit their energy centrally
   - know all the MET filters well!!, ie sec 6.6
+

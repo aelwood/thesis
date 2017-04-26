@@ -16,7 +16,7 @@ described in Sec.~\ref{sec:trigStrat}.
 \label{sec:simEvents}
 
 A selection of simulated \MC samples are used to help estimate the \SM
-backgrounds and possible signal within the analysis. The samples are
+backgrounds and possible signal yields within the analysis. The samples are
 generated with the methods discussed in Sec.~\ref{sec:mc_reco}. The
 majority of samples, including the signal model samples, are simulated
 with \textsc{MadGraph5} \cite{Alwall:2011uj,Alwall:2014hca} at \LO
@@ -34,14 +34,14 @@ are calculated at \NLO and \NNLO precision
 The detector response is simulated using \textsc{Geant4}
 \cite{Agostinelli:2002hh}.
 
-As the simulations cannot fully recreate all the effects within data a
+As the simulations cannot fully recreate all the effects within data, a
 series of corrections are made on the event yields predicted by the
 simulation. They are described in the rest of this section.
 
 \subsection{Pileup reweighting}
 
-When the \MC samples are generated the number of \PU collisions are
-simulated as Poisson distributed about a chosen rate that is expected
+When the \MC samples are generated, the number of \PU collisions are
+simulated at a chosen rate that is expected
 to be close to that obtained in data. As the simulation is produced
 before the data is collected and the true \PU distribution varies with
 time, the actual distribution cannot be accurately simulated. To
@@ -55,7 +55,7 @@ correct for this effect the \MC events are reweighted to ensure their
 There are often small differences between the efficiencies of finding
 physics objects that are simulated to those that are observed in data.
 The difference between these efficiencies is measured using a known
-data sample, such as \zmumu events to measure muon efficiencies. A
+data sample, such as \zmumu events, to measure muon efficiencies. A
 scale factor is then applied to the \MC to reweight the simulated
 events in a way that means they more accurately simulate the
 efficiency of finding various physics objects. These scale factors are
@@ -122,8 +122,9 @@ to determine the admixture of the different processes in each of the
 analysis regions.  It is for this reason that these corrections are
 important.
 
-To derive the correction in the \gj control region, a sideband is used
-in the \alphat variable. The same selection is applied as for the \gj
+To derive the correction in the \gj control region, a sideband is
+defined 
+with the \alphat variable. The same selection is applied as for the \gj
 control region, other than the requirement that $0.50<\alphat<0.52$.
 Within the \mj and \mmj control regions a sideband in \MHT is used,
 requiring $100<\MHT<130~\gev$. A maximum likelihood fit across all the
@@ -165,10 +166,10 @@ corrections described in this section have been applied.
 The accurate determination of the \SM backgrounds is of utmost
 importance when searching for the indications of \BSM phenomena. So as
 not to rely too heavily on the modelling of the backgrounds in
-simulation, a \emph{data-driven} approach is utilised wherever
-possible. As this analysis is carried out with the requirement of
-significant hadronic activity, mismodelling effects are particularly
-prevalent due to the difficulties in simulating strong-force
+simulation, a \emph{data-driven} approach is utilised. As this
+analysis is carried out with the requirement of significant hadronic
+activity, mismodelling effects are particularly prevalent due to the
+difficulties in simulating strong-force
 interactions to a high degree of accuracy.
 
 Given that the analysis selections are chosen to reduce the \QCD
@@ -192,7 +193,7 @@ obtained from \MC simulation for the same bin of the signal region and
 a given control sample:
 \begin{equation}
   \label{equ:tf-ratio}
-  {\rm TF} = \frac{N_{\rm MC}^{\rm signal}(\HT,\nj,\nb)}{N_{\rm
+  {\rm TF}(\HT,\nj,\nb) = \frac{N_{\rm MC}^{\rm signal}(\HT,\nj,\nb)}{N_{\rm
       MC}^{\rm control}(\HT,\nj,\nb)}, 
 \end{equation}
 where $N_{\rm MC}^{\rm signal}$ is the total simulated event yield for
@@ -214,12 +215,17 @@ where $\nobs^{\rm control}$ is the number of events that are observed
 within the bin of a control region.
 
 When constructing the \TFs, the \MC expectations for the following \SM
-processes are considered: W + jets ($N_{\rm W}$), \ttbar + jets
-($N_{\ttbar}$), \znunu\ + jets ($N_{\znunu}$), DY + jets ($N_{\mathrm
-DY}$), \gj ($N_\gamma$), single top + jets production via the $s$,
-$t$, and $tW$-channels ($N_{\rm top}$), $WW+$~jets, $WZ~+$~jets, and
-$ZZ + \textrm{jets}$ ($N_{\rm di-boson}$), and $\ttbar$V or $\ttbar$H
-($N_{\rm {\ttbar}X}$). 
+processes are considered: W + jets, \ttbar + jets, \znunu\ + jets, DY
++ jets, \gj, single top + jets production via the $s$, $t$, and
+$tW$-channels, $WW+$~jets, $WZ~+$~jets, and $ZZ + \textrm{jets}$, and
+$\ttbar$V or $\ttbar$H. 
+% When constructing the \TFs, the \MC expectations for the following \SM
+% processes are considered: W + jets ($N_{\rm W}$), \ttbar + jets
+% ($N_{\ttbar}$), \znunu\ + jets ($N_{\znunu}$), DY + jets ($N_{\mathrm
+% DY}$), \gj ($N_\gamma$), single top + jets production via the $s$,
+% $t$, and $tW$-channels ($N_{\rm top}$), $WW+$~jets, $WZ~+$~jets, and
+% $ZZ + \textrm{jets}$ ($N_{\rm di-boson}$), and $\ttbar$V or $\ttbar$H
+% ($N_{\rm {\ttbar}X}$). 
 
 The \TFs account for differences in cross sections, acceptance,
 reconstruction efficiencies and kinematic requirements between the
@@ -362,9 +368,10 @@ in each (\HT,\nj,\nb) category is considered valid.
   \\
   \caption{
   The distribution of the significance of the deviation from zero of
-  the linear parameters of the . As all these pulls for each of the
-  control regions are statistically compatible with one, a linear
-  hypothesis for the \MHT data/\MC ratio is valid.}
+  the linear parameters of the data/\MC fits. The pull is defined as
+  the value of the parameter divided by its error. As all these pulls
+  for each of the control regions are statistically compatible with
+  zero, a linear hypothesis for the \MHT data/\MC ratio is valid.}
   \label{fig:pulls} 
 \end{figure}
 
@@ -407,7 +414,7 @@ contaminated, but still close in phase space to the signal region. To
 achieve this, the signal region selection is applied with the
 requirements on two of the variables used to remove the multijet
 background inverted. They are defined by the requirement 
-$\mhtmet>1.25$, $\bdphi<0.5$ and both these requirements as
+$\mhtmet>1.25$, $\bdphi<0.5$ and both these requirements, as
 illustrated in Table~\ref{tab:qcd_sidebands}. 
 
 For the core \QCD multijet background prediction, the \mhtmet sideband
@@ -424,7 +431,7 @@ transfer factor, the \bdphi and double sidebands are used.
   \begin{tabular}{ l|l|l }
                            & $\bdphi < 0.5$           & $\bdphi > 0.5$                  \\[0.2ex]
     \hline
-    $1.25 < \mhtmet < 3.0$ & \textbf{A} Double sideband & \textbf{B} \mhtmet sideband \\[0.2ex]
+    $\mhtmet > 1.25$ & \textbf{A} Double sideband & \textbf{B} \mhtmet sideband \\[0.2ex]
     \hline
     $\mhtmet < 1.25$       & \textbf{C} \bdphi sideband & \textbf{D} Signal region    \\[0.2ex]
   \end{tabular}
@@ -482,13 +489,13 @@ provides an estimate of the level of \QCD multijet events in each
     labelled as described in App.~\ref{app:plotKey}. Also shown in (c)
     is the ratio \rmhtmet for QCD multijets, again determined from
     simulation. Finally, (d) shows the expected number of non-multijet
-    eventse (V+jets and \ttbar, plus other residual non-multijet
+    events (V+jets and \ttbar, plus other residual non-multijet
     backgrounds) that fail the $\mhtmet < 1.25$ requirement, predicted
     using the \TF method and binned according to \njet and \scalht.}
   \label{fig:qcd_plots}
 \end{figure}
 
-The number of counts from \QCD multijet events satisfying and failing the
+The number of counts from simulated \QCD multijet events satisfying and failing the
 requirement $\mhtmet < 1.25$, \rmhtmet, are
 summarised in Fig.~\ref{fig:qcd_pass}, \ref{fig:qcd_fail}, and
 \ref{fig:qcd_ratio}. Figure~\ref{fig:ewk_fail} shows the expected
@@ -500,7 +507,7 @@ predicted with the \TF method.
   \subfloat[Binned data counts in \mhtmet sideband.\label{fig:data_fail}]{
     \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/obsYields_QcdSb}
   } 
-  \subfloat[Predicted QCD counts in \mhtmet sideband.\label{fig:data_corr}]{
+  \subfloat[Predicted QCD counts in \mhtmet sideband, $\mathcal{Q}$.\label{fig:data_corr}]{
     \includegraphics[width=0.5\textwidth]{figs/analysis/qcdMethod/postFitQcdYields_QcdSb}
   } \\
   \subfloat[QCD multijet predictions in the signal region.\label{fig:qcd_pred}]{
@@ -524,7 +531,7 @@ predicted with the \TF method.
     Finally, (d), shows the ratio of expected
     multijet background events in the signal region divided by
     non-multijet backgrounds. The multijet background is therefore
-    shown to be at the percent level.}
+    shown to be below the percent level.}
   \label{fig:qcd_plots2}
 \end{figure}
 
@@ -698,7 +705,7 @@ uncertainties in any theoretical calculations that may be relevant.
 These uncertainties are propagated to each of the \TFs which are of
 interest for the background prediction, namely: $\mj \rightarrow
 (\znunu)$, $\mmj \rightarrow (\znunu)$, $\gj \rightarrow (\znunu)$ and
-$\mj \rightarrow \mathrm{\ttbar+W}$. 
+$\mj \rightarrow \ttbar+\mathrm{W}$. 
 % Due to the fact that the control
 % regions and signal region are finely binned in the same way, the
 % systematics caused by t
@@ -787,7 +794,7 @@ changes are typically in the range of 1-15\%.
   }\\
 
   \caption{\label{fig:tfSyst_jec_muToTtw} The relative change in the
-  $\mj \rightarrow \mathrm{\ttbar+W}$ transfer
+  $\mj \rightarrow \ttbar\mathrm{+W}$ transfer
   factors when varying JEC in MC within its uncertainties, as a function of \scalht (GeV) and jet category. 
   Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. The bins are
     labelled as described in App.~\ref{app:plotKey}.
@@ -1096,8 +1103,8 @@ tests are performed in data using the photon and double-muon control
 regions. The events in the \gj control are used to predict events in
 the \mmj control regions, again using transfer factors from simulation.
 These tests target the modelling of the Z/$\gamma$ ratio in simulation
-and also indirectly test muon/photon acceptance effects, which,
-however, are expected to be sub-dominant and whose uncertainties are
+and also indirectly test muon/photon acceptance effects, which
+are expected to be sub-dominant and whose uncertainties are
 already addressed elsewhere. 
 
 The result are shown in Fig.~\ref{fig:closurePhoToMuMu} as a function
@@ -1139,7 +1146,7 @@ background.
 % The uncertainty derived is therefore driven by the
 % limited statistics available in the control sample. 
 
-The result are shown in Fig.~\ref{fig:closureBTag} as a function of
+The results are shown in Fig.~\ref{fig:closureBTag} as a function of
 \HT and \njet.  The grey band is the systematic uncertainty
 propagated through the analysis, taken as un-correlated per each
 \scalht bin and jet topology (symmetric/asymmetric). The systematic
@@ -1167,21 +1174,21 @@ Along with the uncertainty on the \TFs, described above, additional
 uncertainties in the shape of the \MHT distribution that is taken from
 simulation are derived. For all the known sources of systematic
 uncertainty, discussed in Sec.~\ref{sec:simUnc}, the effect of the $\pm 1\sigma$
-variation is propagated as uncertainty that varies the \MHT shape.
-Due to the fact that the analysis is binned in \HT and \nj bin
-migration effects are minimised and these sources of uncertainty are
-found to be subdominant.
+variation is propagated as an uncertainty that varies the \MHT shape.
+% Due to the fact that the analysis is binned in \HT and \nj, bin
+% migration effects are minimised and these sources of uncertainty are
+% found to be subdominant.
 
 There is also an uncertainty associated with the fact that the \MHT shape
 is taken directly from simulation. To estimate this, a data-driven
 method is devised, based on the validation of the \MHT shapes
 described in Sec.~\ref{sec:mhtDim}. Within the \mj, \mmj and \gj
-control regions the data-simulation ratio of the \MHT shape is
+control regions the data/\MC ratio of the \MHT shape is
 constructed for each (\HT,\nj,\nb) bin. The agreement between the two
 distributions is parameterised with a linear orthogonal polynomial.
 This function is chosen as it allows one to make a linear fit with
-just one parameter as the total overall normalisation is preserved.
-To derive the uncertainty for each of the background sources
+just one parameter, as the total overall normalisation is preserved.
+To derive the uncertainty for each of the background sources,
 a simultaneous fit of the \MHT shapes is performed across
 all the relevant control regions. This gives a value for the fit
 parameter, $p$, which should be compatible with flat, i.e.
@@ -1353,7 +1360,7 @@ samples used is incorporated as an additional nuisance parameter per
 The fit of the likelihood model to find the final result is carried
 out in two steps. Firstly, the predicted background yields in the
 signal region, $b^{\htcat}_{\mathrm{had}}$, are determined with a fit
-in only the control regions, Eq.~\ref{eq:controlLikelihood}. This is
+in only the control regions. This is
 followed by a full fit using the full likelihood model,
 Eq.~\ref{eq:total_likelihood}, taking account of all the correlations
 between the control regions and signal region, along with the
