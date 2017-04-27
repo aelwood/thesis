@@ -9,7 +9,7 @@
 %\documentclass[hyperpdf,bindnopdf]{hepthesis}
 %% For Cambridge hard-bound version (must be one-sided)
 %\documentclass[hyperpdf,oneside,hidelinks]{hepthesis}
-\documentclass[]{hepthesis}
+\documentclass[oneside]{hepthesis}
 
 %% Load special font packages here if you wish
 %\usepackage{lmodern}
@@ -63,13 +63,13 @@
 \begin{mainmatter}
   %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
   \input{introduction}
-  \input{theory}
-  \input{detector}
-  \input{reconstruction}
-  \input{l1trig}
-  \input{eventSelection}
-  \input{backgroundPred}
-  \input{results}
+  % \input{theory}
+  % \input{detector}
+  % \input{reconstruction}
+  % \input{l1trig}
+  % \input{eventSelection}
+  % \input{backgroundPred}
+  % \input{results}
   \input{conclusion}
 \end{mainmatter}
 
