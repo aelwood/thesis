@@ -60,7 +60,7 @@ requirements. The fake missing energy can be introduced in a variety
 of ways:
 \begin{itemize}
 \item{Detector effects leading to inefficiencies, such as jets
-falling into regions of the detector that or uninstrumented or have a
+falling into regions of the detector that are uninstrumented or have a
 reduced response due to hardware issues.}
 \item{Fake additional energy being introduced. This can occur through
 detector malfunctions, for example from problems in the readout
@@ -96,7 +96,7 @@ but must still be accounted for.
 \subsection{Backgrounds from SM processes with genuine
 \MET}
 
-The other class of \SM backgrounds are those produced with genuine
+The other class of \SM backgrounds is those produced with genuine
 \MET. These processes only occur in the \SM through the electroweak
 production of neutrinos. Due to the
 mass scale of the W and Z bosons, they are commonly produced in
@@ -112,7 +112,7 @@ in association with the neutrino that results in the significant \MET.
 Such events will only present a problem when the leptons are not
 reconstructed, or do not appear to be isolated. Additionally, if the W boson
 decays via a \tau-lepton that subsequently decays hadronically, the
-event will not be removed by the lepton veto.  This is a comparably
+event will not be removed by the lepton veto.  This is a comparatively
 small background, however.
 
 The major irreducible background in \BSM searches with \MET comes from 
@@ -266,7 +266,7 @@ typically boosted along the jet direction. In these cases the \bdphi
 helps to reject the \QCD background that may have passed an $\alphat$
 cut. This can happen in events with more than two jets, where the
 jet collinear to the \MET is combined into a pseudojet in the \alphat
-calculation in a way that masks fact that there is \MET along a jet
+calculation in a way that masks the fact that there is \MET along a jet
 axis. The
 \bdphi distribution for multijet events and the remaining \SM
 backgrounds is shown in Fig.~\ref{fig:bdphi}. A requirement on \bdphi
@@ -335,7 +335,7 @@ than for \dphimhtj at the cost of approximately a factor $3$ reduction
 in signal efficiency. The threshold on \bdphi required to give an
 approximately equivalent suppression of QCD achieved with the
 \dphimhtj variable is larger than 1.5, at the cost of a loss of a
-factor $5$ in signal acceptance w.r.t. \bdphi. This also holds true in
+factor $5$ in signal acceptance with respect to \bdphi. This also holds true in
 the extreme case of a high jet multiplicity signal model.
 Despite performing similarly to \bdphi for separating
 the non-multijet from multijet backgrounds, the \dphimhtjall variable
@@ -445,7 +445,7 @@ applied, charged hadrons that can be traced back to \PU vertices are
 not clustered. The four-vectors of the jets are then corrected with
 the procedure outlined in Sec.~\ref{sec:reco_jec}.
 
-The \emph{loose} working point jet quality criteria is chosen, defined
+The \emph{loose} working point jet quality criteria are chosen, defined
 by the selections listed in Tab.~\ref{tab:loose-jet-id}. All jets are
 required to contain at least part of their energy within the \ECAL and
 \HCAL and must consist of at least one of each different type of
@@ -482,7 +482,7 @@ rate of $\sim$10 \% and a b-quark b-tag efficiency of about 60 \%.
 \label{sec:muon-id}
 Two types of selection are made on muons depending on whether they are
 used to carry out the veto in the signal region or used for selecting
-one of the control regions. A tighter criteria is used for the control
+one of the control regions. Tighter criteria are used for the control
 region, muons are required to be well isolated and be
 reconstructed with the global algorithm, as detailed in
 Sec.~\ref{sec:muons_reco}. The muon must consist of a track
@@ -539,7 +539,7 @@ In order to veto electrons a \emph{loose} working point definition
 ratio of \HCAL and \ECAL deposits, criteria to remove photons that
 have converted within the tracker, a minimum number of tracks required
 and kinematic requirements on the deposit within the \ECAL. Electrons
-are also require required to be isolated with the effective-area
+are also required to be isolated with the effective-area
 corrected mini-isolation algorithm.  Isolated electrons are defined by
 $I^{\textrm{rel}}_{\textrm{mini}} < 0.1$. The reconstructed electron
 must have a $\pT>10~\gev$ and be within $|\eta|<2.5$.
@@ -590,7 +590,7 @@ $\rightarrow$ h$^{\pm}$ + n$\pi^{0}$ $\nu$.
 \subsection{Energy sums}
 
 The \MET is reconstructed as described in
-Sec.~\ref{sec:met_reco} and the the Type-I \MET energy correction is applied.
+Sec.~\ref{sec:met_reco} and the Type-I \MET energy correction is applied.
 The \met is used in the definition of 
 the transverse mass of potential W bosons, $M_{T}$, which is in turn used as part of
 the selection criteria that define the single muon control sample 
@@ -614,7 +614,7 @@ around maintaining as low an energy threshold as possible given the
 very high rate of \QCD multijet processes. To select for events with
 significant hadronic activity and missing energy, triggers are used
 that rely on the \HT and \MHT of the events. Additionally, including
-topological variables, such as \alphat, in the \HLT allow events to be
+topological variables, such as \alphat, in the \HLT allows events to be
 collected with $\HT$ as low as $200~\gev$. 
 
 So the rate of events that is processed by the \HLT is not too high,
@@ -806,7 +806,7 @@ a higher \alphat threshold, due to the fact that the multijet
 background falls off as a function of \HT. In the case that events
 have just one identified jet, the value of \alphat is undefined. In
 these \emph{monojet} events there is no \alphat cut. The \bdphi
-variable is also undefined with 40~\gev jets. To get around this issue
+variable is also undefined with $\pT<40~\gev$ jets. To get around this issue
 and provide multijet discrimination in monojet events, the \pT
 threshold on jets used to calculate the \bdphi variable is reduced to
 25~\gev. In the case that there are no other jets between 25 and
@@ -816,7 +816,7 @@ It is observed that the beam halo \MET filter, described in
 Sec.~\ref{sec:preselection}, is ineffective in removing all cases of
 mismeasurement from the signal region. A requirement that the \ac{CHF}
 of the lead jet is above $10\%$ is enough to negate this effect. This
-cut is demonstrated to in Fig.~\ref{fig:leadJetCleaning}. Due to the
+cut is demonstrated in Fig.~\ref{fig:leadJetCleaning}. Due to the
 fact that the proton beam is steered within the horizontal plane of
 the \LHC, beam halo effects manifest themselves at \phi values of $0$
 and $\pi$. The application of the \ac{CHF} cut removes the spikes in
@@ -908,7 +908,7 @@ is also made on the transverse mass of the W candidate. It is
 approximated by taking the transverse mass between the \MET and the
 muon, and is then required to be compatible with the W mass,
 $30<M_T(\mu,\MET)<125~\gev$. This effectively suppresses any residual
-\QCD multijet background that pass the muon requirement.
+\QCD multijet background that passes the muon requirement.
 %plots??
 
 \subsection{The \mmj control region}
@@ -964,7 +964,7 @@ discussed in Sec.~\ref{sec:qcdEstimation}.
 \label{sec:categorisation}
 
 To help to separate signal from background for a wide range of
-different signal hypotheses, events are a categorised based on the
+different signal hypotheses, events are categorised based on the
 number of jets, \nj, their total hadronic energy, \HT, the magnitude
 of the missing hadronic energy, \MHT, and the number of jets tagged as
 a $b$-quark, \nb. These particular variables are chosen because many

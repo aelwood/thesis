@@ -232,7 +232,7 @@ reconstruction efficiencies and kinematic requirements between the
 signal and control regions. One big advantage of using \TFs is that
 any mismodelling effects that are consistent within a particular bin
 across relevant \MC samples will cancel out. It is seen that the
-mismodelling of hadronic effects typically vary as a function of \HT
+mismodelling of hadronic effects typically varies as a function of \HT
 and \nj. An example of this mismodelling is visible in
 Fig.~\ref{fig:distribution_signal}, the disagreement in the data and
 simulation changes as a function of the \HT or \nj. The fact
@@ -266,7 +266,7 @@ backgrounds are predicted with the \mj control sample. This method is
 ultimately implemented within a fitting procedure that is defined
 formally by the likelihood model described in
 Sec.~\ref{sec:likelihood}. This procedure allows the appropriate
-systematic uncertainties to be taken into a way that takes account of
+systematic uncertainties to be included in a way that takes account of
 their correlations across all samples and bins.
 
 To summarise the fitting procedure, the observation in each bin of the
@@ -375,12 +375,12 @@ in each (\HT,\nj,\nb) category is considered valid.
   \label{fig:pulls} 
 \end{figure}
 
-The size of the \MHT bins within the signal region are chosen to
+The sizes of the \MHT bins within the signal region are chosen to
 contain enough data counts within each of the control regions to
-perform the validation. Taking \MHT bin widths of 50~\gev are found
+perform the validation. Taking \MHT bin widths of 50~\gev is found
 to be enough to satisfy this condition, while not being limited by the
 measured \MHT resolution. In most cases the \MHT bins
-are naturally bounded from above by maximum value of \HT in a
+are naturally bounded from above by the maximum value of \HT in a
 particular bin.  However, the highest \HT bin is unbounded from above,
 the final \MHT bin is therefore limited to sit at $\MHT>800~\gev$
 ($\MHT>600~\gev$) for symmetric (asymmetric) topologies to
@@ -584,7 +584,7 @@ defined in Sec.~\ref{sec:bkgdMet}.
 The predictions summarised in Fig.~\ref{fig:qcd_ewk_ratio} show that 
 the \HT-dependent \alphat thresholds defined in Table~\ref{tab:atCut} 
 and the requirement of $\bdphi > 0.5$ suppress the \QCD multijet
-contamination in all bins of the signal region to percent-level or smaller with
+contamination in all bins of the signal region to the percent-level or smaller with
 respect to the total non-multijet background. These predicted multijet events are 
 included as a background contribution to the likelihood model
 described in Sec~\ref{sec:likelihood}.
@@ -603,7 +603,7 @@ signal region.
 Despite using a predominantly data-driven method, the prediction of
 the \QCD contamination relies on the ratio of \QCD counts, \rmhtmet,
 that is derived with simulation. This ratio is validated with data in
-a \QCD enriched sideband, where full signal region selection is used
+a \QCD enriched sideband, where the full signal region selection is used
 other than an inversion of the \bdphi cut to $\bdphi<0.5$. In this
 sideband a data driven estimation of the \QCD counts is carried out in
 two regions, the \bdphi sideband with \mhtmet values less than 1.25
@@ -692,7 +692,7 @@ However, these sort of systematics only encode known and simulated
 sources of systematic uncertainty. To be able to account of unknown
 sources, additional data-driven uncertainties are derived with the
 use of the control samples (Sec.~\ref{sec:closureTests}). After their
-descriptions below, a summary of the all the uncertainties is given in
+descriptions below, a summary of all the uncertainties is given in
 Tab.~\ref{tab:systs}.
 
 \subsection{Uncertainties derived from simulation}
@@ -722,7 +722,7 @@ in the \mj and \mmj control regions on the \TFs is investigated.  As
 the \scalht and jet multiplicity binning is mirrored in signal and
 control regions, the effect of jet energy scale on the \TFs
 is expected to be small.  However, the jet energy scale can still have
-an effect due to jets moving in and out acceptance (above and below
+an effect due to jets moving in and out of acceptance (above and below
 $40\gev$). The relative change in the \TFs is presented as
 a function of \scalht and jet category in
 Fig.~\ref{fig:tfSyst_jec_muToZinv}-\ref{fig:tfSyst_jec_muToTtw}. These
@@ -876,7 +876,7 @@ effect of varying them on the \gj \TF is investigated. To make a
 conservative estimate of the systematic, the uncertainty on this
 correction is taken as the size of the inefficiency. The relative
 change in the \gj transfer factor is presented in
-Fig.~\ref{fig:tfSyst_photonTrigger_gjToZinv} variation is typically in
+Fig.~\ref{fig:tfSyst_photonTrigger_gjToZinv}, the variation is typically in
 the range 0-3\%.
 
 \subsubsection*{Signal trigger uncertainty}
@@ -906,7 +906,7 @@ variation is typically in the range 0-15\%.
 Due to the greater prevalence of \QCD multijet background in the \gj
 control sample, which is expected to be at the $\sim5\%$ level, an
 uncertainty is applied on this contamination. An arbitrarily large
-variation of $\pm 100\%$ on the number of simulated \QCD is chosen and
+variation of $\pm 100\%$ on the number of simulated \QCD events is chosen and
 leads to a systematic variation on the \TFs of at most 5\%
 in the majority of bins. This value is small enough to remain
 subdominant to other uncertainties and is found to be covered in the
@@ -994,7 +994,7 @@ defined as:
 where $N^{\alphat>x}_{obs}$ is the number of observed events that pass
 the \alphat requirement.
 
-The result of these tests are shown in Fig.~\ref{fig:closureAlphaT} as
+The results of the tests are shown in Fig.~\ref{fig:closureAlphaT} as
 a function of \scalht and \njet.  The grey band is the systematic
 uncertainty propagated through the analysis, taken as un-correlated
 per each \scalht bin and jet topology (symmetric/asymmetric). The
@@ -1035,7 +1035,7 @@ ratio in simulation and also indirectly test muon acceptance effects,
 which are expected to be sub-dominant and whose uncertainties are
 already addressed elsewhere.
 
-The result are shown in Fig.~\ref{fig:closureMuToMuMu} as a function
+The results are shown in Fig.~\ref{fig:closureMuToMuMu} as a function
 of \scalht and \njet.  The grey band is the systematic uncertainty
 propagated through the analysis, taken as un-correlated per each
 \scalht bin and jet topology (symmetric/asymmetric). The systematic
@@ -1062,7 +1062,7 @@ derived from these tests is in the range $3-20\%$.
 As the kinematics of $W^+$ and $W^-$ decays are subtly different, a
 data-driven test is introduced to check the modelling of this effect
 in simulation. In this study, carried out with events in the \mj
-control region, yields $\mu^{+}$ events are used to predict the yields
+control region, yields of $\mu^{+}$ events are used to predict the yields
 of $\mu^{-}$ events.  The production mechanism of W bosons from
 $pp$-collisions means high $p_T$ W-bosons are predominantly left
 handed \cite{WPol}.  For high $p_T$ bosons, this implies that $W^+$
@@ -1107,7 +1107,7 @@ and also indirectly test muon/photon acceptance effects, which
 are expected to be sub-dominant and whose uncertainties are
 already addressed elsewhere. 
 
-The result are shown in Fig.~\ref{fig:closurePhoToMuMu} as a function
+The results are shown in Fig.~\ref{fig:closurePhoToMuMu} as a function
 of \scalht and \njet.  The grey band is the systematic uncertainty
 propagated through the analysis, taken as un-correlated per each
 \scalht bin and jet topology (symmetric/asymmetric). The systematic
@@ -1134,7 +1134,7 @@ derived from these tests is in the range $7-15\%$.
 The $0$ b-tag $\rightarrow1$ b-tag data-driven tests in the \mj
 control region probe the sensitivity of the \TFs to the
 relative admixture of events from the \wj and \ttbar processes,
-since they utilise a W-eniched sample to predict a \ttbar-enriched
+since they utilise a W-enriched sample to predict a \ttbar-enriched
 sample.  These tests also indirectly probe the modelling of the
 b-tagging efficiency, although this systematic effect is expected to
 be smaller and is already addressed by the dedicated study presented
@@ -1223,7 +1223,7 @@ dominates over other sources.
 \begin{landscape}
 \begin{table}[h!]
   \caption{Summary of the systematics on the transfer factors considered in the analysis, 
-    with representatives ranges of uncertainties and the correlation assummed, 
+    with representative ranges of uncertainties and the correlation assummed, 
     for the predictions of the $\ttbar$, W and $\znunu$  background
     components.}
   \label{tab:systs}

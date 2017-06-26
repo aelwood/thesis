@@ -191,11 +191,11 @@ matching the area covered by the $R=0.4$ offline jets that are used in
 Run~2. Within a window the central tower is considered as the
 direction of a candidate jet. The candidate is vetoed if any of the
 other \TTs in the square have an energy deposit of either greater than
-or greater than or equal to it. The veto condition is
+or, in some cases, equal to it. The veto condition is
 antisymmetric along the diagonal of the square to prevent \TTs with the
 same energy from vetoing one another. A representation of the window
 considered can be seen in Fig.~\ref{fig:stage2_jetalgo}.  Any \TTs that
-pass this criteria are considered as jet centres, where the jet energy
+pass this criterion are considered as jet centres, where the jet energy
 is equal to the sum of all the towers within the $9\times9$ square.
 % Taking the highest energy
 % TT as the centre of the jet axis is motivated by the fact that jets
@@ -264,10 +264,10 @@ or \TTs as input. They include:
 \begin{itemize}
 \item{total $E_T$, the scalar sum of the transverse energy in all the
 \TTs}
-\item{\met, the inverse vector sum of the transverse energy in all the
+\item{\met, the negative vector sum of the transverse energy in all the
 \TTs}
 \item{\HT, the scalar sum of all the Level-1 jets}
-\item{\MHT, the inverse vector sum of all the Level-1 jets}
+\item{\MHT, the negative vector sum of all the Level-1 jets}
 \end{itemize}
 
 \section{Pileup subtraction}
@@ -313,11 +313,11 @@ QCD multijet processes. It is also important to take account of the
 Level-1 trigger architecture when designing the algorithm to ensure
 that it can be performed with a fixed latency. Different forms of \PUS
 in the Level-1 trigger are outlined in this section and their
-performance subject to this criteria is is examined in
+performance subject to these criteria is examined in
 Sec.~\ref{sec:jet_algo_performance}. 
 
 As well as mitigating \PU from simultaneous collisions, the effects of
-\ac{OOTPU} must be removed. This predominantly achieved during the
+\ac{OOTPU} must be removed. This is predominantly achieved during the
 generation of the \TT inputs for the calorimeter trigger. When reading
 out the energy deposited in the \ECAL and \HCAL the average extra
 energy deemed to have come from a previous bunch crossing is
@@ -339,7 +339,7 @@ where $p_{Tj}$ is the transverse momentum of a jet $j$, $A_j$ is its
 area and the median is taken over all reconstructed jets in an event.
 In the plots in this chapter, this form of \PUS is known as \emph{global}. It
 acts to remove half the jets in an event, the low energy half, and
-correct down the energy of the remaining half. This works works
+correct down the energy of the remaining half. This works
 particularly well in high \PU cases as $\rho$ is insensitive to
 fluctuations in the energy of interesting physics events. 
 % It is
@@ -384,7 +384,8 @@ their energy is deposited very close to the central \TT of the jet
 algorithm \cite{JetProfile_pileup}. A typical energy profile of a jet
 is shown in Fig.~\ref{fig:jetprofile}. In the case of isolated jets,
 the ring five \TTs from the centre of the jet can be assumed to contain
-only contamination from \PU.  The \emph{donut subtraction} algorithm therefore take the
+only contamination from \PU.  The \emph{donut subtraction} algorithm
+therefore takes the
 energy per unit area in the ring of \TTs surrounding the jet (shown in
 Fig.~\ref{fig:donutstrips}) and scales
 it up by the area of the jet. The resulting energy is then subtracted
@@ -395,8 +396,8 @@ been applied in the analysis of heavy ion collisions at the \LHC
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=0.8\linewidth]{figs/trigger/jetProfile}
-  \caption{ Jet energy profile as a function of distance from the
-  centre of the jet, $R$. The number of trigger towers that the
+  \caption{ Jet energy profile as a function of the squared distance from the
+  centre of the jet, $\Delta R^2$. The number of trigger towers that the
   distances corresponds to are shown in pink. Calculated for jets from
   a simulation of Z to $\mu\mu$ events \cite{JetProfile_pileup}}
 	\label{fig:jetprofile}
@@ -648,8 +649,10 @@ procedure scales reasonably well with the number of \PU interactions.
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=1.0\linewidth]{figs/trigger/pu140_calib_closure}
-  \caption{The ratio of L1 jets with Gen before and after they are calibrated,
-demonstrating the effectiveness of the calibration}
+  \caption{The ratio of the \pT of Level-1 jets with matched generator
+  jets before and after they are calibrated. This is carried out at a
+  \PU of 140 and, demonstrates the effectiveness of the calibration in
+  these extreme conditions.}
   \label{fig:pu140calibclosure}
 	\end{center}
 \end{figure}
@@ -668,7 +671,7 @@ commissioning of the upgraded trigger is plotted with label
 sample only consists of overlaid \PU events and has no generator jets.
 To test physics performance a sample of simulated $t\bar{t}$
 events was used, which contains generator jets that originate from
-the hard interaction. The Level-1 jets jets are calibrated for each
+the hard interaction. The Level-1 jets are calibrated for each
 type of \PUS with the method as outlined in Section~\ref{sec:l1jec}.
 
 Fig.~\ref{fig:matchingeff} shows the efficiency of generator jets,
@@ -701,7 +704,7 @@ number of reconstructed vertices is plotted for the minimum bias sample,
 Fig.~\ref{fig:ratenvtx}. The rate is defined as the fraction of
 minimum bias events that pass a Level-1 jet $p_T$ cut of $30$~\gev.
 This cut is applied to a different jet rank depending on the type of
-trigger to be tested. For \emph{single-jet} trigger the cut is applied to
+trigger to be tested. For the \emph{single-jet} trigger the cut is applied to
 the lead jet, for a \emph{quad-jet} trigger the cut is applied to the
 fourth leading jet. The different forms of \PUS clearly reduce the
 dependence of the rate on the number of interactions. The upgrade algorithm
@@ -710,7 +713,7 @@ rates are incredibly sensitive to PU. Of the algorithms investigated,
 the seed of 2.5~\gev, denoted \emph{Seed 5}, has the most dramatic
 effect due to its ability to kill soft \PU jets. The \rho-area
 subtraction, denoted \emph{Global Sub}, also performs well. Applying
-donut subtraction without a seed threshold does not making much difference for this
+donut subtraction without a seed threshold does not make much difference for this
 particular \PUS benchmark. This is likely due to the fact that
 donut subtraction works well in correcting the resolution of jets
 contaminated with soft particles from \PU vertices, rather than
@@ -781,17 +784,17 @@ To better characterise the different Level-1 jet algorithms independently of ene
 scale, the efficiency of selecting events with a particular generator
 level jet quantity is plotted against the rate from a minimum bias
 sample. In each case, a range of thresholds for the equivalent Level-1
-quantity are scanned through and the rate and efficiency for that
-threshold is plotted. The rate is calculated for an instantaneous luminosity
+quantity are scanned through and the rate and efficiency for the
+thresholds are plotted. The rate is calculated for an instantaneous luminosity
 of $7\times10^{33}$~cm$^{-2}$s$^{-1}$ with a 50~ns \LHC bunch crossing
 interval. Figure~\ref{fig:rateEffJet} shows the rate of the Level-1
 trigger in Hz against the efficiency of selecting events for jet
-triggers. In Fig.~\ref{fig:leadJetTurnon} the efficiency of
+triggers. In Fig.~\ref{fig:leadJetRateEff} the efficiency of
 selecting $t\bar{t}$ events containing a generator jet with
 $\pT>150~\gev$ is plotted against the minimum bias rate for an
 equivalent Level-1 threshold. The rate and efficiency are plotted for
 a range of cuts on the lead Level-1 jet for all the jet algorithms
-discussed in this chapter. In Fig.~\ref{fig:fourthJetTurnon} the
+discussed in this chapter. In Fig.~\ref{fig:fourthJetRateEff} the
 efficiency of selecting events with a fourth leading generator jet
 with $\pT>50~\gev$ are plotted for a range of cuts on the fourth Level-1
 jet. As was observed in the turn-on curves, the efficiencies for the
@@ -814,7 +817,7 @@ energy. This is due to the fact that they give a total measure of the
 hadronic energy scale of the event and a strong indication of the
 presence of any weakly interacting particles. The performance of the
 \HT and \MHT triggers is therefore of significant interest and shown
-in Fig.~\ref{fig:rateEffJet}. In Fig.~\ref{fig:htTurnon} the
+in Fig.~\ref{fig:rateEffJet}. In Fig.~\ref{fig:htRateEff} the
 efficiency of selecting $t\bar{t}$ events with a scalar sum of $p_T>20~\gev$
 generator jets that is greater than $200~\gev$ for a range of
 thresholds on the Level-1 $\HT$ is plotted against the minimum bias
@@ -823,7 +826,7 @@ makes a significant difference. Applying a seed threshold on the
 selected jets performs well. Applying the chunky donut or
 $\rho$-area \PUS methods on top of a seed threshold obtains the best result.
 
-Figure~\ref{fig:mhtTurnon} shows a similar rate and efficiency curve
+Figure~\ref{fig:mhtRateEff} shows a similar rate and efficiency curve
 for the \MHT variable. For reference on this plot the \MET rate and
 efficiency, labelled \emph{MET}, is also shown. As a
 vector sum of jets is not made in the interim trigger, the curve with
@@ -839,11 +842,11 @@ jets, it is again observed that a seed threshold with chunky donut or
   \centering
   \subfloat[Lead jet $p_T>150~\gev$]{
     \includegraphics[width=0.48\textwidth]{figs/trigger/performance/singleJet_150}
-    \label{fig:leadJetTurnon}
+    \label{fig:leadJetRateEff}
   }~ 
   \subfloat[Fourth leading jet $p_T>50~\gev$]{
     \includegraphics[width=0.52\textwidth]{figs/trigger/performance/quadJet_50}
-    \label{fig:fourthJetTurnon}
+    \label{fig:fourthJetRateEff}
   }
   \caption{ The normalised minimum bias rate (in Hz) against efficiency for a
   variety of thresholds of jet triggers
@@ -856,11 +859,11 @@ jets, it is again observed that a seed threshold with chunky donut or
   \centering
   \subfloat[$\HT>200~\gev$]{
     \includegraphics[width=0.5\textwidth]{figs/trigger/performance/ht_200}
-    \label{fig:htTurnon}
+    \label{fig:htRateEff}
   }~
   \subfloat[$\MHT>200~\gev$]{
     \includegraphics[width=0.5\textwidth]{figs/trigger/performance/mht_200}
-    \label{fig:mhtTurnon}
+    \label{fig:mhtRateEff}
   }
   \caption{ The normalised minimum bias rate (in Hz) against efficiency for a
   variety of thresholds of energy sum
@@ -927,11 +930,11 @@ in simulation.
   \centering
   \subfloat[]{
     \includegraphics[width=0.48\textwidth]{figs/trigger/jetEtaEmulator}
-    \label{fig:leadJetTurnon}
+    \label{fig:jetEtaEmulator}
   }~ 
   \subfloat[]{
     \includegraphics[width=0.52\textwidth]{figs/trigger/jetPhiEmulator}
-    \label{fig:fourthJetTurnon}
+    \label{fig:jetPhiEmulator}
   }
   \caption{Demonstration of agreement between the trigger algorithm
   implemented in firmware and emulated in software for simulation

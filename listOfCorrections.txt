@@ -1,0 +1,173 @@
+Hi Adam and Morgan,
+
+   Here's my list of minor corrections to Adam's thesis, including also a couple of things that came up in the viva. Please let me know if anything doesn't make sense.
+
+      Again, congratulations and best wishes for the future ...
+
+      Paul
+
+      ----------------------------------------------------------------
+
+      \ Page 2) many of order of
+
+      \ 2) phenomena -> phenomenon
+
+      \ 3) the the
+
+      \ 4) force partner -> force partners
+
+      \ 6) Full stop after eq 2.6
+
+      8) Please look again at the description of fragmentation and hadronisation (when are there quarks and when hadrons?)
+
+      \ 9) Hyphenate inter-generational
+
+      \ 11) comma after Goldstone bosons
+
+      \ 12) points to -> point to
+
+      \ 14) versions of supersymmetry is     (-> are)
+
+      \ 16) sparticles -> sparticle
+
+      \ 28) Up to |eta| < 1.3 -> Up to |eta| = 1.3
+
+      \ 31) to to
+
+      Section 4.5) Please consider adding a sprinkling of plots (or else clear citations) summarising the jet performance in terms of JES uncertainty etc
+
+      \ 34) drop > before 99% (in fact you can probably write 99.9%)?
+
+      \ 39) cannot not ... Freudian slip? :-)
+
+      \ 41) often indicate -> often indicates
+
+      \ 44) |eta| < 5    ->    |eta| = 5
+
+      \ 51) either greater than or greater than or
+
+      \ 54) Bullets 1 and 3, inverse -> negative
+
+      \ 55) this criteria -> this criterion
+
+      \ 55) This predominantly -> This is predominantly
+
+      \ 55) works works
+
+      56) y axis label has mean rather than median (don't worry if you're unable to change that)
+
+      \ 56) take the energy -> takes the energy
+
+      57) Fig 5.7 confused us in the viva. - Check what's plotted?...
+
+      \57) Fig 5.7 figure x axis is <DeltaR^2>, caption is just R
+
+      58) same comment as page 56 on axis label
+
+      \ 63) Suggest to add PU=140 in caption of fig 5.13
+
+      \ 64) jets jets
+
+      \ 65) Add 'the' before 'single jet'
+
+      \ 65) does not making
+
+      \ 66) Figure numbers in text go wrong: 5.19a -> 5.16a and 5.18a -> 5.16a
+
+      \ 67) Same problem, 5.18 -> 5.17, 5.19a -> 5.17
+
+      \ 67) threshold is plotted -> thrshold are plotted
+
+      \ 72) that or uninstrumented
+
+      \ 73) class of backgrounds are -> class ... is
+
+      \ 73) comparably -> comparatively
+
+      \ 77) masks fact
+
+      \ 78) Spell out w.r.t.
+
+      \ 81) criteria is -> criteria are (twice on page)
+
+      \ 83) require required
+
+      \ 83) the the
+
+      \ 84) allow events -> allows events
+
+      \ 88) I was confused by 'undefined with 40 GeV jets' ... should it be 'with <40 GeV jets'?
+
+      \ 88) demonstrated to in
+
+      \ 90) background that pass -> background that passes
+
+      \ 91) events are a categorised
+
+      94) Some quantification of the reweight and scale factors would be good in terms of plots or citations.
+
+      \ 94) number of PU collisions is -> number ... are
+
+      \ 98) typically vary -> typically varies
+
+      \ 99) taken into a way
+
+      \ 100) The size of the HTslash -> The sizes ...
+
+      \ 100) 50 GeV are -> 50 GeV is
+
+      \ 100) by maximum -> by the maximum
+
+      \ 105) Add 'the' before percent-level
+
+      \ 105) Add 'the' before full signal region
+
+      \ 107) of the all the
+
+      \ 107) in and out acceptance
+
+      \ 110) in Fig A.24 variation
+
+      \ 111) Add 'events' after 'simulated QCD'
+
+      \ 113) result of the tests are
+
+      \ 114) yields mu^+
+
+      \ 116) The result are
+
+      \ 116) W-eniched
+
+      119) Is it possible to say what the most important systematics are in terms of restrictions on the sensitivity / limits?... and to quantify how much effect the systematics have on the limits at all?
+
+      \ 119) 1st line of table caption, representatives -> representative
+
+      120) Could you indicate how the systematics are included in the likelihoods?
+
+      \ 132) commissioned is currently
+
+      \ 133) sort of generic -> sorts of generic
+
+
+Double check or do:
+
+
+      8) Please look again at the description of fragmentation and hadronisation (when are there quarks and when hadrons?)
+
+      Section 4.5) Please consider adding a sprinkling of plots (or else clear citations) summarising the jet performance in terms of JES uncertainty etc
+
+      56) y axis label has mean rather than median (don't worry if you're unable to change that)
+
+      57) Fig 5.7 confused us in the viva. - Check what's plotted?...
+
+      58) same comment as page 56 on axis label
+
+      \ 66) Figure numbers in text go wrong: 5.19a -> 5.16a and 5.18a -> 5.16a
+
+      \ 67) Same problem, 5.18 -> 5.17, 5.19a -> 5.17
+
+      94) Some quantification of the reweight and scale factors would be good in terms of plots or citations.
+
+      119) Is it possible to say what the most important systematics are in terms of restrictions on the sensitivity / limits?... and to quantify how much effect the systematics have on the limits at all?
+
+      120) Could you indicate how the systematics are included in the likelihoods?
