@@ -1,4 +1,6 @@
 12/1/2017:
+72 colour pages!
+
   TODO:
     - \ Add references for dark matter and dark energy in Intro and in
       other places!
@@ -65,31 +67,47 @@ POTENTIAL VIVA QUESTIONS/REVISION:
     - This is important to know WRT start of PFlow section
 
 - Revise: multiple scattering, bremsstrahlung, ionisation
+    - in high Z materials undergo brehmstrahlung and pair production
+      - Moliere radius is how contained the shower is (small for lead tungstate)
+      - small radiation length due to high Z
+      - brehmstrahlung goes 1/m^4
+        - radiation loss increases linearly with E and goes as the square of Z
+        - ionization loss increases logarithmically with E and linearly with Z
+      - pair production must happen by a nucleus to preserve momentum, photon transferred to the nucleus. Can't have a 3 point vertex on its own
+
+      - For hadrons it depends on the nuclear interaction length
+
     - i.e. what is a MIP, how it all works
 
 - Decays of backgrounds
     - what proportion of Z's decay to nus etc...
+      -The reason is that the coupling is T3 − Qsin2θW for each vertex (squared for the amplitude/rate).
+      Since the neutrinos have no charge and no right-handed state their total relative rate is just 3*(T3^2) = 3*1/4 = 0.75
+      For the muons they have RH and LH states and charge. For the LH states the rate is −1⁄2 + sin2θW and for the RH sin2θW. Squaring these and taking 0.23 for the Weinberg angle gives 0.1258
+      So the ratio is 0.75/0.1258 = 5.96
 
 - Composition of jets
 
-- Be able to derive the gauge invariance stuff, like in Robyn and Mark's
+- ~\ Be able to derive the gauge invariance stuff, like in Robyn and Mark's
   theses
 
 - Properly explain the hierarchy problem (ie in SUSY primer)
 
-- Make myself clear on what's going on with charges in the SM group
+- \ Make myself clear on what's going on with charges in the SM group
   theory (ie end of gauge group section)
 
-- Difference between chirality and helicity and how that's manifest in
+- \ Difference between chirality and helicity and how that's manifest in
   the EWK stuff
 
-- how does one choose a specific gauge for the higgs stuff! (see
+- ~\ how does one choose a specific gauge for the higgs stuff! (see
 robyn's thesis)
 
 - how to add nu mass to the SM (for morgan...)
 
-- Why do you have to mix the gauge fields to get the physical fields?
+- \ Why do you have to mix the gauge fields to get the physical fields?
+  - there's a broken symmetry, gauge fields are massless
 
+===
 - Make sure I can show how the multijet alphaT comes from the dijet
   version
 
@@ -130,4 +148,43 @@ Recommendations from Alex:
 
   - justify why high mass scale events deposit their energy centrally
   - know all the MET filters well!!, ie sec 6.6
+
+Theory
+=====
+
+I think the golden rule is if they point at an equation know enough to say
+something about where it comes from, or you should know one level deeper than
+what you wrote. It's okay to say you don't know of course, but you don't want
+to do that too often. In your chapter, I don't see how they can ask anything on
+the fermions and forces part, but they could ask about Higgs a little, or about
+the hierarchy problem or about unification. Maybe on SMS be able to draw a real
+Feynman diagram with a propagator for the models.
+
+Detector =======
+
+Here they would probably ask about fundamental things, like mechanisms for
+particle energy loss in a medium etc. Would be good to know what the different
+terms in the detector resolution parameterisations represent. Perhaps later in
+the reco chapter would be good to know how jet energy is split between charged,
+and neutral and EM and hadronic energies. Paul N. was involved in jet physics
+so revise the anti-kt algorithm. This might also come up in the L1 trigger
+chapter.
+
+Big picture ========
+
+It would be a bit unfair but they might ask you about the state of SUSY in
+general. I'd play this as you do a generic search for a missing energy
+signature. Don't care if it's SUSY or not, but you may also want to be ready to
+discuss SUSY. There was a workshop in Spain recently on whether SUSY is alive.
+Buch went. Maybe skim a few slides.
+
+https://workshops.ift.uam-csic.es/susyaaw/program
+
+Since you mention DM, you'd better know the latest state of direct DM searches
+and be able to say something about the next generation, so LZ etc. and know
+what the neutrino "floor" is since that's the problem after the next
+generation.
+
+Morgan might ask I suppose about neutrino physics. Wikipedia should be enough
+prep on this.
 
