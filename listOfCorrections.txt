@@ -152,22 +152,31 @@ Hi Adam and Morgan,
 Double check or do:
 
 
-      8) Please look again at the description of fragmentation and hadronisation (when are there quarks and when hadrons?)
+      \ 8) Please look again at the description of fragmentation and hadronisation (when are there quarks and when hadrons?)
 
-      Section 4.5) Please consider adding a sprinkling of plots (or else clear citations) summarising the jet performance in terms of JES uncertainty etc
+      \ Section 4.5) Please consider adding a sprinkling of plots (or else clear citations) summarising the jet performance in terms of JES uncertainty etc
+        \ - Quantify the jet resolution
+        \ - cite CMS jet performance
 
-      56) y axis label has mean rather than median (don't worry if you're unable to change that)
+      \ 56) y axis label has mean rather than median (don't worry if you're unable to change that)
 
-      57) Fig 5.7 confused us in the viva. - Check what's plotted?...
+      \ 57) Fig 5.7 confused us in the viva. - Check what's plotted?...
 
-      58) same comment as page 56 on axis label
+      \ 58) same comment as page 56 on axis label
 
       \ 66) Figure numbers in text go wrong: 5.19a -> 5.16a and 5.18a -> 5.16a
 
       \ 67) Same problem, 5.18 -> 5.17, 5.19a -> 5.17
 
       94) Some quantification of the reweight and scale factors would be good in terms of plots or citations.
+        \ - Put in the PU RW plot
+        \ - Find a reference for the scale factor stuff + say they're O few percent
+          \ - add muon
+          - add btag stuff
 
       119) Is it possible to say what the most important systematics are in terms of restrictions on the sensitivity / limits?... and to quantify how much effect the systematics have on the limits at all?
+        - check if there have been any studies, speak to Matt etc.
 
       120) Could you indicate how the systematics are included in the likelihoods?
+        - figure out something based on matts thing
+          - put in Matt's equation

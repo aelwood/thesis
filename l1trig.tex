@@ -360,7 +360,7 @@ problem with a 50~ns bunch spacing.
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=0.8\linewidth]{figs/trigger/median}
+		\includegraphics[width=0.8\linewidth]{figs/trigger/medianEdited}
   \caption{The median energy density, \rho, of Level-1 jets in the \CMS
   calorimeters as a function of the number of simultaneous collisions.
   This is taken from minimum bias \MC simulation at 13~\tev with a
@@ -377,28 +377,33 @@ subtraction harder to perform in hardware. Despite this fact, as
 global \rho is a popular and well understood form of offline \PUS it
 acts as a good benchmark against which to test other algorithms.
 
-\subsection{Donut Subtraction}
+\subsection{Donut subtraction}
 
 As jets from the hard scatter are typically boosted objects, most of
 their energy is deposited very close to the central \TT of the jet
-algorithm \cite{JetProfile_pileup}. A typical energy profile of a jet
-is shown in Fig.~\ref{fig:jetprofile}. In the case of isolated jets,
-the ring five \TTs from the centre of the jet can be assumed to contain
-only contamination from \PU.  The \emph{donut subtraction} algorithm
-therefore takes the
-energy per unit area in the ring of \TTs surrounding the jet (shown in
-Fig.~\ref{fig:donutstrips}) and scales
-it up by the area of the jet. The resulting energy is then subtracted
-from the jet to correct any \PU contamination. This kind of \PUS has
+algorithm \cite{JetProfile_pileup}. The $\pT$ weighted distance from
+the centre of the jet axis of particles that make up a jet is shown in
+Fig.~\ref{fig:jetprofile}. In the case of isolated jets, the ring five
+\TTs from the centre of the jet can be assumed to contain only
+contamination from \PU jets external to the jet in question.  The
+\emph{donut subtraction} algorithm therefore takes the energy per unit
+area in the ring of \TTs surrounding the jet (shown in
+Fig.~\ref{fig:donutstrips}) and scales it up by the area of the jet.
+The resulting energy is then subtracted from the jet to correct any
+\PU contamination. This kind of \PUS has
 been applied in the analysis of heavy ion collisions at the \LHC
 \cite{Cacciari:2010te}.
 
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=0.8\linewidth]{figs/trigger/jetProfile}
-  \caption{ Jet energy profile as a function of the squared distance from the
-  centre of the jet, $\Delta R^2$. The number of trigger towers that the
-  distances corresponds to are shown in pink. Calculated for jets from
+  \caption{ The energy weighted distance of particles clustered in a
+  jet with respect to the central jet axis, $\langle \Delta R^2\rangle
+  = \sum_{i} \Delta R_i^2\pT_i^2/\sum_{i} \pT_i^2$, where the
+  different particles in a jet are indexed with $i$ and are a distance
+  of $\Delta R$ away from the jet centre. The number of
+  trigger towers that the distances corresponds to are shown in pink.
+  Calculated for jets from
   a simulation of Z to $\mu\mu$ events \cite{JetProfile_pileup}}
 	\label{fig:jetprofile}
 	\end{center}
@@ -453,7 +458,7 @@ pass through the origin, implying it is indeed a good measure of \PU.
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=0.8\linewidth]{figs/trigger/threestrips}
+		\includegraphics[width=0.8\linewidth]{figs/trigger/threestripsEdited}
   \caption{The energy density in the median two $3\times 1$ \TT strips
   of a chunky donut around Level-1 jets in the \CMS calorimeters as a
   function of the number of simultaneous collisions. This is taken
