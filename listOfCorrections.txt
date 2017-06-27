@@ -172,7 +172,7 @@ Double check or do:
         \ - Put in the PU RW plot
         \ - Find a reference for the scale factor stuff + say they're O few percent
           \ - add muon
-          - add btag stuff
+          \ - add btag stuff
 
       119) Is it possible to say what the most important systematics are in terms of restrictions on the sensitivity / limits?... and to quantify how much effect the systematics have on the limits at all?
         - check if there have been any studies, speak to Matt etc.
