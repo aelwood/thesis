@@ -1367,6 +1367,28 @@ Finally, the uncertainty from the limited statistical power of the \MC
 samples used is incorporated as an additional nuisance parameter per
 \htcat and \MHT bin. This is taken as uncorrelated across all bins.
 
+The full likelihood for the hadronic signal region including the
+systematics and free floating parameters can be written as:
+\small
+\begin{multline}
+\label{eq:hadronicLikelihood}
+\mathcal{L}^{J}_{\mathrm{had}} = \prod_i \mathcal{L}^{J,i}_{\mathrm{had}} = \prod_i \mathrm{Pois}(n^{J,i}_{\mathrm{had}} |\sum_{j \in J}\, b^{j,i}_{\znunu~,\mathrm{had}}\times\phi^{j}(\mu\mu\rightarrow\znunu~)\times a^{j}\times\rho^{j,i}_{\znunu~,\mathrm{had}}\, + \\ 
+b^{j,i}_{\ttw,\mathrm{had}}\times\phi^{j}(\mu\rightarrow\ttw)\times a^{j}\times\rho^{j,i}_{\ttw,\mathrm{had}}\, + b^{j,i}_{\text{QCD},\mathrm{had}}\times\omega^{j,i}_{\text{QCD},\mathrm{had}} + \,r\times s^{j,i}_{\mathrm{had}}\times\rho^{j,i}_{s,\mathrm{had}}),
+\end{multline}
+\normalsize
+where $b^{j,i}_{\znunu~/\ttw,\mathrm{had}}$ are the predicted number of events
+from simulation for the electroweak backgrounds;
+$b^{j,i}_{\text{QCD},\mathrm{had}}$ are the predicted number of events for the
+QCD multijet component; the $a^{j}$ parameters are the parameters
+that can float in the fit; $\phi^{j}$ contains the systematic uncertainties on
+the transfer factors from the data-driven tests; $\rho^{j,i}$ contains the
+systematics from variations in simulation, the systematics derived from the
+control regions on the~\mht shape and the uncertainty from the limited number
+of simulated events; $r$ is the unconstrained `signal strength' parameter and
+$\omega_{\text{QCD},\mathrm{had}}^{j,i}$ contains the uncertainties on
+the QCD multijet component. The systematics enter into the
+likelihood models for the control regions in a similar way.
+
 \subsection{Fitting}
 
 The fit of the likelihood model to find the final result is carried

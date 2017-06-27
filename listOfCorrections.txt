@@ -168,15 +168,17 @@ Double check or do:
 
       \ 67) Same problem, 5.18 -> 5.17, 5.19a -> 5.17
 
-      94) Some quantification of the reweight and scale factors would be good in terms of plots or citations.
+      \ 94) Some quantification of the reweight and scale factors would be good in terms of plots or citations.
         \ - Put in the PU RW plot
         \ - Find a reference for the scale factor stuff + say they're O few percent
           \ - add muon
           \ - add btag stuff
 
-      119) Is it possible to say what the most important systematics are in terms of restrictions on the sensitivity / limits?... and to quantify how much effect the systematics have on the limits at all?
-        - check if there have been any studies, speak to Matt etc.
+      \ 119) Is it possible to say what the most important systematics are in terms of restrictions on the sensitivity / limits?... and to quantify how much effect the systematics have on the limits at all?
+        \ - check if there have been any studies, speak to Matt etc.
+        \ - put a paragraph in the exclusion limits section
 
-      120) Could you indicate how the systematics are included in the likelihoods?
-        - figure out something based on matts thing
-          - put in Matt's equation
+      \ 120) Could you indicate how the systematics are included in the likelihoods?
+        \ - figure out something based on matts thing
+          \ - put in Matt's equation
+          \ - make sure it's EPE (one a)
