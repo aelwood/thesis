@@ -55,8 +55,8 @@ seen in Fig.~\ref{f044_corr_nTrueInt_data_mc_norm}.
 \centering
 \includegraphics[scale=1.00]{figs/analysis/puRw}
 \caption{The distribution of the number of interactions per bunch
-crossing in \MC simulation before and after reweighting, compared
-to the number measured in data.} \label{f044_corr_nTrueInt_data_mc_norm}
+crossing in \MC simulation before and after \PU reweighting, compared
+to the distribution measured in data.} \label{f044_corr_nTrueInt_data_mc_norm}
 \end{figure}
 
 \subsection{Scale factors}
@@ -73,7 +73,7 @@ typically determined as a function of \pT and \eta, two quantities in
 which the detector response can vary significantly. These scale
 factors are used to correct lepton, photon and $b$-tagging
 efficiencies. As the simulation and data generally agree well, these
-scale factors are typically at most a few percent \cite{CMS-DP-2017-007,CMS-DP-2016-042}.
+scale factors are typically small, at most a few percent \cite{CMS-DP-2017-007,CMS-DP-2016-042}.
 % lepton SFs from muons etc... eta pt etc...
 % btag SFs
 % top pt reweighting
@@ -1368,12 +1368,12 @@ samples used is incorporated as an additional nuisance parameter per
 \htcat and \MHT bin. This is taken as uncorrelated across all bins.
 
 The full likelihood for the hadronic signal region including the
-systematics and free floating parameters can be written as:
+systematics and free floating parameters, with $\htcat\equiv J$, can be written as:
 \small
 \begin{multline}
 \label{eq:hadronicLikelihood}
-\mathcal{L}^{J}_{\mathrm{had}} = \prod_i \mathcal{L}^{J,i}_{\mathrm{had}} = \prod_i \mathrm{Pois}(n^{J,i}_{\mathrm{had}} |\sum_{j \in J}\, b^{j,i}_{\znunu~,\mathrm{had}}\times\phi^{j}(\mu\mu\rightarrow\znunu~)\times a^{j}\times\rho^{j,i}_{\znunu~,\mathrm{had}}\, + \\ 
-b^{j,i}_{\ttw,\mathrm{had}}\times\phi^{j}(\mu\rightarrow\ttw)\times a^{j}\times\rho^{j,i}_{\ttw,\mathrm{had}}\, + b^{j,i}_{\text{QCD},\mathrm{had}}\times\omega^{j,i}_{\text{QCD},\mathrm{had}} + \,r\times s^{j,i}_{\mathrm{had}}\times\rho^{j,i}_{s,\mathrm{had}}),
+\mathcal{L}^{J}_{\mathrm{had}} = \prod_i \mathcal{L}^{J,i}_{\mathrm{had}} = \prod_i \mathrm{Pois}(n^{J,i}_{\mathrm{had}} |\sum_{j \in J}\, b^{j,i}_{\znunu~,\mathrm{had}}\times\phi^{j}(\mu\mu\rightarrow(\znunu)~)\times a^{j}\times\rho^{j,i}_{\znunu~,\mathrm{had}}\, + \\ 
+b^{j,i}_{\ttw,\mathrm{had}}\times\phi^{j}(\mu\rightarrow(\ttw))\times a^{j}\times\rho^{j,i}_{\ttw,\mathrm{had}}\, + b^{j,i}_{\text{QCD},\mathrm{had}}\times\omega^{j,i}_{\text{QCD},\mathrm{had}} + \,r\times s^{j,i}_{\mathrm{had}}\times\rho^{j,i}_{s,\mathrm{had}}),
 \end{multline}
 \normalsize
 where $b^{j,i}_{\znunu~/\ttw,\mathrm{had}}$ are the predicted number of events
