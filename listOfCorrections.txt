@@ -182,3 +182,12 @@ Double check or do:
         \ - figure out something based on matts thing
           \ - put in Matt's equation
           \ - make sure it's EPE (one a)
+
+
+      \ - Table 2.1 - fix electron neutrino mass limit (http://pdg.lbl.gov/2017/tables/rpp2017-sum-leptons.pdf ) 
+          -check this
+
+      \ - Mention tetraquarks & pentaquarks
+
+      \ - Current PDG citation should be C. Patrignani et al. (Particle Data Group), Chin. Phys. C, 40, 100001 (2016) .
+
